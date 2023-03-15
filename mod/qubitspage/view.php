@@ -86,12 +86,13 @@ $formatoptions->context = $context;
 $content = format_text($content, $page->contentformat, $formatoptions);
 $templatecontext = array(
     "PYODIDE_INDEX_URL" => "https://cdn.jsdelivr.net/pyodide/v0.21.3/full/",
-    "tickimgurl" => new moodle_url("/mod/qubitspage/pix/chapter-tick.png")
+    "tickimgurl" => new moodle_url("/mod/qubitspage/pix/chapter-tick.png"),
+    "staticbasic" => new moodle_url("/mod/qubitspage/static/")
 );
 //preg_match_all('/<pythoncode>(.*?)<\/pythoncode>/s', $content, $matches);
 echo $OUTPUT->box($content, "generalbox center clearfix", "qubitspage");
 
-echo $OUTPUT->render_from_template("mod_qubitspage/pythoncode", $templatecontext);
+echo $OUTPUT->render_from_template("mod_qubitspage/pythoncode-v2", $templatecontext);
 
 if (!isset($options['printlastmodified']) || !empty($options['printlastmodified'])) {
     $strlastmodified = get_string("lastmodified");
