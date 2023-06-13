@@ -428,16 +428,35 @@ class base {
      * @return \stdClass The created token database record.
      */
     protected function createtoken($classlinkuniqid, $username, $authparams, $tokenparams, \auth_classlink\jwt $idtoken, $userid = 0) {
-        global $DB;
 
+       
+        global $DB,$CFG;
         // Determine remote username. Use 'upn' if available (Azure-specific), or fall back to standard 'sub'.
         $classlinkusername = $idtoken->claim('upn');
-        if (empty($classlinkusername)) {
-            $classlinkusername = $idtoken->claim('sub');
+        if (empty($classlinkusername)) { 
+          //  $classlinkusername = $idtoken->claim('sub');
+            $classlinkusername = $idtoken->claim('login_hint');
         }
 
+        $classlinkusername = trim(\core_text::strtolower($classlinkusername));
+      
+        // Look for local moodle user by matched email:
+        $email = $idtoken->claim('email');
+        if (!empty($email)) {
+            $existingUser = $DB->get_record("user", array("email"=>$email), "id");
+            if ($existingUser) {
+                $userid = $existingUser->id;
+                $username = $classlinkusername;
+
+                $lastip = getremoteaddr();
+                $timecreated = time();
+                $mnethostid = $CFG->mnet_localhost_id;
+                $user = $DB->update_record("user", array("id"=>$userid, "username"=>$username, "auth"=>'classlink',"firstaccess"=>$timecreated,"lastaccess"=>$timecreated,"currentlogin"=>$timecreated,"lastip"=>$lastip,"mnethostid"=>$mnethostid));
+            }
+    }
+
         // We should not fail here (idtoken was verified earlier to at least contain 'sub', but just in case...).
-        if (empty($classlinkusername)) {
+        if (empty($classlinkusername)) { 
             throw new \moodle_exception('errorauthinvalididtoken', 'auth_classlink');
         }
 
@@ -461,6 +480,8 @@ class base {
         $tokenrec->idtoken = $tokenparams['id_token'];
         $tokenrec->id = $DB->insert_record('auth_classlink_token', $tokenrec);
         return $tokenrec;
+
+        
     }
 
     /**

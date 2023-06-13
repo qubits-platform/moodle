@@ -542,7 +542,7 @@ EOF;
 
         // See whether this user is an agent for any other user.
         // Note: This is only applied for students as per section 4.1.2 of the specification.
-        $this->sync_user_agents($entity, $localuser);
+       // $this->sync_user_agents($entity, $localuser);
 
         return $localuser;
     }
@@ -555,9 +555,11 @@ EOF;
      * @return  stdClass
      */
     protected function create_new_user(user_representation $entity, stdClass $remoteuser): stdClass {
+
+        
         // Check whether there is an existing user with the same username.
-        $user = core_user::get_user_by_username($remoteuser->username);
-        if ($user) {
+        $user = core_user::get_user_by_username($remoteuser->username);        
+        if ($user) { 
             $localuser = \core_user::get_user($user->id);
             $this->create_user_mapping($localuser, $remoteuser->idnumber);
 
@@ -568,10 +570,18 @@ EOF;
 
             return $localuser;
         }
+        if($remoteuser->status=='tobedeleted') 
+        { echo 'TO DE DELETED';
+        
+            $this->get_trace()->output("No user found for user ");
+            return $remoteuser;
+        }
 
-        // No user with the same idnumber, or a mapped idnumber.
-        // Create a new user.
-        $this->get_trace()->output(sprintf("Creating new user %s (%s)",
+        if($remoteuser->status=='active') 
+        { echo 'CREATE';
+            // No user with the same idnumber, or a mapped idnumber.
+            // Create a new user.
+            $this->get_trace()->output(sprintf("Creating new user %s (%s)",
             $remoteuser->username,
             $remoteuser->idnumber
         ), 4);
@@ -583,6 +593,7 @@ EOF;
         $this->create_user_mapping($localuser, $remoteuser->idnumber);
 
         return $localuser;
+        }
     }
 
     /**

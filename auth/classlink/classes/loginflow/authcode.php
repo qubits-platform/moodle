@@ -431,8 +431,14 @@ class authcode extends \auth_classlink\loginflow\base {
     protected function handlelogin($classlinkuniqid, $authparams, $tokenparams, $idtoken) {
         global $DB, $CFG;
 
+        $user_use_login = $idtoken->claim('login_hint');
+
+        $user_uselogin = trim(\core_text::strtolower($user_use_login));
+
+        $classlinkuniqid = $user_uselogin;
+
         $tokenrec = $DB->get_record('auth_classlink_token', ['classlinkuniqid' => $classlinkuniqid]);
-        if (!empty($tokenrec)) {
+        if (!empty($tokenrec)) { 
             // Already connected user.
 
             if (empty($tokenrec->userid)) {
@@ -449,7 +455,7 @@ class authcode extends \auth_classlink\loginflow\base {
             $user = authenticate_user_login($username, null, true);
             complete_user_login($user);
             return true;
-        } else {
+        } else { 
             // No existing token, user not connected.
             //
             // Possibilities:
@@ -458,9 +464,17 @@ class authcode extends \auth_classlink\loginflow\base {
 
             // Generate a Moodle username.
             // Use 'upn' if available for username (Azure-specific), or fall back to lower-case classlinkuniqid.
-            $username = $idtoken->claim('upn');
+
+            $user = $DB->get_record('user', ['username' => $user_uselogin]);          
+            if (empty($user)) {
+                // ERROR.
+                echo 'ERROR2';die();
+            }
+
+            $username = $user->username;
             if (empty($username)) {
-                $username = $classlinkuniqid;
+                $classlinkuniqid = $username;
+                $username = $classlinkuniqid; 
             }
 
             // See if we have an object listing.
@@ -472,13 +486,38 @@ class authcode extends \auth_classlink\loginflow\base {
             }
             $username = trim(\core_text::strtolower($username));
             $tokenrec = $this->createtoken($classlinkuniqid, $username, $authparams, $tokenparams, $idtoken);
-
+           
             $existinguserparams = ['username' => $username, 'mnethostid' => $CFG->mnet_localhost_id];
-            if ($DB->record_exists('user', $existinguserparams) !== true) {
+            
+            if ($DB->record_exists('user', $existinguserparams) !== true) { 
                 // User does not exist. Create user if site allows, otherwise fail.
-                if (empty($CFG->authpreventaccountcreation)) {
-                    $user = create_user_record($username, null, 'classlink');
-                } else {
+                if (empty($CFG->authpreventaccountcreation)) { 
+
+                $tokenrec = $DB->get_record('auth_classlink_token', ['classlinkuniqid' => $classlinkuniqid]);
+
+               
+                if (!empty($tokenrec)) { 
+                            // Already connected user.
+
+                            if (empty($tokenrec->userid)) {
+                                // ERROR.
+                                echo 'ERROR1';die();
+                            }
+                            $user = $DB->get_record('user', ['id' => $tokenrec->userid]);
+                            if (empty($user)) {
+                                // ERROR.
+                                echo 'ERROR2';die();
+                            }
+                            $username = $user->username;
+                            $this->updatetoken($tokenrec->id, $authparams, $tokenparams);
+                           
+                            $user = authenticate_user_login($username, null, true);
+                            
+                            complete_user_login($user);
+                            return true;
+                        }
+                    
+                } else { 
                     // Trigger login failed event.
                     $failurereason = AUTH_LOGIN_NOUSER;
                     $eventdata = ['other' => ['username' => $username, 'reason' => $failurereason]];
@@ -487,10 +526,9 @@ class authcode extends \auth_classlink\loginflow\base {
                     throw new \moodle_exception('errorauthloginfailednouser', 'auth_classlink', null, null, '1');
                 }
             }
-
             $user = authenticate_user_login($username, null, true);
 
-            if (!empty($user)) {
+            if (!empty($user)) { 
                 complete_user_login($user);
                 return true;
             } else {

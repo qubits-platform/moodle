@@ -27,7 +27,7 @@ namespace enrol_oneroster\local\entities;
 use coding_exception;
 use enrol_oneroster\local\endpoints\rostering as rostering_endpoint;
 use enrol_oneroster\local\entity;
-use enrol_oneroster\local\interfaces\ user_representation;
+use enrol_oneroster\local\interfaces\user_representation;
 use enrol_oneroster\local\interfaces\container as container_interface;
 use stdClass;
 
@@ -99,7 +99,9 @@ class user extends entity implements user_representation {
     public function get_user_data(): stdClass {
         return (object) [
             'idnumber' => $this->get('sourcedId'),
+            'status' => $this->get('status'),
             'username' => strtolower($this->get('identifier')),
+            //'username' => $this->get('identifier'),
             'email' => $this->get('email'),
             'password' => $this->get('password') ?? '',
             'firstname' => $this->get('givenName'),
