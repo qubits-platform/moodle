@@ -90,14 +90,18 @@ $templatecontext = array(
 );
 //preg_match_all('/<pythoncode>(.*?)<\/pythoncode>/s', $content, $matches);
 echo $OUTPUT->box($content, "generalbox center clearfix", "qubitspage");
+$pageslug = trim(strip_tags($page->intro));
 $qmurl = $CFG->wwwroot . '/mod/qubitspage';
 
 //echo $OUTPUT->render_from_template("mod_qubitspage/pythoncode-v2", $templatecontext);
 ?>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+    integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 <script src="https://cdn.jsdelivr.net/gh/qubits-platform/sqlite-wasm@master/sqlite3.js"></script>
 <script src="https://cdn.jsdelivr.net/pyodide/v0.21.3/full/pyodide.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-Validation-Engine/2.6.4/jquery-1.8.2.min.js"></script>
+<script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-Validation-Engine/2.6.4/jquery-1.8.2.min.js"></script>
 <script type="text/javascript" src="<?php echo $qmurl ?>/js/d3.v2.min.js">
 </script>
 
@@ -129,29 +133,30 @@ $qmurl = $CFG->wwwroot . '/mod/qubitspage';
 <script src="<?php echo $qmurl ?>/_next/static/chunks/186.6f71c3634fd890ea.js" defer=""></script>
 <script src="<?php echo $qmurl ?>/_next/static/chunks/pages/Chapter2-f805aa114b1502b2.js" defer=""></script>
 <script src="<?php echo $qmurl ?>/_next/static/chunks/pages/Chapter3-c56d845d803f27df.js" defer=""></script>
+<script src="<?php echo $qmurl ?>/_next/static/chunks/pages/_error-54de1933a164a1ff.js" defer=""></script>
 
 
-<div id="__next"></div>
-<script id="__NEXT_DATA__" type="application/json">
-    {
-        "props": {
+<div id="__next">
+    </div>
+        <script id="__NEXT_DATA__" type="application/json"> {
+            "props": {
             "pageProps": {}
-        },
-        "page": "/",
-        "query": {},
-        "buildId": "eB-JcAnJBaH7nYj37FHgJ",
-        "nextExport": true,
-        "autoExport": true,
-        "isFallback": false,
-        "scriptLoader": []
-    }
-</script>
+            },
+            "page": "<?php echo $pageslug; ?>",
+            "query": {},
+            "buildId": "eB-JcAnJBaH7nYj37FHgJ",
+            "nextExport": true,
+            "autoExport": true,
+            "isFallback": false,
+            "scriptLoader": []
+            }
+            </script>
 
-<?php
+            <?php
 
-if (!isset($options['printlastmodified']) || !empty($options['printlastmodified'])) {
-    $strlastmodified = get_string("lastmodified");
-    echo html_writer::div("$strlastmodified: " . userdate($page->timemodified), 'modified');
-}
+            if (!isset($options['printlastmodified']) || !empty($options['printlastmodified'])) {
+                $strlastmodified = get_string("lastmodified");
+                echo html_writer::div("$strlastmodified: " . userdate($page->timemodified), 'modified');
+            }
 
-echo $OUTPUT->footer();
+            echo $OUTPUT->footer();
