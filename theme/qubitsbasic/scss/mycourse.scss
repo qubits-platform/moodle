@@ -71,7 +71,8 @@
   position: absolute;
   right: 0%;
   top: -20%;
-  font-size: 25px;
+  
+  font-size: $fontsize25;
   z-index: 20;
   background-color: var(--white);
   border-radius: 50%;
@@ -87,7 +88,8 @@
   padding: 1.6rem 0px;
   transition: all 0.5s ease;
   .text {
-    font-size: 20px;
+    
+    font-size: $fontsize20;
     font-weight: 600;
   }
   @include breakpoint(xs) {
@@ -119,7 +121,8 @@
       cursor: pointer;
     }
     .text {
-      font-size: 20px;
+      
+      font-size: $fontsize20;
       font-weight: 600;
       color: var(--basetextcolor);
     }
@@ -149,7 +152,8 @@
       .text-grey {
         color: #333333 !important;
         opacity: 0.5;
-        font-size: 12px;
+       
+        font-size: $fontsize12;
       }
     }
   }
@@ -191,7 +195,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 30px;
+   
+    font-size: $fontsize30;
     font-weight: 600;
     font-family: "Acme", sans-serif;
   }
@@ -217,20 +222,25 @@
     height: 4px !important;
   }
   .card-text {
-    font-size: 20px;
+   
+    font-size: $fontsize20;
   }
   .card-text-size {
     @include breakpoint(xs) {
-      font-size: 27px;
+     
+      font-size: $fontsize27;
     }
     @include breakpoint(md) {
-      font-size: 30px;
+      
+      font-size: $fontsize30;
     }
     @include breakpoint(lg) {
-      font-size: 46px;
+     
+      font-size: $fontsize46;
     }
     @include breakpoint(xlg) {
-      font-size: 46px;
+     
+      font-size: $fontsize46;
     }
   }
 
@@ -291,7 +301,8 @@
       line-height: 50px;
     }
     .logo_name {
-      font-size: 22px;
+    
+      font-size: $fontsize22;
       color: #fff;
       font-weight: 600;
       transition: 0.3s ease;
@@ -308,7 +319,8 @@
   .arrow-left {
     cursor: pointer;
     color: var(--hovertextcolor);
-    font-size: 15px;
+    
+    font-size: $fontsize15;
   }
   .nav-links {
     height: 100%;
@@ -331,7 +343,8 @@
       .sub-menu {
         padding-left: 4rem;
         a {
-          font-size: 15px;
+         
+          font-size: $fontsize15;
           padding: 15px 10px;
           transition: all 0.3s ease;
         }
@@ -348,7 +361,9 @@
           }
         }
         .link_name {
-          font-size: 16px;
+         
+          pointer-events: none;
+          font-size: $fontsize16;
           font-weight: 600;
           white-space: nowrap;
           // / color: #585858; /
@@ -364,7 +379,8 @@
         text-align: center;
         line-height: 50px;
         // / color: #585858; /
-        font-size: 20px;
+        
+        font-size: $fontsize20;
         cursor: pointer;
         transition: all 0.3s ease;
       }
@@ -429,6 +445,7 @@
     font-size: 16px;
     font-weight: 600;
     white-space: nowrap;
+   
     transition: all 0.4s ease;
     &:hover {
       background: #e2eaf2;
@@ -462,7 +479,8 @@
     border-radius: 8px !important;
     background-color: #ca3120;
     color: #fff;
-    font-size: 12px !important;
+   
+    font-size: $fontsize12 !important;
     line-height: 11px;
     position: absolute;
     top: 30px !important;
@@ -539,7 +557,8 @@
         transition: 0s;
 
         .link_name {
-          font-size: 18px;
+          
+          font-size: $fontsize18;
           opacity: 1;
           display: block;
         }
@@ -727,8 +746,65 @@ button.close:focus,
 .complete-text-color {
   color: #4d4d4d;
 }
+<<<<<<< .mine
 .numbercolor {
   color: darken($colorbgcard, 45);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=======
+.navbar.messageicon {
+  .fa-comment-o {
+    display: none !important;
+  }
+  .navbar-nav {
+    align-items: center;
+
+    .popover-region-notifications {
+      border: 1px solid #e6e6e6;
+      border-radius: 50%;
+      height: 50px !important;
+      width: 50px !important;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  .count-container {
+    padding: 4px !important;
+    border-radius: 8px !important;
+    background-color: #ca3120;
+    color: #fff;
+    font-size: $fontsize12 !important;
+    line-height: 11px;
+    position: absolute;
+    top: 30px !important;
+    right: -9px !important;
+  }
+>>>>>>> .theirs
 }
 .leftnav {
   left: 0 !important;
@@ -739,7 +815,8 @@ button.close:focus,
 
 .secondary-navigation .navigation .nav-tabs .nav-link {
   color: #585858;
-  font-size: 16px !important;
+  \
+  font-size: $fontsize16 !important;
 }
 #page.drawers.show-drawer-left {
   @include breakpoint(md) {
