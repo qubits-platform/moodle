@@ -47,5 +47,46 @@ class theme_qubitsbasic_core_renderer extends theme_boost\output\core_renderer {
         );
         return $this->render_from_template("theme_qubitsbasic/custom/leftnavigation", $context);
     }
+
+    public function qubits_page_header(){
+        global $DB, $USER, $CFG, $SITE; 
+        $heading = null;
+        $context = $this->page->context;
+        $otherpage = true;
+
+        // Make sure to use the heading if it has been set.
+        if (isset($headerinfo['heading'])) {
+            $heading = $headerinfo['heading'];
+        } else {
+            $heading = $this->page->heading;
+        }
+
+        if ($context->contextlevel == CONTEXT_MODULE) {
+            if ($this->page->course->format === 'singleactivity') {
+                $heading = $this->page->course->fullname;
+            } else {
+                $heading = $this->page->cm->get_formatted_name();
+            }
+        }
+
+        $ismycoursepage = ($_SERVER['SCRIPT_NAME'] == "/my/courses.php") ? true : false;
+        $ismodulepage = ($context->contextlevel == CONTEXT_MODULE) ? true : false;
+        $iscourseviewpage = ($context->contextlevel == CONTEXT_COURSE) ? true : false;
+
+        if($ismycoursepage==true || $ismodulepage==true || $iscourseviewpage==true){
+            $otherpage = false;
+        }
+
+        $outputcontext = array(
+            "heading" =>  $heading,
+            "ismycoursepage" => $ismycoursepage,
+            "iscourseviewpage" => $iscourseviewpage,
+            "ismodulepage" => $ismodulepage,
+            "otherpage" => $otherpage,
+            "coursefullname" => $this->page->course->fullname,
+            "courseid" => $this->page->course->id
+        );
+        return $this->render_from_template("theme_qubitsbasic/custom/pageheader", $outputcontext);
+    }
     
 }
