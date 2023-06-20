@@ -98,12 +98,16 @@ $qmurl = $CFG->wwwroot . '/mod/qubitspage';
 
 
 <link rel="icon" href="<?php echo $qmurl ?>/qubits-logo.png" sizes="any" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+    integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 <script src="https://cdn.jsdelivr.net/gh/qubits-platform/sqlite-wasm@master/sqlite3.js" async=""></script>
 <script src="https://cdn.jsdelivr.net/pyodide/v0.21.3/full/pyodide.js" async=""></script>
 <script type="text/javascript" src="<?php echo $qmurl ?>/js/d3.v2.min.js" async=""></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-Validation-Engine/2.6.4/jquery-1.8.2.min.js" async=""></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/simplemodal/1.4.4/jquery.simplemodal.min.js" async=""></script>
+<script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-Validation-Engine/2.6.4/jquery-1.8.2.min.js" async=""></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/simplemodal/1.4.4/jquery.simplemodal.min.js"
+    async=""></script>
 <script type="text/javascript" src="<?php echo $qmurl ?>/js/jquery.ba-bbq.js" async=""></script>
 <script type="text/javascript" src="<?php echo $qmurl ?>/js/jquery.jsPlumb-1.3.10-all-min.js" async=""></script>
 <script type="text/javascript" src="<?php echo $qmurl ?>/js/jquery-ui.min.js" async=""></script>
@@ -135,18 +139,18 @@ $qmurl = $CFG->wwwroot . '/mod/qubitspage';
 
 <div id="__next"></div>
 <script id="__NEXT_DATA__" type="application/json">
-    {
-        "props": {
-            "pageProps": {}
-        },
-        "page": "<?php echo $pageslug; ?>",
-        "query": {},
-        "buildId": "Vlw3PAumiBBChzCZdiNN0",
-        "nextExport": true,
-        "autoExport": true,
-        "isFallback": false,
-        "scriptLoader": []
-    }
+{
+    "props": {
+        "pageProps": {}
+    },
+    "page": "<?php echo $pageslug; ?>",
+    "query": {},
+    "buildId": "Vlw3PAumiBBChzCZdiNN0",
+    "nextExport": true,
+    "autoExport": true,
+    "isFallback": false,
+    "scriptLoader": []
+}
 </script>
 
 <?php
