@@ -5,6 +5,8 @@ div.ExecutionVisualizer {
 div.ExecutionVisualizer table.visualizer {
     font-size: 10pt;
     margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 div.ExecutionVisualizer table.visualizer td.vizLayoutTd {
@@ -16,10 +18,13 @@ div.ExecutionVisualizer td#heap_td {
     vertical-align: top;
     font-size: 10pt;
 }
-
-div.ExecutionVisualizer #dataViz {
+#printOutputDocs{
+    text-align: center;
 }
-
+table #stackHeapTable {
+    margin-left: auto;
+    margin-right: auto;
+}
 div.ExecutionVisualizer #selectiveHideStatus {
     font-size: 9pt;
     margin-top: 20px;
@@ -110,8 +115,9 @@ div.ExecutionVisualizer div#progOutputs {
 
 div.ExecutionVisualizer div#legendDiv {
     padding: 5px;
-    text-align: left;
+    text-align: center;
     color: #666;
+    margin-top: 15px;
     font-size: 9pt;
 }
 
@@ -219,14 +225,16 @@ div.ExecutionVisualizer #pyStdout {
     font-size: 10pt;
     padding: 3px;
     font-family: Andale mono, monospace;
-
+    width: 100%;
     overflow: auto;
     /* to look pretty on IE */
     /* make sure textarea doesn't grow and stretch */
     resize: none;
 }
 
-
+div.ui-wrapper{
+    width: 100%;
+}
 div.ExecutionVisualizer .vizFrame {
     margin-bottom: 20px;
     padding-left: 8px;
@@ -796,8 +804,6 @@ div.ExecutionVisualizer .highlight-legend {
 /* resizing sliders from David Pritchard */
 .ui-resizable-e {
     background-color: #dddddd;
-    width: 1px;
-    border: 3px solid white;
 }
 
 .ui-resizable-e:hover {
@@ -913,4 +919,5 @@ div.ExecutionVisualizer td.queueFElt table.dictTbl {
 }
 div.executionSliderDocs {
     margin-top: 5px;
+    margin-left: 30px;
 }

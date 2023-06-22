@@ -1,4 +1,4 @@
-var jqueryNew = jQuery;
+var jqueryold = jQuery;
 var SVG_ARROW_POLYGON = "0,3 12,3 12,0 18,5 12,10 12,7 0,7";
 var SVG_ARROW_HEIGHT = 10; // must match height of SVG_ARROW_POLYGON
 
@@ -109,7 +109,7 @@ function ExecutionVisualizer(domRootID, dat, params) {
 
   // the root elements for jQuery and D3 selections, respectively.
   // ALWAYS use these and never use raw $(__) or d3.select(__)
-  this.domRoot = jqueryNew("#" + domRootID);
+  this.domRoot = jqueryold("#" + domRootID);
   this.domRoot.data("vis", this); // bnm store a reference to this as div data for use later.
   this.domRootD3 = d3.select("#" + domRootID);
 
@@ -417,7 +417,7 @@ ExecutionVisualizer.prototype.render = function () {
       pyVer = "cpp";
     }
 
-    var urlStr = jqueryNew.param.fragment(
+    var urlStr = jqueryold.param.fragment(
       this.params.editCodeBaseURL,
       { code: this.curInputCode, py: pyVer },
       2
@@ -774,7 +774,7 @@ ExecutionVisualizer.prototype.destroyAllAnnotationBubbles = function () {
 
   // hopefully destroys all old bubbles and reclaims their memory
   if (myViz.allAnnotationBubbles) {
-    jqueryNew.each(myViz.allAnnotationBubbles, function (i, e) {
+    jqueryold.each(myViz.allAnnotationBubbles, function (i, e) {
       e.destroyQTip();
     });
   }
@@ -807,42 +807,42 @@ ExecutionVisualizer.prototype.initAllAnnotationBubbles = function () {
   myViz.destroyAllAnnotationBubbles();
 
   var codelineIDs = [];
-  jqueryNew.each(this.domRoot.find("#pyCodeOutput .cod"), function (i, e) {
+  jqueryold.each(this.domRoot.find("#pyCodeOutput .cod"), function (i, e) {
     codelineIDs.push($(e).attr("id"));
   });
 
   var heapObjectIDs = [];
-  jqueryNew.each(this.domRoot.find(".heapObject"), function (i, e) {
+  jqueryold.each(this.domRoot.find(".heapObject"), function (i, e) {
     heapObjectIDs.push($(e).attr("id"));
   });
 
   var variableIDs = [];
-  jqueryNew.each(this.domRoot.find(".variableTr"), function (i, e) {
+  jqueryold.each(this.domRoot.find(".variableTr"), function (i, e) {
     variableIDs.push($(e).attr("id"));
   });
 
   var frameIDs = [];
-  jqueryNew.each(this.domRoot.find(".stackFrame"), function (i, e) {
+  jqueryold.each(this.domRoot.find(".stackFrame"), function (i, e) {
     frameIDs.push($(e).attr("id"));
   });
 
   myViz.allAnnotationBubbles = [];
 
-  jqueryNew.each(codelineIDs, function (i, e) {
+  jqueryold.each(codelineIDs, function (i, e) {
     myViz.allAnnotationBubbles.push(new AnnotationBubble(myViz, "codeline", e));
   });
-  jqueryNew.each(heapObjectIDs, function (i, e) {
+  jqueryold.each(heapObjectIDs, function (i, e) {
     myViz.allAnnotationBubbles.push(new AnnotationBubble(myViz, "object", e));
   });
-  jqueryNew.each(variableIDs, function (i, e) {
+  jqueryold.each(variableIDs, function (i, e) {
     myViz.allAnnotationBubbles.push(new AnnotationBubble(myViz, "variable", e));
   });
-  jqueryNew.each(frameIDs, function (i, e) {
+  jqueryold.each(frameIDs, function (i, e) {
     myViz.allAnnotationBubbles.push(new AnnotationBubble(myViz, "frame", e));
   });
 
   this.domRoot.find("#pyCodeOutputDiv").scroll(function () {
-    jqueryNew.each(myViz.allAnnotationBubbles, function (i, e) {
+    jqueryold.each(myViz.allAnnotationBubbles, function (i, e) {
       if (e.type == "codeline") {
         e.redrawCodelineBubble();
       }
@@ -865,7 +865,7 @@ ExecutionVisualizer.prototype.enterViewAnnotationsMode = function () {
       // and display them in 'View' mode
       myViz.initAllAnnotationBubbles();
 
-      jqueryNew.each(myViz.allAnnotationBubbles, function (i, e) {
+      jqueryold.each(myViz.allAnnotationBubbles, function (i, e) {
         var txt = curEntry.bubbleAnnotations[e.domID];
         if (txt) {
           e.preseedText(txt);
@@ -877,7 +877,7 @@ ExecutionVisualizer.prototype.enterViewAnnotationsMode = function () {
   if (myViz.allAnnotationBubbles) {
     var curAnnotations = {};
 
-    jqueryNew.each(myViz.allAnnotationBubbles, function (i, e) {
+    jqueryold.each(myViz.allAnnotationBubbles, function (i, e) {
       e.enterViewMode();
 
       if (e.text) {
@@ -923,7 +923,7 @@ ExecutionVisualizer.prototype.enterEditAnnotationsMode = function () {
     myViz.initAllAnnotationBubbles();
   }
 
-  jqueryNew.each(myViz.allAnnotationBubbles, function (i, e) {
+  jqueryold.each(myViz.allAnnotationBubbles, function (i, e) {
     e.enterEditMode();
   });
 
@@ -942,7 +942,7 @@ ExecutionVisualizer.prototype.enterEditAnnotationsMode = function () {
 
 ExecutionVisualizer.prototype.redrawAllAnnotationBubbles = function () {
   if (this.allAnnotationBubbles) {
-    jqueryNew.each(this.allAnnotationBubbles, function (i, e) {
+    jqueryold.each(this.allAnnotationBubbles, function (i, e) {
       e.redrawBubble();
     });
   }
@@ -981,7 +981,7 @@ ExecutionVisualizer.prototype.findNextBreakpoint = function () {
   // single-step forward to the next execution point, NOT the next
   // breakpoint. it's often useful to see what happens when the line
   // at a breakpoint executes.
-  else if (jqueryNew.inArray(c, myViz.sortedBreakpointsList) >= 0) {
+  else if (jqueryold.inArray(c, myViz.sortedBreakpointsList) >= 0) {
     return c + 1;
   } else {
     for (var i = 0; i < myViz.sortedBreakpointsList.length - 1; i++) {
@@ -1042,7 +1042,7 @@ ExecutionVisualizer.prototype.renderCorrectFile = function (prevStep) {
       breakpointHere: false,
     };
 
-    jqueryNew.each(this.curTrace, function (j, elt) {
+    jqueryold.each(this.curTrace, function (j, elt) {
       if (elt.line === n.lineNumber) {
         n.executionPoints.push(j);
       }
@@ -1185,14 +1185,14 @@ ExecutionVisualizer.prototype.renderPyCodeOutput = function () {
   }
 
   function addToBreakpoints(executionPoints) {
-    jqueryNew.each(executionPoints, function (i, ep) {
+    jqueryold.each(executionPoints, function (i, ep) {
       myViz.breakpoints.set(ep, 1);
     });
     myViz.sortedBreakpointsList = _getSortedBreakpointsList();
   }
 
   function removeFromBreakpoints(executionPoints) {
-    jqueryNew.each(executionPoints, function (i, ep) {
+    jqueryold.each(executionPoints, function (i, ep) {
       myViz.breakpoints.remove(ep);
     });
     myViz.sortedBreakpointsList = _getSortedBreakpointsList();
@@ -1225,7 +1225,7 @@ ExecutionVisualizer.prototype.renderPyCodeOutput = function () {
     n.executionPoints = [];
     n.breakpointHere = false;
 
-    jqueryNew.each(this.curTrace, function (j, elt) {
+    jqueryold.each(this.curTrace, function (j, elt) {
       if (elt.line == n.lineNumber) {
         n.executionPoints.push(j);
       }
@@ -1738,7 +1738,7 @@ ExecutionVisualizer.prototype.updateOutputFull = function (smoothTransition) {
       var codeAtLine = curLineInfo.text;
 
       // shotgun approach: reset ALL lines to their natural (unbolded) state
-      jqueryNew.each(myViz.codeOutputLines, function (i, e) {
+      jqueryold.each(myViz.codeOutputLines, function (i, e) {
         var d = myViz.generateID("cod" + e.lineNumber);
         myViz.domRoot.find("#" + d).html(htmlspecialchars(e.text));
       });
@@ -2052,15 +2052,15 @@ ExecutionVisualizer.prototype.precomputeCurTraceLayouts = function () {
   var myViz = this; // to prevent confusion of 'this' inside of nested functions
 
   assert(this.curTrace.length > 0);
-  jqueryNew.each(this.curTrace, function (i, curEntry) {
+  jqueryold.each(this.curTrace, function (i, curEntry) {
     var prevLayout = myViz.curTraceLayouts[myViz.curTraceLayouts.length - 1];
 
     // make a DEEP COPY of prevLayout to use as the basis for curLine
-    var curLayout = jqueryNew.extend(true /* deep copy */, [], prevLayout);
+    var curLayout = jqueryold.extend(true /* deep copy */, [], prevLayout);
 
     // initialize with all IDs from curLayout
     var idsToRemove = d3.map();
-    jqueryNew.each(curLayout, function (i, row) {
+    jqueryold.each(curLayout, function (i, row) {
       for (var j = 1 /* ignore row ID tag */; j < row.length; j++) {
         idsToRemove.set(row[j], 1);
       }
@@ -2105,7 +2105,7 @@ ExecutionVisualizer.prototype.precomputeCurTraceLayouts = function () {
       }
 
       if (isLinearObj(heapObj)) {
-        jqueryNew.each(heapObj, function (ind, child) {
+        jqueryold.each(heapObj, function (ind, child) {
           if (ind < 1) return; // skip type tag
 
           if (!myViz.isPrimitiveType(child)) {
@@ -2119,7 +2119,7 @@ ExecutionVisualizer.prototype.precomputeCurTraceLayouts = function () {
           }
         });
       } else if (heapObj[0] == "DICT") {
-        jqueryNew.each(heapObj, function (ind, child) {
+        jqueryold.each(heapObj, function (ind, child) {
           if (ind < 1) return; // skip type tag
 
           if (myViz.disableHeapNesting) {
@@ -2141,7 +2141,7 @@ ExecutionVisualizer.prototype.precomputeCurTraceLayouts = function () {
           }
         });
       } else if (heapObj[0] == "INSTANCE" || heapObj[0] == "CLASS") {
-        jqueryNew.each(heapObj, function (ind, child) {
+        jqueryold.each(heapObj, function (ind, child) {
           var headerLength = heapObj[0] == "INSTANCE" ? 2 : 3;
           if (ind < headerLength) return;
 
@@ -2228,7 +2228,7 @@ ExecutionVisualizer.prototype.precomputeCurTraceLayouts = function () {
             }
           } else {
             curLayout.push(
-              jqueryNew.extend(true /* make a deep copy */, [], newRow)
+              jqueryold.extend(true /* make a deep copy */, [], newRow)
             );
           }
 
@@ -2254,12 +2254,12 @@ ExecutionVisualizer.prototype.precomputeCurTraceLayouts = function () {
 
     function recurseIntoCStructArray(val) {
       if (val[0] === "C_ARRAY") {
-        jqueryNew.each(val, function (ind, elt) {
+        jqueryold.each(val, function (ind, elt) {
           if (ind < 2) return;
           updateCurLayoutAndRecurse(elt);
         });
       } else if (val[0] === "C_STRUCT") {
-        jqueryNew.each(val, function (ind, kvPair) {
+        jqueryold.each(val, function (ind, kvPair) {
           if (ind < 3) return;
           updateCurLayoutAndRecurse(kvPair[1]);
         });
@@ -2267,7 +2267,7 @@ ExecutionVisualizer.prototype.precomputeCurTraceLayouts = function () {
     }
 
     // iterate through all globals and ordered stack frames and call updateCurLayout
-    jqueryNew.each(curEntry.ordered_globals, function (i, varname) {
+    jqueryold.each(curEntry.ordered_globals, function (i, varname) {
       var val = curEntry.globals[varname];
       if (val !== undefined) {
         // might not be defined at this line, which is OKAY!
@@ -2283,8 +2283,8 @@ ExecutionVisualizer.prototype.precomputeCurTraceLayouts = function () {
       }
     });
 
-    jqueryNew.each(curEntry.stack_to_render, function (i, frame) {
-      jqueryNew.each(frame.ordered_varnames, function (xxx, varname) {
+    jqueryold.each(curEntry.stack_to_render, function (i, frame) {
+      jqueryold.each(frame.ordered_varnames, function (xxx, varname) {
         var val = frame.encoded_locals[varname];
         // TODO: try to unify this behavior between C/C++ and other languages:
         if (myViz.isCppMode()) {
@@ -2301,7 +2301,7 @@ ExecutionVisualizer.prototype.precomputeCurTraceLayouts = function () {
     // iterate through remaining elements of idsToRemove and REMOVE them from curLayout
     idsToRemove.forEach(function (id, xxx) {
       id = Number(id); // keys are stored as strings, so convert!!!
-      jqueryNew.each(curLayout, function (rownum, row) {
+      jqueryold.each(curLayout, function (rownum, row) {
         var ind = row.indexOf(id);
         if (ind > 0) {
           // remember that index 0 of the row is the row ID tag
@@ -2352,7 +2352,7 @@ ExecutionVisualizer.prototype.renderDataStructures = function (
       existingParentPointerConnectionEndpointIDs.set(c.sourceId, c.targetId);
     });
 
-  jqueryNew.each(curToplevelLayout, function (xxx, row) {
+  jqueryold.each(curToplevelLayout, function (xxx, row) {
     for (var i = 0; i < row.length; i++) {
       var objID = row[i];
       var heapObjID = myViz.generateHeapObjID(objID, myViz.curInstr);
@@ -2480,7 +2480,7 @@ ExecutionVisualizer.prototype.renderDataStructures = function (
   }
 
   var realGlobalsLst = [];
-  jqueryNew.each(curEntry.ordered_globals, function (i, varname) {
+  jqueryold.each(curEntry.ordered_globals, function (i, varname) {
     var val = curEntry.globals[varname];
 
     // (use '!==' to do an EXACT match against undefined)
@@ -2888,7 +2888,7 @@ ExecutionVisualizer.prototype.renderDataStructures = function (
       myViz.jsPlumbManager.heapConnectionEndpointIDs.keys();
     srcHeapConnectorIDs.sort();
 
-    jqueryNew.each(srcHeapConnectorIDs, function (i, srcID) {
+    jqueryold.each(srcHeapConnectorIDs, function (i, srcID) {
       var dstID = myViz.jsPlumbManager.heapConnectionEndpointIDs.get(srcID);
 
       var srcAnchorObject = myViz.domRoot.find("#" + srcID);
@@ -3073,7 +3073,7 @@ ExecutionVisualizer.prototype.renderDataStructures = function (
 
   // highlight the top-most non-zombie stack frame or, if not available, globals
   var frame_already_highlighted = false;
-  jqueryNew.each(curEntry.stack_to_render, function (i, e) {
+  jqueryold.each(curEntry.stack_to_render, function (i, e) {
     if (e.is_highlighted) {
       highlight_frame(myViz.generateID("stack" + i));
       frame_already_highlighted = true;
@@ -3102,27 +3102,27 @@ ExecutionVisualizer.prototype.renderTabularView = function () {
 
   // iterate through the entire trace and find all global variables, and
   // all local variables in all functions, in order of appearance in the trace
-  jqueryNew.each(myViz.curTrace, function (i, elt) {
-    jqueryNew.each(elt.ordered_globals, function (i, g) {
+  jqueryold.each(myViz.curTrace, function (i, elt) {
+    jqueryold.each(elt.ordered_globals, function (i, g) {
       // don't add duplicates into this list,
       // but need to use a list to maintain ORDERING
-      if (jqueryNew.inArray(g, allGlobalVars) === -1) {
+      if (jqueryold.inArray(g, allGlobalVars) === -1) {
         allGlobalVars.push(g);
       }
     });
 
-    jqueryNew.each(elt.stack_to_render, function (i, sf) {
+    jqueryold.each(elt.stack_to_render, function (i, sf) {
       var funcVarsList = funcNameToOrderedVars[sf.func_name];
       if (funcVarsList === undefined) {
         funcVarsList = [];
         funcNameToOrderedVars[sf.func_name] = funcVarsList;
         orderedFuncNames.push(sf.func_name);
       }
-      jqueryNew.each(sf.ordered_varnames, function (i, v) {
+      jqueryold.each(sf.ordered_varnames, function (i, v) {
         // don't add duplicates into this list,
         // but need to use a list to maintain ORDERING
         // (ignore the special __return__ value)
-        if (jqueryNew.inArray(v, funcVarsList) === -1 && v !== "__return__") {
+        if (jqueryold.inArray(v, funcVarsList) === -1 && v !== "__return__") {
           funcVarsList.push(v);
         }
       });
@@ -3131,11 +3131,11 @@ ExecutionVisualizer.prototype.renderTabularView = function () {
 
   var allVarNames = ["Step"];
 
-  jqueryNew.each(allGlobalVars, function (i, e) {
+  jqueryold.each(allGlobalVars, function (i, e) {
     allVarNames.push(e);
   });
-  jqueryNew.each(orderedFuncNames, function (i, funcName) {
-    jqueryNew.each(funcNameToOrderedVars[funcName], function (i, v) {
+  jqueryold.each(orderedFuncNames, function (i, funcName) {
+    jqueryold.each(funcNameToOrderedVars[funcName], function (i, v) {
       allVarNames.push(funcName + ":" + v);
     });
   });
@@ -3146,21 +3146,21 @@ ExecutionVisualizer.prototype.renderTabularView = function () {
     // table is the step number
     var allVarValues = [""];
 
-    jqueryNew.each(allGlobalVars, function (i, e) {
+    jqueryold.each(allGlobalVars, function (i, e) {
       allVarValues.push(curEntry.globals[e]);
     });
 
     // for local variables, grab only the values in the highlighted
     // frame (if any)
     var highlightedFrame = null;
-    jqueryNew.each(curEntry.stack_to_render, function (i, sf) {
+    jqueryold.each(curEntry.stack_to_render, function (i, sf) {
       if (sf.is_highlighted) {
         highlightedFrame = sf;
       }
     });
 
-    jqueryNew.each(orderedFuncNames, function (i, funcName) {
-      jqueryNew.each(funcNameToOrderedVars[funcName], function (i, v) {
+    jqueryold.each(orderedFuncNames, function (i, funcName) {
+      jqueryold.each(funcNameToOrderedVars[funcName], function (i, v) {
         var found = false;
         if (highlightedFrame && funcName == highlightedFrame.func_name) {
           var obj = highlightedFrame.encoded_locals[v];
@@ -3204,7 +3204,7 @@ ExecutionVisualizer.prototype.renderTabularView = function () {
   tBody.attr("class", "stepTableTbody");
 
   var stepsAndTraceEntries = [];
-  jqueryNew.each(myViz.curTrace, function (i, e) {
+  jqueryold.each(myViz.curTrace, function (i, e) {
     stepsAndTraceEntries.push([i, e]);
   });
 
@@ -3508,7 +3508,7 @@ ExecutionVisualizer.prototype.renderCompoundObject = function (
 
   var curHeap = myViz.curTrace[stepNum].heap;
   var obj = curHeap[objID];
-  assert(jqueryNew.isArray(obj));
+  assert(jqueryold.isArray(obj));
 
   // prepend the type label with a memory address label
   var typeLabelPrefix = "";
@@ -3558,7 +3558,7 @@ ExecutionVisualizer.prototype.renderCompoundObject = function (
         tbl.append("<tr></tr><tr></tr>");
         var headerTr = tbl.find("tr:first");
         var contentTr = tbl.find("tr:last");
-        jqueryNew.each(obj, function (ind, val) {
+        jqueryold.each(obj, function (ind, val) {
           if (ind < 1) return; // skip type tag and ID entry
 
           // add a new column and then pass in that newly-added column
@@ -3586,7 +3586,7 @@ ExecutionVisualizer.prototype.renderCompoundObject = function (
           numCols += 1;
         }
 
-        jqueryNew.each(obj, function (ind, val) {
+        jqueryold.each(obj, function (ind, val) {
           if (ind < 1) return; // skip 'SET' tag
 
           if ((ind - 1) % numCols == 0) {
@@ -3598,7 +3598,7 @@ ExecutionVisualizer.prototype.renderCompoundObject = function (
           myViz.renderNestedObject(val, stepNum, curTr.find("td:last"));
         });
       } else if (obj[0] == "DICT") {
-        jqueryNew.each(obj, function (ind, kvPair) {
+        jqueryold.each(obj, function (ind, kvPair) {
           if (ind < 1) return; // skip 'DICT' tag
 
           tbl.append(
@@ -3660,7 +3660,7 @@ ExecutionVisualizer.prototype.renderCompoundObject = function (
 
       var tbl = d3DomElement.children("table");
 
-      jqueryNew.each(obj, function (ind, kvPair) {
+      jqueryold.each(obj, function (ind, kvPair) {
         if (ind < headerLength) return; // skip header tags
 
         tbl.append(
@@ -3796,7 +3796,7 @@ ExecutionVisualizer.prototype.renderCompoundObject = function (
 
       if (funcProperties) {
         assert(funcProperties.length > 0);
-        jqueryNew.each(funcProperties, function (ind, kvPair) {
+        jqueryold.each(funcProperties, function (ind, kvPair) {
           tbl.append(
             '<tr class="classEntry"><td class="classKey"></td><td class="classVal"></td></tr>'
           );
@@ -3899,7 +3899,7 @@ ExecutionVisualizer.prototype.renderCStructArray = function (
 
       var tbl = d3DomElement.children("table");
 
-      jqueryNew.each(obj, function (ind, kvPair) {
+      jqueryold.each(obj, function (ind, kvPair) {
         if (ind < 3) return; // skip header tags
 
         tbl.append(
@@ -3937,7 +3937,7 @@ ExecutionVisualizer.prototype.renderCStructArray = function (
     tbl.append("<tr></tr><tr></tr>");
     var headerTr = tbl.find("tr:first");
     var contentTr = tbl.find("tr:last");
-    jqueryNew.each(obj, function (ind, val) {
+    jqueryold.each(obj, function (ind, val) {
       if (ind < 2) return; // skip 'C_ARRAY' and addr
 
       // add a new column and then pass in that newly-added column
@@ -4267,7 +4267,7 @@ AnnotationBubble.prototype.showStub = function () {
   // destroy then create a new tip:
   this.destroyQTip();
   $(this.hashID).qtip(
-    jqueryNew.extend({}, qtipShared, {
+    jqueryold.extend({}, qtipShared, {
       content: " ",
       id: this.domID,
       position: {
@@ -4305,7 +4305,7 @@ AnnotationBubble.prototype.showEditor = function () {
   // destroy then create a new tip:
   this.destroyQTip();
   $(this.hashID).qtip(
-    jqueryNew.extend({}, qtipShared, {
+    jqueryold.extend({}, qtipShared, {
       content: ta,
       id: this.domID,
       position: {
@@ -4358,7 +4358,7 @@ AnnotationBubble.prototype.showViewer = function () {
   // destroy then create a new tip:
   this.destroyQTip();
   $(this.hashID).qtip(
-    jqueryNew.extend({}, qtipShared, {
+    jqueryold.extend({}, qtipShared, {
       content: htmlsanitize(this.text), // help prevent HTML/JS injection attacks
       id: this.domID,
       position: {
@@ -4532,7 +4532,7 @@ function traceQCheckMe(inputId, divId, answer) {
 }
 
 function closeModal(divId) {
-  jqueryNew.modal.close();
+  jqueryold.modal.close();
   $("#" + divId)
     .data("vis")
     .stepForward();
@@ -4748,7 +4748,7 @@ ExecutionVisualizer.prototype.activateJavaFrontend = function () {
           '<span class="stringObj symbolic">&#8596;</span>' +
           "</td>"
       );
-      jqueryNew.each(obj, function (ind, val) {
+      jqueryold.each(obj, function (ind, val) {
         if (ind < 1) return; // skip type tag and ID entry
         contentTr.append('<td class="' + label + 'Elt"></td>');
         myViz.renderNestedObject(val, stepNum, contentTr.find("td:last"));
@@ -4766,7 +4766,7 @@ ExecutionVisualizer.prototype.activateJavaFrontend = function () {
           'FElt">' +
           '<span class="stringObj symbolic">&#8592;</span></td>'
       );
-      jqueryNew.each(obj, function (ind, val) {
+      jqueryold.each(obj, function (ind, val) {
         if (ind < 1) return; // skip type tag and ID entry
         contentTr.append('<td class="' + label + 'Elt"></td>');
         myViz.renderNestedObject(val, stepNum, contentTr.find("td:last"));
