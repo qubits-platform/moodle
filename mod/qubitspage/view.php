@@ -97,62 +97,45 @@ $PAGE->requires->jquery();
 ?>
 
 
+
+
+<link rel="icon" href="<?php echo $qmurl ?>/qubits-logo.png" sizes="any" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <script src="https://cdn.jsdelivr.net/gh/qubits-platform/sqlite-wasm@master/sqlite3.js" defer=""></script>
 <script src="https://cdn.jsdelivr.net/pyodide/v0.21.3/full/pyodide.js" defer=""></script>
-<script type="text/javascript" src="<?php echo $qmurl ?>/js/d3.v2.min.js" defer=""></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-Validation-Engine/2.6.4/jquery-1.8.2.min.js" defer=""></script>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/simplemodal/1.4.4/jquery.simplemodal.min.js" defer=""></script>
-
-<script type="text/javascript" src="<?php echo $qmurl ?>/js/jquery.ba-bbq.js" defer=""></script>
-<script type="text/javascript" src="<?php echo $qmurl ?>/js/jquery.jsPlumb-1.3.10-all-min.js" defer=""></script>
-
-<script type="text/javascript" src="<?php echo $qmurl ?>/js/jquery-ui.min.js" defer=""></script>
-<link type="text/css" href="<?php echo $qmurl ?>/css/jquery-ui.min.css" rel="stylesheet" />
-<link type="text/css" href="<?php echo $qmurl ?>/css/pytutor-basic.css" rel="stylesheet" />
-<script type="text/javascript" src="<?php echo $qmurl ?>/js/pytutor.js" defer=""></script>
-<link rel="stylesheet" href="<?php echo $qmurl ?>/css/pytutor.css" />
-
+<link rel="preload" href="<?php echo $qmurl ?>/_next/static/css/8637dc5940b82e6a.css" as="style" />
 <link rel="stylesheet" href="<?php echo $qmurl ?>/_next/static/css/8637dc5940b82e6a.css" data-n-g="" />
 <noscript data-n-css=""></noscript>
-<link rel="preload" href="<?php echo $qmurl ?>/_next/static/css/8637dc5940b82e6a.css" as="style" />
 <script defer="" nomodule="" src="<?php echo $qmurl ?>/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script>
-<script src="<?php echo $qmurl ?>/_next/static/chunks/webpack-b62f17611695669b.js" defer=""></script>
+<script src="<?php echo $qmurl ?>/_next/static/chunks/webpack-0124a6d1c5800fd9.js" defer=""></script>
 <script src="<?php echo $qmurl ?>/_next/static/chunks/framework-2c79e2a64abdb08b.js" defer=""></script>
 <script src="<?php echo $qmurl ?>/_next/static/chunks/main-164f91e3b1a225f8.js" defer=""></script>
-<script src="<?php echo $qmurl ?>/_next/static/chunks/pages/_app-56234dec6cff1cfd.js" defer=""></script>
+<script src="<?php echo $qmurl ?>/_next/static/chunks/pages/_app-27065eecd8aeb3ae.js" defer=""></script>
 <script src="<?php echo $qmurl ?>/_next/static/chunks/pages/index-44a994c9ffe51c6c.js" defer=""></script>
-<script src="<?php echo $qmurl ?>/_next/static/alv6j6nlnltlq8PQQxyG2/_buildManifest.js" defer=""></script>
-<script src="<?php echo $qmurl ?>/_next/static/alv6j6nlnltlq8PQQxyG2/_ssgManifest.js" defer=""></script>
+<script src="<?php echo $qmurl ?>/_next/static/r8axIo-woj1gZqT6ZWhcv/_buildManifest.js" defer=""></script>
+<script src="<?php echo $qmurl ?>/_next/static/r8axIo-woj1gZqT6ZWhcv/_ssgManifest.js" defer=""></script>
 <script src="<?php echo $qmurl ?>/_next/static/chunks/8a28b14e.d29918a3616a3ec4.js" defer=""></script>
-<script src="<?php echo $qmurl ?>/_next/static/chunks/25.42ab8018a3117c3f.js" defer=""></script>
-<script src="<?php echo $qmurl ?>/_next/static/chunks/186.70d0e194e7f158a2.js" defer=""></script>
-<script src="<?php echo $qmurl ?>/_next/static/chunks/pages/_error-54de1933a164a1ff.js" defer=""></script>
-
-
-
-
-
+<script src="<?php echo $qmurl ?>/_next/static/chunks/792.40b0b06ec78d3a1f.js" defer=""></script>
+<script src="<?php echo $qmurl ?>/_next/static/chunks/938.4d9aae90a278c26c.js" defer=""></script>
+<script src="<?php echo $qmurl ?>/_next/static/chunks/pages/Chapter2-f805aa114b1502b2.js" defer=""></script>
+<script src="<?php echo $qmurl ?>/_next/static/chunks/pages/Chapter3-c56d845d803f27df.js" defer=""></script>
 
 
 <div id="__next"></div>
 <script id="__NEXT_DATA__" type="application/json">
     {
-
         "props": {
             "pageProps": {}
         },
-        "page": "/",
+        "page": "<?php echo $pageslug; ?>",
         "query": {},
-        "buildId": "alv6j6nlnltlq8PQQxyG2",
+        "buildId": "r8axIo-woj1gZqT6ZWhcv",
         "nextExport": true,
         "autoExport": true,
         "isFallback": false,
         "scriptLoader": []
     }
 </script>
-
 <?php
 
 if (!isset($options['printlastmodified']) || !empty($options['printlastmodified'])) {

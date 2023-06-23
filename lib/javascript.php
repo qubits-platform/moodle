@@ -40,8 +40,7 @@ if ($slashargument = min_get_slash_argument()) {
     // image must be last because it may contain "/"
     list($rev, $file) = explode('/', $slashargument, 2);
     $rev  = min_clean_param($rev, 'INT');
-    $file = '/'.min_clean_param($file, 'SAFEPATH');
-
+    $file = '/' . min_clean_param($file, 'SAFEPATH');
 } else {
     $rev  = min_optional_param('rev', -1, 'INT');
     $file = min_optional_param('jsfile', '', 'RAW'); // 'file' would collide with URL rewriting!
@@ -51,7 +50,7 @@ if ($slashargument = min_get_slash_argument()) {
 $jsfiles = array();
 $files = explode(',', $file);
 foreach ($files as $fsfile) {
-    $jsfile = realpath($CFG->dirroot.$fsfile);
+    $jsfile = realpath($CFG->dirroot . $fsfile);
     if ($jsfile === false) {
         // does not exist
         continue;
@@ -77,11 +76,11 @@ if (!$jsfiles) {
     die('No valid javascript files found');
 }
 
-$etag = sha1($rev.implode(',', $jsfiles));
+$etag = sha1($rev . implode(',', $jsfiles));
 
 // Use the caching only for meaningful revision numbers which prevents future cache poisoning.
-if ($rev > 0 and $rev < (time() + 60*60)) {
-    $candidate = $CFG->localcachedir.'/js/'.$etag;
+if ($rev > 0 and $rev < (time() + 60 * 60)) {
+    $candidate = $CFG->localcachedir . '/js/' . $etag;
 
     if (file_exists($candidate)) {
         if (!empty($_SERVER['HTTP_IF_NONE_MATCH']) || !empty($_SERVER['HTTP_IF_MODIFIED_SINCE'])) {
@@ -90,7 +89,6 @@ if ($rev > 0 and $rev < (time() + 60*60)) {
             js_send_unmodified(filemtime($candidate), $etag);
         }
         js_send_cached($candidate, $etag);
-
     } else {
         // The JS needs minfifying, so we're gonna have to load our full Moodle
         // environment to process it..
@@ -112,6 +110,6 @@ if ($rev > 0 and $rev < (time() + 60*60)) {
 
 $content = '';
 foreach ($jsfiles as $jsfile) {
-    $content .= file_get_contents($jsfile)."\n";
+    $content .= file_get_contents($jsfile) . "\n";
 }
 js_send_uncached($content);
