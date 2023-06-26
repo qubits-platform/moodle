@@ -76,6 +76,7 @@ if ($inpopup and $page->display == RESOURCELIB_DISPLAY_POPUP) {
     }
 }
 $PAGE->activityheader->set_attrs($activityheader);
+$PAGE->set_pagelayout('executablebook');
 echo $OUTPUT->header();
 $content = file_rewrite_pluginfile_urls($page->content, 'pluginfile.php', $context->id, 'mod_qubitspage', 'content', $page->revision);
 $formatoptions = new stdClass;
@@ -97,12 +98,6 @@ $PAGE->requires->jquery();
 ?>
 
 
-
-
-<link rel="icon" href="<?php echo $qmurl ?>/qubits-logo.png" sizes="any" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<script src="https://cdn.jsdelivr.net/gh/qubits-platform/sqlite-wasm@master/sqlite3.js" defer=""></script>
-<script src="https://cdn.jsdelivr.net/pyodide/v0.21.3/full/pyodide.js" defer=""></script>
 <link rel="preload" href="<?php echo $qmurl ?>/_next/static/css/8637dc5940b82e6a.css" as="style" />
 <link rel="stylesheet" href="<?php echo $qmurl ?>/_next/static/css/8637dc5940b82e6a.css" data-n-g="" />
 <noscript data-n-css=""></noscript>
