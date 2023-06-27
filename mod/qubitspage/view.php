@@ -98,24 +98,6 @@ $PAGE->requires->jquery();
 ?>
 
 
-<link rel="preload" href="<?php echo $qmurl ?>/_next/static/css/8637dc5940b82e6a.css" as="style" />
-<link rel="stylesheet" href="<?php echo $qmurl ?>/_next/static/css/8637dc5940b82e6a.css" data-n-g="" />
-<noscript data-n-css=""></noscript>
-<script defer="" nomodule="" src="<?php echo $qmurl ?>/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script>
-<script src="<?php echo $qmurl ?>/_next/static/chunks/webpack-0124a6d1c5800fd9.js" defer=""></script>
-<script src="<?php echo $qmurl ?>/_next/static/chunks/framework-2c79e2a64abdb08b.js" defer=""></script>
-<script src="<?php echo $qmurl ?>/_next/static/chunks/main-164f91e3b1a225f8.js" defer=""></script>
-<script src="<?php echo $qmurl ?>/_next/static/chunks/pages/_app-27065eecd8aeb3ae.js" defer=""></script>
-<script src="<?php echo $qmurl ?>/_next/static/chunks/pages/index-44a994c9ffe51c6c.js" defer=""></script>
-<script src="<?php echo $qmurl ?>/_next/static/r8axIo-woj1gZqT6ZWhcv/_buildManifest.js" defer=""></script>
-<script src="<?php echo $qmurl ?>/_next/static/r8axIo-woj1gZqT6ZWhcv/_ssgManifest.js" defer=""></script>
-<script src="<?php echo $qmurl ?>/_next/static/chunks/8a28b14e.d29918a3616a3ec4.js" defer=""></script>
-<script src="<?php echo $qmurl ?>/_next/static/chunks/792.40b0b06ec78d3a1f.js" defer=""></script>
-<script src="<?php echo $qmurl ?>/_next/static/chunks/938.4d9aae90a278c26c.js" defer=""></script>
-<script src="<?php echo $qmurl ?>/_next/static/chunks/pages/Chapter2-f805aa114b1502b2.js" defer=""></script>
-<script src="<?php echo $qmurl ?>/_next/static/chunks/pages/Chapter3-c56d845d803f27df.js" defer=""></script>
-
-
 <div id="__next"></div>
 <script id="__NEXT_DATA__" type="application/json">
     {

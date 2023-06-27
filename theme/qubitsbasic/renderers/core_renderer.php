@@ -173,10 +173,14 @@ class theme_qubitsbasic_core_renderer extends theme_boost\output\core_renderer {
     }
 
     public function executable_book_files(){
+        global $CFG; 
         if($this->page->pagelayout !== 'executablebook'){
             return '';
         }
-        $context = [];
+        $context = [
+            'wwwroot' => $CFG->wwwroot,
+            'qmurl' => $CFG->wwwroot.'/mod/qubitspage'
+        ];
         return $this->render_from_template("theme_qubitsbasic/custom/exbookfiles", $context);
     }
     
