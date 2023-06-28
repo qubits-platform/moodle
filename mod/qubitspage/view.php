@@ -93,7 +93,7 @@ $templatecontext = array(
 echo $OUTPUT->box($content, "generalbox center clearfix", "qubitspage");
 $pageslug = trim(strip_tags($page->intro));
 $qmurl = $CFG->wwwroot . '/mod/qubitspage';
-$PAGE->requires->jquery();
+//$PAGE->requires->jquery();
 //echo $OUTPUT->render_from_template("mod_qubitspage/pythoncode-v2", $templatecontext);
 ?>
 
@@ -105,8 +105,9 @@ $PAGE->requires->jquery();
             "pageProps": {}
         },
         "page": "<?php echo $pageslug; ?>",
+
         "query": {},
-        "buildId": "r8axIo-woj1gZqT6ZWhcv",
+        "buildId": "X1vMAZVl8rd7YOZpe9vsM",
         "nextExport": true,
         "autoExport": true,
         "isFallback": false,
@@ -121,3 +122,4 @@ if (!isset($options['printlastmodified']) || !empty($options['printlastmodified'
 }
 
 echo $OUTPUT->footer();
+?>
