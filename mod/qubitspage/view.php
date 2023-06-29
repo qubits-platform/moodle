@@ -97,7 +97,6 @@ $qmurl = $CFG->wwwroot . '/mod/qubitspage';
 //echo $OUTPUT->render_from_template("mod_qubitspage/pythoncode-v2", $templatecontext);
 ?>
 
-
 <div id="__next"></div>
 <script id="__NEXT_DATA__" type="application/json">
     {

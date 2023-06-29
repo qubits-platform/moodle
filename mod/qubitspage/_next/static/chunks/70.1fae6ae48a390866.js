@@ -1,5 +1,5 @@
 !(function () {
-  "use strict";
+  
   function e(e, n) {
     if (!(e instanceof n)) throw TypeError("Cannot call a class as a function");
   }
