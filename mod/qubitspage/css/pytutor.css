@@ -11,6 +11,7 @@ div.ExecutionVisualizer table.visualizer {
 
 div.ExecutionVisualizer table.visualizer td.vizLayoutTd {
     vertical-align: top;
+    width: 500px;
 }
 
 div.ExecutionVisualizer td#stack_td,
@@ -206,7 +207,7 @@ div.ExecutionVisualizer #vcrControls button {
     border-radius: 4px;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
     font-weight: 500;
-    font-size: 0.875rem;
+    font-size:  8px;
     line-height: 1.75;
     letter-spacing: 0.02857em;
     text-transform: uppercase;
@@ -920,4 +921,16 @@ div.ExecutionVisualizer td.queueFElt table.dictTbl {
 div.executionSliderDocs {
     margin-top: 5px;
     margin-left: 30px;
+}
+
+#progOutputs .ui-wrapper{
+    margin : auto !important;
+ }
+
+ #vizLayoutTdFirst{
+    border : none !important;
+ }
+
+ #pyCodeOutput th, td {
+    border: none;
 }
