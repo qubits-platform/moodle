@@ -234,7 +234,7 @@ body {
 
 .content h1:not(.menu-title):before {
   content: "";
-  background: url(http://qubits.localhost.com/mod/qubitspage/_next/static/media/chapter-tick.2f183901.png)
+  background: url(https://staging.myqubit.co/mod/qubitspage/_next/static/media/chapter-tick.2f183901.png)
     no-repeat;
   background-size: contain;
   width: 118px;
