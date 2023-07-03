@@ -106,7 +106,7 @@ $qmurl = $CFG->wwwroot . '/mod/qubitspage';
         "page": "<?php echo $pageslug; ?>",
 
         "query": {},
-        "buildId": "X1vMAZVl8rd7YOZpe9vsM",
+        "buildId": "KBNmaMY8_hUwQkFmcUMeO",
         "nextExport": true,
         "autoExport": true,
         "isFallback": false,

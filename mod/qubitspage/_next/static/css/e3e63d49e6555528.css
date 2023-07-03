@@ -97,8 +97,8 @@ pre > .result {
 }
 
 /* :root {
-      font-size: 62.5%;
-    } */
+        font-size: 62.5%;
+      } */
 
 .content html {
   font-family: Open Sans, sans-serif;
@@ -216,7 +216,7 @@ h6:target:before {
 }
 blockquote {
   margin: 20px 0;
-  padding: 0 20px;
+  padding: 0 0 0 0 !important;
   color: #000;
   background-color: #f1f6f9;
   border-top: 0.1em solid #e0ecf1;
@@ -234,7 +234,7 @@ body {
 
 .content h1:not(.menu-title):before {
   content: "";
-  background: url(http://qubits.localhost.com/mod/qubitspage/_next/static/media/chapter-tick.2f183901.png)
+  background: url(http://staging.myqubit.co/mod/qubitspage/_next/static/media/chapter-tick.2f183901.png)
     no-repeat;
   background-size: contain;
   width: 118px;

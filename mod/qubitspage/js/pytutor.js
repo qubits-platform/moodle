@@ -1,10 +1,3 @@
-function welcomealex() {
-  console.log("siva");
-  $("ol.breadcrumb").append(
-    `<li class="breadcrumb-item"><a href="/my/courses.php" class="bc-items">siva Courses</a></li>`
-  );
-}
-console.log("Super power hero");
 var SVG_ARROW_POLYGON = "0,3 12,3 12,0 18,5 12,10 12,7 0,7";
 var SVG_ARROW_HEIGHT = 10; // must match height of SVG_ARROW_POLYGON
 
@@ -238,7 +231,6 @@ ExecutionVisualizer.prototype.render = function () {
   }
 
   var myViz = this; // to prevent confusion of 'this' inside of nested functions
-  console.log("Before VCR Control >>>> ")
   var codeDisplayHTML =
     '<div id="codeDisplayDiv">\
         <div id="langDisplayDiv"></div>\
@@ -316,7 +308,6 @@ ExecutionVisualizer.prototype.render = function () {
         "</td></tr></table>"
     );
   } else {
-    console.log("After VCR Control >>>> Else >>>> ")
     this.domRoot.html(
       vizHeaderHTML +
         '<table border="0" class="visualizer"><tr><td class="vizLayoutTd" id="vizLayoutTdFirst">' +
