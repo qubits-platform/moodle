@@ -942,9 +942,29 @@ ol {
   overflow-y: scroll;
 }
 
-
 .badge-secondary {
   background-color: #008195 !important;
   color: #ffffff !important;
   box-shadow: none !important;
+}
+.userinitials.size-35 {
+  width: 50px !important;
+  height: 50px !important;
+}
+.usermenu .dropdown.show #user-action-menu {
+  margin-top: 15px !important;
+}
+#page-content {
+  margin-top: 20px !important;
+}
+.dropdown-item.active,
+.dropdown-item:active,
+.dropdown-item:hover,
+.dropdown-item:focus,
+.dropdown-item:focus-within {
+  background-color: #1482e6 !important ;
+}
+.custom-select {
+  background: #ffffff url("[[pix:theme|down-arrow]]") right 0.75rem center/8px
+    10px no-repeat !important;
 }
