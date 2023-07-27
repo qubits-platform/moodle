@@ -1,0 +1,61 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width"/><meta name="next-head-count" content="2"/><link rel="icon" href="/qubits-logo.png" sizes="any"/><link rel="stylesheet" href="/css/Chapter.css"/><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerPolicy="no-referrer"/><script src="https://cdn.jsdelivr.net/gh/qubits-platform/sqlite-wasm@master/sqlite3.js" defer=""></script><script src="https://cdn.jsdelivr.net/pyodide/v0.21.3/full/pyodide.js" defer=""></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-Validation-Engine/2.6.4/jquery-1.8.2.min.js" defer=""></script><script type="text/javascript" src="/js/jquery-ui.min.js" defer=""></script><script type="text/javascript" src="/js/d3.v2.min.js" defer=""></script><script type="text/javascript" src="/js/jquery.ba-bbq.js" defer=""></script><script type="text/javascript" src="/js/jquery.jsPlumb-1.3.10-all-min.js" defer=""></script><link type="text/css" href="/css/jquery-ui.min.css" rel="stylesheet"/><link type="text/css" href="/css/pytutor-basic.css" rel="stylesheet"/><script type="text/javascript" src="/js/pytutor.js" defer=""></script><link rel="stylesheet" href="/css/pytutor.css"/><noscript data-n-css=""></noscript><script defer="" nomodule="" src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script><script src="/_next/static/chunks/webpack-90a5202df4c770d0.js" defer=""></script><script src="/_next/static/chunks/framework-2c79e2a64abdb08b.js" defer=""></script><script src="/_next/static/chunks/main-164f91e3b1a225f8.js" defer=""></script><script src="/_next/static/chunks/pages/_app-aea6920bd27938ca.js" defer=""></script><script src="/_next/static/chunks/pages/Chapter1-93361b5cdf9d445d.js" defer=""></script><script src="/_next/static/BXl1ZtTDTb9tENltKnSWf/_buildManifest.js" defer=""></script><script src="/_next/static/BXl1ZtTDTb9tENltKnSWf/_ssgManifest.js" defer=""></script></head><body><div id="__next"><h1>Loops in Python</h1>
+<p>Most of the actions in this world occur repeatedly. For example, if you have to walk one kilometer to reach a mall, you put your left and right foot forward, alternatively, to cover the distance. You repeatedly put each of your feet forward, one by one, a number of times until you reach the mall. Similarly in programming, you need to repeat a set of code multiple times more often than not. Loops help us to reduce this process of repetition.</p>
+<p>In Python, the for loop is used to iterate over a sequence such as a list or string and other iterable objects such as a range.</p>
+<p>Using a <code>for</code> loop, we can iterate over each item in the sequence and execute the same set of commands for each item. This way we can automate and repeat tasks in an efficient manner.</p>
+<p>Print the <code>Hello</code> statement five times by repeating the statements.</p>
+<pre><code class="language-python,non-editable,no-input,no-visualization">print(&quot;Hello&quot;)
+print(&quot;Hello&quot;)
+print(&quot;Hello&quot;)
+print(&quot;Hello&quot;)
+</code></pre>
+<p>Write a program to get the same output using a <code>for</code> loop.</p>
+<pre><code class="language-python,editable,no-input,visualization">for i in range(5):
+  print(&quot;Hello&quot;)
+</code></pre>
+<p>Here <code>range(5)</code> returns a list of numbers from 0 to 4, that is, five elements. Therefore it repeats five times. So the <code>for</code> loop executes the <code>print(&quot;Hello&quot;)</code> statement five times.</p>
+<p>Let’s write a program to display the odd numbers till a given number using loops in Python</p>
+<pre><code class="language-python,editable,no-input,visualization">#Write a program to display the odd numbers till 19 (inclusive)
+i = 1
+while(i &lt;= 19):
+    if(i % 2 == 1):
+        print(i)
+    i = i + 1
+</code></pre>
+<p>Let’s write a program to find factors of a number using loops in Python</p>
+<pre><code class="language-python,editable,no-input,visualization"># write a program find the factors of a number
+num = 10
+i = 1
+while(i &lt;= num):
+    if(num % i == 0):
+        print(i)
+    i = i + 1
+</code></pre>
+<h1>Prime Number</h1>
+<p>A natural number greater than 1 that can only be divided by 1 or the number itself is a prime number. Given below is a list of the first few prime numbers, in an increasing order:</p>
+<p>2, 3, 5, 7, 11, 13, 17, 19, 23,...</p>
+<p>Let’s write a program to check if a number is prime or not.</p>
+<pre><code class="language-python,editable,input,visualization">num = int(input(&quot;Enter a number&quot;))
+prime = True
+
+if num &lt;= 1:
+   prime=False
+
+for i in range(2,num):
+       if (num % i) == 0:
+           prime = False
+           break
+if prime:
+      print(num,&quot;is a prime number&quot;)
+else:
+      print(num,&quot;is not a prime number&quot;)
+</code></pre>
+<h1>File I/O</h1>
+<p>Now let&#x27;s learn how to read and write to a file</p>
+<pre><code class="language-python,non-editable,no-input,visualization">def fun():
+    file = open(&quot;tes.txt&quot;,&quot;w&quot;)
+    L = [&quot;This is Test File&quot;]
+    file.writelines(L)
+    file = open(&quot;tes.txt&quot;,&quot;r+&quot;)
+    return(file.read())
+fun()
+</code></pre></div><script id="__NEXT_DATA__" type="application/json">{"props":{"pageProps":{}},"page":"/Chapter1","query":{},"buildId":"BXl1ZtTDTb9tENltKnSWf","nextExport":true,"autoExport":true,"isFallback":false,"scriptLoader":[]}</script></body></html>
