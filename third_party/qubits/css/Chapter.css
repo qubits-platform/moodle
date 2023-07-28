@@ -1425,7 +1425,7 @@ code {
 .standalone-container {
   position: relative;
   margin-bottom: 40px;
-  height: 80vh;
+  min-height: 80vh;
 }
 
 .standalone-editor {

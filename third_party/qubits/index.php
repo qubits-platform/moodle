@@ -1,10 +1,10 @@
 <?php
 require('../../config.php');
+$elanguage      = optional_param('language', '', PARAM_TEXT);
 $PAGE->set_pagelayout('thirdparty');
 echo $OUTPUT->header();
 
 ?>
-<p>Python Editor</p>
 <div id="__next"></div>
 
  <script id="__NEXT_DATA__" type="application/json">
@@ -15,9 +15,9 @@ echo $OUTPUT->header();
 	},
 	"page": "/Editor/[language]",
 	"query": {
-	  "language": "python"
+	  "language": "<?php echo $elanguage; ?>"
 	},
-	"buildId": "BXl1ZtTDTb9tENltKnSWf",
+	"buildId": "LtlwT_pwV8l8pbM_OcXTM",
 	"isFallback": false,
 	"gsp": true,
 	"scriptLoader": []
