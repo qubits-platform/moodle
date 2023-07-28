@@ -298,7 +298,7 @@ ExecutionVisualizer.prototype.render = function () {
         </div>';
 
   if (this.params.verticalStack) {
-    console.log("After VCR Control >>>> If >>>> ");
+    console.log("After VCR Control >>>> If >>>> ")
     this.domRoot.html(
       vizHeaderHTML +
         '<table border="0" class="visualizer"><tr><td class="vizLayoutTd" id="vizLayoutTdFirst"">' +
@@ -888,9 +888,7 @@ ExecutionVisualizer.prototype.enterViewAnnotationsMode = function () {
     curEntry.bubbleAnnotations = curAnnotations;
   }
 
-  var stepAnnotationEditorVal = myViz.domRoot
-    .find("#stepAnnotationEditor")
-    .val();
+  var stepAnnotationEditorVal = myViz.domRoot.find("#stepAnnotationEditor").val();
   if (stepAnnotationEditorVal) {
     stepAnnotationEditorVal = $.trim(stepAnnotationEditorVal);
     curEntry.stepAnnotation = stepAnnotationEditorVal;
