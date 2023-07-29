@@ -1,6 +1,7 @@
 .hintstyle {
   width: 80%;
 }
+
 .hintstyle ul {
   margin-top: 20px;
 }
@@ -20,6 +21,7 @@
   font-size: var(--code-font-size);
   padding: 10px;
 }
+
 .resultTextareaStyle {
   background-color: #343232;
   color: #fff;
@@ -37,20 +39,23 @@
 .content html {
   scrollbar-color: var(--scrollbar) var(--bg);
 }
+
 #searchresults a,
 .content a:link,
 a:visited,
-a > .hljs {
+a>.hljs {
   color: var(--links);
 }
 
-a:hover > .hljs {
+a:hover>.hljs {
   text-decoration: underline;
 }
+
 pre {
   position: relative;
 }
-pre > .buttons {
+
+pre>.buttons {
   position: absolute;
   z-index: 100;
   right: 0;
@@ -62,10 +67,12 @@ pre > .buttons {
   opacity: 1;
   transition: visibility 0.1s linear, opacity 0.1s linear;
 }
-pre > .buttons i {
+
+pre>.buttons i {
   margin-left: 8px;
 }
-pre > .buttons button {
+
+pre>.buttons button {
   cursor: inherit;
   margin: 0 5px;
   padding: 3px 5px;
@@ -79,18 +86,22 @@ pre > .buttons button {
   transition-property: color, border-color, background-color;
   color: var(--icons);
 }
+
 @media (pointer: coarse) {
-  pre > .buttons button {
+  pre>.buttons button {
     padding: 0.3rem 1rem;
   }
 }
-pre > code {
+
+pre>code {
   padding: 1rem;
 }
+
 .hljs.ace_editor {
   padding: 0;
 }
-pre > .result {
+
+pre>.result {
   margin-top: 10px;
   background-color: #343232;
   color: #fefefe;
@@ -107,6 +118,7 @@ pre > .result {
   text-size-adjust: none;
   -webkit-text-size-adjust: none;
 }
+
 .content p {
   margin: 0;
   font-size: 16px;
@@ -116,6 +128,7 @@ pre > .result {
 .content h1 {
   font-size: 1.6rem;
 }
+
 .content a {
   font-size: 1rem;
 }
@@ -124,6 +137,7 @@ pre > .result {
   font-family: var(--mono-font) !important;
   font-size: 14px;
 }
+
 main {
   overflow-wrap: break-word;
 }
@@ -141,6 +155,7 @@ h2,
 h3 {
   margin-top: 2.5em;
 }
+
 h4,
 h5 {
   margin-top: 2em;
@@ -157,6 +172,7 @@ h6:target:before {
   margin-left: -30px;
   width: 30px;
 }
+
 :target {
   scroll-margin-top: calc(var(--menu-bar-height) + 0.5em);
 }
@@ -166,6 +182,7 @@ h6:target:before {
   margin-right: auto;
   max-width: var(--content-max-width);
 }
+
 .content ol,
 .content p,
 .content ul {
@@ -177,6 +194,7 @@ h6:target:before {
   margin-bottom: 0;
   margin-top: 23px;
 }
+
 .content * {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
@@ -186,6 +204,7 @@ h6:target:before {
 .inline-code {
   font-family: var(--mono-font) !important;
 }
+
 .editor-container * {
   font-family: var(--mono-font) !important;
   line-height: 1.1;
@@ -198,22 +217,27 @@ h6:target:before {
 .content a {
   text-decoration: none;
 }
+
 .content a:hover {
   text-decoration: underline !important;
   color: white !important;
 }
+
 .content img,
 .content video {
   max-width: 100%;
 }
+
 .content .header:link,
 .content .header:visited {
   color: var(--fg);
 }
+
 .content .header:link,
 .content .header:visited:hover {
   text-decoration: none;
 }
+
 blockquote {
   margin: 20px 0;
   padding: 0 0 0 0 !important;
@@ -226,6 +250,7 @@ blockquote {
 :root {
   --link-color: #0f6cbf;
 }
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif,
@@ -234,8 +259,7 @@ body {
 
 .content h1:not(.menu-title):before {
   content: "";
-  background: url(http://staging.myqubit.co/mod/qubitspage/_next/static/media/chapter-tick.2f183901.png)
-    no-repeat;
+  background: url(http://staging.myqubit.co/mod/qubitspage/_next/static/media/chapter-tick.2f183901.png) no-repeat;
   background-size: contain;
   width: 118px;
   height: 79px;
@@ -244,12 +268,14 @@ body {
   left: -40px;
   top: -23px;
 }
+
 .content h1:not(.menu-title) {
   background-color: #47bbb6;
   border-radius: 30px;
   position: relative;
   padding-left: 80px;
 }
+
 h1:target:before,
 h2:target:before,
 h3:target:before,
@@ -258,10 +284,12 @@ h5:target:before,
 h6:target:before {
   content: "";
 }
+
 .content .header:link:hover,
 .content .header:visited:hover {
   color: var(--link-color);
 }
+
 .content h1 .header:not(.menu-title):link,
 .content h1 .header:not(.menu-title):visited {
   color: #fff;
@@ -271,11 +299,13 @@ h6:target:before {
   position: relative;
   top: -0.6rem;
 }
+
 .content h1 .header:not(.menu-title):link .sub-header,
 .content h1 .header:not(.menu-title):visited .sub-header {
   color: #fcca1e;
   font-weight: 700;
 }
+
 .content main {
   background: #fef6db;
   padding: 20px;
@@ -285,33 +315,41 @@ h6:target:before {
 pre {
   margin: 0.4em 0;
 }
-pre ~ p {
+
+pre~p {
   margin-top: 2em;
   margin-bottom: 0;
 }
+
 .hljs,
 .hljs.ace_editor {
   padding: 8px 5px !important;
 }
+
 .noplayground.hljs:not(.result),
 .playground .hljs:not(.result) {
   background-color: #f8f9fa;
 }
+
 .ace_editor.editable {
   background-color: #fff;
 }
+
 .ace_editor.editable:hover {
   outline: 2px solid #5babf2;
 }
+
 .ace_line:nth-child(2n) {
   background-color: rgba(0, 0, 0, 0.05);
 }
+
 .result-1,
 .result-2,
 .result-3,
 .result-4 {
   display: none;
 }
+
 .chapter-title {
   color: #fff;
   text-transform: uppercase;
@@ -320,52 +358,63 @@ pre ~ p {
   position: relative;
   top: -0.3rem;
 }
+
 .inline-code {
   display: block;
   display: inline;
   padding: 0.1em 0.3em;
   border-radius: 3px;
 }
+
 .inline-code,
 code {
   overflow-x: auto;
   background: #f6f7f6;
   color: #000;
 }
+
 code {
   display: block;
 }
+
 .content pre {
   color: white;
 }
+
 .menu-items {
   display: flex;
   padding: 1em;
   width: 100%;
 }
+
 .Mui-selected.MuiMenuItem-root.MuiMenuItem-gutters.Mui-selected {
   width: 100%;
   background-color: #0f6cbf;
   border-radius: 4px;
   color: #fff;
 }
+
 .editor-container {
   position: relative;
   margin-top: 20px !important;
 }
+
 .tool-button {
   min-width: 40px !important;
   background-color: #fff;
 }
-.tool-button:hover{
+
+.tool-button:hover {
   background-color: #fff;
 }
+
 .reset-button {
   position: absolute !important;
   right: 105px;
   top: 10px;
   z-index: 9;
 }
+
 .traceBlockStyle {
   width: "100%";
   border: beige;
@@ -378,22 +427,27 @@ code {
     Helvetica Neue, Arial, Noto Sans, Liberation Sans, sans-serif,
     Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji !important;
 }
+
 .tool-button span {
   margin-left: 0;
 }
+
 .button-toolbar {
   padding: 5px;
   position: absolute;
   top: 8px;
   right: 5px;
 }
+
 .console-wrapper {
   position: relative;
   margin-top: 25px;
 }
+
 .ai-help-button {
   z-index: 9;
 }
+
 .ai-help-button,
 .ai-console-wrapper.resultTextareaStyleerror.chatgptbtn {
   position: absolute !important;
@@ -402,6 +456,7 @@ code {
   background-color: #fff !important;
   min-width: 40px !important;
 }
+
 .chatgptbtn {
   color: #000 !important;
   font-weight: bold !important;
@@ -410,16 +465,20 @@ code {
   background-color: white;
   height: 30px;
 }
+
 .ai-help-button span {
   margin-left: 0;
 }
+
 .ace-tm .ace_print-margin {
   width: 0 !important;
 }
+
 .hljs-comment,
 .hljs-quote {
   color: #575757;
 }
+
 .hljs-attribute,
 .hljs-link,
 .hljs-name,
@@ -431,6 +490,7 @@ code {
 .hljs-variable {
   color: #d70025;
 }
+
 .hljs-built_in,
 .hljs-builtin-name,
 .hljs-literal,
@@ -440,35 +500,43 @@ code {
 .hljs-type {
   color: #b21e00;
 }
+
 .hljs-bullet,
 .hljs-string,
 .hljs-symbol {
   color: #008200;
 }
+
 .hljs-section,
 .hljs-title {
   color: #0030f2;
 }
+
 .hljs-keyword,
 .hljs-selector-tag {
   color: #9d00ec;
 }
+
 .hljs {
   display: block;
   overflow-x: auto;
   background: #f6f7f6;
   color: #000;
 }
+
 .hljs-emphasis {
   font-style: italic;
 }
+
 .hljs-strong {
   font-weight: 700;
 }
+
 .hljs-addition {
   color: #22863a;
   background-color: #f0fff4;
 }
+
 .hljs-deletion {
   color: #b31d28;
   background-color: #ffeef0;
@@ -485,13 +553,14 @@ code {
 #page-header {
   display: none !important;
 }
+
 .standalone-editor {
   min-height: 300px;
   overflow-y: scroll;
 }
 
 
-.error404{
+.error404 {
   font-family: 'Calligraffitti', cursive;
   font-weight: 700;
   font-size: 13rem;
@@ -499,39 +568,41 @@ code {
   letter-spacing: 0.02em;
   text-align: center;
   color: #47BBB6;
-  text-shadow: 5px 5px 0px #FFB650, 
-    10px 10px 0px #FFD662, 
-    15px 15px 0px  #FF80BF, 
-    20px 20px 0px #EF5097, 
-    25px 25px 0px #6868AC, 
+  text-shadow: 5px 5px 0px #FFB650,
+    10px 10px 0px #FFD662,
+    15px 15px 0px #FF80BF,
+    20px 20px 0px #EF5097,
+    25px 25px 0px #6868AC,
     30px 30px 0px #90B1E0;
 }
 
-.notavailable{
+.notavailable {
   text-align: center;
   background-color: #47BBB6;
   color: white;
-  padding:10px;
+  padding: 10px;
   border-radius: 35px;
 }
 
-.react-pdf-viewer-Toolbar{
+.react-pdf-viewer-Toolbar {
   align-items: center;
-  display:flex;
+  display: flex;
   width: 100%;
 }
 
-.react-pdf-viewer-style{
+.react-pdf-viewer-style {
   height: 750px;
-} 
-.react-pdf-Toolbar
-{
+}
+
+.react-pdf-Toolbar {
   padding: 0px 2px
 }
-.react-pdf-fullscreen{
+
+.react-pdf-fullscreen {
   padding: 0px 2px;
   margin-left: auto;
 }
+
 .content .title a {
   color: white;
   text-transform: uppercase;
@@ -539,4 +610,31 @@ code {
   font-size: 18px;
   position: relative;
   top: -0.2rem;
+}
+
+.MuiButtonBase-root.tool-button {
+  color: #747474;
+  border-color: #747474;
+  margin: 0px;
+  padding: 3px 2px;
+  border-radius: 4px;
+}
+
+.MuiButtonBase-root.tool-button:hover {
+  color: #0f6cbf;
+  border-color: #747474;
+}
+
+.MuiSvgIcon-fontSizeMedium {
+  margin-right: 4px;
+}
+
+.MuiButtonBase-root.ai-help-button {
+  color: #747474;
+  border-color: #747474;
+}
+
+.MuiButtonBase-root.ai-help-button:hover {
+  color: #0f6cbf;
+  border-color: #747474;
 }

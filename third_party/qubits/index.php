@@ -7,21 +7,25 @@ echo $OUTPUT->header();
 ?>
 <div id="__next"></div>
 
- <script id="__NEXT_DATA__" type="application/json">
-  {
-	"props": {
-	  "pageProps": {},
-	  "__N_SSG": true
-	},
-	"page": "/Editor/[language]",
-	"query": {
-	  "language": "<?php echo $elanguage; ?>"
-	},
-	"buildId": "LtlwT_pwV8l8pbM_OcXTM",
-	"isFallback": false,
-	"gsp": true,
-	"scriptLoader": []
-  }
+<script id="__NEXT_DATA__" type="application/json">
+	{
+		"props": {
+			"pageProps": {},
+			"__N_SSG": true
+		},
+
+
+		"page": "/pdf",
+		"query": {
+			"course": "DigiPro",
+			"Level": "Level1",
+			"pdf": "DPL01_U01_S02"
+		},
+		"buildId": "WfyxBXQSGxaaBPq5khe1-",
+		"isFallback": false,
+		"gsp": true,
+		"scriptLoader": []
+	}
 </script>
 
 <?php
