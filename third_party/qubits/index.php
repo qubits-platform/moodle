@@ -15,13 +15,12 @@ echo $OUTPUT->header();
 		},
 
 
-		"page": "/pdf",
-		"query": {
-			"course": "DigiPro",
-			"Level": "Level1",
-			"pdf": "DPL01_U01_S02"
-		},
-		"buildId": "WfyxBXQSGxaaBPq5khe1-",
+		"page": "/Editor/[language]",
+	"query": {
+	  "language": "<?php echo $elanguage; ?>"
+	},
+
+		"buildId": "G7GxyPIfk8vrAIEzQ0oJE",
 		"isFallback": false,
 		"gsp": true,
 		"scriptLoader": []
