@@ -558,12 +558,14 @@ code {
   min-height: 300px;
   overflow-y: scroll;
 }
-
+.rpv-core__textbox{
+  width: 100% !important;
+}
 
 .error404 {
   font-family: 'Calligraffitti', cursive;
   font-weight: 700;
-  font-size: 13rem;
+  font-size: 13rem !important;
   text-shadow: -15px 5px 20px #ced0d3;
   letter-spacing: 0.02em;
   text-align: center;
@@ -578,10 +580,12 @@ code {
 
 .notavailable {
   text-align: center;
-  background-color: #47BBB6;
-  color: white;
+  font-size: 35px !important;
+  color: #fff;
   padding: 10px;
   border-radius: 35px;
+  font-weight:600;
+  background-color: #47BBB6;
 }
 
 .react-pdf-viewer-Toolbar {
