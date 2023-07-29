@@ -7,21 +7,24 @@ echo $OUTPUT->header();
 ?>
 <div id="__next"></div>
 
- <script id="__NEXT_DATA__" type="application/json">
-  {
-	"props": {
-	  "pageProps": {},
-	  "__N_SSG": true
-	},
-	"page": "/Editor/[language]",
+<script id="__NEXT_DATA__" type="application/json">
+	{
+		"props": {
+			"pageProps": {},
+			"__N_SSG": true
+		},
+
+
+		"page": "/Editor/[language]",
 	"query": {
 	  "language": "<?php echo $elanguage; ?>"
 	},
-	"buildId": "LtlwT_pwV8l8pbM_OcXTM",
-	"isFallback": false,
-	"gsp": true,
-	"scriptLoader": []
-  }
+
+		"buildId": "G7GxyPIfk8vrAIEzQ0oJE",
+		"isFallback": false,
+		"gsp": true,
+		"scriptLoader": []
+	}
 </script>
 
 <?php
