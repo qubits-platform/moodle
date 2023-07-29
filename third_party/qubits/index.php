@@ -1,7 +1,9 @@
 <?php
 require('../../config.php');
 $elanguage      = optional_param('language', '', PARAM_TEXT);
+$clsname = 'page-editor-qubits-'.$elanguage;
 $PAGE->set_pagelayout('thirdparty');
+$PAGE->add_body_class($clsname);
 echo $OUTPUT->header();
 
 ?>
