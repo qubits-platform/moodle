@@ -97,10 +97,6 @@ class local_qbcourse extends external_api {
                             array(
                                 'shortname'=> 'cardcolour',
                                 'value' => trim($courses[0]['cardcolour'])
-                            ),
-                            array(
-                                'shortname'=> 'course001',
-                                'value' => trim($courses[0]['course001'])
                             )
                         )
                 
@@ -244,13 +240,6 @@ class local_qbcourse extends external_api {
                 $DB->set_field('customfield_data', 'value', trim($otherfields->cardcolour), array('fieldid' => $cardcolour->id,'instanceid'=>$cid));
             }
             
-
-            $course001 = $DB->get_record('customfield_field', array('shortname' => 'course001'));
-            if($course001){
-                $DB->set_field('customfield_data', 'charvalue', trim($otherfields->course001), array('fieldid' => $course001->id,'instanceid'=>$cid));
-                $DB->set_field('customfield_data', 'value', trim($otherfields->course001), array('fieldid' => $course001->id,'instanceid'=>$cid));
-            }
-            
         }
         
     }
@@ -273,17 +262,15 @@ class local_qbcourse extends external_api {
                         $page->course = $cid;
                         $page->name = trim($activities[$a]->title);
 
-                        if(empty($activities[$a]->description))
+                        if(empty($activities[$a]->route))
                         $page->intro = '<p>.</p>';
                         else
-                        $page->intro = $activities[$a]->description;
+                        $page->intro = $activities[$a]->route;
 
                         $page->introformat = 1;
 
-                        if(empty($activities[$a]->content))
-                        $page->content = '<p>/</p>';
-                        else
-                        $page->content = $activities[$a]->content;
+                        $page->content = '<p>.</p>';
+                        
 
                         $page->contentformat = 1;
                         $page->legacyfiles = 0;
