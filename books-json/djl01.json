@@ -1,0 +1,172 @@
+[
+  {
+    "book": {
+      "name": "Computer Science and Programming",
+      "code": "DJL01",
+      "category": "DigiJunior",
+      "categorycode": "DJ",
+      "summary": ".",
+      "otherfields": {
+        "level": "1",
+        "cardcolour": "#215caa"
+      },
+      "chapters": [
+        {
+          "route": "book/DJL01/DJL01-TP1-000.mdx",
+          "title": "Computer",
+          "type": "topic",
+          "uid": "DJL01-TP1-000",
+          "children": [
+            {
+              "title": "Computer",
+              "uid": "DJL01-TP1-CHDRN1",
+              "description": "",
+              "route": "/pdf?course=DigiJunior&Level=Level1&pdf=DigiJunior_U01_Intro",
+              "type": "page"
+            },
+            {
+              "title": "SPRINT 1.1 - WHAT IS A COMPUTER?",
+              "uid": "DJL01-TP1-CHDRN2",
+              "description": "",
+              "route": "/pdf?course=DigiJunior&Level=Level1&pdf=DigiJunior_U01_S01",
+              "type": "page"
+            },
+            {
+              "title": "SPRINT 1.2 - THE COMPUTER FAMILY",
+              "uid": "DJL01-TP1-CHDRN3",
+              "description": "",
+              "route": "/pdf?course=DigiJunior&Level=Level1&pdf=DigiJunior_U01_S02",
+              "type": "page"
+            },
+            {
+              "title": "Parts of a Computer",
+              "uid": "DJL01-TP1-CHDRN4",
+              "description": "",
+              "route": "/pdf?course=DigiJunior&Level=Level1&pdf=DigiJunior_U02_Intro",
+              "type": "page"
+            },
+            {
+              "title": "SPRINT 2.1 - PARTS OF A COMPUTER",
+              "uid": "DJL01-TP1-CHDRN5",
+              "description": "",
+              "route": "/pdf?course=DigiJunior&Level=Level1&pdf=DigiJunior_U02_S01",
+              "type": "page"
+            },
+            {
+              "title": "DSPRINT 2.2 - TOUCHSCREEN",
+              "uid": "DJL01-TP1-CHDRN6",
+              "description": "",
+              "route": "/pdf?course=DigiJunior&Level=Level1&pdf=DigiJunior_U02_S02",
+              "type": "page"
+            },
+            {
+              "title": "How to Use a Computer?",
+              "uid": "DJL01-TP1-CHDRN7",
+              "description": "",
+              "route": "/pdf?course=DigiJunior&Level=Level1&pdf=DigiJunior_U03_Intro",
+              "type": "page"
+            },
+            {
+              "title": "SPRINT 3.1 - TURN A COMPUTER ON OR OFF",
+              "uid": "DJL01-TP1-CHDRN8",
+              "description": "",
+              "route": "/pdf?course=DigiJunior&Level=Level1&pdf=DigiJunior_U03_S01",
+              "type": "page"
+            },
+            {
+              "title": "SPRINT 3.2 - SAFETY MEASURES",
+              "uid": "DJL01-TP1-CHDRN9",
+              "description": "",
+              "route": "/pdf?course=DigiJunior&Level=Level1&pdf=DigiJunior_U03_S02",
+              "type": "page"
+            },
+            {
+              "title": "Uses of Computers",
+              "uid": "DJL01-TP1-CHDRN10",
+              "description": "",
+              "route": "/pdf?course=DigiJunior&Level=Level1&pdf=DigiJunior_U04_Intro",
+              "type": "page"
+            },
+            {
+              "title": "SPRINT 4.1 - STORING DATA",
+              "uid": "DJL01-TP1-CHDRN11",
+              "description": "",
+              "route": "/pdf?course=DigiJunior&Level=Level1&pdf=DigiJunior_U04_S01",
+              "type": "page"
+            },
+            {
+              "title": "SPRINT 4.2 - PHOTOS AND VIDEOS",
+              "uid": "DJL01-TP1-CHDRN12",
+              "description": "",
+              "route": "/pdf?course=DigiJunior&Level=Level1&pdf=DigiJunior_U04_S02",
+              "type": "page"
+            },
+            {
+              "title": "SPRINT 4.3 - RECORDING SOUND",
+              "uid": "DJL01-TP1-CHDRN13",
+              "description": "",
+              "route": "/pdf?course=DigiJunior&Level=Level1&pdf=DigiJunior_U04_S03",
+              "type": "page"
+            },
+            {
+              "title": "Other Uses",
+              "uid": "DJL01-TP1-CHDRN14",
+              "description": "",
+              "route": "/pdf?course=DigiJunior&Level=Level1&pdf=DigiJunior_U05_Intro",
+              "type": "page"
+            },
+            {
+              "title": "SPRINT 5.1 - ENTERTAINMENT",
+              "uid": "DJL01-TP1-CHDRN15",
+              "description": "",
+              "route": "/pdf?course=DigiJunior&Level=Level1&pdf=DigiJunior_U05_S01",
+              "type": "page"
+            },
+            {
+              "title": "SPRINT 5.2 - CREATING ART",
+              "uid": "DJL01-TP1-CHDRN16",
+              "description": "",
+              "route": "/pdf?course=DigiJunior&Level=Level1&pdf=DigiJunior_U05_S02",
+              "type": "page"
+            },
+            {
+              "title": "SPRINT 5.3 - COMMUNICATION",
+              "uid": "DJL01-TP1-CHDRN17",
+              "description": "",
+              "route": "/pdf?course=DigiJunior&Level=Level1&pdf=DigiJunior_U05_S03",
+              "type": "page"
+            },
+            {
+              "title": "SPRINT 5.4 - GENERAL INFORMATION",
+              "uid": "DJL01-TP1-CHDRN18",
+              "description": "",
+              "route": "/pdf?course=DigiJunior&Level=Level1&pdf=DigiJunior_U05_S04",
+              "type": "page"
+            },
+            {
+              "title": "How Does a Computer Work?",
+              "uid": "DJL01-TP1-CHDRN19",
+              "description": "",
+              "route": "/pdf?course=DigiJunior&Level=Level1&pdf=DigiJunior_U06_Intro",
+              "type": "page"
+            },
+            {
+              "title": "SPRINT 6.1 - SEQUENCING",
+              "uid": "DJL01-TP1-CHDRN20",
+              "description": "",
+              "route": "/pdf?course=DigiJunior&Level=Level1&pdf=DigiJunior_U06_S01",
+              "type": "page"
+            },
+            {
+              "title": "SPRINT 6.2 - ALGORITHM",
+              "uid": "DJL01-TP1-CHDRN21",
+              "description": "",
+              "route": "/pdf?course=DigiJunior&Level=Level1&pdf=DigiJunior_U06_S02",
+              "type": "page"
+            }
+          ]
+        }
+      ]
+    }
+  }
+]

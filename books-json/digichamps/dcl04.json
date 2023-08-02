@@ -1,0 +1,207 @@
+[
+	{
+		"book": {
+			"name": "Computer Science and Programming",
+			"code": "DCL04",
+			"category": "DigiChamps",
+			"categorycode": "DC",
+			"summary": ".",
+			"otherfields": {
+				"level": "4",
+				"cardcolour": "#215caa"
+			},
+			"chapters": [
+				{
+					"route": "book/DCL04/DCL04-TP1-000.mdx",
+					"title": "",
+					"type": "topic",
+					"uid": "DCL04-TP1-000",
+					"children": [
+						{
+							"title": "Computing Devices",
+							"uid": "DCL04-TP1-CHDRN1",
+							"description": "",
+							"route": "/pdf?course=DigiChamps&Level=Level4&pdf=DCL04_U01_Intro",
+							"type": "page"
+						},
+						{
+							"title": "SPRINT 1.1 - TROUBLESHOOTING",
+							"uid": "DCL04-TP1-CHDRN2",
+							"description": "",
+							"route": "/pdf?course=DigiChamps&Level=Level4&pdf=DCL04_U01_S01",
+							"type": "page"
+						},
+						{
+							"title": "SPRINT 1.2 - NEXT GENERATION TECHNOLOGY",
+							"uid": "DCL04-TP1-CHDRN3",
+							"description": "",
+							"route": "/pdf?course=DigiChamps&Level=Level4&pdf=DCL04_U01_S02",
+							"type": "page"
+						},
+						{
+							"title": "Internet and Network",
+							"uid": "DCL04-TP1-CHDRN4",
+							"description": "",
+							"route": "/pdf?course=DigiChamps&Level=Level4&pdf=DCL04_U02_Intro",
+							"type": "page"
+						},
+						{
+							"title": "SPRINT 2.1 - SENDING DATA USING INTERNET",
+							"uid": "DCL04-TP1-CHDRN5",
+							"description": "",
+							"route": "/pdf?course=DigiChamps&Level=Level4&pdf=DCL04_U02_S01",
+							"type": "page"
+						},
+						{
+							"title": "SPRINT 2.2 - CLOUD SERVICE",
+							"uid": "DCL04-TP1-CHDRN6",
+							"description": "",
+							"route": "/pdf?course=DigiChamps&Level=Level4&pdf=DCL04_U02_S02",
+							"type": "page"
+						},
+						{
+							"title": "SPRINT 2.3 - RESPONDING TO AN EMAIL",
+							"uid": "DCL04-TP1-CHDRN7",
+							"description": "",
+							"route": "/pdf?course=DigiChamps&Level=Level4&pdf=DCL04_U02_S03",
+							"type": "page"
+						},
+						{
+							"title": "SPRINT 2.4 - SENDING ATTACHMENTS WITH AN EMAIL",
+							"uid": "DCL04-TP1-CHDRN8",
+							"description": "",
+							"route": "/pdf?course=DigiChamps&Level=Level4&pdf=DCL04_U02_S04",
+							"type": "page"
+						},
+						{
+							"title": "Your First 3D Design",
+							"uid": "DCL04-TP1-CHDRN9",
+							"description": "",
+							"route": "/pdf?course=DigiChamps&Level=Level4&pdf=DCL04_U03_Intro",
+							"type": "page"
+						},
+						{
+							"title": "SPRINT 3.1 - EDITING SHAPES",
+							"uid": "DCL04-TP1-CHDRN10",
+							"description": "",
+							"route": "/pdf?course=DigiChamps&Level=Level4&pdf=DCL04_U03_S01",
+							"type": "page"
+						},
+						{
+							"title": "SPRINT 3.2 - ALIGN",
+							"uid": "DCL04-TP1-CHDRN11",
+							"description": "",
+							"route": "/pdf?course=DigiChamps&Level=Level4&pdf=DCL04_U03_S02",
+							"type": "page"
+						},
+						{
+							"title": "SPRINT 3.3 - RULER AND 3D TEXT TOOL",
+							"uid": "DCL04-TP1-CHDRN12",
+							"description": "",
+							"route": "/pdf?course=DigiChamps&Level=Level4&pdf=DCL04_U03_S03",
+							"type": "page"
+						},
+						{
+							"title": "SPRINT 3.4 - 3D PRINTING",
+							"uid": "DCL04-TP1-CHDRN13",
+							"description": "",
+							"route": "/pdf?course=DigiChamps&Level=Level4&pdf=DCL04_U03_S04",
+							"type": "page"
+						},
+						{
+							"title": "Icons and Shapes",
+							"uid": "DCL04-TP1-CHDRN14",
+							"description": "",
+							"route": "/pdf?course=DigiChamps&Level=Level4&pdf=DCL04_U04_Intro",
+							"type": "page"
+						},
+						{
+							"title": "SPRINT 4.1 - ICONS",
+							"uid": "DCL04-TP1-CHDRN15",
+							"description": "",
+							"route": "/pdf?course=DigiChamps&Level=Level4&pdf=DCL04_U04_S01",
+							"type": "page"
+						},
+						{
+							"title": "SPRINT 4.2 - DUPLICATE SLIDES",
+							"uid": "DCL04-TP1-CHDRN16",
+							"description": "",
+							"route": "/pdf?course=DigiChamps&Level=Level4&pdf=DCL04_U04_S02",
+							"type": "page"
+						},
+						{
+							"title": "SPRINT 4.3 - SHAPE FORMAT",
+							"uid": "DCL04-TP1-CHDRN17",
+							"description": "",
+							"route": "/pdf?course=DigiChamps&Level=Level4&pdf=DCL04_U04_S03",
+							"type": "page"
+						},
+						{
+							"title": "SPRINT 4.4 - ADDING EFFECTS TO SHAPES",
+							"uid": "DCL04-TP1-CHDRN18",
+							"description": "",
+							"route": "/pdf?course=DigiChamps&Level=Level4&pdf=DCL04_U04_S04",
+							"type": "page"
+						},
+						{
+							"title": "Tables and Templates in MS Word",
+							"uid": "DCL04-TP1-CHDRN19",
+							"description": "",
+							"route": "/pdf?course=DigiChamps&Level=Level4&pdf=DCL04_U05_Intro",
+							"type": "page"
+						},
+						{
+							"title": "SPRINT 5.1 - TABLES IN DOCUMENTS",
+							"uid": "DCL04-TP1-CHDRN20",
+							"description": "",
+							"route": "/pdf?course=DigiChamps&Level=Level4&pdf=DCL04_U05_S01",
+							"type": "page"
+						},
+						{
+							"title": "SPRINT 5.2 - BORDERS AND LINE SPACING",
+							"uid": "DCL04-TP1-CHDRN21",
+							"description": "",
+							"route": "/pdf?course=DigiChamps&Level=Level4&pdf=DCL04_U05_S02",
+							"type": "page"
+						},
+						{
+							"title": "SPRINT 5.3 - TEMPLATES AND ORIENTATION",
+							"uid": "DCL04-TP1-CHDRN22",
+							"description": "",
+							"route": "/pdf?course=DigiChamps&Level=Level4&pdf=DCL04_U05_S03",
+							"type": "page"
+						},
+						{
+							"title": "Working with Data",
+							"uid": "DCL04-TP1-CHDRN23",
+							"description": "",
+							"route": "/pdf?course=DigiChamps&Level=Level4&pdf=DCL04_U06_Intro",
+							"type": "page"
+						},
+						{
+							"title": "SPRINT 6.1 - DATA AT WORK",
+							"uid": "DCL04-TP1-CHDRN24",
+							"description": "",
+							"route": "/pdf?course=DigiChamps&Level=Level4&pdf=DCL04_U06_S01",
+							"type": "page"
+						},
+						{
+							"title": "SPRINT 6.2 - PREDICTION FROM DATA",
+							"uid": "DCL04-TP1-CHDRN25",
+							"description": "",
+							"route": "/pdf?course=DigiChamps&Level=Level4&pdf=DCL04_U06_S02",
+							"type": "page"
+						},
+						{
+							"title": "SPRINT 6.3 - DATA INSIGHT",
+							"uid": "DCL04-TP1-CHDRN26",
+							"description": "",
+							"route": "/pdf?course=DigiChamps&Level=Level4&pdf=DCL04_U06_S03",
+							"type": "page"
+						}
+					]
+				}
+			]
+		}
+	}
+]

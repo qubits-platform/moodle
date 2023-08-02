@@ -1,0 +1,221 @@
+[
+	{
+		"book": {
+			"name": "Computer Science and Programming",
+			"code": "DCL02",
+			"category": "DigiChamps",
+			"categorycode": "DC",
+			"summary":".",			
+			"otherfields":
+				{
+				"level": "1",
+				"cardcolour":"#215caa"
+				},
+			"chapters": [
+			      {
+					"route": "book/DCL01/DCL01-TP1-000.mdx",
+					"title": "Computer and Us",
+					"type": "topic",
+				    "uid": "DCL02-TP1-000",
+					"children": [
+					   {
+						    "title": "Computer and Us",
+							"uid": "DCL02-TP1-CHDRN1",
+							"description": "",
+							"route":"/pdf?course=DigiChamps&Level=Level2&pdf=DCL02_U01_Intro",
+							"type": "page"
+					   },
+					   {
+						    "title": "SPRINT 1.1 - SOLVING PROBLEMS",
+							"uid": "DCL02-TP1-CHDRN2",
+							"description": "",
+							"route":"/pdf?course=DigiChamps&Level=Level2&pdf=DCL02_U01_S01",
+							"type": "page"
+					   },
+					   {
+						"title": "SPRINT 1.2 - WORKING WITH INFORMATION",
+						"uid": "DCL02-TP1-CHDRN3",
+						"description": "",
+						"route":"/pdf?course=DigiChamps&Level=Level2&pdf=DCL02_U01_S02",
+						"type": "page"
+				   },
+				   {
+					"title": "Internet and Safety",
+					"uid": "DCL02-TP1-CHDRN4",
+					"description": "",
+					"route":"/pdf?course=DigiChamps&Level=Level2&pdf=DCL02_U02_Intro",
+					"type": "page"
+			   },
+			   {
+				"title": "SPRINT 2.1 - USING WEB BROWSERS",
+				"uid": "DCL02-TP1-CHDRN5",
+				"description": "",
+				"route":"/pdf?course=DigiChamps&Level=Level2&pdf=DCL02_U02_S01",
+				"type": "page"
+		   }, 
+		   {
+			"title": "SPRINT 2.2 - ONLINE SAFETY",
+			"uid": "DCL02-TP1-CHDRN6",
+			"description": "",
+			"route":"/pdf?course=DigiChamps&Level=Level2&pdf=DCL02_U02_S02",
+			"type": "page"
+	   },
+	   {
+		"title": "Lines, Shapes and Texts",
+		"uid": "DCL02-TP1-CHDRN7",
+		"description": "",
+		"route":"/pdf?course=DigiChamps&Level=Level2&pdf=DCL02_U03_Intro",
+		"type": "page"
+   },
+   {
+	"title": "SPRINT 3.1 - LINES",
+	"uid": "DCL02-TP1-CHDRN8",
+	"description": "",
+	"route":"/pdf?course=DigiChamps&Level=Level2&pdf=DCL02_U03_S01",
+	"type": "page"
+},
+{
+	"title": "SPRINT 3.2 - SHAPES",
+	"uid": "DCL02-TP1-CHDRN9",
+	"description": "",
+	"route":"/pdf?course=DigiChamps&Level=Level2&pdf=DCL02_U03_S02",
+	"type": "page"
+},
+{
+	"title": "SPRINT 3.3 - TEXT AND LABELS",
+	"uid": "DCL02-TP1-CHDRN10",
+	"description": "",
+	"route":"/pdf?course=DigiChamps&Level=Level2&pdf=DCL02_U03_S03",
+	"type": "page"
+},	   
+{
+	"title": "Tux Magic",
+	"uid": "DCL02-TP1-CHDRN11",
+	"description": "",
+	"route":"/pdf?course=DigiChamps&Level=Level2&pdf=DCL02_U04_Intro",
+	"type": "page"
+},	 
+{
+	"title": "SPRINT 4.1 - FLIP IT!",
+	"uid": "DCL02-TP1-CHDRN12",
+	"description": "",
+	"route":"/pdf?course=DigiChamps&Level=Level2&pdf=DCL02_U04_S01",
+	"type": "page"
+},
+{
+	"title": "SPRINT 4.2 - MAGIC TOOL",
+	"uid": "DCL02-TP1-CHDRN13",
+	"description": "",
+	"route":"/pdf?course=DigiChamps&Level=Level2&pdf=DCL02_U04_S02",
+	"type": "page"
+},		
+{
+	"title": "SPRINT 4.3 - PATTERN PAINTING",
+	"uid": "DCL02-TP1-CHDRN14",
+	"description": "",
+	"route":"/pdf?course=DigiChamps&Level=Level2&pdf=DCL02_U04_S03",
+	"type": "page"
+},
+{
+	"title": "SPRINT 4.4 - PICTURE DECORATIONS",
+	"uid": "DCL02-TP1-CHDRN15",
+	"description": "",
+	"route":"/pdf?course=DigiChamps&Level=Level2&pdf=DCL02_U04_S04",
+	"type": "page"
+},
+{
+	"title": "Shapes on Slides",
+	"uid": "DCL02-TP1-CHDRN16",
+	"description": "",
+	"route":"/pdf?course=DigiChamps&Level=Level2&pdf=DCL02_U05_Intro",
+	"type": "page"
+},
+{
+	"title": "PowerPoint Basics",
+	"uid": "DCL02-TP1-CHDRN17",
+	"description": "",
+	"route":"/pdf?course=DigiChamps&Level=Level2&pdf=DCL02_U05_S01",
+	"type": "page"
+},
+{
+	"title": "SPRINT 5.2 - THEMES AND COLOR",
+	"uid": "DCL02-TP1-CHDRN18",
+	"description": "",
+	"route":"/pdf?course=DigiChamps&Level=Level2&pdf=DCL02_U05_S02",
+	"type": "page"
+},
+{
+	"title": "SPRINT 5.3 - SIZE OF SHAPES",
+	"uid": "DCL02-TP1-CHDRN19",
+	"description": "",
+	"route":"/pdf?course=DigiChamps&Level=Level2&pdf=DCL02_U05_S03",
+	"type": "page"
+},
+{
+	"title": "My First Letter",
+	"uid": "DCL02-TP1-CHDRN20",
+	"description": "",
+	"route":"/pdf?course=DigiChamps&Level=Level2&pdf=DCL02_U06_Intro",
+	"type": "page"
+},
+{
+	"title": "SPRINT 6.1 - INTRODUCTION TO MICROSOFT WORD",
+	"uid": "DCL02-TP1-CHDRN21",
+	"description": "",
+	"route":"/pdf?course=DigiChamps&Level=Level2&pdf=DCL02_U06_S01",
+	"type": "page"
+},
+{
+	"title": "SPRINT 6.2 - PICTURE AND PICTURE FRAME",
+	"uid": "DCL02-TP1-CHDRN22",
+	"description": "",
+	"route":"/pdf?course=DigiChamps&Level=Level2&pdf=DCL02_U06_S02",
+	"type": "page"
+},
+{
+	"title": "SPRINT 6.2 - PICTURE AND PICTURE FRAME",
+	"uid": "DCL02-TP1-CHDRN23",
+	"description": "",
+	"route":"/pdf?course=DigiChamps&Level=Level2&pdf=DCL02_U06_S03",
+	"type": "page"
+},{
+	"title": "SPRINT 6.4 - FORMATTING IMAGES",
+	"uid": "DCL02-TP1-CHDRN24",
+	"description": "",
+	"route":"/pdf?course=DigiChamps&Level=Level2&pdf=DCL02_U06_S04",
+	"type": "page"
+},
+{
+	"title": "Insights from Data",
+	"uid": "DCL02-TP1-CHDRN25",
+	"description": "",
+	"route":"/pdf?course=DigiChamps&Level=Level2&pdf=DCL02_U07_Intro",
+	"type": "page"
+},
+{
+	"title": "SPRINT 7.1 - BAR GRAPH",
+	"uid": "DCL02-TP1-CHDRN26",
+	"description": "",
+	"route":"/pdf?course=DigiChamps&Level=Level2&pdf=DCL02_U07_S01",
+	"type": "page"
+},
+{
+	"title": "SPRINT 7.2 - PIE CHARTS",
+	"uid": "DCL02-TP1-CHDRN27",
+	"description": "",
+	"route":"/pdf?course=DigiChamps&Level=Level2&pdf=DCL02_U07_S02",
+	"type": "page"
+},
+{
+	"title": "Exercise",
+	"uid": "DCL02-TP1-CHDRN28",
+	"description": "",
+	"route":"/pdf?course=DigiChamps&Level=Level2&pdf=DCL02_U07_S03",
+	"type": "page"
+}
+					]
+				  }
+			 ]
+		}
+	}
+]
