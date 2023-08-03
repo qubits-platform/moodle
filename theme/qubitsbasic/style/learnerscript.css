@@ -1,3 +1,60 @@
 .qicon-chevron-down-thin.arrow::after {
     background: transparent !important;
 }
+
+body.reportdashboard {
+    background-color: #fff !important;
+}
+
+#widgetaction .htitle:hover .tooltiptext, .reportdashboard_header .htitle:hover .tooltiptext {
+    min-width: 170px !important;
+}
+body.reportdashboard span.coursefilter {
+    background: none !important;
+}
+#widgetaction a:hover {
+    background: none !important;
+    color: #fff !important;
+  
+}
+body.path-blocks-reportdashboard ul#switchrole_menu li:hover, body.path-blocks-reportdashboard ul.dropdown-content li:hover {
+  background: #116cbf !important;
+  color: #fff !important;
+}
+.tiles_information {
+    margin-bottom: 0 !important;
+}
+
+.instancename {
+    color: #2f3139!important;
+}
+
+
+
+.tiles_information h6, .tiles_information h1 {
+    margin-bottom: 0 !important;
+}
+
+body.reportdashboard .block_reporttiles .tiles_information table td {
+    padding-right: 15px !important;
+}
+
+body#page-blocks-learnerscript-viewreport #licenceresult span.dateicon, body#page-blocks-learnerscript-viewreport #licenceresult span.graphicon>a.htitle {
+    background-color: #116cbf !important;
+}
+
+body .editreport.viewreport-active a, body .editreport.design-active a, body .editreport.permissions-active a, body .editreport.edit_icon-active a, body .editreport.schreportform-active a, body .editreport.editicon-active a, body .editreport.addgraphs:focus {
+    color: #116cbf !important;
+}
+body.reportdashboard .block_reportdashboard .dataTables_paginate li.paginate_button.active {
+    background-color: #116cbf !important;
+}
+
+.spark-report svg {
+    vertical-align: top;
+}
+
+
+body.reportdashboard .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    background-color: #116cbf !important;
+}

@@ -635,8 +635,7 @@
   width: auto !important;
 }
 
-.card-text,
-.card-title {
+.my-course-section .card-text, .my-course-section .card-title {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
@@ -653,7 +652,7 @@
 // }
 .main-inner {
   position: relative;
-  height: 100vh;
+
   left: 140px;
   width: calc(100% - 260px) !important;
   transition: all 0.5s ease;
