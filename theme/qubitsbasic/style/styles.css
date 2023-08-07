@@ -96,10 +96,6 @@
   transition: all 0.5s ease;
 }
 
-.navbar.fixed-top {
-  height: 88px !important;
-  z-index: 50 !important;
-}
 
 /* .test:hover {
     color: red;
