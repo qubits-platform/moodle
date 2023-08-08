@@ -67,6 +67,13 @@
 .qicon-tick-mark:before {
   content: "\e90d";
 }
+.qicon-notifications {
+  color: #9e9ea2;
+  font-size: 20px !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
 .success-tick {
   position: absolute;
   right: 0%;
@@ -80,8 +87,10 @@
   color: #78c466;
 }
 .navbar.fixed-top {
-  height: 88px !important;
+  height: 70px !important;
   z-index: 50 !important;
+  border-bottom: 0px !important;
+  box-shadow: 0px 15px 10px -15px rgba(0,0,0,0.2) !important;
 }
 .pagetitle-left-alignment {
   margin-left: 280px;
@@ -290,6 +299,7 @@
     width: 100%;
     display: flex;
     align-items: center;
+    height: 69px;
 
     i {
       height: 50px;
@@ -305,12 +315,10 @@
       transition-delay: 0.1s;
     }
     .main-logo {
-      width: 75%;
-      padding: 23px 10px 22px 10px;
+      width: 65%;
+      margin-left: 15px;
     }
-    .compact-logo {
-      padding: 15px 10px 14px 10px;
-    }
+   
   }
   .arrow-left {
     cursor: pointer;
@@ -330,6 +338,7 @@
       position: relative;
       list-style: none;
       transition: all 0.4s ease;
+      margin-bottom: 20px;
 
       .sub-menu.blank {
         opacity: 1;
@@ -342,7 +351,7 @@
         padding-left: 4rem;
         a {
           font-size: $fontsize15;
-          padding: 15px 10px;
+          padding: 10px 10px;
           transition: all 0.3s ease;
         }
       }
@@ -373,7 +382,7 @@
         }
       }
       .icon {
-        height: 50px;
+        height: 38px;
         min-width: 70px;
         text-align: center;
         line-height: 50px;
@@ -381,6 +390,9 @@
         font-size: $fontsize20;
         cursor: pointer;
         transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
       .icon-link {
         display: flex;
@@ -388,7 +400,7 @@
         justify-content: space-between;
       }
       .sub-menu {
-        padding: 0px 0px 14px 70px;
+        padding: 0px 0px 0px 70px;
         background: #f7f7f7;
         display: none;
 
@@ -427,7 +439,8 @@
   }
   .compact-logo {
     display: none;
-    width: 100%;
+    width: 65%;
+    margin: 0px auto;
   }
   .hr-line {
     background-color: #dedede;
@@ -447,7 +460,7 @@
     }
   }
   .link_name {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
     white-space: nowrap;
     transition: all 0.4s ease;
