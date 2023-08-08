@@ -43,11 +43,11 @@
 #searchresults a,
 .content a:link,
 a:visited,
-a > .hljs {
+a>.hljs {
   color: var(--links);
 }
 
-a:hover > .hljs {
+a:hover>.hljs {
   text-decoration: underline;
 }
 
@@ -55,7 +55,7 @@ pre {
   position: relative;
 }
 
-pre > .buttons {
+pre>.buttons {
   position: absolute;
   z-index: 100;
   right: 0;
@@ -68,11 +68,11 @@ pre > .buttons {
   transition: visibility 0.1s linear, opacity 0.1s linear;
 }
 
-pre > .buttons i {
+pre>.buttons i {
   margin-left: 8px;
 }
 
-pre > .buttons button {
+pre>.buttons button {
   cursor: inherit;
   margin: 0 5px;
   padding: 3px 5px;
@@ -88,12 +88,12 @@ pre > .buttons button {
 }
 
 @media (pointer: coarse) {
-  pre > .buttons button {
+  pre>.buttons button {
     padding: 0.3rem 1rem;
   }
 }
 
-pre > code {
+pre>code {
   padding: 1rem;
 }
 
@@ -101,7 +101,7 @@ pre > code {
   padding: 0;
 }
 
-pre > .result {
+pre>.result {
   margin-top: 10px;
   background-color: #343232;
   color: #fefefe;
@@ -276,11 +276,12 @@ body {
 }
 
 .content h1:not(.menu-title) {
-  background-color: #47bbb6;
+  background-color: #1482e6;
   border-radius: 30px;
   position: relative;
   padding-left: 80px;
 }
+
 .content h1:not(.menu-title.heading-title) {
   padding-left: 20px;
 }
@@ -316,7 +317,6 @@ h6:target:before {
 }
 
 .content main {
-  background: #fef6db;
   padding: 20px;
   border-radius: 36px;
 }
@@ -325,7 +325,7 @@ pre {
   margin: 0.4em 0;
 }
 
-pre ~ p {
+pre~p {
   margin-top: 2em;
   margin-bottom: 0;
 }
