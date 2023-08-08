@@ -50,11 +50,6 @@ $qbassign->set_module_viewed();
 // Apply overrides.
 $qbassign->update_effective_access($USER->id);
 
-/* echo "<pre>";
-print_r($qbassign);
-echo "</pre>";
-exit; */
-
 // Get the qbassign class to
 // render the page.
 echo $qbassign->view(optional_param('action', '', PARAM_ALPHA));
