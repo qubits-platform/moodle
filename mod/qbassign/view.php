@@ -51,10 +51,12 @@ $qbassign->set_module_viewed();
 $qbassign->update_effective_access($USER->id);
 
 /* echo "<pre>";
-print_r($qbassign);
+print_r($qbassign->get_instance());
 echo "</pre>";
 exit; */
 
+$qbassign_instance = $qbassign->get_instance();
+$qbassign_uid = isset($qbassign_instance->uid) ? $qbassign_instance->uid : '';
 // Get the qbassign class to
 // render the page.
 echo $qbassign->view(optional_param('action', '', PARAM_ALPHA));
@@ -70,7 +72,7 @@ $qmurl = $CFG->wwwroot.'/mod/qbassign';
         },
         "page": "/AssignmentComponent",
         "query": {
-			"ufield" : "DPL01-TP1-CHDRN5"
+			"ufield" : "<?php echo $qbassign_uid; ?>"
 		},
         "buildId": "VdbRc0lzih9zOq3ECbG1c",
         "nextExport": true,
