@@ -299,13 +299,13 @@
   width: 260px;
   background: #f7f7f7;
   z-index: 106;
-  transition: all 0.5s ease;
+  transition: all 0.2s ease;
 
   .logo-details {
     width: 100%;
     display: flex;
     align-items: center;
-    height: 69px;
+    height: 70px;
 
     i {
       height: 50px;
@@ -635,7 +635,8 @@
     li.showMenu {
       .sub-menu {
         display: block;
-        margin: 0 !important;
+        margin: 10px 0px 0px 0px !important;
+        
       }
       i.arrow {
         transform: rotate(-180deg);
@@ -931,7 +932,6 @@ button.close:focus,
 .breadcrumb-item.active {
   color: #333333 !important;
   font-size: 20px !important;
-  font-weight: 600 !important;
 }
 .breadcrumb-item + .breadcrumb-item::before {
   font-size: 14px !important;
@@ -989,9 +989,9 @@ ol {
 .usermenu .dropdown.show #user-action-menu {
   margin-top: 15px !important;
 }
-#page-content {
-  margin-top: 20px !important;
-}
+// #page-content {
+//   margin-top: 20px !important;
+// }
 .dropdown-item.active,
 .dropdown-item:active,
 .dropdown-item:hover,
