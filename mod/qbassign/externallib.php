@@ -3366,7 +3366,6 @@ class mod_qbassign_external extends \mod_qbassign\external\external_api {
                      $onlinetext_default = $DB->insert_record('qbassign_plugin_config', $updatesactivityonline);
                  }           
              } 
-             purge_all_caches();
              $lti_updated = [                        
                          'message'=>'Success update here',
                          'assignment_id' =>$check_uniquefield->id,
@@ -3573,27 +3572,28 @@ class mod_qbassign_external extends \mod_qbassign\external\external_api {
                      $onlinetext_default = $DB->insert_record('qbassign_plugin_config', $updatesactivityonline);
                  }           
              }
-             purge_all_caches();
              $DB->set_field('qbassign', 'uid', $uid, array('id' => $returnid));
              $lti_updated = [                        
                              'message'=>'Success here',
                              'assignment_id' =>$returnid,
-                             'uniquefield' => $uid
+                             'uniquefield' => $uid,
+                             'cm_id' => $courseinsertid
                              ];
              return $lti_updated;
          }
      }
  
      public static function create_assignment_service_returns()
-     {
-         return new external_single_structure(
-                 array(
-                     'assignment_id' => new external_value(PARAM_TEXT, 'assignment id'),
-                     'message'=> new external_value(PARAM_TEXT, 'success message'),
-                     'uniquefield'=> new external_value(PARAM_TEXT, 'Unique Field')
-                 )
-             );
-     }
+    {
+        return new external_single_structure(
+                array(
+                    'assignment_id' => new external_value(PARAM_TEXT, 'assignment id'),
+                    'message'=> new external_value(PARAM_TEXT, 'success message'),
+                    'uniquefield'=> new external_value(PARAM_TEXT, 'Unique Field'),
+                    'cm_id' => new external_value(PARAM_INT, 'Course Module ID')
+                )
+            );
+    }
  
      public static function getbytevalue($val)
      {
@@ -4018,7 +4018,7 @@ class mod_qbassign_external extends \mod_qbassign\external\external_api {
                      }
                  }
              }
-             return array('message'=>'Added Success');
+             return array('message'=>'Added Success','cm_id' => $courseinsertid);
          }
      }
  
@@ -4026,7 +4026,8 @@ class mod_qbassign_external extends \mod_qbassign\external\external_api {
      {
          return new external_single_structure(
                  array(
-                     'message'=> new external_value(PARAM_TEXT, 'success message')
+                     'message'=> new external_value(PARAM_TEXT, 'success message'),
+                     'cm_id' => new external_value(PARAM_INT, 'Course Module ID')
                  )
              );
      }
