@@ -36,7 +36,8 @@ $context = context_module::instance($cm->id);
 require_capability('mod/qbassign:view', $context);
 
 $course_user_roles = enrol_get_course_users_roles($course->id);
-$all_roles = get_all_roles();
+$all_objroles = get_all_roles();
+$all_roles = json_decode(json_encode ( $all_objroles ) , true);
 echo "<pre>";
 print_r($all_roles);
 print_r($course_user_roles);
