@@ -35,6 +35,12 @@ $context = context_module::instance($cm->id);
 
 require_capability('mod/qbassign:view', $context);
 
+$course_user_roles = enrol_get_course_users_roles($course->id);
+$all_roles = get_all_roles();
+echo "<pre>";
+print_r($all_roles);
+print_r($course_user_roles);
+echo "</pre>"; exit;
 $qbassign = new qbassign($context, $cm, $course);
 $urlparams = array('id' => $id,
                   'action' => optional_param('action', '', PARAM_ALPHA),
@@ -49,11 +55,6 @@ $qbassign->set_module_viewed();
 
 // Apply overrides.
 $qbassign->update_effective_access($USER->id);
-
-/* echo "<pre>";
-print_r($qbassign->get_instance());
-echo "</pre>";
-exit; */
 
 $qbassign_instance = $qbassign->get_instance();
 $qbassign_uid = isset($qbassign_instance->uid) ? $qbassign_instance->uid : '';
