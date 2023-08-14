@@ -36,11 +36,15 @@ $context = context_module::instance($cm->id);
 require_capability('mod/qbassign:view', $context);
 
 $course_user_roles = enrol_get_course_users_roles($course->id);
-$all_objroles = get_all_roles();
-$all_roles = json_decode(json_encode ( $all_objroles ) , true);
+$teacher_id = 3;
+foreach($course_user_roles as $k => $cu_role){
+  $cur_role_obj = current($cu_role);
+  echo "<pre>"; print_r($cur_role_obj); echo "</pre>";
+}
+//$ct_key = array_search($teacher_id, array_column($course_user_roles, "roleid"));
 echo "<pre>";
-print_r($all_roles);
 print_r($course_user_roles);
+//print_r($ct_key);
 echo "</pre>"; exit;
 $qbassign = new qbassign($context, $cm, $course);
 $urlparams = array('id' => $id,
