@@ -35,17 +35,6 @@ $context = context_module::instance($cm->id);
 
 require_capability('mod/qbassign:view', $context);
 
-$course_user_roles = enrol_get_course_users_roles($course->id);
-$teacher_id = 3;
-foreach($course_user_roles as $k => $cu_role){
-  $cur_role_obj = current($cu_role);
-  echo "<pre>"; print_r($cur_role_obj); echo "</pre>";
-}
-//$ct_key = array_search($teacher_id, array_column($course_user_roles, "roleid"));
-echo "<pre>";
-print_r($course_user_roles);
-//print_r($ct_key);
-echo "</pre>"; exit;
 $qbassign = new qbassign($context, $cm, $course);
 $urlparams = array('id' => $id,
                   'action' => optional_param('action', '', PARAM_ALPHA),
@@ -61,47 +50,6 @@ $qbassign->set_module_viewed();
 // Apply overrides.
 $qbassign->update_effective_access($USER->id);
 
-$qbassign_instance = $qbassign->get_instance();
-$qbassign_uid = isset($qbassign_instance->uid) ? $qbassign_instance->uid : '';
 // Get the qbassign class to
 // render the page.
 echo $qbassign->view(optional_param('action', '', PARAM_ALPHA));
-$qmurl = $CFG->wwwroot.'/mod/qbassign';
-?>
-<link rel="stylesheet" href="<?php echo $qmurl; ?>/css/Chapter.css" />
-<link rel="stylesheet" href="<?php echo $qmurl; ?>/css/highlight.css" />
-<div id="__next"></div>
-<script id="__NEXT_DATA__" type="application/json">
-      {
-        "props": {
-          "pageProps": {}
-        },
-        "page": "/AssignmentComponent",
-        "query": {
-			"ufield" : "<?php echo $qbassign_uid; ?>"
-		},
-        "buildId": "VdbRc0lzih9zOq3ECbG1c",
-        "nextExport": true,
-        "autoExport": true,
-        "isFallback": false,
-        "scriptLoader": []
-      }
-    </script>
-<script>
-//<![CDATA[
-var murl = "<?php echo $qmurl; ?>";
-require(["jquery", "jqueryui"], function($, jqui){
-	$.getScript(`${murl}/_next/static/chunks/613-e1596a16f7f4258b.js`)
-	$.getScript(`${murl}/_next/static/chunks/framework-2c79e2a64abdb08b.js`)
-	$.getScript(`${murl}/_next/static/chunks/main-4d96db3776cc5fae.js`)
-	$.getScript(`${murl}/_next/static/chunks/pages/AssignmentComponent-5940078c2dc49145.js`)
-	$.getScript(`${murl}/_next/static/chunks/pages/index-d53433006dcaa3a2.js`)
-	$.getScript(`${murl}/_next/static/chunks/pages/_app-aea6920bd27938ca.js`)
-	$.getScript(`${murl}/_next/static/chunks/pages/_error-3986dd5834f581dc.js`)
-	$.getScript(`${murl}/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js`)
-	$.getScript(`${murl}/_next/static/chunks/webpack-c4acd79e87956a0e.js`)
-	$.getScript(`${murl}/_next/static/VdbRc0lzih9zOq3ECbG1c/_buildManifest.js`)
-	$.getScript(`${murl}/_next/static/VdbRc0lzih9zOq3ECbG1c/_ssgManifest.js`)
-});
-//]]>
-</script>
