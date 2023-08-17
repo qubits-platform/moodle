@@ -216,6 +216,7 @@ class local_qbcourse extends external_api {
 
             $DB->set_field('course_sections', 'name', trim($sections[$s]->title), array('course' => $cid,'section'=>$s+1));
             $DB->set_field('course_sections', 'uid', trim($sections[$s]->uid), array('course' => $cid,'section'=>$s+1));
+
             self::createpageactivity($cid,$sections,$s);
            }           
            else{
@@ -230,6 +231,9 @@ class local_qbcourse extends external_api {
                 self::updatepageactivity($cid,$sections,$s);
             }
            }
+
+           if(isset($sections[$s]->visiblefor))
+            self::setvisibility($cid,$sections[$s]->visiblefor,trim($sections[$s]->uid));
            
         }
 
@@ -278,7 +282,7 @@ class local_qbcourse extends external_api {
                         if(is_file($assfile)){
                             $cm_id = self::createqbassignment($activities[$a],$assfile,$cid,$sid+1);
 
-                            if(!empty($cm_id) and isset($cm_id['cm_id']))
+                            if(!empty($cm_id) and isset($cm_id['cm_id']) and $cm_id['cm_id'] != '')
                             $acts = $acts.','.$cm_id['cm_id'];
                         }
                     }
@@ -289,7 +293,7 @@ class local_qbcourse extends external_api {
                         if(is_file($quizfile)){
                             $cm_id = self::createqbquiz($activities[$a],$quizfile,$cid,$sid+1);
 
-                            if(!empty($cm_id) and isset($cm_id['cm_id']))
+                            if(!empty($cm_id) and isset($cm_id['cm_id']) and $cm_id['cm_id'] != '')
                             $acts = $acts.','.$cm_id['cm_id'];
                         }
                     }
@@ -486,6 +490,37 @@ class local_qbcourse extends external_api {
         catch(Error $e) {
             return;
         }
+    }
+
+    public static function setvisibility($cid,$visiblefor,$uid){
+
+        global $DB;
+
+        $visible = '';
+
+        $visiblities = explode(',',$visiblefor);
+        $roles = '';
+        for($v=0;$v<count($visiblities);$v++){
+
+            if(strtolower(trim($visiblities[$v])) == 'teacher')
+            $roles = $roles.',{"type":"role","id":3}';
+            elseif(strtolower(trim($visiblities[$v])) == 'student')
+            $roles = $roles.',{"type":"role","id":5}';
+            elseif(strtolower(trim($visiblities[$v])) == 'manager')
+            $roles = $roles.',{"type":"role","id":1}';
+            elseif(strtolower(trim($visiblities[$v])) == 'non teacher')
+            $roles = $roles.',{"type":"role","id":4}';
+        }
+
+        if($roles != ''){
+            $visible = '{"op":"|","c":[';            
+            $roles = preg_replace('/,/', '', $roles, 1);
+            $visible = $visible.$roles;
+            $visible = $visible.'],"show":true}';
+        }
+
+        $DB->set_field('course_sections', 'availability', $visible, array('course' => $cid,'uid'=>$uid));
+
     }
     
 
