@@ -232,8 +232,8 @@ class local_qbcourse extends external_api {
             }
            }
 
-           if(isset($sections[$s]->visiblefor))
-            self::setvisibility($cid,$sections[$s]->visiblefor,trim($sections[$s]->uid));
+           if(isset($sections[$s]->teacheronly))
+            self::setvisibility($cid,$sections[$s]->teacheronly,trim($sections[$s]->uid));
            
         }
 
@@ -496,29 +496,11 @@ class local_qbcourse extends external_api {
 
         global $DB;
 
-        $visible = '';
+        $visible = NULL;
 
-        $visiblities = explode(',',$visiblefor);
-        $roles = '';
-        for($v=0;$v<count($visiblities);$v++){
-
-            if(strtolower(trim($visiblities[$v])) == 'teacher')
-            $roles = $roles.',{"type":"role","id":3}';
-            elseif(strtolower(trim($visiblities[$v])) == 'student')
-            $roles = $roles.',{"type":"role","id":5}';
-            elseif(strtolower(trim($visiblities[$v])) == 'manager')
-            $roles = $roles.',{"type":"role","id":1}';
-            elseif(strtolower(trim($visiblities[$v])) == 'non teacher')
-            $roles = $roles.',{"type":"role","id":4}';
-        }
-
-        if($roles != ''){
-            $visible = '{"op":"|","c":[';            
-            $roles = preg_replace('/,/', '', $roles, 1);
-            $visible = $visible.$roles;
-            $visible = $visible.'],"show":true}';
-        }
-
+        if($visiblefor == 'yes')
+        $visible = '{"op":"&","c":[{"type":"role","id":3}],"showc":[true]}'; 
+        
         $DB->set_field('course_sections', 'availability', $visible, array('course' => $cid,'uid'=>$uid));
 
     }
