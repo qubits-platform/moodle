@@ -84,6 +84,8 @@ class uu_progress_tracker {
             'suspended' => get_string('suspended', 'auth'),
             'theme' => get_string('theme'),
             'deleted' => get_string('delete'),
+            'userclass' => 'User Class',
+            'usersection' => 'User Section'
         ];
         $this->columns = array_keys($this->headers);
     }
@@ -216,6 +218,7 @@ function uu_validate_user_upload_columns(csv_import_reader $cir, $stdfields, $pr
         'type',
     ];
     $specialfieldsregex = "/^(" . implode('|', $acceptedfields) . ")\d+$/";
+    $qubitsaddflds = array("userclass", "usersection");
 
     foreach ($columns as $key=>$unused) {
         $field = $columns[$key];
@@ -237,7 +240,11 @@ function uu_validate_user_upload_columns(csv_import_reader $cir, $stdfields, $pr
             // special fields for enrolments
             $newfield = $lcfield;
 
-        } else {
+        } else if(in_array($lcfield, $qubitsaddflds)){
+            // For Qubits Class and Sections
+            $newfield = $lcfield;
+        } 
+        else {
             $cir->close();
             $cir->cleanup();
             throw new \moodle_exception('invalidfieldname', 'error', $returnurl, $field);
