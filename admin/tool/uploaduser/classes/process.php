@@ -463,16 +463,11 @@ class process {
         }
 
         $qsite_user = new \stdClass;
-        //$userclsdata = $DB->get_record("local_qubits_classes", array("idnumber" => $user->userclass));
-        //$usersecdata = $DB->get_record("local_qubits_sections", array("idnumber" => $user->usersection));
-        //$qsite_user->class_id = $userclsdata->id;
-        //$qsite_user->section_id = $usersecdata->id;
-
-         $usersysrole = '';
-         $aclasses = [];
-         $asections = [];
-         $aclass_sections = [];
-         foreach ($this->get_file_columns() as $column) {
+        $usersysrole = '';
+        $aclasses = [];
+        $asections = [];
+        $aclass_sections = [];
+        foreach ($this->get_file_columns() as $column) {
             if (preg_match('/^sysrole\d+$/', $column)) {
                 $i = substr($column, 7);
                 if (!empty($user->$column)) {
@@ -493,10 +488,16 @@ class process {
                 $this->userserrors++;
                 return;
             }
-            $userclsdata = $DB->get_record("local_qubits_classes", array("idnumber" => $userclass));
-            if($userclsdata)
-              $aclasses[] = $userclsdata->id;
-            //echo $i." class ".$userclass."<br/>";
+            if(!empty($userclass)){
+                $userclsdata = $DB->get_record("local_qubits_classes", array("idnumber" => $userclass));
+                if($userclsdata){
+                    $aclasses[] = $userclsdata->id;
+                } else {
+                    $this->upt->track('status', 'userclass'.$i.' is not in Database', 'error');
+                    $this->userserrors++;
+                    return;
+                }
+            }
         }
 
         // Find Usersections
@@ -511,10 +512,16 @@ class process {
                 $this->userserrors++;
                 return;
             }
-            $usersecdata = $DB->get_record("local_qubits_sections", array("idnumber" => $usersection));
-            if($usersecdata)
-              $asections[] = $usersecdata->id;
-            //echo $i." sections ".$usersection."<br/>";
+            if(!empty($usersection)){
+                $usersecdata = $DB->get_record("local_qubits_sections", array("idnumber" => $usersection));
+                if($usersecdata){
+                    $asections[] = $usersecdata->id;
+                } else {
+                    $this->upt->track('status', 'usersection'.$i.' is not in Database', 'error');
+                    $this->userserrors++;
+                    return;
+                }
+            }
         }
         
         if(count($aclasses) != count($asections)){
