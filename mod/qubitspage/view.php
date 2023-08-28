@@ -76,84 +76,32 @@ if ($inpopup and $page->display == RESOURCELIB_DISPLAY_POPUP) {
     }
 }
 $PAGE->activityheader->set_attrs($activityheader);
+$PAGE->set_pagelayout('executablebook');
 echo $OUTPUT->header();
-$content = file_rewrite_pluginfile_urls($page->content, 'pluginfile.php', $context->id, 'mod_qubitspage', 'content', $page->revision);
-$formatoptions = new stdClass;
-$formatoptions->noclean = true;
-$formatoptions->overflowdiv = true;
-$formatoptions->context = $context;
-$content = format_text($content, $page->contentformat, $formatoptions);
-$templatecontext = array(
-    "PYODIDE_INDEX_URL" => "https://cdn.jsdelivr.net/pyodide/v0.21.3/full/",
-    "tickimgurl" => new moodle_url("/mod/qubitspage/pix/chapter-tick.png"),
-    "staticbasic" => new moodle_url("/mod/qubitspage/static/")
-);
-//echo $OUTPUT->box($content, "generalbox center clearfix", "qubitspage");
 $pageslug = trim(strip_tags($page->intro));
+$qmurl = $CFG->wwwroot . '/mod/qubitspage';
+$pq = parse_url($pageslug, PHP_URL_QUERY);
+parse_str(html_entity_decode($pq), $parsedpq);
 ?>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<script src="https://cdn.jsdelivr.net/gh/qubits-platform/sqlite-wasm@master/sqlite3.js"></script>
-<script src="https://cdn.jsdelivr.net/pyodide/v0.21.3/full/pyodide.js"></script>
-<link rel="preload" href="<?php echo $CFG->wwwroot; ?>/mod/qubitspage/_next/static/css/764a282bd97c50ec.css" as="style" />
-<link rel="stylesheet" href="<?php echo $CFG->wwwroot; ?>/mod/qubitspage/_next/static/css/764a282bd97c50ec.css" data-n-g="" />
-<noscript data-n-css=""></noscript>
-<script defer="" nomodule="" src="<?php echo $CFG->wwwroot; ?>/mod/qubitspage/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script>
-<script src="<?php echo $CFG->wwwroot; ?>/mod/qubitspage/_next/static/chunks/webpack-b6a0d4afbf757f34.js" defer="">
-</script>
-<script src="<?php echo $CFG->wwwroot; ?>/mod/qubitspage/_next/static/chunks/framework-2c79e2a64abdb08b.js" defer="">
-</script>
-<script src="<?php echo $CFG->wwwroot; ?>/mod/qubitspage/_next/static/chunks/main-c3c47d789570afbb.js" defer=""></script>
-<script src="<?php echo $CFG->wwwroot; ?>/mod/qubitspage/_next/static/chunks/pages/_app-36098dacfc4cdfc8.js" defer="">
-</script>
-<script src="<?php echo $CFG->wwwroot; ?>/mod/qubitspage/_next/static/chunks/pages/index-6bad1b3ea3f5e85f.js" defer="">
-</script>
-<script src="<?php echo $CFG->wwwroot; ?>/mod/qubitspage/_next/static/yo32rx2DlR4M--pvQTybe/_buildManifest.js" defer="">
-</script>
-<script src="<?php echo $CFG->wwwroot; ?>/mod/qubitspage/_next/static/yo32rx2DlR4M--pvQTybe/_ssgManifest.js" defer="">
-
-</script>
-
-
-<script src="<?php echo $CFG->wwwroot; ?>/mod/qubitspage/_next/static/chunks/pages/Chapter2-1a347203221c73c2.js" defer="">
-</script>
-<script src="<?php echo $CFG->wwwroot; ?>/mod/qubitspage/_next/static/chunks/pages/Chapter3-c56d845d803f27df.js" defer="">
-</script>
-
-<script src="<?php echo $CFG->wwwroot; ?>/mod/qubitspage/_next/static/chunks/8a28b14e.76beef9b9875f983.js" defer="">
-</script>
-<script src="<?php echo $CFG->wwwroot; ?>/mod/qubitspage/_next/static/chunks/163.6a4972002b5c8c3d.js" defer="">
-</script>
-<script src="<?php echo $CFG->wwwroot; ?>/mod/qubitspage/_next/static/chunks/873.3a28d5c74883a08b.js" defer="">
-</script>
-
-
-
-<script id="__NEXT_DATA__" type="application/json">
-    {
-        "props": {
-            "pageProps": {}
-        },
-        "page": "<?php echo $pageslug; ?>",
-        "query": {},
-        "buildId": "yo32rx2DlR4M--pvQTybe",
-        "nextExport": true,
-        "autoExport": true,
-        "isFallback": false,
-        "scriptLoader": []
-    }
-</script>
-
-
-
 <div id="__next"></div>
+<script id="__NEXT_DATA__" type="application/json">
+	{
+		"props": {
+			"pageProps": {},
+			"__N_SSG": true
+		},
 
+
+		"page": "/pdf",
+		"query": <?php echo json_encode($parsedpq); ?>,
+		"buildId": "G7GxyPIfk8vrAIEzQ0oJE",
+		"isFallback": false,
+		"gsp": true,
+		"scriptLoader": []
+	}
+</script>
 
 <?php
-
-if (!isset($options['printlastmodified']) || !empty($options['printlastmodified'])) {
-    $strlastmodified = get_string("lastmodified");
-    echo html_writer::div("$strlastmodified: " . userdate($page->timemodified), 'modified');
-}
-
 echo $OUTPUT->footer();
+?>

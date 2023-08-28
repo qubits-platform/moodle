@@ -1,4 +1,4 @@
-<?php
+<?php 
 // This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
@@ -25,8 +25,15 @@
  */
 
 defined('MOODLE_INTERNAL') || die;
-
+global $CFG;
 require_once("$CFG->libdir/externallib.php");
+require_once("$CFG->libdir/moodlelib.php");
+require_once("$CFG->libdir/enrollib.php");
+require_once($CFG->dirroot . '/mod/qbassign/lib.php');
+require_once($CFG->dirroot . '/mod/qbassign/locallib.php');
+require_once($CFG->dirroot . '/course/lib.php');
+require_once("$CFG->dirroot/user/externallib.php");
+
 
 class local_qubitsbook_external extends external_api {
 
@@ -82,4 +89,5 @@ class local_qubitsbook_external extends external_api {
         );
     }
 
+    
 }
