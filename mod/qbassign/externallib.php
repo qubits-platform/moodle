@@ -3373,7 +3373,8 @@ class mod_qbassign_external extends \mod_qbassign\external\external_api {
              $assign_updated = [                        
                          'message'=>'Successfuly updated assignment',
                          'assignment_id' =>$check_uniquefield->id,
-                         'uniquefield' => $uid
+                         'uniquefield' => $uid,
+                         'cm_id' => $check_coursemodulefield->id
                          ];
              return $assign_updated;
          }        
@@ -3871,7 +3872,9 @@ class mod_qbassign_external extends \mod_qbassign\external\external_api {
                      }
                  }
              }
-             return array('message'=>'updated Success');
+             
+             return array('message'=>'updated Success','cm_id' => $mod_id);
+             
          }
          else
          {
