@@ -336,7 +336,7 @@ class local_qbcourse extends external_api {
 
                             $course_module = $DB->get_record('course_modules', array('course' => $cid,'module' => self::qbget_module_id(),'instance' => $rec->id));
 
-                            if($$course_module)
+                            if($course_module)
                             $acts = $acts.','.$course_module->id;
                         }
                         else{
