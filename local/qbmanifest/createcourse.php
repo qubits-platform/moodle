@@ -232,8 +232,8 @@ class local_qbcourse extends external_api {
             }
            }
 
-           if(isset($sections[$s]->teacheronly))
-            self::setvisibility($cid,$sections[$s]->teacheronly,trim($sections[$s]->uid));
+         /*  if(isset($sections[$s]->teacheronly))
+            self::setvisibility($cid,$sections[$s]->teacheronly,trim($sections[$s]->uid)); */
            
         }
 
