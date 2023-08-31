@@ -334,10 +334,7 @@ class local_qbcourse extends external_api {
                             else
                             $DB->set_field('qubitspage', 'content', $activities[$a]->content, array('uid' => $activities[$a]->uid));
 
-                            $course_module = $DB->get_record('course_modules', array('course' => $cid,'module' => self::qbget_module_id(),'instance' => $rec->id));
-
-                            if($course_module)
-                            $acts = $acts.','.$course_module->id;
+                            
                         }
                         else{
 
@@ -373,9 +370,9 @@ class local_qbcourse extends external_api {
 
 
                  if($acts != ''){     
-                    /*if($sec->sequence != '')               
+                    if($sec->sequence != '')               
                     $acts = $sec->sequence.$acts;
-                    else */
+                    else 
                     $acts = preg_replace('/,/', '', $acts, 1);
                     $DB->set_field('course_sections', 'sequence', $acts, array('id' => $sec->id));
                 }
