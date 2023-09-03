@@ -52,6 +52,7 @@ use enrol_oneroster\local\entities\user as user_entity;
 use moodle_url;
 use progress_trace;
 use stdClass;
+require_once($CFG->dirroot.'/group/lib.php');
 
 /**
  * One Roster v1p1 client.
@@ -167,7 +168,7 @@ trait oneroster_client {
 
         // Only fetch users last modified in the past day.
         // All timezones in One Roster are Zulu.
-        $this->sync_users_in_schools($schoolidstosync, $onlysince);
+        // $this->sync_users_in_schools($schoolidstosync, $onlysince);
 
         // Fetch the details of all enrolment instances before running the sync.
         $this->cache_enrolment_instances();
@@ -350,10 +351,10 @@ EOF;
             // on the sourcedId of the Class entity.
         } 
 
-        $this->get_trace()->output("Fetching enrolments data", 3);
+        /* $this->get_trace()->output("Fetching enrolments data", 3);
         foreach ($school->get_enrollments() as $enrollment) {
             $this->update_or_create_enrolment($enrollment);
-        }
+        } */
     }
 
     /**
@@ -490,12 +491,31 @@ EOF;
         $remotecourse = $entity->get_course_data();
         $qbmcoursedata = $this->get_qbit_mdata($remotecourse->idnumber);
         $qbmcourses = $qbmcoursedata["qubitscourses"];
-        foreach($qbmcourses as $qbmcourse) {
+        foreach($qbmcourses as $k => $qbmcourse) {
             $localcourse = $DB->get_record('course', [
                 'idnumber' => strtolower($qbmcourse),
             ]);
-            $this->ensure_course_enrolment_instance_exists($localcourse);
+
+            $qubitsgroup = $qbmcoursedata["qubitsgroup"][$k];
+             // Course Group created or updated
+             $groupidnumber = $qubitsgroup;
+             $groupid = 0;
+             if (!$group = $DB->get_record('groups', array('idnumber'=>$groupidnumber))) {
+                 $groupdata = new stdClass;
+                 $groupdata->courseid = $localcourse->id;
+                 $groupdata->name = $groupidnumber;
+                 $groupdata->idnumber = $groupidnumber;
+                 $groupdata->description = "Group $groupidnumber";
+                 $groupdata->descriptionformat = 1;
+                 $groupid = groups_create_group($groupdata);
+             }else{
+                 $groupid = $group->id;
+             }
+
+             $this->ensure_course_enrolment_instance_exists($localcourse);
         }
+        
+
     }
 
     /**
