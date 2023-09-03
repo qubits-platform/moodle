@@ -90,6 +90,10 @@ trait oneroster_client {
     /** @var array List of Qubits mapped courses */
     protected $qbs_mcourses = [];
 
+    /** @var array List of Qubits mapped groups */
+    protected $qbs_mgroups = [];
+
+
     /**
      * Get the Base URL for this One Roster API version.
      *
@@ -168,7 +172,7 @@ trait oneroster_client {
 
         // Only fetch users last modified in the past day.
         // All timezones in One Roster are Zulu.
-        // $this->sync_users_in_schools($schoolidstosync, $onlysince);
+        $this->sync_users_in_schools($schoolidstosync, $onlysince);
 
         // Fetch the details of all enrolment instances before running the sync.
         $this->cache_enrolment_instances();
@@ -317,7 +321,7 @@ EOF;
         $sourceid = $schoolobj->sourcedId;
         $this->set_qbcourses($sourceid);
 
-        // $this->update_or_create_category($school); // Qubits
+        // $this->update_or_create_category($school); // Hide by Qubits
 
         // Qubits Need to hide the School data
         /* $this->get_trace()->output("Fetching term data", 3);
@@ -351,10 +355,10 @@ EOF;
             // on the sourcedId of the Class entity.
         } 
 
-        /* $this->get_trace()->output("Fetching enrolments data", 3);
+        $this->get_trace()->output("Fetching enrolments data", 3);
         foreach ($school->get_enrollments() as $enrollment) {
             $this->update_or_create_enrolment($enrollment);
-        } */
+        }
     }
 
     /**
@@ -797,6 +801,9 @@ EOF;
 
     protected function update_or_create_enrolment(enrollment_representation $entity) {
         global $DB;
+        
+        // Set the Groups by Qubits
+        $this->set_course_groups();
 
         // Fetch the user details for this enrolment.
         $userentity = $entity->get_user_entity();
@@ -824,10 +831,15 @@ EOF;
         $cdata = $scourse->get_course_data();
         $mpcdata =  $this->get_qbit_mdata($cdata->idnumber);
         $courses = $mpcdata["qubitscourses"];
-        foreach($courses as $cshname){
+        foreach($courses as $k => $cshname){
             $course =  $DB->get_record('course', ["shortname" => $cshname]);
             //$instance = $this->get_course_enrolment_instance($course);
             $instance = $this->instances[$course->idnumber];
+
+            // Fetch Group data
+            $grpname = $mpcdata["qubitsgroup"][$k];
+            $grpid = $this->qbs_mgroups[$grpname];
+
             if ($instance === null) {
                 $this->get_trace()->output("No enrolment instance could be found or created for course '{$course->idnumber}'", 3);
                 return;
@@ -889,6 +901,7 @@ EOF;
                 );
                 $this->add_metric('enrollment', 'create');
             }
+            groups_add_member($grpid, $moodleuserid);
 
         }
     }
@@ -1185,6 +1198,22 @@ EOF;
             $course = $this->qbs_mcourses[$ckey];
         }
         return $course;
+    }
+
+    protected function set_course_groups(){
+        global $DB;
+        $likeidnumber = $DB->sql_like('idnumber', ':idnum');
+        $groups = $DB->get_records_sql(
+            "SELECT id, idnumber FROM {groups} WHERE {$likeidnumber}",
+            [
+                'idnum' => 'dns%',
+            ]
+        );
+        
+        foreach($groups as $group){
+            $this->qbs_mgroups[$group->idnumber] = $group->id;
+        }
+        
     }
 
 }
