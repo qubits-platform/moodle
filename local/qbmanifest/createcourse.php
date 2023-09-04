@@ -216,6 +216,7 @@ class local_qbcourse extends external_api {
 
             $DB->set_field('course_sections', 'name', trim($sections[$s]->title), array('course' => $cid,'section'=>$s+1));
             $DB->set_field('course_sections', 'uid', trim($sections[$s]->uid), array('course' => $cid,'section'=>$s+1));
+
             self::createpageactivity($cid,$sections,$s);
            }           
            else{
@@ -230,6 +231,9 @@ class local_qbcourse extends external_api {
                 self::updatepageactivity($cid,$sections,$s);
             }
            }
+
+         /*  if(isset($sections[$s]->teacheronly))
+            self::setvisibility($cid,$sections[$s]->teacheronly,trim($sections[$s]->uid)); */
            
         }
 
@@ -278,7 +282,7 @@ class local_qbcourse extends external_api {
                         if(is_file($assfile)){
                             $cm_id = self::createqbassignment($activities[$a],$assfile,$cid,$sid+1);
 
-                            if(!empty($cm_id) and isset($cm_id['cm_id']))
+                            if(!empty($cm_id) and isset($cm_id['cm_id']) and $cm_id['cm_id'] != '')
                             $acts = $acts.','.$cm_id['cm_id'];
                         }
                     }
@@ -289,7 +293,7 @@ class local_qbcourse extends external_api {
                         if(is_file($quizfile)){
                             $cm_id = self::createqbquiz($activities[$a],$quizfile,$cid,$sid+1);
 
-                            if(!empty($cm_id) and isset($cm_id['cm_id']))
+                            if(!empty($cm_id) and isset($cm_id['cm_id']) and $cm_id['cm_id'] != '')
                             $acts = $acts.','.$cm_id['cm_id'];
                         }
                     }
@@ -329,6 +333,8 @@ class local_qbcourse extends external_api {
                             $DB->set_field('qubitspage', 'content', '<p>/</p>', array('uid' => $activities[$a]->uid));
                             else
                             $DB->set_field('qubitspage', 'content', $activities[$a]->content, array('uid' => $activities[$a]->uid));
+
+                            
                         }
                         else{
 
@@ -366,7 +372,7 @@ class local_qbcourse extends external_api {
                  if($acts != ''){     
                     if($sec->sequence != '')               
                     $acts = $sec->sequence.$acts;
-                    else
+                    else 
                     $acts = preg_replace('/,/', '', $acts, 1);
                     $DB->set_field('course_sections', 'sequence', $acts, array('id' => $sec->id));
                 }
@@ -430,7 +436,7 @@ class local_qbcourse extends external_api {
         global $DB;
         $secid = 0;
 
-        $sectiondb = $DB->get_record_sql("SELECT * FROM {course_sections} WHERE course=? order by id desc",[$cid]);
+        $sectiondb = $DB->get_record_sql("SELECT * FROM {course_sections} WHERE course=? order by section desc",[$cid]);
         if($section){
         $sectiondata = new stdClass();
         $sectiondata->course = $cid;
@@ -486,6 +492,19 @@ class local_qbcourse extends external_api {
         catch(Error $e) {
             return;
         }
+    }
+
+    public static function setvisibility($cid,$visiblefor,$uid){
+
+        global $DB;
+
+        $visible = NULL;
+
+        if($visiblefor == 'yes')
+        $visible = '{"op":"&","c":[{"type":"role","id":3}],"showc":[true]}'; 
+        
+        $DB->set_field('course_sections', 'availability', $visible, array('course' => $cid,'uid'=>$uid));
+
     }
     
 
