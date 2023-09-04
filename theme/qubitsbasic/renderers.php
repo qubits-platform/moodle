@@ -76,4 +76,24 @@ class theme_qubitsbasic_mod_quiz_edit_renderer extends editquiz{
 
     }
 
+    public function question_remove_icon(structure $structure, $slot, $pageurl) {
+
+        global $COURSE, $USER;
+
+        $context = context_course::instance($COURSE->id, IGNORE_MISSING);
+        $roles = get_user_roles($context, $USER->id, false);
+        $role = key($roles);       
+
+        if($roles[$role]->shortname == "editingteacher" || $roles[$role]->shortname == "teacher")
+        return '';
+        
+        $url = new \moodle_url($pageurl, array('sesskey' => sesskey(), 'remove' => $slot));
+        $strdelete = get_string('delete');
+
+        $image = $this->pix_icon('t/delete', $strdelete);
+
+        return $this->action_link($url, $image, null, array('title' => $strdelete,
+                    'class' => 'cm-edit-action editing_delete', 'data-action' => 'delete'));
+    }
+
 }
