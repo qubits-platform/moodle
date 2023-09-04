@@ -32,6 +32,12 @@ require_once("$CFG->dirroot/user/externallib.php");
 require_once("$CFG->dirroot/mod/qbassign/lib.php");
 require_once("$CFG->dirroot/mod/qbassign/locallib.php");
 require_once("$CFG->dirroot/mod/quiz/lib.php");
+require_once("$CFG->dirroot/mod/qbassign/submission/file/locallib.php");
+require_once("$CFG->dirroot/mod/qbassign/qbassignmentplugin.php");
+require_once("$CFG->dirroot/files/externallib.php");
+require_once("$CFG->libdir/filelib.php");
+require_once("$CFG->libdir/completionlib.php");
+
 /**
  * qbassign functions
  * @copyright 2012 Paul Charsley
@@ -1816,10 +1822,10 @@ class mod_qbassign_external extends \mod_qbassign\external\external_api {
     public static function save_submission($qbassignmentid, $plugindata) {
         global $CFG, $USER;
 
-       /*$params = self::validate_parameters(self::save_submission_parameters(),
+        $params = self::validate_parameters(self::save_submission_parameters(),
                                             array('qbassignmentid' => $qbassignmentid,
-                                                  'plugindata' => $plugindata)); */
-        $params['plugindata'] = $plugindata;
+                                                  'plugindata' => $plugindata)); 
+        
         list($qbassignment, $course, $cm, $context) = self::validate_qbassign($params['qbassignmentid']);
 
         $notices = array();
@@ -4154,4 +4160,88 @@ class mod_qbassign_external extends \mod_qbassign\external\external_api {
                  )
              );
      }
+
+    public static function studentfilesubmission_parameters()
+    {
+        return new external_function_parameters(
+            array(
+            'assignmentid' => new external_value(PARAM_INT, 'Assignment Id',VALUE_REQUIRED),
+            'fileareainfo' => new external_value(PARAM_RAW, 'My File',VALUE_REQUIRED), 
+            'filename' => new external_value(PARAM_TEXT, 'File Name',VALUE_REQUIRED),            
+            'courseid' => new external_value(PARAM_INT, 'Course ID',VALUE_REQUIRED)
+           )
+        );
+    }
+
+    public static function studentfilesubmission($assignmentid,$fileareainfo,$filename,$courseid)
+    { 
+        global $DB,$USER,$CONTEXT,$CFG;
+        //Get activity Module details
+        $get_coursefield = $DB->get_record('course_modules', array('instance' => $assignmentid,'course' => $courseid));
+        $moduleid = $get_coursefield->id;
+        $contextsystem = context_module::instance($moduleid);
+        $checkenrol = is_enrolled($contextsystem, $USER, 'mod/qbassignment:submit');
+        if($checkenrol)
+        {
+            $token = $DB->get_record('external_tokens', array("id" =>2));
+            if(!empty($token))
+            {
+
+                $userid = $USER->id;
+                $DB->set_field('external_tokens', 'userid', $userid, array('id' => 2));
+
+                $get_context = $DB->get_record('context', array('contextlevel' => 30,'instanceid' => $userid));
+               
+                $obj = new core_files_external();
+                $filecontent = $fileareainfo;
+
+                $filecontent= $fileareainfo;
+                $filename = $filename;
+
+                $filedetails = $obj::upload($get_context->id,'user','draft',0,'/',$filename,$filecontent,'',$get_context->instanceid);
+                if(!empty($filedetails) and isset($filedetails['itemid']))
+                {
+                    $curl = curl_init();
+
+                        curl_setopt_array($curl, array(
+                        CURLOPT_URL => $CFG->wwwroot.'/webservice/rest/server.php?wstoken='.$token->token.'&moodlewsrestformat=json&wsfunction=mod_qbassign_save_submission&qbassignmentid='.$assignmentid.'&plugindata[files_filemanager]='.$filedetails['itemid'],
+                        CURLOPT_RETURNTRANSFER => true,
+                        CURLOPT_ENCODING => '',
+                        CURLOPT_MAXREDIRS => 10,
+                        CURLOPT_TIMEOUT => 0,
+                        CURLOPT_FOLLOWLOCATION => true,
+                        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+                        CURLOPT_CUSTOMREQUEST => 'POST',
+                        ));
+
+                        $response = curl_exec($curl);
+                        curl_close($curl);
+                        return array('code'=>200,'message'=>'Submission Success');
+                }
+                else{
+                    return array('code'=>404,'message'=>'File not created.');
+                }
+                    
+            }
+            else
+            {
+                return array('code'=>404,'message'=>'API service not enabled on the system.');
+            }
+        }
+        else
+        {
+            return array('code'=>404,'message'=>'This user not enrolled.');
+        }
+         
+    }
+
+    public static function studentfilesubmission_returns()
+    {
+        return new external_single_structure(
+                array(
+                    'message'=> new external_value(PARAM_TEXT, 'success message'),
+                    'code'=> new external_value(PARAM_TEXT, 'Status Code')
+                )
+            );
+    }
 }
