@@ -98,10 +98,9 @@ class user extends entity implements user_representation {
      */
     public function get_user_data(): stdClass {
         return (object) [
-            'idnumber' => $this->get('sourcedId'),
+            'idnumber' => $this->get('sourcedId'),            
             'status' => $this->get('status'),
             'username' => strtolower($this->get('identifier')),
-            //'username' => $this->get('identifier'),
             'email' => $this->get('email'),
             'password' => $this->get('password') ?? '',
             'firstname' => $this->get('givenName'),
