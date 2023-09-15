@@ -8,7 +8,7 @@ $PAGE->add_body_class($clsname);
 echo $OUTPUT->header();
 ?>
 <div id="__next"></div>
-<?php if($elanguage=="qubitseditor") { ?>
+<?php if($elanguage=="webeditor") { ?>
 <script id="__NEXT_DATA__" type="application/json">
 	{
 	"props": {
