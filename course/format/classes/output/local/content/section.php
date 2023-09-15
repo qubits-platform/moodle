@@ -255,6 +255,7 @@ class section implements named_templatable, renderable {
         $result = false;
         $course = $this->format->get_course();
         $context = context_course::instance($course->id);
+        $data->issiteadmin = is_siteadmin() ?? false;
         // Check if it is a stealth sections (orphaned).
         if ($this->isstealth) {
             $data->isstealth = true;
