@@ -28,17 +28,17 @@ defined('MOODLE_INTERNAL') || die;
 
 require_once("$CFG->libdir/externallib.php");
 
-class local_clone_qbcourse extends external_api { 
+class local_qbcourse extends external_api { 
 
     private $cohort_idnumber;
-    private $ref_csname;
 
     function __construct($ref_csname ,$cohort_idnumber){
         $this->ref_csname = $ref_csname;
         $this->cohort_idnumber = $cohort_idnumber;
     }
 
-    public function getCategoryId($data){
+
+    public static function getCategoryId($data){
         global  $DB;
 
         $category = $DB->get_record('course_categories', array("idnumber" => trim($data[0]['categoryid'])));
@@ -60,14 +60,14 @@ class local_clone_qbcourse extends external_api {
     }
 
    
-    public function create_course($courses) {
+    public static function create_course($courses) {
         global $CFG, $DB;
         require_once($CFG->dirroot . "/course/lib.php");
         require_once($CFG->libdir . '/completionlib.php');
         
         $courseconfig = get_config('moodlecourse');
 
-        $catid = $this->getCategoryId($courses);
+        $catid = self::getCategoryId($courses);
 
         $params =  array(
             'courses' => array(
@@ -122,7 +122,7 @@ class local_clone_qbcourse extends external_api {
             // Ensure the current user is allowed to run this function
             $context = context_coursecat::instance($course['categoryid'], IGNORE_MISSING);
             try {
-                $this->validate_context($context);
+                self::validate_context($context);
             } catch (Exception $e) {
                 $exceptionparam = new stdClass();
                 $exceptionparam->message = $e->getMessage();
@@ -213,34 +213,34 @@ class local_clone_qbcourse extends external_api {
     }
 
     
-    public function updateSections($cid,$sections,$otherfields,$type=1) {
+    public static function updateSections($cid,$sections,$otherfields,$type=1) {
         global  $DB;
-
+        echo 'tets'; exit;
         for($s=0;$s<count($sections);$s++)
         {
         
            if($type == 1){
 
-            $DB->set_field('course_sections', 'name', trim($sections[$s]->title), array('course' => $cid,'section'=>$s+1));
-            $DB->set_field('course_sections', 'uid', trim($sections[$s]->uid), array('course' => $cid,'section'=>$s+1));
+            $DB->set_field('course_sections', 'name', trim($sections[$s]["title"]), array('course' => $cid,'section'=>$s+1));
+            $DB->set_field('course_sections', 'uid', trim($sections[$s]["uid"]), array('course' => $cid,'section'=>$s+1));
 
-            $this->createpageactivity($cid,$sections,$s);
+            self::createpageactivity($cid,$sections,$s);
            }           
            else{
-
-            $section = $DB->get_record('course_sections', array('uid' => trim($sections[$s]->uid)));
+            
+            $section = $DB->get_record('course_sections', array('uid' => trim($sections[$s]["uid"])));
             if($section){
-                $DB->set_field('course_sections', 'name', trim($sections[$s]->title), array('uid' => trim($sections[$s]->uid)));
-                $this->updatepageactivity($cid,$sections,$s);
+                $DB->set_field('course_sections', 'name', trim($sections[$s]["title"]), array('uid' => trim($sections[$s]["uid"])));
+                self::updatepageactivity($cid,$sections,$s);
             }
             else{
-                $secid = $this->createnewsection($cid,$sections[$s]);                
-                $this->updatepageactivity($cid,$sections,$s);
+                $secid = self::createnewsection($cid,$sections[$s]);                
+                self::updatepageactivity($cid,$sections,$s);
             }
            }
 
          /*  if(isset($sections[$s]->teacheronly))
-            $this->setvisibility($cid,$sections[$s]->teacheronly,trim($sections[$s]->uid)); */
+            self::setvisibility($cid,$sections[$s]->teacheronly,trim($sections[$s]->uid)); */
            
         }
 
@@ -249,14 +249,14 @@ class local_clone_qbcourse extends external_api {
             $level = $DB->get_record('customfield_field', array('shortname' => 'level'));
 
             if($level){
-                $DB->set_field('customfield_data', 'intvalue', trim($otherfields->level), array('fieldid' => $level->id,'instanceid'=>$cid));
-                $DB->set_field('customfield_data', 'value', trim($otherfields->level), array('fieldid' => $level->id,'instanceid'=>$cid));
+                $DB->set_field('customfield_data', 'intvalue', trim($otherfields["level"]), array('fieldid' => $level->id,'instanceid'=>$cid));
+                $DB->set_field('customfield_data', 'value', trim($otherfields["level"]), array('fieldid' => $level->id,'instanceid'=>$cid));
             }
 
             $cardcolour = $DB->get_record('customfield_field', array('shortname' => 'cardcolour'));
             if($cardcolour){
-                $DB->set_field('customfield_data', 'charvalue', trim($otherfields->cardcolour), array('fieldid' => $cardcolour->id,'instanceid'=>$cid));
-                $DB->set_field('customfield_data', 'value', trim($otherfields->cardcolour), array('fieldid' => $cardcolour->id,'instanceid'=>$cid));
+                $DB->set_field('customfield_data', 'charvalue', trim($otherfields["cardcolour"]), array('fieldid' => $cardcolour->id,'instanceid'=>$cid));
+                $DB->set_field('customfield_data', 'value', trim($otherfields["cardcolour"]), array('fieldid' => $cardcolour->id,'instanceid'=>$cid));
             }
             
         }
@@ -264,13 +264,13 @@ class local_clone_qbcourse extends external_api {
     }
 
 
-    public function createpageactivity($cid,$sections,$sid) {
+    public static function createpageactivity($cid,$sections,$sid) {
         global  $DB,$CFG;
 
            $sec = $DB->get_record('course_sections', array('course' => $cid,'section'=>$sid+1));
 
            if(isset($sec->id)){
-                $activities = $sections[$sid]->children;
+                $activities = $sections[$sid]["children"];
 
                 $acts = '';
 
@@ -278,7 +278,7 @@ class local_clone_qbcourse extends external_api {
 
                     if($activities[$a]->type == 'page'){  
 
-                        $cm_id = $this->createqubitspage($cid,$activities[$a]->title,$activities[$a]->route, $activities[$a]->uid,$sec->id);   
+                        $cm_id = self::createqubitspage($cid,$activities[$a]->title,$activities[$a]->route, $activities[$a]->uid,$sec->id);   
 
                         $acts = $acts.','.$cm_id;
                     }
@@ -287,7 +287,7 @@ class local_clone_qbcourse extends external_api {
                         $assfile = $CFG->dirroot."/moodledata/qbassign/".$activities[$a]->fname;
                         
                         if(is_file($assfile)){
-                            $cm_id = $this->createqbassignment($activities[$a],$assfile,$cid,$sid+1);
+                            $cm_id = self::createqbassignment($activities[$a],$assfile,$cid,$sid+1);
 
                             if(!empty($cm_id) and isset($cm_id['cm_id']) and $cm_id['cm_id'] != '')
                             $acts = $acts.','.$cm_id['cm_id'];
@@ -298,7 +298,7 @@ class local_clone_qbcourse extends external_api {
                         $quizfile = $CFG->dirroot."/moodledata/qbquiz/".$activities[$a]->fname;
                         
                         if(is_file($quizfile)){
-                            $cm_id = $this->createqbquiz($activities[$a],$quizfile,$cid,$sid+1);
+                            $cm_id = self::createqbquiz($activities[$a],$quizfile,$cid,$sid+1);
 
                             if(!empty($cm_id) and isset($cm_id['cm_id']) and $cm_id['cm_id'] != '')
                             $acts = $acts.','.$cm_id['cm_id'];
@@ -315,7 +315,7 @@ class local_clone_qbcourse extends external_api {
         
     }
 
-    public function updatepageactivity($cid,$sections,$sid) {
+    public static function updatepageactivity($cid,$sections,$sid) {
         global  $DB,$CFG;
 
         $activities = $sections[$sid]->children;
@@ -345,7 +345,7 @@ class local_clone_qbcourse extends external_api {
                         }
                         else{
 
-                            $cm_id = $this->createqubitspage($cid,$activities[$a]->title,$activities[$a]->route, $activities[$a]->uid,$sec->id); 
+                            $cm_id = self::createqubitspage($cid,$activities[$a]->title,$activities[$a]->route, $activities[$a]->uid,$sec->id); 
 
                             $acts = $acts.','.$cm_id;
                         }
@@ -353,10 +353,10 @@ class local_clone_qbcourse extends external_api {
                     }
                     elseif($activities[$a]->type == 'assignment'){                       
 
-                        $assfile =  $CFG->dirroot."/moodledata/qbassign/".$activities[$a]->fname;
+                        $assfile = $CFG->dirroot."/moodledata/qbassign/".$activities[$a]->fname;
                         
                         if(is_file($assfile)){
-                           $cm_id = $this->createqbassignment($activities[$a],$assfile,$cid,$sec->section);
+                           $cm_id = self::createqbassignment($activities[$a],$assfile,$cid,$sec->section);
 
                             if(!empty($cm_id) and isset($cm_id['cm_id']))
                             $acts = $acts.','.$cm_id['cm_id'];
@@ -367,7 +367,7 @@ class local_clone_qbcourse extends external_api {
                         $quizfile = $CFG->dirroot."/moodledata/qbquiz/".$activities[$a]->fname;
                         
                         if(is_file($quizfile)){
-                            $cm_id = $this->createqbquiz($activities[$a],$quizfile,$cid,$sec->section);
+                            $cm_id = self::createqbquiz($activities[$a],$quizfile,$cid,$sec->section);
 
                             if(!empty($cm_id) and isset($cm_id['cm_id']))
                             $acts = $acts.','.$cm_id['cm_id'];
@@ -385,7 +385,7 @@ class local_clone_qbcourse extends external_api {
                 }
     }
 
-    public function qbget_module_id($module="qubitspage") {
+    public static function qbget_module_id($module="qubitspage") {
         global $DB;
         $rec = $DB->get_record('modules', array('name' => $module));
     
@@ -396,7 +396,7 @@ class local_clone_qbcourse extends external_api {
         }
     }
 
-    public function createqubitspage($cid,$title,$route,$uid,$secid){
+    public static function createqubitspage($cid,$title,$route,$uid,$secid){
         global $DB;
                 $page = new stdClass();
                 $page->course = $cid;
@@ -426,7 +426,7 @@ class local_clone_qbcourse extends external_api {
                 $cm = new stdClass();
 
                 $cm->course = $cid;
-                $cm->module = $this->qbget_module_id();
+                $cm->module = self::qbget_module_id();
                 $cm->instance = $page_id;
                 $cm->section = $secid;
                 $cm->added = time();
@@ -439,7 +439,7 @@ class local_clone_qbcourse extends external_api {
                 return $cm_id;
     }
 
-    public function createnewsection($cid,$section){
+    public static function createnewsection($cid,$section){
         global $DB;
         $secid = 0;
 
@@ -448,10 +448,10 @@ class local_clone_qbcourse extends external_api {
         $sectiondata = new stdClass();
         $sectiondata->course = $cid;
         $sectiondata->section = $sectiondb->section+1;
-        $sectiondata->name = trim($section->title);  
+        $sectiondata->name = trim($section["title"]);  
         $sectiondata->summaryformat = 1;
         $sectiondata->timemodified = time();
-        $sectiondata->uid = trim($section->uid);
+        $sectiondata->uid = trim($section["uid"]);
 
         $secid = $DB->insert_record('course_sections', $sectiondata);
 
@@ -461,7 +461,7 @@ class local_clone_qbcourse extends external_api {
 
     }
 
-    public function createqbassignment($section,$aFile,$cid,$secid){
+    public static function createqbassignment($section,$aFile,$cid,$secid){
         global $DB,$CFG;
         
         require_once($CFG->dirroot.'/mod/qbassign/externallib.php');
@@ -472,16 +472,16 @@ class local_clone_qbcourse extends external_api {
         $data = json_decode($assData, true);
 
         $qa = new mod_qbassign_external();
-        $data['uid'] = $data['uid'].'-'.$this->cohort_idnumber;
+        
        try {
-          return  $qa->create_assignment_service($cid,1,$secid,$data['title'],$data['duedate'],$data['submissionfrom'],$data['grade_duedate'],$data['grade'],$data['question'],$data['submission_type'],$data['submissionstatus'],$data['online_text_limit'],$data['uid'],$data['maxfilesubmissions'],$data['filetypeslist'],$data['maxfilesubmissions_size'],$data['language_type'],$data['codeblock_mode']);
+          return  $qa->create_assignment_service($cid,1,$secid,$data['title'],$data['duedate'],$data['submissionfrom'],$data['grade_duedate'],$data['grade'],$data['question'],$data['submission_type'],$data['submissionstatus'],$data['online_text_limit'],$data['uid'].'-'.$this->cohort_idnumber,$data['maxfilesubmissions'],$data['filetypeslist'],$data['maxfilesubmissions_size'],$data['language_type'],$data['codeblock_mode']);
         }
         catch(Error $e) { 
             return;
         }
     }
 
-    public function createqbquiz($section,$aFile,$cid,$secid){
+    public static function createqbquiz($section,$aFile,$cid,$secid){
 
         global $DB,$CFG;
         
@@ -492,16 +492,16 @@ class local_clone_qbcourse extends external_api {
         $data = json_decode($assData, true);
 
         $qa = new mod_qbassign_external();
-        $data['uid'] = $data['uid'].'-'.$this->cohort_idnumber;
+
         try {
-        return $qa->quiz_addition($cid,1,$secid,$data["name"],$data["uid"],$data["description"],$data["questions"]);
+        return $qa->quiz_addition($cid,1,$secid,$data["name"],$data["uid"].'-'.$this->cohort_idnumber,$data["description"],$data["questions"]);
         }
         catch(Error $e) {
             return;
         }
     }
 
-    public function setvisibility($cid,$visiblefor,$uid){
+    public static function setvisibility($cid,$visiblefor,$uid){
 
         global $DB;
 
@@ -510,7 +510,7 @@ class local_clone_qbcourse extends external_api {
         if($visiblefor == 'yes')
         $visible = '{"op":"&","c":[{"type":"role","id":3}],"showc":[true]}'; 
         
-        $DB->set_field('course_sections', 'availability', $visible, array('course' => $cid,'uid'=>$uid));
+        $DB->set_field('course_sections', 'availability', $visible, array('course' => $cid,'uid'=>$uid.'-'.$this->cohort_idnumber));
 
     }
     

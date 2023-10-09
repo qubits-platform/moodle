@@ -3,61 +3,69 @@ require_once('../../config.php');
 require_once($CFG->libdir . '/adminlib.php');
 global $CFG, $DB, $USER, $OUTPUT;
 
-$coursefile = $CFG->dirroot.'/books-json/digichamps/dcl01.json';
+$coursefile = $CFG->dirroot.'/books-json/digichamps/dcl02.json';
 $course_fcontent = file_get_contents($coursefile);
-$ref_csname = 'DCL01'; // Reference Course Short name
+$ref_csname = 'DCL02'; // Reference Course Short name
 $cohort_idnumber = 'bfsajman';
 
 $isvalidjson = qbjson_validate($course_fcontent);
 
 if(is_array($isvalidjson) or is_object($isvalidjson)) {
-    $isvalidjson[0]["book"]["code"] = $isvalidjson[0]["book"]["code"].$cohort_idnumber;
-    $isvalidjson[0]["book"]["name"] = $isvalidjson[0]["book"]["name"].' ('.$cohort_idnumber.')';
-    $chapters = $isvalidjson[0]["book"]["chapters"];
-    $chapters = array_map('addcohort_uid_item', $chapters);
-    $isvalidjson[0]["book"]["chapters"] = $chapters;
-    echo "<pre>"; print_r($isvalidjson); echo "</pre>";
-    $course = $isvalidjson[0]["book"];
+    $isvalidjson1 = json_decode($course_fcontent);
+    $course = $isvalidjson1[0]->book;
+    $course->code = $course->code.$cohort_idnumber;
+    $course->name = $course->name.' ('.$cohort_idnumber.')';
+    $chapters = $course->chapters;
+    $course->chapters = array_map('addcohort_uid_item_obj', $chapters);
+    
     $datacourse = array();         
 
-    $numofsections = (int) $course->level;
+            $numofsections = (int) $course->level;
 
-    $datacourse[0]['fullname'] = $course->name;
-    $datacourse[0]['shortname'] = $course->code;
-    $datacourse[0]['category'] = $course->category;
-    $datacourse[0]['categoryid'] = $course->categorycode;
-    $datacourse[0]['numsections'] = count($course->chapters);
-    $datacourse[0]['summary'] = $course->summary;
+            $datacourse[0]['fullname'] = $course->name;
+            $datacourse[0]['shortname'] = $course->code;
+            $datacourse[0]['category'] = $course->category;
+            $datacourse[0]['categoryid'] = $course->categorycode;
+            $datacourse[0]['numsections'] = count($course->chapters);
+            $datacourse[0]['summary'] = $course->summary;
 
-    $datacourse[0]['level'] = '';
-    $datacourse[0]['cardcolour'] = '';
+            $datacourse[0]['level'] = '';
+            $datacourse[0]['cardcolour'] = '';
              
 
-    if(isset($course->otherfields)) {
-        $datacourse[0]['level'] = $course->otherfields->level;
-        $datacourse[0]['cardcolour'] = $course->otherfields->cardcolour;
-    }
+            if(isset($course->otherfields))
+            {
+                $datacourse[0]['level'] = $course->otherfields->level;
+                $datacourse[0]['cardcolour'] = $course->otherfields->cardcolour;
+                
+            }
+            
+            require_once($CFG->dirroot.'/local/qbmanifest/clonecreatecourse.php');
+            $newcourse = new local_clone_qbcourse($ref_csname, $cohort_idnumber);
+            
+            $cexists = $DB->get_record('course', array("shortname" => trim($course->code)));
+            if(!empty($cexists)){
+                $courseid = $cexists->id;
+                $DB->set_field('course', 'fullname', $course->name, array('id' => $cexists->id));
+                $DB->set_field('course', 'summary', $course->summary, array('id' => $cexists->id));
+                $msg='Record has been updated successfully.';
+                $type = 2;
+            }
+            else{
+                $course_details = $newcourse->create_course($datacourse);
+                $courseid = $course_details[0]['id'];
+                $type = 1;
+            }
 
-    require_once($CFG->dirroot.'/local/qbmanifest/clonecreatecourse.php');
-    $newcourse = new local_qbcourse($ref_csname, $cohort_idnumber);
+            $newcourse->updateSections($courseid,$course->chapters,$course->otherfields,$type);
+            rebuild_course_cache($courseid, true);
 
-    $cexists = $DB->get_record('course', array("shortname" => trim($course->code)));
-    if(!empty($cexists)){
-        $courseid = $cexists->id;
-        $DB->set_field('course', 'fullname', $course->name, array('id' => $cexists->id));
-        $DB->set_field('course', 'summary', $course->summary, array('id' => $cexists->id));
-        $msg='Record has been updated successfully.';
-        $type = 2;
-    }
-    else{
-        $course_details = $newcourse->create_course($datacourse);
-        $courseid = $course_details[0]['id'];
-        $type = 1;
-    }
+    echo "<pre>"; 
+    //print_r($isvalidjson);
+    print_r($course);
+    echo "</pre>"; exit;
 
-    $newcourse->updateSections($courseid,$course->chapters,$course->otherfields,$type);
-    rebuild_course_cache($courseid, true);
-
+    
 }
 
 exit;
@@ -123,6 +131,17 @@ function addcohort_uid_item($item){
         $children = $item["children"];
         $children = array_map('addcohort_uid_item', $children);
         $item["children"] = $children;
+    }
+    return $item;
+}
+
+function addcohort_uid_item_obj($item){
+    global $cohort_idnumber;
+    $item->uid = $item->uid.'-'.$cohort_idnumber;
+    if(isset($item->children)){
+        $children = $item->children;
+        $children = array_map('addcohort_uid_item_obj', $children);
+        $item->children = $children;
     }
     return $item;
 }
