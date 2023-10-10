@@ -3,10 +3,17 @@ require_once('../../config.php');
 require_once($CFG->libdir . '/adminlib.php');
 global $CFG, $DB, $USER, $OUTPUT;
 
-$coursefile = $CFG->dirroot.'/books-json/digichamps/dcl02.json';
+//$ref_csname = 'DCL02'; // Reference Course Short name
+//$cohort_idnumber = 'bfsajman';
+// Example http://qubits.localhost.com/local/qbmanifest/clonecourses.php?cshortname=DCL03&cohortid=bfsajman&mfile=/books-json/digichamps/dcl03.jso
+
+$ref_csname = required_param('cshortname', PARAM_ALPHANUMEXT);
+$cohort_idnumber = required_param('cohortid', PARAM_ALPHANUMEXT);
+$cfilename = required_param('mfile', PARAM_RAW);
+
+$coursefile = $CFG->dirroot.$cfilename; // '/books-json/digichamps/dcl02.json'
 $course_fcontent = file_get_contents($coursefile);
-$ref_csname = 'DCL02'; // Reference Course Short name
-$cohort_idnumber = 'bfsajman';
+
 
 $isvalidjson = qbjson_validate($course_fcontent);
 
