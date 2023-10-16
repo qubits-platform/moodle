@@ -36,7 +36,7 @@ $course_groups = $DB->get_records_sql("$qry $where", $gparams);
 $cur_course_instance = $DB->get_record('enrol', array('courseid'=>$current_course->id, 'enrol'=>'manual'), '*');
 
 foreach($course_groups as $course_group){
-   $group_members = groups_get_members_by_role($course_group->id, $parent_course->id);
+   $egroup_members = groups_get_members_by_role($course_group->id, $parent_course->id);
    $newgroup = $DB->get_record("groups", [
        "courseid" => $current_course->id,
 	   "name" => $course_group->name
@@ -44,7 +44,6 @@ foreach($course_groups as $course_group){
    
    if($newgroup->id){
 	   $gid = $newgroup->id;
-	   
    }else{
 	    $newgroup = $course_group;
 	    $newgroup->id = null;
@@ -52,22 +51,22 @@ foreach($course_groups as $course_group){
         $gid = groups_create_group($newgroup);
 		// groups_add_member($groupid, $user->id);
    }
+   foreach($egroup_members as $egroup_member){
+	   $roleid = $egroup_member->id;
+	   $egusers = $egroup_member->users;
+	   foreach($egusers as $eguser){
+		   $manplugin->enrol_user($cur_course_instance, $eguser->id, $roleid);
+		   groups_add_member($gid, $eguser->id);
+	   }
+	 // $manplugin->enrol_user($cur_course_instance, $user1->id, $studentrole->id);  
+   }
+   
+   
+   
    
 }
 
-function enrol_grp_users(){
-	$manager = new course_enrolment_manager($PAGE, $course);
 
-        $instance = null;
-        foreach ($manager->get_enrolment_instances() as $tempinstance) {
-            if ($tempinstance->enrol == 'manual') {
-                if ($instance === null) {
-                    $instance = $tempinstance;
-                    break;
-                }
-            }
-        }
-}
 
 
 // Create Groups and assigned users to destination course
