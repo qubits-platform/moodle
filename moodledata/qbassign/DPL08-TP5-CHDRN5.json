@@ -1,11 +1,11 @@
 {
-	"title" : "Challenge for 5.1 AI on Thunkable",
-	"question": "Write a sample program",
+	"title" : "5.1 Master Challenge 1",
+	"question": "Design and code a simple app that translates English speech or text to German.",
 	"duedate": "",
 	"submissionfrom": "",
 	"grade_duedate": "",
 	"grade":100,	
-	"submission_type": "onlinetext", 
+	"submission_type": "onlinefile", 
 	"__submission_type_hint": "onlinetext - onlinefile - codeblock",
 	"activity_instruction":"Sum of 2 numbers",	
 	"submissionstatus": "yes",
@@ -15,10 +15,10 @@
 	"__codeblock_mode_hint": "automate - manual",
 	"grade_type":"scale",
 	"grading_method": "direct",
-	"uid": "DPL08-TP5-CHDRN5",
-	"maxfilesubmissions":"",	
+	"uid": "DPL08-TP5-CHDRN5DPL08-TP5-CHDRN5",
+	"maxfilesubmissions":"5",	
 	"filetypeslist":"",	
-	"maxfilesubmissions_size":"",	
+	"maxfilesubmissions_size":"2097152",	
 	"testcases" : [
 	  {
 		"value" : "Case = Test integer sum\ninput = 1 2 3 5\noutput = 11"

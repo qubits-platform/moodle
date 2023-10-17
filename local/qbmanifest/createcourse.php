@@ -232,8 +232,8 @@ class local_qbcourse extends external_api {
             }
            }
 
-           if(isset($sections[$s]->teacheronly))
-            self::setvisibility($cid,$sections[$s]->teacheronly,trim($sections[$s]->uid));
+         /*  if(isset($sections[$s]->teacheronly))
+            self::setvisibility($cid,$sections[$s]->teacheronly,trim($sections[$s]->uid)); */
            
         }
 
@@ -333,6 +333,8 @@ class local_qbcourse extends external_api {
                             $DB->set_field('qubitspage', 'content', '<p>/</p>', array('uid' => $activities[$a]->uid));
                             else
                             $DB->set_field('qubitspage', 'content', $activities[$a]->content, array('uid' => $activities[$a]->uid));
+
+                            
                         }
                         else{
 
@@ -370,7 +372,7 @@ class local_qbcourse extends external_api {
                  if($acts != ''){     
                     if($sec->sequence != '')               
                     $acts = $sec->sequence.$acts;
-                    else
+                    else 
                     $acts = preg_replace('/,/', '', $acts, 1);
                     $DB->set_field('course_sections', 'sequence', $acts, array('id' => $sec->id));
                 }
@@ -434,7 +436,7 @@ class local_qbcourse extends external_api {
         global $DB;
         $secid = 0;
 
-        $sectiondb = $DB->get_record_sql("SELECT * FROM {course_sections} WHERE course=? order by id desc",[$cid]);
+        $sectiondb = $DB->get_record_sql("SELECT * FROM {course_sections} WHERE course=? order by section desc",[$cid]);
         if($section){
         $sectiondata = new stdClass();
         $sectiondata->course = $cid;
@@ -465,7 +467,7 @@ class local_qbcourse extends external_api {
         $qa = new mod_qbassign_external();
         
        try {
-          return  $qa->create_assignment_service($cid,1,$secid,$data['title'],$data['duedate'],$data['submissionfrom'],$data['grade_duedate'],$data['grade'],$data['question'],$data['submission_type'],$data['submissionstatus'],$data['online_text_limit'],$data['uid'],$data['maxfilesubmissions'],$data['filetypeslist'],$data['maxfilesubmissions_size']);
+          return  $qa->create_assignment_service($cid,1,$secid,$data['title'],$data['duedate'],$data['submissionfrom'],$data['grade_duedate'],$data['grade'],$data['question'],$data['submission_type'],$data['submissionstatus'],$data['online_text_limit'],$data['uid'],$data['maxfilesubmissions'],$data['filetypeslist'],$data['maxfilesubmissions_size'],$data['language_type'],$data['codeblock_mode']);
         }
         catch(Error $e) { 
             return;

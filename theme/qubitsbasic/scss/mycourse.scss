@@ -60,6 +60,9 @@
 }
 .qicon-menu:before {
   content: "\e90b";
+  @include breakpoint(xs) {
+    margin-right: 0;
+  }
 }
 .qicon-my-courses:before {
   content: "\e90c";
@@ -67,10 +70,24 @@
 .qicon-tick-mark:before {
   content: "\e90d";
 }
-.qicon-notifications {
+.qicon-icon-back:before {
+  content: "\e910";
+  color: #b3b3b3;
+  @include breakpoint(xs) {
+    display: none;
+  }
+  @include breakpoint(sm) {
+    display: none;
+  }
+}
+.qicon-external-link-sign:before {
+  content: "\e911";
   color: #9e9ea2;
-  font-size: 20px !important;
-  display: flex !important;
+}
+.popover-region .popover-region-toggle .qicon-notifications {
+  color: #9e9ea2;
+  font-size: 20px;
+  display: flex;
   align-items: center;
   justify-content: center;
 }
@@ -89,11 +106,11 @@
   border: 3px solid var(--white);
   color: #78c466;
 }
-.navbar.fixed-top {
-  height: 70px !important;
-  z-index: 50 !important;
-  border-bottom: 0px !important;
-  box-shadow: 0px 15px 10px -15px rgba(0, 0, 0, 0.2) !important;
+#page-wrapper nav.navbar.fixed-top {
+  height: 70px;
+  z-index: 50;
+  border-bottom: 0px;
+  box-shadow: 0px 15px 10px -15px rgba(0, 0, 0, 0.2);
 }
 .pagetitle-left-alignment {
   margin-left: 280px;
@@ -109,15 +126,21 @@
   @include breakpoint(xs) {
     margin: 0;
   }
+  @include breakpoint(sm) {
+    margin: 0;
+  }
 }
 .closebar-left-alignment {
   margin-left: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-[role="button"]:focus {
-  box-shadow: none !important;
+  @include breakpoint(xs) {
+    margin: 0;
+  }
+  @include breakpoint(sm) {
+    margin: 0;
+  }
 }
 
 .my-course-section {
@@ -150,10 +173,10 @@
   .text {
     padding-left: 10px;
   }
+  .card-title {
+    margin-bottom: 0;
+  }
   .coursecard {
-    .card-title {
-      margin-bottom: 0 !important;
-    }
     &:hover {
       // background-color: darken($colorbgcard, 20);
       color: var(--white);
@@ -169,7 +192,7 @@
       background-color: var(--white);
 
       .text-grey {
-        color: #333333 !important;
+        color: #333333;
         opacity: 0.5;
         font-size: $fontsize12;
       }
@@ -179,10 +202,10 @@
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.09);
   }
   .card-body-border-radius {
-    border-radius: 8px 8px 0px 0px !important;
+    border-radius: 8px 8px 0px 0px;
   }
   .card-border {
-    border: 1px solid #cacaca !important;
+    border: 1px solid #cacaca;
   }
 
   .card-body-overlay {
@@ -191,7 +214,7 @@
       darken($colorbgcard, 10)
     );
     color: darken($colorbgcard, 45);
-    padding: 20px 20px 20px 10px;
+    padding: 20px 20px 30px 10px;
     font-family: "Acme", sans-serif;
 
     &:hover {
@@ -203,12 +226,12 @@
     }
   }
   .card-border-radius {
-    border-radius: 8px !important;
+    border-radius: 8px;
   }
   .white-circle {
     background-color: var(--white);
     height: 50px;
-    max-width: 50px !important;
+    width: 50px;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -216,6 +239,7 @@
     font-size: $fontsize30;
     font-weight: 600;
     font-family: "Acme", sans-serif;
+    margin-left: 10px;
   }
   .bg-wave {
     background: url("[[pix:theme|bg-waves]]");
@@ -226,27 +250,31 @@
     width: 33%;
     margin: 20px;
     @include breakpoint(xs) {
-      width: 90% !important;
+      width: 90%;
     }
     @include breakpoint(sm) {
-      width: 90% !important;
+      width: 90%;
     }
   }
   .success-color {
-    background-color: #78c466 !important;
+    background-color: #78c466;
   }
   .progress {
-    height: 4px !important;
+    height: 4px;
   }
   .card-text {
     font-size: $fontsize20;
+    margin-bottom: 0;
   }
   .card-text-size {
     @include breakpoint(xs) {
-      font-size: $fontsize27;
+      font-size: $fontsize46;
+    }
+    @include breakpoint(sm) {
+      font-size: $fontsize46;
     }
     @include breakpoint(md) {
-      font-size: $fontsize30;
+      font-size: $fontsize46;
     }
     @include breakpoint(lg) {
       font-size: $fontsize46;
@@ -261,34 +289,44 @@
     margin-top: 83px;
     position: initial;
   }
+  @include breakpoint(sm) {
+    width: 100%;
+    margin-top: 83px;
+    position: initial;
+  }
 }
 .qicon-menu {
   display: none;
   cursor: pointer;
+  color: #116cbf;
 }
-.max-width {
+
+.my-course-section .max-width {
   @include breakpoint(xs) {
-    max-width: 90% !important;
+    max-width: 90%;
+  }
+  @include breakpoint(sm) {
+    max-width: 90%;
   }
   @include breakpoint(md) {
-    max-width: 45% !important;
+    max-width: 45%;
   }
   @include breakpoint(lg) {
-    max-width: 44% !important;
+    max-width: 44%;
   }
   @include breakpoint(xlg) {
-    max-width: 29% !important;
+    max-width: 29%;
   }
 }
-.flex-grow {
+.my-course-section .flex-grow {
   @include breakpoint(md) {
-    flex: 0 0 43% !important;
+    flex: 0 0 43%;
   }
   @include breakpoint(lg) {
-    flex: 0 0 43% !important;
+    flex: 0 0 43%;
   }
   @include breakpoint(xlg) {
-    flex: 0 0 30% !important;
+    flex: 0 0 43%;
   }
 }
 .sidebar {
@@ -337,10 +375,10 @@
     height: 100%;
     padding: 0 0 150px 0;
     overflow: auto;
-    margin: 0 !important;
-    margin-top: 10px !important;
+    margin: 0;
+    margin-top: 10px;
     .nav-item .arrow {
-      font-size: 13px !important;
+      font-size: 13px;
     }
 
     li {
@@ -377,7 +415,7 @@
         }
         .link_name {
           pointer-events: none;
-          font-size: 14px;
+          font-size: 16px;
           font-weight: 600;
           white-space: nowrap;
           // / color: #585858; /
@@ -437,15 +475,15 @@
         }
       }
       .active {
-        background: #e2eaf2 !important;
-        color: var(--hovertextcolor) !important;
+        background: #e2eaf2;
+        color: var(--hovertextcolor);
       }
 
       &:hover {
-        background: #e2eaf2 !important;
+        background: #e2eaf2;
       }
       &:active {
-        background: #e2eaf2 !important;
+        background: #e2eaf2;
       }
     }
   }
@@ -472,7 +510,7 @@
     }
   }
   .link_name {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 600;
     white-space: nowrap;
     transition: all 0.4s ease;
@@ -481,8 +519,8 @@
       color: var(--hovertextcolor);
     }
     .active {
-      background: #e2eaf2 !important;
-      color: var(--hovertextcolor) !important;
+      background: #e2eaf2;
+      color: var(--hovertextcolor);
     }
   }
   &:hover {
@@ -492,7 +530,7 @@
 }
 .navbar.messageicon {
   .fa-comment-o {
-    display: none !important;
+    display: none;
   }
   .navbar-nav {
     align-items: center;
@@ -500,36 +538,36 @@
     .popover-region-notifications {
       border: 1px solid #e6e6e6;
       border-radius: 50%;
-      height: 50px !important;
-      width: 50px !important;
+      height: 50px;
+      width: 50px;
       display: flex;
       justify-content: center;
       align-items: center;
     }
   }
   .count-container {
-    padding: 4px !important;
-    border-radius: 8px !important;
+    padding: 4px;
+    border-radius: 8px;
     background-color: #ca3120;
     color: #fff;
-    font-size: $fontsize12 !important;
+    font-size: $fontsize12;
     line-height: 11px;
     position: absolute;
-    top: 30px !important;
-    right: -9px !important;
+    top: 30px;
+    right: -9px;
   }
 }
 .usermenu {
   .avatar {
     img {
-      width: 50px !important;
-      height: 50px !important;
+      width: 50px;
+      height: 50px;
     }
   }
 }
 .nav-tabs {
   .nav-link.active {
-    color: #116cbf !important;
+    color: #116cbf;
   }
 }
 
@@ -643,7 +681,7 @@
     li.showMenu {
       .sub-menu {
         display: block;
-        // margin: 10px 0px 0px 0px !important;
+        // margin: 10px 0px 0px 0px;
       }
       i.arrow {
         transform: rotate(-180deg);
@@ -658,7 +696,7 @@
 }
 
 .w-auto {
-  width: auto !important;
+  width: auto;
 }
 
 .my-course-section .card-text,
@@ -681,26 +719,26 @@
   position: relative;
 
   left: 140px;
-  width: calc(100% - 260px) !important;
+  width: calc(100% - 260px);
   transition: all 0.5s ease;
 
   .drawer-right-toggle {
-    display: none !important;
+    display: none;
   }
 
   @include breakpoint(xs) {
     left: 0px;
-    width: 100% !important;
+    width: 100%;
   }
   @include breakpoint(sm) {
     left: 0px;
-    width: 100% !important;
+    width: 100%;
   }
 }
 
 .navbar.messageicon {
   .fa-comment-o {
-    display: none !important;
+    display: none;
   }
   .navbar-nav {
     align-items: center;
@@ -708,30 +746,30 @@
     .popover-region-notifications {
       border: 1px solid #e6e6e6;
       border-radius: 50%;
-      height: 50px !important;
-      width: 50px !important;
+      height: 50px;
+      width: 50px;
       display: flex;
       justify-content: center;
       align-items: center;
     }
   }
   .count-container {
-    padding: 4px !important;
-    border-radius: 8px !important;
+    padding: 4px;
+    border-radius: 8px;
     background-color: #ca3120;
     color: #fff;
-    font-size: 12px !important;
+    font-size: 12px;
     line-height: 11px;
     position: absolute;
-    top: 30px !important;
-    right: -9px !important;
+    top: 30px;
+    right: -9px;
   }
 }
 .usermenu {
   .avatar {
     img {
-      width: 50px !important;
-      height: 50px !important;
+      width: 50px;
+      height: 50px;
     }
   }
 }
@@ -783,7 +821,7 @@ button.close:focus,
 }
 .navbar.messageicon {
   .fa-comment-o {
-    display: none !important;
+    display: none;
   }
   .navbar-nav {
     align-items: center;
@@ -791,69 +829,69 @@ button.close:focus,
     .popover-region-notifications {
       border: 1px solid #e6e6e6;
       border-radius: 50%;
-      height: 50px !important;
-      width: 50px !important;
+      height: 50px;
+      width: 50px;
       display: flex;
       justify-content: center;
       align-items: center;
     }
   }
   .count-container {
-    padding: 4px !important;
-    border-radius: 8px !important;
+    padding: 4px;
+    border-radius: 8px;
     background-color: #ca3120;
     color: #fff;
-    font-size: $fontsize12 !important;
+    font-size: $fontsize12;
     line-height: 11px;
     position: absolute;
-    top: 30px !important;
-    right: -9px !important;
+    top: 30px;
+    right: -9px;
   }
 }
 .leftnav {
-  left: 0 !important;
+  left: 0;
 }
 .drawer-left {
-  display: none !important;
+  display: none;
 }
 
 .secondary-navigation .navigation .nav-tabs .nav-link {
   color: #585858;
-  font-size: $fontsize16 !important;
+  font-size: $fontsize16;
 }
 .sidebar {
   .nav-links {
     .dropdown-item {
       .active {
-        background-color: #e2eaf2 !important;
+        background-color: #e2eaf2;
       }
       &:hover() {
-        background-color: #e2eaf2 !important;
+        background-color: #e2eaf2;
       }
       &:focus-within {
-        background-color: #e2eaf2 !important;
+        background-color: #e2eaf2;
       }
       &:active {
-        background-color: #e2eaf2 !important;
+        background-color: #e2eaf2;
       }
       &:focus() {
-        background-color: #e2eaf2 !important;
+        background-color: #e2eaf2;
       }
     }
   }
 }
 // a {
-//   // color: #1482e6 !important;
+//   // color: #1482e6;
 // }
 #page.drawers.show-drawer-left {
   @include breakpoint(md) {
-    margin-left: 0 !important;
+    margin-left: 0;
   }
   @include breakpoint(lg) {
-    margin-left: 0 !important;
+    margin-left: 0;
   }
   @include breakpoint(xlg) {
-    margin-left: 0 !important;
+    margin-left: 0;
   }
 }
 .sidebar-overlay {
@@ -889,17 +927,17 @@ button.close:focus,
 //Css need to change
 .flex-mobile {
   @include breakpoint(sm) {
-    flex-direction: column !important;
+    flex-direction: column;
   }
   @include breakpoint(xs) {
-    flex-direction: column !important;
+    flex-direction: column;
   }
 }
 @media screen and (min-width: 768px) {
   body.limitedwidth #page.drawers .main-inner,
   .header-maxwidth,
   .secondary-navigation .navigation .nav-tabs {
-    max-width: 100% !important;
+    max-width: 100%;
   }
 }
 
@@ -915,9 +953,9 @@ button.close:focus,
   }
 }
 @media screen and (min-width: 250px) and (max-width: 576px) {
-  .navbar-nav .popover-region-notifications,
-  .navbar-nav .usermenu {
-    display: none !important;
+  .navbar #usernavigation .popover-region-notifications,
+  .navbar #usernavigation .usermenu {
+    display: none;
   }
 
   .sidebar.close-bars ~ .my-course-section {
@@ -926,27 +964,33 @@ button.close:focus,
 }
 
 .bc-items {
-  color: #116cbf !important;
-  font-size: 14px !important;
-  text-decoration: underline !important;
+  color: #116cbf;
+  font-size: 14px;
+  text-decoration: underline;
 }
 .bg-none {
-  background-color: transparent !important;
+  background-color: transparent;
 }
 .breadcrumb {
   align-items: center;
 }
 .pagetitle-left-alignment nav .breadcrumb-item.active {
-  color: #333333 !important;
+  color: #333333;
   font-size: 20px;
   font-weight: 600;
 
   @include breakpoint(xs) {
-    font-size: 16px;
+    font-size: 15px;
+  }
+  @include breakpoint(sm) {
+    font-size: 15px;
+  }
+  @include breakpoint(md) {
+    font-size: 15px;
   }
 }
 .breadcrumb-item + .breadcrumb-item::before {
-  font-size: 14px !important;
+  font-size: 14px;
 }
 
 .breadcrumb-item.active {
@@ -956,42 +1000,39 @@ button.close:focus,
   display: none;
 }
 // .breadcrumb-item + .breadcrumb-item {
-//   padding: 0 !important;
+//   padding: 0;
 // }
 ol {
-  margin: 0px !important;
+  margin: 0px;
 }
 
 .sectionname {
-  font-size: 16px !important;
+  font-size: 16px;
 }
 .expanded-icon {
   .icon {
-    font-size: 13px !important;
-    color: #9e9ea2 !important;
+    font-size: 13px;
+    color: #9e9ea2;
   }
 }
 .collapsed-icon {
   .icon {
-    font-size: 13px !important;
-    color: #9e9ea2 !important;
+    font-size: 13px;
+    color: #9e9ea2;
   }
 }
 #page.drawers .main-inner {
-  padding: 0 !important;
-  // margin-top: 0px !important;
+  padding: 0;
+  // margin-top: 0px;
   @include breakpoint(xs) {
-    padding: 0.75rem !important;
-  }
-}
-#page.drawers {
-  margin-top: 90px !important;
-  @include breakpoint(xs) {
-    margin-top: 66px !important;
+    padding: 0.75rem;
   }
   @include breakpoint(sm) {
-    margin-top: 66px !important;
+    padding: 0.75rem;
   }
+}
+#page-wrapper .drawer #page.drawers {
+  margin-top: 70px;
 }
 .sidebar.close-bars .nav-links li .sub-menu {
   height: 200px;
@@ -999,19 +1040,19 @@ ol {
 }
 
 .badge-secondary {
-  background-color: #008195 !important;
-  color: #ffffff !important;
-  box-shadow: none !important;
+  background-color: #008195;
+  color: #ffffff;
+  box-shadow: none;
 }
-.userinitials.size-35 {
-  width: 50px !important;
-  height: 50px !important;
+.usermenu .userbutton .avatar .userinitials.size-35 {
+  width: 50px;
+  height: 50px;
 }
 .usermenu .dropdown.show #user-action-menu {
-  margin-top: 15px !important;
+  margin-top: 15px;
 }
 // #page-content {
-//   margin-top: 20px !important;
+//   margin-top: 20px;
 // }
 .dropdown-item.active,
 .dropdown-item:active,
@@ -1022,7 +1063,7 @@ ol {
 }
 .custom-select {
   background: #ffffff url("[[pix:theme|down-arrow]]") right 0.75rem center/8px
-    10px no-repeat !important;
+    10px no-repeat;
 }
 
 .course_tooltip {
@@ -1074,15 +1115,15 @@ a:not([class]):focus,
   transition: unset !important;
 }
 .previousnav {
-  color: #b3b3b3 !important;
+  color: #b3b3b3;
 }
 
 // .input_input-form_2EIqD .sprite-info_sprite-input_IL2gd{
-//   width: 3rem !important;
+//   width: 3rem;
 // }
 
 .input_input-small_1bkbs {
-  width: 3rem !important;
+  width: 3rem;
 }
 #page-footer .btn-footer-popover {
   display: none;
@@ -1095,4 +1136,35 @@ a:not([class]):focus,
 }
 .card-body .card-body-overlay .w-30 {
   width: 30%;
+}
+.pagetitle-left-alignment .breadcrumb-item + .breadcrumb-item {
+  padding: 0;
+}
+#user-menu-toggle > span > span > span:nth-child(2) {
+  @include breakpoint(sm) {
+    display: none;
+  }
+}
+@media screen and (min-width: 760px) and (max-width: 930px) {
+  #user-menu-toggle > span > span > span:nth-child(2) {
+    display: none;
+  }
+  .editmode-switch-form label {
+    display: none;
+  }
+}
+@media screen and (max-width: 767px) {
+  .pagetitle-left-alignment .breadcrumb:not(:empty) {
+    flex-wrap: wrap;
+    padding: 0;
+  }
+  .pagetitle-left-alignment .breadcrumb:not(:empty) .breadcrumb-item {
+    padding: 0;
+  }
+}
+.new-tab {
+  position: relative;
+  top: -6px;
+  font-size: 7px;
+  left: 5px;
 }

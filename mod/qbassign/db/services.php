@@ -295,4 +295,54 @@ $functions = array(
                 'capabilities'  => 'mod/qbassign:view',
                 'services' => array(MOODLE_OFFICIAL_MOBILE_SERVICE)
         ],
+        'mod_qbassign_save_studentfilesubmission' => [
+                'classname' => 'mod_qbassign_external',
+                'methodname' => 'studentfilesubmission',
+                'classpath' => 'mod/qbassign/externallib.php',
+                'description' => 'Save students submission',
+                'type' => 'write',
+                'ajax' => true,
+                'capabilities'  => 'mod/qbassign:view, mod/qbassign:submit',
+                'services' => array(MOODLE_OFFICIAL_MOBILE_SERVICE)
+        ],
+        'mod_qbassign_delete_comment' => [
+                'classname' => 'mod_qbassign_external',
+                'methodname' => 'delete_comment',
+                'classpath' => 'mod/qbassign/externallib.php',
+                'description' => 'Delete Students Comment',
+                'type' => 'write',
+                'ajax' => true,
+                'capabilities'  => 'mod/qbassign:view, mod/qbassign:submit',
+                'services' => array(MOODLE_OFFICIAL_MOBILE_SERVICE)
+        ],
+        'mod_qbassign_save_comment' => [
+                'classname' => 'mod_qbassign_external',
+                'methodname' => 'save_comment',
+                'classpath' => 'mod/qbassign/externallib.php',
+                'description' => 'Save Students Comment',
+                'type' => 'write',
+                'ajax' => true,
+                'capabilities'  => 'mod/qbassign:view, mod/qbassign:submit',
+                'services' => array(MOODLE_OFFICIAL_MOBILE_SERVICE)
+        ],
+        'mod_qbassign_scratch_submission' => [
+                'classname' => 'mod_qbassign_external',
+                'methodname' => 'scratch_submission',
+                'classpath' => 'mod/qbassign/externallib.php',
+                'description' => 'Save Students Scratch Submission',
+                'type' => 'write',
+                'ajax' => true,
+                'capabilities'  => 'mod/qbassign:view, mod/qbassign:submit',
+                'services' => array(MOODLE_OFFICIAL_MOBILE_SERVICE)
+        ],
+        'mod_qbassign_get_teacherview' => [
+                'classname' => 'mod_qbassign_external',
+                'methodname' => 'get_teacherview',
+                'classpath' => 'mod/qbassign/externallib.php',
+                'description' => 'List assignment details for teachers using unique field',
+                'type' => 'read',
+                'ajax' => true,
+                'capabilities'  => 'mod/qbassign:view',
+                'services' => array(MOODLE_OFFICIAL_MOBILE_SERVICE)
+        ],
 );

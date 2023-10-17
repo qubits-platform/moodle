@@ -1,11 +1,11 @@
 {
-	"title" : "Challenge for 5.1 Data Analysis and Storage",
-	"question": "Write a sample program",
+	"title" : "5.1 Master Challenge 1",
+	"question": "Order status and values of some products are given in the Excel sheet below. Look up the Product name using the MATCH and INDEX functions, and find the Order ID, Value,and Date.<br><img src='https://learn.qubitsedu.com/images/DC_L09_U05_S01_Challenge1.jpg' width='30%' height='100%' />",
 	"duedate": "",
 	"submissionfrom": "",
 	"grade_duedate": "",
 	"grade":100,	
-	"submission_type": "onlinetext", 
+	"submission_type": "onlinefile", 
 	"__submission_type_hint": "onlinetext - onlinefile - codeblock",
 	"activity_instruction":"Sum of 2 numbers",	
 	"submissionstatus": "yes",
@@ -16,9 +16,9 @@
 	"grade_type":"scale",
 	"grading_method": "direct",
 	"uid": "DCL09-TP5-CHDRN7",
-	"maxfilesubmissions":"",	
+	"maxfilesubmissions":"5",	
 	"filetypeslist":"",	
-	"maxfilesubmissions_size":"",	
+	"maxfilesubmissions_size":"2097152",	
 	"testcases" : [
 	  {
 		"value" : "Case = Test integer sum\ninput = 1 2 3 5\noutput = 11"

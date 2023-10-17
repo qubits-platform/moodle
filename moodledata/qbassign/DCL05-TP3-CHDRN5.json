@@ -1,11 +1,11 @@
 {
-	"title" : "Challenge for 3.1 Shape Generators",
-	"question": "Write a sample program",
+	"title" : "3.1 Master Challenge 1",
+	"question": "Design a boomerang using the Extrusion tool in Tinkercad.<br><img src='https://learn.qubitsedu.com/images/DC_L05_U03_S01_Challenge1.jpg' height='70%' />",
 	"duedate": "",
 	"submissionfrom": "",
 	"grade_duedate": "",
 	"grade":100,	
-	"submission_type": "onlinetext", 
+	"submission_type": "onlinefile", 
 	"__submission_type_hint": "onlinetext - onlinefile - codeblock",
 	"activity_instruction":"Sum of 2 numbers",	
 	"submissionstatus": "yes",
@@ -16,9 +16,9 @@
 	"grade_type":"scale",
 	"grading_method": "direct",
 	"uid": "DCL05-TP3-CHDRN5",
-	"maxfilesubmissions":"",	
+	"maxfilesubmissions":"5",	
 	"filetypeslist":"",	
-	"maxfilesubmissions_size":"",	
+	"maxfilesubmissions_size":"2097152",	
 	"testcases" : [
 	  {
 		"value" : "Case = Test integer sum\ninput = 1 2 3 5\noutput = 11"

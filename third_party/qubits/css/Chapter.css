@@ -33,7 +33,7 @@
   --content-max-width: 100% !important;
   --menu-bar-height: 50px;
   --mono-font: Consolas, Menlo;
-   /* --code-font-size: 0.875em;  */
+  /* --code-font-size: 0.875em; */
 }
 
 .content html {
@@ -43,20 +43,19 @@
 #searchresults a,
 .content a:link,
 a:visited,
-a>.hljs {
+a > .hljs {
   color: var(--links);
 }
 
-a:hover>.hljs {
+a:hover > .hljs {
   text-decoration: underline;
 }
 
 pre {
   position: relative;
-  color: #fff;
 }
 
-pre>.buttons {
+pre > .buttons {
   position: absolute;
   z-index: 100;
   right: 0;
@@ -69,11 +68,11 @@ pre>.buttons {
   transition: visibility 0.1s linear, opacity 0.1s linear;
 }
 
-pre>.buttons i {
+pre > .buttons i {
   margin-left: 8px;
 }
 
-pre>.buttons button {
+pre > .buttons button {
   cursor: inherit;
   margin: 0 5px;
   padding: 3px 5px;
@@ -89,12 +88,12 @@ pre>.buttons button {
 }
 
 @media (pointer: coarse) {
-  pre>.buttons button {
+  pre > .buttons button {
     padding: 0.3rem 1rem;
   }
 }
 
-pre>code {
+pre > code {
   padding: 1rem;
 }
 
@@ -102,7 +101,7 @@ pre>code {
   padding: 0;
 }
 
-pre>.result {
+pre > .result {
   margin-top: 10px;
   background-color: #343232;
   color: #fefefe;
@@ -178,13 +177,6 @@ h6:target:before {
   scroll-margin-top: calc(var(--menu-bar-height) + 0.5em);
 }
 
-.content main {
-  margin-left: auto;
-  margin-right: auto;
-    /* once you proceed integration for moodle uncomment this line max-width: var(--content-max-width);   */
-   max-width: var(--content-max-width); 
-}
-
 .content ol,
 .content p,
 .content ul {
@@ -212,12 +204,15 @@ h6:target:before {
   line-height: 1.1;
 }
 
+.content p {
+  margin-top: 20px;
+}
+
 .content a {
   text-decoration: none;
 }
 
 .content a:hover {
-  text-decoration: underline !important;
   color: white !important;
 }
 
@@ -262,7 +257,8 @@ body {
 
 .content h1:not(.menu-title):before {
   content: "";
-  background: url(http://staging.myqubit.co/mod/qubitspage/_next/static/media/chapter-tick.2f183901.png) no-repeat;
+  background: url(./images/chapter-tick.2f183901.png)
+    no-repeat;
   background-size: contain;
   width: 118px;
   height: 79px;
@@ -273,17 +269,15 @@ body {
 }
 
 .content h1:not(.menu-title) {
-  background-color: #47bbb6;
-  border-radius: 30px;
-  position: relative;
-  padding-left: 80px;
+    background-color: #47bbb6;
+    border-radius: 30px;
+    position: relative;
+    padding-left: 80px;
 }
 
-/* .content h1:not(.menu-title.heading-title) {
+.content h1:not(.menu-title.heading-title) {
   padding-left: 20px;
-} */
-
-
+}
 
 h1:target:before,
 h2:target:before,
@@ -316,7 +310,6 @@ h6:target:before {
 }
 
 .content main {
-  background: #fef6db;
   padding: 20px;
   border-radius: 36px;
 }
@@ -325,7 +318,7 @@ pre {
   margin: 0.4em 0;
 }
 
-pre~p {
+pre ~ p {
   margin-top: 2em;
   margin-bottom: 0;
 }
@@ -642,7 +635,7 @@ code {
   border-color: #747474;
 }
 
-.ace-dracula .ace_print-margin {
+.ace-crimson-editor .ace_print-margin {
   background: none !important;
 }
 
@@ -653,7 +646,8 @@ code {
   padding-left: 80px;
 }
 
-.standalone-editor-container h1:not(.menu-standalone-editor-title.standalone-editor-language-title) {
+.standalone-editor-container
+  h1:not(.menu-standalone-editor-title.standalone-editor-language-title) {
   padding-left: 20px;
 }
 
@@ -677,7 +671,7 @@ code {
 .standalone-editor-container main {
   margin-left: auto;
   margin-right: auto;
-  max-width: var(--content-max-width); 
+  max-width: var(--content-max-width);
 }
 
 .iframe-container {
@@ -688,6 +682,7 @@ code {
 .iframe {
   width: 100%;
   min-height: 300px;
+  border: none;
 }
 
 .MuiButtonBase-root.run-button {
@@ -708,22 +703,212 @@ code {
   color: white;
 }
 
-.sql-table-style:nth-child(2){
+.sql-table-style:nth-child(2) {
   width: 42%;
 }
-.sql-table-style:nth-child(3){
+
+.sql-table-style:nth-child(3) {
   width: 33%;
 }
-.sql-table-style:nth-child(1){
+
+.sql-table-style:nth-child(1) {
   width: 33%;
 }
-.sqlTableStyle table,thead{
+
+.sqlTableStyle table,
+thead {
   text-align: left;
   border: 1px solid gray;
- }
- .sqlTableStyle table{
+}
+
+.sqlTableStyle table {
   width: 100%;
   background-color: white;
   color: #000;
   border-collapse: collapse;
+}
+
+/* Assignment styles */
+.assignment-wrapper {
+  padding: 20px;
+  padding-left: 30px;
+}
+.tox-tinymce {
+  border-radius: 16px !important;
+}
+.tox-toolbar__primary {
+  background-color: #dee0e2 !important;
+}
+.tox .tox-tbtn:hover {
+  background-color: #116cbf !important;
+}
+.tox .tox-tbtn--enabled,
+.tox .tox-tbtn--enabled:hover {
+  background-color: #116cbf !important;
+  color: white !important;
+}
+.tox .tox-tbtn--enabled svg {
+  fill: white !important;
+}
+.tox .tox-tbtn--enabled:hover svg {
+  fill: white !important;
+}
+
+/*Edit Component*/
+
+.table-align {
+  font-size: 14px !important;
+  border: 1px solid black !important;
+}
+
+.tablestart {
+  margin-top: 20px;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+
+.material-icons.css-583gqu {
+  color: black;
+  padding: 8px;
+  border-radius: 5px;
+}
+.material-icons.css-583gqu:hover {
+  color: white;
+  background-color: #116cbf;
+}
+#__next > div > div > div > div > div:nth-child(4) {
+  height: 250px;
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 10px;
+}
+#__next > div > div > div > div > div:nth-child(4) > p {
+  margin: 0;
+}
+
+.slateditor {
+  height: 250px;
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 10px;
+}
+.assignment-wrapper .css-r5rnga .css-vbnk1l {
+  color: white;
+  background-color: #116cbf;
+}
+
+
+.console-container {
+  background-color: #000;
+  color: white;
+  padding: 10px;
+  margin: 10px 0;
+  position: relative;
+  width: 100%;
+  min-height: 100px;
+}
+
+.console-text {
+  position: absolute;
+}
+
+.top-pane {
+  background-color: lightgray;
+}
+
+.pane {
+  height: 50vh;
+  width: 100%;
+  display: flex;
+}
+
+.webide-container {
+  flex-grow: 1;
+  flex-basis: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  background-color: #060606;
+}
+
+.webide-wrapper {
+  flex-grow: 1;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.webide-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1d1e23;
+  color: white;
+  padding: 0.5rem;
+  padding-left: 1rem;
+  border-top-right-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
+}
+
+.webide-container.collapsed {
+  flex-grow: 0;
+}
+
+.webide-container.collapsed .cm-scroller {
+  position: absolute;
+  overflow: hidden;
+}
+
+.webide-btn {
+  background-color: hsl(255, 6%, 13%);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  font-size: 1.3rem;
+  cursor: pointer;
+  margin-left: 0.5rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.webide-btn:hover {
+  background-color: hsl(255, 6%, 23%);
+  color: aqua;
+}
+
+@media screen and (min-width: 300px) and (max-width: 800px) {
+  .top-pane {
+    flex-direction: column;
+    height: fit-content;
+  }
+
+  .webide-wrapper {
+    min-height: 10vh;
+  }
+}
+
+.css-3tmnuj {
+  color: red;
+}
+
+.rpv-core__textbox {
+    width: 100% !important;
+}
+
+pre {
+	color: #fff;
+}
+
+.console-messages {
+  padding: 10px;
+  height: 330px;
+  overflow-y: scroll;
+}
+/* //console-feed fontcolor */
+.css-e393sm {
+  color: white;
+}
+/* custom alert style */
+.MuiAlert-filled.error-alert {
+  margin-top: 30px;
 }
