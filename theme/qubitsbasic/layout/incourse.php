@@ -116,6 +116,7 @@ $is_scratch = false;
 $is_student = false;
 $is_teacher = false;
 $userid = optional_param('userid', 0, PARAM_INT);
+$action = optional_param('action', '', PARAM_TEXT);
 if($path_params == "/mod/qbassign/view.php"){
     global $DB;
     $course_user_roles = enrol_get_course_users_roles($COURSE->id);
@@ -146,6 +147,8 @@ if($path_params == "/mod/qbassign/view.php"){
         'value' => "1"
     ]);
 
+    //echo "<pre>"; print_r($qb_config_data); exit;
+
     if(isset($cuserroles['stu-'.$USER->id])){
         $tmplpath = 'theme_qubitsbasic/incourse-assign-student';
         if($qb_config_data){
@@ -154,8 +157,14 @@ if($path_params == "/mod/qbassign/view.php"){
     }
 
     if(isset($cuserroles['tea-'.$USER->id]) || is_siteadmin()){
+        $templatecontext["is_showreact"] = false;
+        $templatecontext["is_scratch"] = false;
         $tmplpath = 'theme_qubitsbasic/incourse-assign-teacher';
+        if($action=="grader" || $action=="viewpluginqbassignsubmission"){
+            $templatecontext["is_showreact"] = true;  
+        }
         if($qb_config_data){
+            $templatecontext["is_scratch"] = true;
             $tmplpath = 'theme_qubitsbasic/incourse-assign-scratch-teacher';
         }
      }
@@ -165,6 +174,5 @@ if($path_params == "/mod/qbassign/view.php"){
     $templatecontext["scratch_aurl"] = $CFG->wwwroot.'/third_party/scratch/assn';
 
 }
-
 
 echo $OUTPUT->render_from_template($tmplpath, $templatecontext);
