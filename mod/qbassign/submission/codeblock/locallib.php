@@ -413,7 +413,7 @@ class qbassign_submission_codeblock extends qbassign_submission_plugin {
             if ($codeblock != $shorttext) {
                 $wordcount = get_string('numwords', 'qbassignsubmission_codeblock', count_words($codeblock));
 
-                return array($plagiarismlinks . $wordcount . $text,1);
+                return array($plagiarismlinks . $wordcount . $text,1); 
             } else {
                 return array($plagiarismlinks . $text . "<div>Additional Comments :<br/>".$expln."</div>",1);
             }
