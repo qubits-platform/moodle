@@ -347,6 +347,30 @@ foreach($enrolledusers as $enrolleduser){
             }
         }
         
+        // Scratch qbassignsubmission_scratch
+
+        $oldcodescratch = $DB->get_record("qbassignsubmission_scratch",
+           [
+                "qbassignment" => $oqaid,
+                "submission" => $oldsub_id
+           ]
+        );
+
+        if($oldcodescratch){
+            $newcodescratch = $DB->get_record("qbassignsubmission_scratch",
+                [
+                    "qbassignment" => $nqaid,
+                    "submission" => $newsub_id
+                ]
+            );
+            if(empty($newcodescratch)){
+                unset($oldcodescratch->id);
+                $oldcodescratch->qbassignment = $nqaid;
+                $oldcodescratch->submission = $newsub_id;
+                $DB->insert_record("qbassignsubmission_scratch", $oldcodescratch);
+            }
+        }
+
 
 
     }
