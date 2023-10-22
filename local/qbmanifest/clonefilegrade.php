@@ -134,10 +134,10 @@ foreach($orecds as $k => $v){
 }
 
 $options = array(
-    array('name' => 'onlyactive', 'value' => true),
     array('name' => 'userfields', 'value' => 'id')
 );
-$enrolledusers = core_enrol_external::get_enrolled_users(227, $options);
+
+$enrolledusers = core_enrol_external::get_enrolled_users($ccourse_id, $options);
 
 /////// User Mapping and Grading Entries ////////
 foreach($enrolledusers as $enrolleduser){
@@ -198,6 +198,7 @@ foreach($enrolledusers as $enrolleduser){
 
         // qbassign_submission migration //
         $oldsub_id = 0;
+        $newsub_id = 0;
         if($oldsubmission){
             $oldsub_id = $oldsubmission->id; // Old submission id important one
             $newsubmission = $DB->get_record("qbassign_submission",
@@ -277,6 +278,75 @@ foreach($enrolledusers as $enrolleduser){
             }
         } */
 
+        // Qb Assign User Flags
+        $oqauflag = $DB->get_record("qbassign_user_flags",
+            [
+               "qbassignment" => $oqaid,
+               "userid" => $cusrid
+            ]
+        );
+        
+        if( $oqauflag ){
+            $nqauflag = $DB->get_record("qbassign_user_flags",
+                [
+                "qbassignment" => $nqaid,
+                "userid" => $cusrid
+                ]
+            );
+            if(empty($nqauflag)){
+                unset($oqauflag->id);
+                $oqauflag->qbassignment = $nqaid;
+                $DB->insert_record("qbassign_user_flags", $oqauflag);
+            }
+        }
+
+        // Online text
+
+        $oldonline_txt = $DB->get_record("qbassignsubmission_onlinetex",
+           [
+                "qbassignment" => $oqaid,
+                "submission" => $oldsub_id
+           ]
+        );
+
+        if($oldonline_txt){
+            $newonline_txt = $DB->get_record("qbassignsubmission_onlinetex",
+                [
+                    "qbassignment" => $nqaid,
+                    "submission" => $newsub_id
+                ]
+            );
+            if(empty($newonline_txt)){
+                unset($oldonline_txt->id);
+                $oldonline_txt->qbassignment = $nqaid;
+                $oldonline_txt->submission = $newsub_id;
+                $DB->insert_record("qbassignsubmission_onlinetex", $oldonline_txt);
+            }
+        }
+
+        // Code Block qbassignsubmission_codeblock
+        $oldcodeblock = $DB->get_record("qbassignsubmission_codeblock",
+           [
+                "qbassignment" => $oqaid,
+                "submission" => $oldsub_id
+           ]
+        );
+
+        if($oldcodeblock){
+            $newcodeblock = $DB->get_record("qbassignsubmission_codeblock",
+                [
+                    "qbassignment" => $nqaid,
+                    "submission" => $newsub_id
+                ]
+            );
+            if(empty($newcodeblock)){
+                unset($oldcodeblock->id);
+                $oldcodeblock->qbassignment = $nqaid;
+                $oldcodeblock->submission = $newsub_id;
+                $DB->insert_record("qbassignsubmission_codeblock", $oldcodeblock);
+            }
+        }
+        
 
 
     }
