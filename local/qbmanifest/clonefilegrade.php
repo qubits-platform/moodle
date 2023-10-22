@@ -145,6 +145,8 @@ foreach($enrolledusers as $enrolleduser){
     foreach($combinedrecs as $combinedrec){
         $oqaid = $combinedrec["old_qb_assgn_id"];
         $nqaid = $combinedrec["new_qb_assgn_id"];
+        $octxt_id = $combinedrec["old_ctxt_id"];
+        $nctxt_id = $combinedrec["new_ctxt_id"];
         $oldmapping = $DB->get_record("qbassign_user_mapping",
             [
                 "qbassignment" => $oqaid,
@@ -186,6 +188,95 @@ foreach($enrolledusers as $enrolleduser){
             }
         }
         
+        // Get Old Submission from Old Assignment ID
+        $oldsubmission = $DB->get_record("qbassign_submission",
+            [
+               "qbassignment" => $oqaid,
+               "userid" => $cusrid
+            ]
+        );
+
+        // qbassign_submission migration //
+        $oldsub_id = 0;
+        if($oldsubmission){
+            $oldsub_id = $oldsubmission->id; // Old submission id important one
+            $newsubmission = $DB->get_record("qbassign_submission",
+                    [
+                    "qbassignment" => $nqaid,
+                    "userid" => $cusrid
+                    ]
+            );
+
+            if(empty($newsubmission)){
+                $newsubmission =  new stdClass;
+                unset($oldsubmission->id);
+                $oldsubmission->qbassignment = $nqaid;
+                $newsub_id = $DB->insert_record("qbassign_submission", $oldsubmission);
+            }else{
+                $newsub_id = $newsubmission->id;
+            }
+        }
+
+        // qbassignsubmission_file //
+        $oldsubmissionfile = $DB->get_record("qbassignsubmission_file",
+            [
+               "qbassignment" => $oqaid,
+               "submission" => $oldsub_id
+            ]
+        );
+        
+        if($oldsubmissionfile){
+            
+            $newsubmissionfile = $DB->get_record("qbassignsubmission_file",
+                [
+                "qbassignment" => $nqaid,
+                "submission" => $newsub_id
+                ]
+            );
+            
+            if(empty($newsubmissionfile)){
+                unset($oldsubmissionfile->id);
+                $oldsubmissionfile->qbassignment = $nqaid;
+                $oldsubmissionfile->submission = $newsub_id;
+                $newsub_fid = $DB->insert_record("qbassignsubmission_file", $oldsubmissionfile);
+            }
+        }
+        
+        $old_files = $DB->get_records("files",
+            [
+                "contextid" => $octxt_id,
+                "component" => "qbassignsubmission_file",
+                "filearea" => "submission_files",
+                "itemid" => $oldsub_id
+            ]
+        );
+        
+        if($old_files){
+            $new_files = $DB->get_records("files",
+                [
+                    "contextid" => $nctxt_id,
+                    "component" => "qbassignsubmission_file",
+                    "filearea" => "submission_files",
+                    "itemid" => $newsub_id
+                ]
+            );
+            
+            if(empty($new_files)){
+                
+                foreach($old_files as $old_file){
+                    echo "<pre>";
+                    print_r($old_file);
+                    unset($old_file->id);
+                    $old_file->contextid = $nctxt_id;
+                    $old_file->itemid = $newsub_id;
+                    print_r($old_file); exit;
+                    $DB->insert_record("files", $old_file);
+                    echo 'trace9';
+                }
+                exit;
+            }
+        }
+
 
     }
 }
