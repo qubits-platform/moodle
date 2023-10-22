@@ -34,6 +34,7 @@ $where .= " AND ".$DB->sql_like('name', ':name', false);
 
 $course_groups = $DB->get_records_sql("$qry $where", $gparams);
 $cur_course_instance = $DB->get_record('enrol', array('courseid'=>$current_course->id, 'enrol'=>'manual'), '*');
+$par_course_instance = $DB->get_record('enrol', array('courseid'=>$parent_course->id, 'enrol'=>'manual'), '*');
 
 foreach($course_groups as $course_group){
    $egroup_members = groups_get_members_by_role($course_group->id, $parent_course->id);
@@ -57,6 +58,7 @@ foreach($course_groups as $course_group){
 	   foreach($egusers as $eguser){
 		   $manplugin->enrol_user($cur_course_instance, $eguser->id, $roleid);
 		   groups_add_member($gid, $eguser->id);
+           // $manplugin->unenrol_user($par_course_instance, $eguser->id); // unenroll user from parent course
 	   }
 	 // $manplugin->enrol_user($cur_course_instance, $user1->id, $studentrole->id);  
    }
