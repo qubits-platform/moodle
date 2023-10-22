@@ -251,31 +251,32 @@ foreach($enrolledusers as $enrolleduser){
             ]
         );
         
-        if($old_files){
-            $new_files = $DB->get_records("files",
-                [
-                    "contextid" => $nctxt_id,
-                    "component" => "qbassignsubmission_file",
-                    "filearea" => "submission_files",
-                    "itemid" => $newsub_id
-                ]
-            );
-            
-            if(empty($new_files)){
-                
-                foreach($old_files as $old_file){
-                    echo "<pre>";
-                    print_r($old_file);
-                    unset($old_file->id);
-                    $old_file->contextid = $nctxt_id;
-                    $old_file->itemid = $newsub_id;
-                    print_r($old_file); exit;
-                    $DB->insert_record("files", $old_file);
-                    echo 'trace9';
-                }
-                exit;
+        if($old_files){      
+            foreach($old_files as $old_file){
+                $old_file->contextid = $nctxt_id;
+                $old_file->itemid = $newsub_id;
+                $DB->update_record("files", $old_file);
             }
-        }
+        } 
+
+        // If we want to revert new file using the below code
+        /* $new_files = $DB->get_records("files",
+            [
+                "contextid" => $nctxt_id,
+                "component" => "qbassignsubmission_file",
+                "filearea" => "submission_files",
+                "itemid" => $newsub_id
+            ]
+        );
+        
+        if($new_files){      
+            foreach($new_files as $new_file){
+                $new_file->contextid = $octxt_id;
+                $new_file->itemid = $oldsub_id;
+                $DB->update_record("files", $new_file);
+            }
+        } */
+
 
 
     }

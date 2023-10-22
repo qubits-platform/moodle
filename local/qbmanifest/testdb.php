@@ -26,7 +26,26 @@ $old_file = array(
     "referencefileid" => ""
 );
 
-$id = $DB->insert_record("files", $old_file);
-echo $id;
+$old_fdata = json_decode(json_encode($old_file));
+echo "<pre>";
+print_r($old_fdata);
+//$id = $DB->insert_record("files", $old_fdata);
+$recs = $DB->get_records("files",
+  [
+    "contextid" => 10462,
+    "component" => "qbassignsubmission_file",
+    "filearea" => "submission_files",
+    "itemid" => 3291,
+  ]
+  );
+foreach($recs as $idata)
+{
+    $idata->itemid = 7557;
+    $idata->contextid = 26076;
+    print_r($idata);
+    $DB->update_record("files", $idata);
+}
+
+print_r($recs);
 
 exit;
