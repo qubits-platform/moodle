@@ -135,13 +135,59 @@ foreach($orecds as $k => $v){
 
 $options = array(
     array('name' => 'onlyactive', 'value' => true),
-    //array('name' => 'userfields', 'value' => 'id')
+    array('name' => 'userfields', 'value' => 'id')
 );
 $enrolledusers = core_enrol_external::get_enrolled_users(227, $options);
 
 /////// User Mapping and Grading Entries ////////
-foreach($enrolledusers as $$enrolleduser){
-    
+foreach($enrolledusers as $enrolleduser){
+    $cusrid = $enrolleduser["id"];
+    foreach($combinedrecs as $combinedrec){
+        $oqaid = $combinedrec["old_qb_assgn_id"];
+        $nqaid = $combinedrec["new_qb_assgn_id"];
+        $oldmapping = $DB->get_record("qbassign_user_mapping",
+            [
+                "qbassignment" => $oqaid,
+                "userid" => $cusrid
+            ]
+        );
+        if($oldmapping){
+            $newmapping = $DB->get_record("qbassign_user_mapping",
+                [
+                    "qbassignment" => $nqaid,
+                    "userid" => $cusrid
+                ]
+            );
+            if(empty($newmapping)){
+                $umapdata = new stdClass;
+                $umapdata->qbassignment = $nqaid;
+                $umapdata->userid = $cusrid;
+                $DB->insert_record("qbassign_user_mapping", $umapdata);
+            }
+        }
+
+        $oldgrade = $DB->get_record("qbassign_grades",
+                    [
+                        "qbassignment" => $oqaid,
+                        "userid" => $cusrid
+                    ]
+        );
+        if($oldgrade){
+            $newgrade = $DB->get_record("qbassign_grades",
+                    [
+                        "qbassignment" => $nqaid,
+                        "userid" => $cusrid
+                    ]
+            );
+            if(empty($newgrade)){
+                unset($oldgrade->id);
+                $oldgrade->qbassignment = $nqaid;
+                $DB->insert_record("qbassign_grades", $oldgrade);
+            }
+        }
+        
+
+    }
 }
 
 //echo $enrolledusers[0]["roles"][0]["shortname"]."<br/>";
