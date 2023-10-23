@@ -167,7 +167,105 @@ foreach($enrolledusers as $enrolleduser){
         }
 
         // End Quiz Grades
+        // Start Quiz Attempts quiz_attempts
+        $old_attempts = $DB->get_records("quiz_attempts",[
+            "quiz" => $oqzid,
+            "userid" => $cusrid
+        ]);
 
+        if($old_attempts){
+            foreach($old_attempts as $old_attempt){
+                $new_attempt = $DB->get_record("quiz_attempts",[
+                    "quiz" => $nqzid,
+                    "userid" => $cusrid,
+                    "attempt" => $old_attempt->attempt
+                ]);
+                if(empty($new_attempt)){
+                    //unset($old_attempt->id);
+                    $old_attempt->quiz = $nqzid;
+                    $DB->update_record("quiz_attempts", $old_attempt);
+                }
+            }
+        }
+
+        // End Quiz Attempts
+        // Grade Items and Grades
+        $oldgradeitem = $DB->get_record("grade_items",
+            [
+                "iteminstance" => $oqzid,
+                "itemtype" => "mod",
+                "itemmodule" => "quiz",
+                "courseid" => $pcourse_id
+            ]
+        );
+        $ogrditmid = 0;
+        $ngrditmid = 0;
+        if($oldgradeitem){
+            $ogrditmid = $oldgradeitem->id;
+            $newgradeitem = $DB->get_record("grade_items",
+                [
+                    "iteminstance" => $nqzid,
+                    "itemtype" => "mod",
+                    "itemmodule" => "quiz",
+                    "courseid" => $ccourse_id
+                ]
+            );
+
+             if($newgradeitem){
+                $ngrditmid = $newgradeitem->id;
+                // $cusrid
+                // Grade of Grades grade_grades
+                $og_grades = $DB->get_record("grade_grades",
+                    [
+                        "itemid" => $ogrditmid,
+                        "userid" => $cusrid
+                    ]
+                );
+                if($og_grades){
+                    $ng_grades = $DB->get_record("grade_grades",
+                        [
+                            "itemid" => $ngrditmid,
+                            "userid" => $cusrid
+                        ]
+                    );
+                    if(empty($ng_grades)){
+                        unset($og_grades->id);
+                        $og_grades->itemid = $ngrditmid;
+                        $DB->insert_record("grade_grades", $og_grades);
+                    }
+                }
+             }
+        }
+        // Ended Grade Items and Grades
+        // Grades History grade_grades_history
+        $oldgradehistories = $DB->get_records("grade_grades_history",
+            [
+                "itemid" => $ogrditmid,
+                "userid" => $cusrid,
+                "source" => "mod/quiz"
+            ]
+        );
+
+        if($oldgradehistories){
+            foreach($oldgradehistories as $oldgradehistory){
+                $newgradehistory = $DB->get_record("grade_grades_history",
+                    [
+                        "itemid" => $ngrditmid,
+                        "userid" => $cusrid,
+                        "source" => "mod/quiz",
+                        "loggeduser" => $oldgradehistory->loggeduser,
+                        "action" => $oldgradehistory->action
+                    ]
+                );
+ 
+                if(empty($newgradehistory)){
+                    unset($oldgradehistory->id);
+                    $oldgradehistory->itemid = $ngrditmid;
+                    $DB->insert_record("grade_grades_history", $oldgradehistory);         
+                }  
+            }
+        }
+        // Ended Grades History
 
     }
 }
