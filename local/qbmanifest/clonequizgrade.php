@@ -64,9 +64,9 @@ $newmnfstcourse["code"] = $newmnfstcourse["code"].$cohort_idnumber;
 $newchapters = $newmnfstcourse["chapters"];
 $newmnfstcourse["chapters"] = array_map('addcohort_uid_item', $newchapters);
 
-$pc_ctxt_sql = "SELECT qbc.id ctxt_id, qc.cmdl_id, qc.course_id, qc.qb_assgn_id, qc.uid FROM {context} qbc
-JOIN (SELECT cmdls.id cmdl_id, cmdls.course course_id, qba.id qb_assgn_id, qba.uid FROM {course_modules} cmdls  
-LEFT JOIN  {qbassign} qba ON  cmdls.course = qba.course AND cmdls.instance = qba.id
+$pc_ctxt_sql = "SELECT qbc.id ctxt_id, qc.cmdl_id, qc.course_id, qc.qb_quiz_id, qc.uid FROM {context} qbc
+JOIN (SELECT cmdls.id cmdl_id, cmdls.course course_id, qba.id qb_quiz_id, qba.uid FROM {course_modules} cmdls  
+LEFT JOIN  {quiz} qba ON  cmdls.course = qba.course AND cmdls.instance = qba.id
 WHERE qba.course = :cid) qc
 ON qbc.instanceid = qc.cmdl_id AND qbc.contextlevel = :ctxt_mdl";
 
@@ -113,8 +113,8 @@ foreach($orecds as $k => $v){
            "new_ctxt_id" => $nrow["ctxt_id"],
            "old_cmdl_id" => $v["cmdl_id"],
            "new_cmdl_id" => $nrow["cmdl_id"],
-           "old_qb_assgn_id" => $v["qb_assgn_id"],
-           "new_qb_assgn_id" => $nrow["qb_assgn_id"]
+           "old_qb_quiz_id" => $v["qb_quiz_id"],
+           "new_qb_quiz_id" => $nrow["qb_quiz_id"]
         );
     }elseif(isset($nrecds1[$ky2])){
         $nrow = $nrecds1[$ky2];
@@ -127,8 +127,8 @@ foreach($orecds as $k => $v){
             "new_ctxt_id" => $nrow["ctxt_id"],
             "old_cmdl_id" => $v["cmdl_id"],
             "new_cmdl_id" => $nrow["cmdl_id"],
-            "old_qb_assgn_id" => $v["qb_assgn_id"],
-            "new_qb_assgn_id" => $nrow["qb_assgn_id"]
+            "old_qb_quiz_id" => $v["qb_quiz_id"],
+            "new_qb_quiz_id" => $nrow["qb_quiz_id"]
          );
     }
 }
@@ -143,234 +143,30 @@ $enrolledusers = core_enrol_external::get_enrolled_users($ccourse_id, $options);
 foreach($enrolledusers as $enrolleduser){
     $cusrid = $enrolleduser["id"];
     foreach($combinedrecs as $combinedrec){
-        $oqaid = $combinedrec["old_qb_assgn_id"];
-        $nqaid = $combinedrec["new_qb_assgn_id"];
+        $oqzid = $combinedrec["old_qb_quiz_id"];
+        $nqzid = $combinedrec["new_qb_quiz_id"];
         $octxt_id = $combinedrec["old_ctxt_id"];
         $nctxt_id = $combinedrec["new_ctxt_id"];
-        $oldmapping = $DB->get_record("qbassign_user_mapping",
-            [
-                "qbassignment" => $oqaid,
+
+        // Quiz Grades
+        $old_qgrade = $DB->get_record("quiz_grades",[
+            "quiz" => $oqzid,
+            "userid" => $cusrid
+        ]);
+
+        if($old_qgrade){
+            $new_qgrade = $DB->get_record("quiz_grades",[
+                "quiz" => $nqzid,
                 "userid" => $cusrid
-            ]
-        );
-        if($oldmapping){
-            $newmapping = $DB->get_record("qbassign_user_mapping",
-                [
-                    "qbassignment" => $nqaid,
-                    "userid" => $cusrid
-                ]
-            );
-            if(empty($newmapping)){
-                $umapdata = new stdClass;
-                $umapdata->qbassignment = $nqaid;
-                $umapdata->userid = $cusrid;
-                $DB->insert_record("qbassign_user_mapping", $umapdata);
+            ]);
+            if(empty($new_qgrade)){
+                unset($old_qgrade->id);
+                $old_qgrade->quiz = $nqzid;
+                $DB->insert_record("quiz_grades", $old_qgrade);
             }
         }
 
-        $oldgrade = $DB->get_record("qbassign_grades",
-                    [
-                        "qbassignment" => $oqaid,
-                        "userid" => $cusrid
-                    ]
-        );
-        if($oldgrade){
-            $newgrade = $DB->get_record("qbassign_grades",
-                    [
-                        "qbassignment" => $nqaid,
-                        "userid" => $cusrid
-                    ]
-            );
-            if(empty($newgrade)){
-                unset($oldgrade->id);
-                $oldgrade->qbassignment = $nqaid;
-                $DB->insert_record("qbassign_grades", $oldgrade);
-            }
-        }
-        
-        // Get Old Submission from Old Assignment ID
-        $oldsubmission = $DB->get_record("qbassign_submission",
-            [
-               "qbassignment" => $oqaid,
-               "userid" => $cusrid
-            ]
-        );
-
-        // qbassign_submission migration //
-        $oldsub_id = 0;
-        $newsub_id = 0;
-        if($oldsubmission){
-            $oldsub_id = $oldsubmission->id; // Old submission id important one
-            $newsubmission = $DB->get_record("qbassign_submission",
-                    [
-                    "qbassignment" => $nqaid,
-                    "userid" => $cusrid
-                    ]
-            );
-
-            if(empty($newsubmission)){
-                $newsubmission =  new stdClass;
-                unset($oldsubmission->id);
-                $oldsubmission->qbassignment = $nqaid;
-                $newsub_id = $DB->insert_record("qbassign_submission", $oldsubmission);
-            }else{
-                $newsub_id = $newsubmission->id;
-            }
-        }
-
-        // qbassignsubmission_file //
-        $oldsubmissionfile = $DB->get_record("qbassignsubmission_file",
-            [
-               "qbassignment" => $oqaid,
-               "submission" => $oldsub_id
-            ]
-        );
-        
-        if($oldsubmissionfile){
-            
-            $newsubmissionfile = $DB->get_record("qbassignsubmission_file",
-                [
-                "qbassignment" => $nqaid,
-                "submission" => $newsub_id
-                ]
-            );
-            
-            if(empty($newsubmissionfile)){
-                unset($oldsubmissionfile->id);
-                $oldsubmissionfile->qbassignment = $nqaid;
-                $oldsubmissionfile->submission = $newsub_id;
-                $newsub_fid = $DB->insert_record("qbassignsubmission_file", $oldsubmissionfile);
-            }
-        }
-        
-        $old_files = $DB->get_records("files",
-            [
-                "contextid" => $octxt_id,
-                "component" => "qbassignsubmission_file",
-                "filearea" => "submission_files",
-                "itemid" => $oldsub_id
-            ]
-        );
-        
-        if($old_files){      
-            foreach($old_files as $old_file){
-                $old_file->contextid = $nctxt_id;
-                $old_file->itemid = $newsub_id;
-                $DB->update_record("files", $old_file);
-            }
-        } 
-
-        // If we want to revert new file using the below code
-        /* $new_files = $DB->get_records("files",
-            [
-                "contextid" => $nctxt_id,
-                "component" => "qbassignsubmission_file",
-                "filearea" => "submission_files",
-                "itemid" => $newsub_id
-            ]
-        );
-        
-        if($new_files){      
-            foreach($new_files as $new_file){
-                $new_file->contextid = $octxt_id;
-                $new_file->itemid = $oldsub_id;
-                $DB->update_record("files", $new_file);
-            }
-        } */
-
-        // Qb Assign User Flags
-        $oqauflag = $DB->get_record("qbassign_user_flags",
-            [
-               "qbassignment" => $oqaid,
-               "userid" => $cusrid
-            ]
-        );
-        
-        if( $oqauflag ){
-            $nqauflag = $DB->get_record("qbassign_user_flags",
-                [
-                "qbassignment" => $nqaid,
-                "userid" => $cusrid
-                ]
-            );
-            if(empty($nqauflag)){
-                unset($oqauflag->id);
-                $oqauflag->qbassignment = $nqaid;
-                $DB->insert_record("qbassign_user_flags", $oqauflag);
-            }
-        }
-
-        // Online text
-
-        $oldonline_txt = $DB->get_record("qbassignsubmission_onlinetex",
-           [
-                "qbassignment" => $oqaid,
-                "submission" => $oldsub_id
-           ]
-        );
-
-        if($oldonline_txt){
-            $newonline_txt = $DB->get_record("qbassignsubmission_onlinetex",
-                [
-                    "qbassignment" => $nqaid,
-                    "submission" => $newsub_id
-                ]
-            );
-            if(empty($newonline_txt)){
-                unset($oldonline_txt->id);
-                $oldonline_txt->qbassignment = $nqaid;
-                $oldonline_txt->submission = $newsub_id;
-                $DB->insert_record("qbassignsubmission_onlinetex", $oldonline_txt);
-            }
-        }
-
-        // Code Block qbassignsubmission_codeblock
-        $oldcodeblock = $DB->get_record("qbassignsubmission_codeblock",
-           [
-                "qbassignment" => $oqaid,
-                "submission" => $oldsub_id
-           ]
-        );
-
-        if($oldcodeblock){
-            $newcodeblock = $DB->get_record("qbassignsubmission_codeblock",
-                [
-                    "qbassignment" => $nqaid,
-                    "submission" => $newsub_id
-                ]
-            );
-            if(empty($newcodeblock)){
-                unset($oldcodeblock->id);
-                $oldcodeblock->qbassignment = $nqaid;
-                $oldcodeblock->submission = $newsub_id;
-                $DB->insert_record("qbassignsubmission_codeblock", $oldcodeblock);
-            }
-        }
-        
-        // Scratch qbassignsubmission_scratch
-
-        $oldcodescratch = $DB->get_record("qbassignsubmission_scratch",
-           [
-                "qbassignment" => $oqaid,
-                "submission" => $oldsub_id
-           ]
-        );
-
-        if($oldcodescratch){
-            $newcodescratch = $DB->get_record("qbassignsubmission_scratch",
-                [
-                    "qbassignment" => $nqaid,
-                    "submission" => $newsub_id
-                ]
-            );
-            if(empty($newcodescratch)){
-                unset($oldcodescratch->id);
-                $oldcodescratch->qbassignment = $nqaid;
-                $oldcodescratch->submission = $newsub_id;
-                $DB->insert_record("qbassignsubmission_scratch", $oldcodescratch);
-            }
-        }
-
+        // End Quiz Grades
 
 
     }
@@ -405,9 +201,9 @@ function get_new_assign_id($old_assgn_id)
     global $combinedrecs;
     $new_assgn_id = "";
     foreach($combinedrecs as $ck => $cv){
-        if($cv["old_qb_assgn_id"]==$old_assgn_id)
+        if($cv["old_qb_quiz_id"]==$old_assgn_id)
         {
-           $new_assgn_id = $cv["new_qb_assgn_id"];
+           $new_assgn_id = $cv["new_qb_quiz_id"];
            break;
         }
     }
