@@ -10,8 +10,8 @@ require_once($CFG->dirroot . '/enrol/externallib.php');
 
 //$ref_csname = 'DCL02'; // Reference Course Short name
 //$cohort_idnumber = 'bfsajman';
-// http://qubits.localhost.com/local/qbmanifest/clonefilegrade.php?cshortname=DPL06&cohortid=ajyalmbz
-// Example http://qubits.localhost.com/local/qbmanifest/clonefilegrade.php?cshortname=DCL03&cohortid=bfsajman
+// http://qubits.localhost.com/local/qbmanifest/clonequizgrade.php?cshortname=DPL06&cohortid=ajyalmbz
+// Example http://qubits.localhost.com/local/qbmanifest/clonequizgrade.php?cshortname=DCL03&cohortid=bfsajman
 
 $ref_csname = required_param('cshortname', PARAM_ALPHANUMEXT);
 $cohort_idnumber = required_param('cohortid', PARAM_ALPHANUMEXT);
@@ -371,84 +371,8 @@ foreach($enrolledusers as $enrolleduser){
             }
         }
 
-        // Grade Items and Grades
-        $oldgradeitem = $DB->get_record("grade_items",
-            [
-                "iteminstance" => $oqaid,
-                "itemtype" => "mod",
-                "itemmodule" => "qbassign",
-                "courseid" => $pcourse_id
-            ]
-        );
-        $ogrditmid = 0;
-        $ngrditmid = 0;
-        if($oldgradeitem){
-            $ogrditmid = $oldgradeitem->id;
-            $newgradeitem = $DB->get_record("grade_items",
-                [
-                    "iteminstance" => $nqaid,
-                    "itemtype" => "mod",
-                    "itemmodule" => "qbassign",
-                    "courseid" => $ccourse_id
-                ]
-            );
 
-             if($newgradeitem){
-                $ngrditmid = $newgradeitem->id;
-                // $cusrid
-                // Grade of Grades grade_grades
-                $og_grades = $DB->get_record("grade_grades",
-                    [
-                        "itemid" => $ogrditmid,
-                        "userid" => $cusrid
-                    ]
-                );
-                if($og_grades){
-                    $ng_grades = $DB->get_record("grade_grades",
-                        [
-                            "itemid" => $ngrditmid,
-                            "userid" => $cusrid
-                        ]
-                    );
-                    if(empty($ng_grades)){
-                        unset($og_grades->id);
-                        $og_grades->itemid = $ngrditmid;
-                        $DB->insert_record("grade_grades", $og_grades);
-                    }
-                }
-             }
-        }
-        // Ended Grade Items and Grades
-        // Grades History grade_grades_history
-        $oldgradehistories = $DB->get_records("grade_grades_history",
-            [
-                "itemid" => $ogrditmid,
-                "userid" => $cusrid,
-                "source" => "mod/qbassign"
-            ]
-        );
 
-        if($oldgradehistories){
-            foreach($oldgradehistories as $oldgradehistory){
-                $newgradehistory = $DB->get_record("grade_grades_history",
-                    [
-                        "itemid" => $ngrditmid,
-                        "userid" => $cusrid,
-                        "source" => "mod/qbassign",
-                        "loggeduser" => $oldgradehistory->loggeduser,
-                        "action" => $oldgradehistory->action
-                    ]
-                );
- 
-                if(empty($newgradehistory)){
-                    unset($oldgradehistory->id);
-                    $oldgradehistory->itemid = $ngrditmid;
-                    $DB->insert_record("grade_grades_history", $oldgradehistory);         
-                }  
-            }
-        }
-        // Ended Grades History
-        
     }
 }
 
