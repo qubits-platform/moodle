@@ -279,6 +279,13 @@
               "type": "assignment"
             },
             {
+              "title": "2.3 - Add A Webpage",
+              "uid": "DCL06-TP2-CHDRN4",
+              "description": "",
+              "route": "/pdf?course=DigiChamps&Level=Level6&pdf=DCL06_U02_S03",
+              "type": "page"
+            },
+            {
               "uid": "DCL06-TP2-CHDRN13",
               "fname": "DCL06-TP2-CHDRN13.json",
               "type": "assignment"
@@ -569,6 +576,13 @@
               "uid": "DCL06-TP5-CHDRN13",
               "fname": "DCL06-TP5-CHDRN13.json",
               "type": "assignment"
+            },
+            {
+              "title": "5.4 - Logical Functions",
+              "uid": "DCL06-TP5-CHDRN5",
+              "description": "",
+              "route": "/pdf?course=DigiChamps&Level=Level6&pdf=DCL06_U05_S04",
+              "type": "page"
             },
             {
               "uid": "DCL06-TP5-CHDRN14",

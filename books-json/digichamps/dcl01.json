@@ -382,6 +382,13 @@
               "type": "assignment"
             },
             {
+              "title": "4.3 - Stamps",
+              "uid": "DCL01-TP4-CHDRN4",
+              "description": "",
+              "route": "/pdf?course=DigiChamps&Level=Level1&pdf=DCL01_U04_S03",
+              "type": "page"
+            },
+            {
               "uid": "DCL01-TP4-CHDRN13",
               "fname": "DCL01-TP4-CHDRN13.json",
               "type": "assignment"
