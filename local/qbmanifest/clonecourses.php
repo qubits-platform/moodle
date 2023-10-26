@@ -36,12 +36,6 @@ $farr = array(
     "DJL01" => "/books-json/djl01.json"
 );
 
-$carr = array(
-    "efalcon" => array(
-        "name" => "Emirates Falcon",
-        "idnumber" => "efalcon"
-    )
-);
 
 $ref_csname = required_param('cshortname', PARAM_ALPHANUMEXT);
 $cohort_idnumber = required_param('cohortid', PARAM_ALPHANUMEXT);
@@ -87,11 +81,6 @@ if(is_array($isvalidjson) or is_object($isvalidjson)) {
             $datacourse[0]['shortname'] = $course->code;
             $datacourse[0]['category'] = $coursecategory->name;
             $datacourse[0]['categoryid'] = $coursecategory->idnumber;
-
-            if(isset($carr[$cohort_idnumber])){
-                $datacourse[0]['category'] = $carr[$cohort_idnumber]["name"];
-                $datacourse[0]['categoryid'] = $carr[$cohort_idnumber]["idnumber"];
-            }
 
             $datacourse[0]['numsections'] = count($course->chapters);
             $datacourse[0]['summary'] = $course->summary;
