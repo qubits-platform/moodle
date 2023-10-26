@@ -6,3 +6,22 @@ DROP CONSTRAINT "pqbs_quizatte_uni_uix";
 
 DROP INDEX "pqbs_file_pat_uix";
 DROP INDEX "pqbs_quizatte_uni_uix";
+
+
+dummyschool
+
+
+dummyschool
+
+Madar International School, 
+Al Ain American National School,
+Al Ain Ajyal International School MBZ,
+Abu Dhabi Dubai National School-Albarsha,
+Dubai Dubai National School -Twar, Dubai
+Al Nahda National School - Boys, 
+Abu Dhabi City American School, 
+Ajman Rawafed Private School, 
+Abu Dhabi
+
+
+https://staging.myqubit.co/local/qbmanifest/clonecourses.php?cshortname=DCL01&cohortid=dummyschool
