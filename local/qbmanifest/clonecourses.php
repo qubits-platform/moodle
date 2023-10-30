@@ -5,11 +5,65 @@ global $CFG, $DB, $USER, $OUTPUT;
 
 //$ref_csname = 'DCL02'; // Reference Course Short name
 //$cohort_idnumber = 'bfsajman';
-// Example http://qubits.localhost.com/local/qbmanifest/clonecourses.php?cshortname=DCL03&cohortid=bfsajman&mfile=/books-json/digichamps/dcl03.jso
+// Example http://qubits.localhost.com/local/qbmanifest/clonecourses.php?cshortname=DCL03&cohortid=bfsajman
+// Deprecated this param &mfile=/books-json/digichamps/dcl03.json
+
+require_login();
+
+if(!is_siteadmin()){
+    throw new \moodle_exception('accessdenied');
+}
+
+$farr = array(
+    "DCL01" => "/books-json/digichamps/dcl01.json",
+    "DCL02" => "/books-json/digichamps/dcl02.json",
+    "DCL03" => "/books-json/digichamps/dcl03.json",
+    "DCL04" => "/books-json/digichamps/dcl04.json",
+    "DCL05" => "/books-json/digichamps/dcl05.json",
+    "DCL06" => "/books-json/digichamps/dcl06.json",
+    "DCL07" => "/books-json/digichamps/dcl07.json",
+    "DCL08" => "/books-json/digichamps/dcl08.json",
+    "DCL09" => "/books-json/digichamps/dcl09.json",
+    "DCL10" => "/books-json/digichamps/dcl10.json",
+    "DCL11" => "/books-json/digichamps/dcl11.json",
+    "DCL12" => "/books-json/digichamps/dcl12.json",
+    "DPL01" => "/books-json/digipro/dpl01.json",
+    "DPL02" => "/books-json/digipro/dpl02.json",
+    "DPL03" => "/books-json/digipro/dpl03.json",
+    "DPL04" => "/books-json/digipro/dpl04.json",
+    "DPL05" => "/books-json/digipro/dpl05.json",
+    "DPL06" => "/books-json/digipro/dpl06.json",
+    "DPL07" => "/books-json/digipro/dpl07.json",
+    "DPL08" => "/books-json/digipro/dpl08.json",
+    "DPL09" => "/books-json/digipro/dpl09.json",
+    "DPL10" => "/books-json/digipro/dpl10.json",
+    "DPL11" => "/books-json/digipro/dpl11.json",
+    "DPL12" => "/books-json/digipro/dpl12.json",
+    "DJL01" => "/books-json/djl01.json"
+);
+
 
 $ref_csname = required_param('cshortname', PARAM_ALPHANUMEXT);
 $cohort_idnumber = required_param('cohortid', PARAM_ALPHANUMEXT);
-$cfilename = required_param('mfile', PARAM_RAW);
+//$cfilename = required_param('mfile', PARAM_RAW);
+$cfilename = $farr[$ref_csname];
+
+$rcohort = $DB->get_record("cohort", [
+    "idnumber" => $cohort_idnumber
+], '*', MUST_EXIST);
+
+$coursecategory = $DB->get_record("course_categories", [
+    "idnumber" => $cohort_idnumber
+], '*');
+
+if(empty($coursecategory)){
+    $coursecategory = new stdClass;
+    $coursecategory->name = $rcohort->description;
+    $coursecategory->idnumber = $rcohort->idnumber;
+    $coursecategory->parent = 0;
+    $rcat = core_course_category::create($coursecategory, '');
+}
+
 
 $coursefile = $CFG->dirroot.$cfilename; // '/books-json/digichamps/dcl02.json'
 $course_fcontent = file_get_contents($coursefile);
@@ -31,8 +85,9 @@ if(is_array($isvalidjson) or is_object($isvalidjson)) {
 
             $datacourse[0]['fullname'] = $course->name;
             $datacourse[0]['shortname'] = $course->code;
-            $datacourse[0]['category'] = $course->category;
-            $datacourse[0]['categoryid'] = $course->categorycode;
+            $datacourse[0]['category'] = $coursecategory->name;
+            $datacourse[0]['categoryid'] = $coursecategory->idnumber;
+
             $datacourse[0]['numsections'] = count($course->chapters);
             $datacourse[0]['summary'] = $course->summary;
 
@@ -57,11 +112,19 @@ if(is_array($isvalidjson) or is_object($isvalidjson)) {
                 $DB->set_field('course', 'summary', $course->summary, array('id' => $cexists->id));
                 $msg='Record has been updated successfully.';
                 $type = 2;
+                if($cohort_idnumber=="dnsbarsha")
+                  $courseinstance = $DB->insert_record('enrol', array('courseid'=>$courseid, 'enrol'=>'oneroster', 'status'=> ENROL_INSTANCE_ENABLED));
             }
             else{
                 $course_details = $newcourse->create_course($datacourse);
                 $courseid = $course_details[0]['id'];
                 $type = 1;
+                if($cohort_idnumber=="dnsbarsha"){
+                    $courseinstance = $DB->get_record('enrol', array('courseid'=>$courseid, 'enrol'=>'oneroster'));
+                    if(empty($courseinstance)){
+                        $courseinstance = $DB->insert_record('enrol', array('courseid'=>$courseid, 'enrol'=>'oneroster', 'status'=> ENROL_INSTANCE_ENABLED));
+                    }
+                }
             }
 
             $newcourse->updateSections($courseid,$course->chapters,$course->otherfields,$type);

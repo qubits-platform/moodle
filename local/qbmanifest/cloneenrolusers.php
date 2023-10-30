@@ -10,6 +10,12 @@ require_once($CFG->dirroot.'/cohort/lib.php');
 //$cohort_idnumber = 'bfsajman';
 // Example http://qubits.localhost.com/local/qbmanifest/cloneenrolusers.php?cshortname=DCL03&cohortid=bfsajman
 
+require_login();
+
+if(!is_siteadmin()){
+    throw new \moodle_exception('accessdenied');
+}
+
 $ref_csname = required_param('cshortname', PARAM_ALPHANUMEXT);
 $cohort_idnumber = required_param('cohortid', PARAM_ALPHANUMEXT);
 
@@ -28,14 +34,27 @@ $current_course = $DB->get_record("course",[
 // Get Source group users
 $qry = "SELECT * FROM {groups} WHERE ";
 $gparams["courseid"] = $parent_course->id;
-$gparams["name"] = $cohort_idnumber.$ref_csname.'%';
-$where = "courseid = :courseid ";
-$where .= " AND ".$DB->sql_like('name', ':name', false);
 
+$gparams["name1"] = $cohort_idnumber.$ref_csname.'%';
+$gparams["name2"] = $cohort_idnumber.'%'.$ref_csname;
+$gparams["name3"] = $ref_csname.'%'.$cohort_idnumber;
+
+$where = "courseid = :courseid ";
+$where .= " AND ( ".$DB->sql_like('name', ':name1', false)." OR ".$DB->sql_like('name', ':name2', false)." OR ".$DB->sql_like('name', ':name3', false)." )";
 $course_groups = $DB->get_records_sql("$qry $where", $gparams);
-$cur_course_instance = $DB->get_record('enrol', array('courseid'=>$current_course->id, 'enrol'=>'manual'), '*');
+
+if($cohort_idnumber=="dnsbarsha"){
+    $manplugin = enrol_get_plugin('oneroster');
+    $cur_course_instance = $DB->get_record('enrol', array('courseid'=>$current_course->id, 'enrol'=>'oneroster'), '*');
+    $par_course_instance = $DB->get_record('enrol', array('courseid'=>$parent_course->id, 'enrol'=>'oneroster'), '*');
+}else{
+    $cur_course_instance = $DB->get_record('enrol', array('courseid'=>$current_course->id, 'enrol'=>'manual'), '*');
+    $par_course_instance = $DB->get_record('enrol', array('courseid'=>$parent_course->id, 'enrol'=>'manual'), '*');    
+}
+echo "<pre>"; print_r($course_groups);
 
 foreach($course_groups as $course_group){
+   $old_group_id = $course_group->id;
    $egroup_members = groups_get_members_by_role($course_group->id, $parent_course->id);
    $newgroup = $DB->get_record("groups", [
        "courseid" => $current_course->id,
@@ -55,8 +74,12 @@ foreach($course_groups as $course_group){
 	   $roleid = $egroup_member->id;
 	   $egusers = $egroup_member->users;
 	   foreach($egusers as $eguser){
+           echo 'Group '.$gid.' User '.$eguser->id.' Role '.$roleid."<br/>";
 		   $manplugin->enrol_user($cur_course_instance, $eguser->id, $roleid);
 		   groups_add_member($gid, $eguser->id);
+
+           //groups_remove_member($old_group_id, $eguser->id);
+           //$manplugin->unenrol_user($par_course_instance, $eguser->id); // unenroll user from parent course
 	   }
 	 // $manplugin->enrol_user($cur_course_instance, $user1->id, $studentrole->id);  
    }
