@@ -447,7 +447,7 @@ class qbassign_submission_scratch extends qbassign_submission_plugin {
                     'qbassignment' => $submission->qbassignment));
             }
         }
-
+        return '';
         return $plagiarismlinks . $result;
     }
 
