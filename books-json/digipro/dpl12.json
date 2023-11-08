@@ -144,7 +144,7 @@
                     "type": "page"
                   },   
                   {
-                    "title": "Sprint 4.4 Accessors,Mutators and Non-Void Methods",
+                    "title": "Sprint 4.4 Access Modifiers,Libraries and Packages",
                     "uid": "DPL12-TP0-CHDRN18",
                     "description": "",
                     "route": "/pdf?course=DigiPro&Level=Level12&unit=Unit4&pdf=DP_L12_Unit4_Sprint4.4",
@@ -1033,7 +1033,12 @@
                 "uid": "DPL12-TP7-CHDRN10",
                 "fname": "DPL12-TP7-CHDRN10.json",
                 "type": "assignment"
-              }
+              },
+             {
+               "uid": "DPL12-U07-CHDRN1",
+               "fname": "DPL12-U07-CHDRN1.json",
+               "type": "quiz"
+             }
             ],
             "teacheronly": "no"
           },
