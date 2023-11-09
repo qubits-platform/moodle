@@ -32,7 +32,7 @@
                   "type": "page"
                 },
           {
-                  "title": "Sprint 1.2 Password Managers",
+                  "title": "Sprint 1.2 Securing Data",
                   "uid": "DCL07-TP0-CHDRN3",
                   "description": "",
                   "route": "/pdf?course=DigiChamps&Level=Level7&unit=Unit1&pdf=V2_DC L7 Sprint 1.2",
@@ -130,7 +130,7 @@
                   "type": "page"
                 },
                 {
-                  "title": "Sprint 6.2 Bits for Colors",
+                  "title": "Sprint 6.2 Working With Data",
                   "uid": "DCL07-TP0-CHDRN17",
                   "description": "",
                   "route": "/pdf?course=DigiChamps&Level=Level7&unit=Unit6&pdf=V2_DC L7 Sprint6.2",
@@ -204,7 +204,8 @@
               "title": "Unit 2 Summary",
               "uid": "DCL07-TP2-CHDRN1",
               "description": "",
-              "route": "/pdf?course=DigiChamps&Level=Level7&pdf=DCL07_U02_Intro"
+              "route": "/pdf?course=DigiChamps&Level=Level7&pdf=DCL07_U02_Intro",
+              "type": "page"
             },
             {
               "title": "2.1 - Home Page With Header And Footer",
@@ -483,7 +484,7 @@
               "title": "5.3 -References",
               "uid": "DCL07-TP5-CHDRN4",
               "description": "",
-              "route": "/pdf?course=DigiChamps&Level=Level3&pdf=DCL07_U05_S03",
+              "route": "/pdf?course=DigiChamps&Level=Level7&pdf=DCL07_U05_S03",
               "type": "page"
             },
             {
