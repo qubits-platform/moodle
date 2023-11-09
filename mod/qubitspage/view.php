@@ -86,20 +86,20 @@ parse_str(html_entity_decode($pq), $parsedpq);
 
 <div id="__next"></div>
 <script id="__NEXT_DATA__" type="application/json">
-    {
-        "props": {
-            "pageProps": {},
-            "__N_SSG": true
-        },
+{
+    "props": {
+        "pageProps": {},
+        "__N_SSG": true
+    },
 
 
-        "page": "/pdf",
-        "query": <?php echo json_encode($parsedpq); ?>,
-        "buildId": "A1dhyo6H_joRa_TtvJg7a",
-        "isFallback": false,
-        "gsp": true,
-        "scriptLoader": []
-    }
+    "page": "/pdf",
+    "query": <?php echo json_encode($parsedpq); ?>,
+    "buildId": "d2TWjZabmutxKXlkHHqRV",
+    "isFallback": false,
+    "gsp": true,
+    "scriptLoader": []
+}
 </script>
 
 <?php

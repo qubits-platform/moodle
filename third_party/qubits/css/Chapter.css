@@ -1318,3 +1318,14 @@ body.react-split--disabled {
 .p-0 {
   padding: 0 !important;
 }
+
+.flex-tabs {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  right: 25px;
+  top: 55px;
+  width: 50px;
+  color: #6d6d6d;
+}
