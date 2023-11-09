@@ -238,3 +238,6 @@ body.reportdashboard.path-blocks-reportdashboard
 #inst132 > div > div > div.dashboard_reporttile_container {
   background-color: #f87370 !important;
 }
+#widgetaction .dropdown #switchrole {
+  display: none;
+}
