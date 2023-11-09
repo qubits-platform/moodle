@@ -466,10 +466,6 @@ pre {
   color: white;
 }
 
-.resultTextareaStyle pre {
-	color: white;
-}
-
 pre ~ p {
   margin-top: 2em;
   margin-bottom: 0;
@@ -489,7 +485,7 @@ pre ~ p {
   background-color: #fff;
 }
 
-.ace_editor.editable:hover {
+.ace_editor.edita	ble:hover {
   outline: 2px solid #5babf2;
 }
 
