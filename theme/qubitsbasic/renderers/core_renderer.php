@@ -28,10 +28,23 @@ require_once("$CFG->dirroot/theme/qubitsbasic/externallib.php");
 class theme_qubitsbasic_core_renderer extends theme_boost\output\core_renderer {
 
     public function qubits_left_navigation(){
-        global $CFG, $PAGE,$DB;
+        global $CFG, $PAGE,$DB,$USER;
+        if (is_siteadmin())
+        {
+            $isadmin = true;
+        }
+        else
+        {
+            $isadmin = false;
+        }
         $mycourses = enrol_get_my_courses(array('id', 'cacherev'), 'fullname');
         $myenrolcourses = array();
         foreach($mycourses as $mycourse){
+            $context = context_course::instance($mycourse->id);
+            $roles = get_user_roles($context, $USER->id, true);
+            $role = key($roles);
+            $rolename = $roles[$role]->shortname;
+
             $category = $DB->get_record('course_categories',array('id'=>$mycourse->category));
             $categoryName = $category->name;
             $mform = new theme_qubitsbasic_external();
@@ -53,7 +66,9 @@ class theme_qubitsbasic_core_renderer extends theme_boost\output\core_renderer {
         $primarymenu = $primary->export_for_template($renderer);
         $context = array(
             "myenrolcourses" => $myenrolcourses,
-            'usermenu' => $primarymenu['user']
+            'usermenu' => $primarymenu['user'],
+            'currentrolename' => $rolename,
+            'currentadmin' => $isadmin
         );
         return $this->render_from_template("theme_qubitsbasic/custom/leftnavigation", $context);
     }
