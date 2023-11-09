@@ -123,8 +123,8 @@ body.reportdashboard.path-blocks-reportdashboard .reportdashboard_right:hover {
 }
 .dataTables_wrapper .dataTables_paginate .paginate_button:hover,
 .dataTables_wrapper .dataTables_paginate .paginate_button:active {
-  background-color: #116cbf !important;
-  background: #116cbf !important;
+  background-color: rgba(0, 0, 0, 0.1) !important;
+  border: none !important;
 }
 body.path-blocks-learnerscript a:hover {
   text-decoration: underline !important;
@@ -181,4 +181,63 @@ body.reportdashboard.path-blocks-reportdashboard
 option:not(:checked) {
   background-color: #fff;
   color: #1d2125;
+}
+body .editreport > a,
+.editreport > a:hover,
+.editreport > a:focus {
+  color: #808285 !important;
+}
+#custom_jumpto {
+  background-color: #116cbf;
+}
+.reportdashboard #widgetaction {
+  top: 10px !important;
+}
+.sendmessage input {
+  background-color: #116cbf;
+  padding: 5px;
+  border-radius: 5px;
+  border: none !important;
+  color: white;
+}
+body.path-blocks-learnerscript .ui-dialog .ui-dialog-titlebar,
+body.path-blocks-reportdashboard .ui-dialog .ui-dialog-titlebar {
+  background-color: #116cbf !important;
+}
+body.path-blocks-learnerscript .ui-dialog .ui-dialog-titlebar .ui-dialog-title {
+  color: white !important;
+}
+.width-container .block_navigation {
+  display: none !important;
+}
+body.reportdashboard.path-blocks-reportdashboard
+  .dataTables_wrapper
+  .co_report_header
+  input {
+  margin: 5px !important;
+}
+body.reportdashboard .block_reporttiles .tiles_information table tr {
+  justify-content: space-evenly !important;
+}
+.block_reporttiles div.tiles_information {
+  align-items: center !important;
+}
+body.reportdashboard .block_reporttiles .tiles_information table td {
+  border: none !important;
+}
+body.reportdashboard.path-blocks-reportdashboard
+  .width-container.reports-act-graphs {
+  margin-top: 30px !important;
+}
+#inst144 > div > div > div.dashboard_reporttile_container {
+  background-color: #c5cdf2 !important;
+}
+#inst187 > div > div > div.dashboard_reporttile_container {
+  background-color: #80d9e9 !important;
+}
+#inst132 > div > div > div.dashboard_reporttile_container {
+  background-color: #f87370 !important;
+}
+#widgetaction .dropdown #switchrole {
+  display: none;
 }

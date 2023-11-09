@@ -554,7 +554,8 @@ class process {
                    $csec = $asections1[$k];
                    $user->{'course'.$ccnt} = $ccode;
                    $user->{'role'.$ccnt} = $usersysrole;
-                   $user->{'group'.$ccnt} = $usercohort.$ccode.$cv.$csec;
+                   $mccode = str_replace($usercohort, "", $ccode);
+                   $user->{'group'.$ccnt} = $usercohort.$mccode.$cv.$csec;
                    $nflcolumns[] = 'course'.$ccnt;
                    $nflcolumns[] = 'role'.$ccnt;
                    $nflcolumns[] = 'group'.$ccnt;
