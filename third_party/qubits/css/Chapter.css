@@ -485,7 +485,7 @@ pre ~ p {
   background-color: #fff;
 }
 
-.ace_editor.edita	ble:hover {
+.ace_editor.editable:hover {
   outline: 2px solid #5babf2;
 }
 
