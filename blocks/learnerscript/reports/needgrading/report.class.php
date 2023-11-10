@@ -38,7 +38,7 @@ class report_needgrading extends reportbase implements report {
         global $USER;
         parent::__construct($report, $reportproperties);
         $this->components = array('columns', 'filters', 'permissions', 'calcs', 'plot');
-        $columns = ['username', 'course', 'module', 'assignment', 'datesubmitted', 'delay', 'grade'];
+        $columns = ['username', 'course', 'assignment', 'datesubmitted', 'delay', 'grade'];
         $this->columns = ['needgrading' => $columns];
         $this->courselevel = true;
         if ($this->role != 'student') {
@@ -46,7 +46,7 @@ class report_needgrading extends reportbase implements report {
         }
         $this->filters = array('users');
         $this->parent = true;
-        $this->orderable = array('username', 'course', 'module', 'assignment', 'datesubmitted', 'delay', 'grade');
+        $this->orderable = array('username', 'course', 'assignment', 'datesubmitted', 'delay', 'grade');
         $this->defaultcolumn = "concat(gg.itemid, '-', cm.course, '-', gg.userid, '-',cm.id)";
         $this->excludedroles = array("'student'");
     }
@@ -57,7 +57,7 @@ class report_needgrading extends reportbase implements report {
     }
 
     function select() {
-        $this->sql = "SELECT DISTINCT(concat(gg.itemid, '-', cm.course, '-', gg.userid, '-',cm.id)) , co.fullname as course, (SELECT concat(u.firstname,' ',u.lastname) FROM {user} u WHERE u.id=gg.userid) as username, gg.userid, gi.itemname as assignment, gg.timecreated as timecreated, m.name as module, cm.id as cmd";
+        $this->sql = "SELECT DISTINCT(concat(gg.itemid, '-', cm.course, '-', gg.userid, '-',cm.id)) , co.fullname as course, (SELECT concat(u.firstname,' ',u.lastname) FROM {user} u WHERE u.id=gg.userid) as username, gg.userid, gi.itemname as assignment, gg.timecreated as timecreated, cm.id as cmd";
     }
 
     function from() {
@@ -100,7 +100,7 @@ class report_needgrading extends reportbase implements report {
     } 
 
     function groupby() {
-        $this->sql .= " GROUP BY gg.itemid, cm.course, gg.userid, cm.id, co.fullname, gi.itemname, gg.timecreated, m.name";
+        $this->sql .= " GROUP BY gg.itemid, cm.course, gg.userid, cm.id, co.fullname, gi.itemname, gg.timecreated";
     }
 
     /**
