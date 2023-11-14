@@ -99,7 +99,7 @@ define(['jquery',
             //Line, Bar and column charts
             lbchart: function(chartdata) {
                 var charttype = chartdata.type;
-                var chartcolors = ['#336B87', '#90AFC5', '#688B8A', '#A0B084', '#FAEFD4','#A57C65', '#1aadce', '#492970', '#f28f43', '#77a1e5', '#c42525', '#a6c96a'];
+                var chartcolors = ['#116CBF', '#90AFC5', '#688B8A', '#A0B084', '#FAEFD4','#A57C65', '#1aadce', '#492970', '#f28f43', '#77a1e5', '#c42525', '#a6c96a'];
                 if (typeof $(chartdata.container).data('chartcolor') != 'undefined') {
                     chartcolors = ['#' + $(chartdata.container).data('chartcolor') + ''];
                 }
@@ -208,7 +208,7 @@ define(['jquery',
             },
             //Combination chart with line,bar and pie
             combinationchart: function(chartdata) {
-                var chartcolors = ['#90AFC5', '#336B87', '#FAEFD4','#A57C65', '#1aadce', '#492970', '#f28f43', '#77a1e5', '#c42525', '#a6c96a'];
+                var chartcolors = ['#90AFC5', '#116CBF', '#FAEFD4','#A57C65', '#1aadce', '#492970', '#f28f43', '#77a1e5', '#c42525', '#a6c96a'];
                 if (typeof $(chartdata.container).data('chartcolor') != 'undefined') {
                     chartcolors = ['#' + $(chartdata.container).data('chartcolor') + ''];
                 }
