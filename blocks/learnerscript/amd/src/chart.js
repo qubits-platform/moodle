@@ -208,7 +208,7 @@ define(['jquery',
             },
             //Combination chart with line,bar and pie
             combinationchart: function(chartdata) {
-                var chartcolors = ['#90AFC5', '#116CBF', '#FAEFD4','#A57C65', '#1aadce', '#492970', '#f28f43', '#77a1e5', '#c42525', '#a6c96a'];
+                var chartcolors = ['#90AFC5', '#116CBF', '#FAEFD4','#A57C65', '#1aadce', '#492970', '#f28f43', '#77a1e5', '#c42525', '#A6C96A'];
                 if (typeof $(chartdata.container).data('chartcolor') != 'undefined') {
                     chartcolors = ['#' + $(chartdata.container).data('chartcolor') + ''];
                 }
