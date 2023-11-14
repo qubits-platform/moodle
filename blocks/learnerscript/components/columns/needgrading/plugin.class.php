@@ -49,7 +49,7 @@ class plugin_needgrading extends pluginbase{
         $date = new DateTime();
     	$timestamp = $date->getTimestamp();
 		switch ($data->column) {
-			case 'module':
+			case 'moduled':
 				$row->modulename = $row->module;
                 $activityicon = $OUTPUT->pix_icon('icon', ucfirst($row->module), $row->module, array('class' => 'icon'));
             	$row->{$data->column} =  ($activityicon.get_string('pluginname', $row->module));
