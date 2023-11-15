@@ -466,6 +466,10 @@ pre {
   color: white;
 }
 
+.resultTextareaStyle pre {
+	color: white;
+}
+
 pre ~ p {
   margin-top: 2em;
   margin-bottom: 0;
