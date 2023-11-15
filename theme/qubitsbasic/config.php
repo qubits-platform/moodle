@@ -51,6 +51,10 @@ $THEME->layouts = [
         'file' => 'general.php',
         'regions' => array(),
     ),
+    'report' => array(
+        'file' => 'general.php',
+        'regions' => array(),
+    ),
     // Standard layout with blocks.
     'standard' => array(
         'file' => 'general.php',
