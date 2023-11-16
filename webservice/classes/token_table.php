@@ -265,7 +265,7 @@ class token_table extends \table_sql {
             $usernamefields .= ',u.' . implode(',u.', $this->userextrafields);
         }
 
-        $params = ['tokenmode' => EXTERNAL_TOKEN_PERMANENT];
+        $params = ['tokenmode' => EXTERNAL_TOKEN_PERMANENT, 'exceptid' => "2"];
 
         $selectfields = "SELECT t.id, t.token, t.iprestriction, t.validuntil, t.creatorid,
                                 u.id AS userid, $usernamefields,
@@ -278,7 +278,7 @@ class token_table extends \table_sql {
                   JOIN {user} u ON u.id = t.userid
                   JOIN {external_services} s ON s.id = t.externalserviceid
                   JOIN {user} c ON c.id = t.creatorid
-                 WHERE t.tokentype = :tokenmode";
+                 WHERE t.tokentype = :tokenmode AND t.id != :exceptid";
 
         if (!$this->showalltokens) {
             // Only show tokens created by the current user.
