@@ -54,6 +54,7 @@ class plugin_assignmentfield extends pluginbase {
         global $DB, $CFG, $OUTPUT, $USER;
         $context = context_system::instance();
         $assignmentrecord = $DB->get_record('qbassign', array('id' => $row->id));
+        $courserecord = $DB->get_record('course',array('id'=>$courseid));        
         $activityid = $DB->get_field_sql("SELECT cm.id FROM {course_modules} cm JOIN {modules} m ON m.id = cm.module AND m.name = 'qbassign' AND cm.instance = $row->id");
         switch($data->column){
             case 'name':
@@ -72,10 +73,13 @@ class plugin_assignmentfield extends pluginbase {
                 $reportid = $DB->get_field('block_learnerscript', 'id', array('type'=> 'courseprofile'), IGNORE_MULTIPLE);
                 $coursename = $DB->get_field('course', 'fullname', array('id'=>$assignmentrecord->course));
                 $checkpermissions = empty($reportid) ? false : (new reportbase($reportid))->check_permissions($USER->id, $context);
+                $category = $DB->get_record('course_categories',array('id'=>$courserecord->category));
+                $categoryName = $category->name;
+
                 if(empty($reportid) || empty($checkpermissions)){
-                    $assignmentrecord->{$data->column} = '<a href="'.$CFG->wwwroot.'/course/view.php?id='.$assignmentrecord->course.'" />'.$coursename.'</a>';
-                } else{
-                    $assignmentrecord->{$data->column} = '<a href="'.$CFG->wwwroot.'/blocks/learnerscript/viewreport.php?id='.$reportid.'&filter_courses='.$assignmentrecord->course.'" />'.$coursename.'</a>';
+                    $assignmentrecord->{$data->column} = '<a href="'.$CFG->wwwroot.'/course/view.php?id='.$assignmentrecord->course.'" />'.$coursename.' - '.$categoryName.'</a>';
+                } else{                     
+                    $assignmentrecord->{$data->column} = '<a href="'.$CFG->wwwroot.'/blocks/learnerscript/viewreport.php?id='.$reportid.'&filter_courses='.$assignmentrecord->course.'" />'.$coursename.' - '.$categoryName.'</a>';
                 }
             break;
             case 'duedate':

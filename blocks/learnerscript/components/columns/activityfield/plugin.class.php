@@ -58,6 +58,7 @@ class plugin_activityfield extends pluginbase {
             $activityid = $row->id;
         }
         $courserecord = $DB->get_record('course_modules',array('id'=>$activityid));
+        $courserow = $DB->get_record('course',array('id'=>$courseid));
             switch ($data->column) {
                 case 'groupmode':
                     if($courserecord->{$data->column} == 0){
@@ -80,11 +81,14 @@ class plugin_activityfield extends pluginbase {
                     $reportid = $DB->get_field('block_learnerscript', 'id', array('type'=> 'courseprofile'), IGNORE_MULTIPLE);
                     $coursename = $DB->get_field('course', 'fullname', array('id' => $courserecord->course));
 
+                    $category = $DB->get_record('course_categories',array('id'=>$courserow->category));
+                    $categoryName = $category->name;
+
                     $checkpermissions = empty($reportid) ? false : (new reportbase($reportid))->check_permissions($USER->id, $context);
                     if(empty($reportid) || empty($checkpermissions)){
-                         $courserecord->{$data->column} = '<a href="'.$CFG->wwwroot.'/course/view.php?id='.$courserecord->course.'" />'.$coursename.'</a>';
+                         $courserecord->{$data->column} = '<a href="'.$CFG->wwwroot.'/course/view.php?id='.$courserecord->course.'" />'.$coursename.' - '.$categoryName.'</a>';
                     } else{
-                        $courserecord->{$data->column} = '<a href="'.$CFG->wwwroot.'/blocks/learnerscript/viewreport.php?id='.$reportid.'&filter_courses='.$courserecord->course.'" />'.$coursename.'</a>';
+                        $courserecord->{$data->column} = '<a href="'.$CFG->wwwroot.'/blocks/learnerscript/viewreport.php?id='.$reportid.'&filter_courses='.$courserecord->course.'" />'.$coursename.' - '.$categoryName.'</a>';
                     }
                 break;
                 case 'visible':
