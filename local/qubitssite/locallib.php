@@ -2,7 +2,7 @@
 defined('MOODLE_INTERNAL') || die();
 
 global $CFG;
-
+require_once($CFG->dirroot.'/course/lib.php');
 require_once("$CFG->dirroot/cohort/lib.php");
 
 function local_qubits_site_render_list($search, $page, $perpage, $sortcolumn, $sortdir){
@@ -212,16 +212,20 @@ function local_qubitssite_upsert_cohort($name, $cohortidnumber, $cohortid){
     $cohort->contextid = \context_system::instance()->id;
     $cohort->name = $name;
     $cohort->idnumber = $cohortidnumber;
-    $cohort->description = 'Cohort - '.$name;
+    $cohort->description = ucfirst($name);
     $cohort->descriptionformat = FORMAT_HTML;
     if(empty($cohortid)){
         $cohortid = cohort_add_cohort($cohort);
+        local_qbs_upsert_ccategory($cohort, "add");
     } else {
         $cohort = $DB->get_record('cohort', array('id'=>$cohortid));
+        $oldcohortidnumber = $cohort->idnumber;
         $cohort->name = $name;
         $cohort->idnumber = $cohortidnumber;
-        $cohort->description = 'Cohort - '.$name;
+        $cohort->description = ucfirst($name);
         cohort_update_cohort($cohort);
+        $cohort->oldcohortidnumber = $oldcohortidnumber;
+        local_qbs_upsert_ccategory($cohort, "edit");
     }
     return $cohortid;
 }
@@ -258,4 +262,32 @@ function local_qubitssite_url_title($str, $separator = '-', $lowercase = FALSE, 
     }
 
     return trim(trim($str, $separator));
+}
+
+function local_qbs_upsert_ccategory($cohort, $uflag){
+    global $DB;
+    if($uflag=="add"){
+        $coursecategory = new stdClass;
+        $coursecategory->name = $cohort->description;
+        $coursecategory->idnumber = $cohort->idnumber;
+        $coursecategory->parent = 0;
+        $rcat = core_course_category::create($coursecategory, '');
+    }else{
+        $coursecategory = $DB->get_record("course_categories", [
+            "idnumber" => $cohort->oldcohortidnumber
+        ], '*');
+    
+        if(empty($coursecategory)){
+          $coursecategory = new stdClass;
+          $coursecategory->name = $cohort->description;
+          $coursecategory->idnumber = $cohort->idnumber;
+          $coursecategory->parent = 0;
+          $rcat = core_course_category::create($coursecategory, '');
+        }else{
+            $coursecategory->idnumber = $cohort->idnumber;
+            $coursecategory->name = $cohort->description;
+            $DB->update_record("course_categories", $coursecategory);
+        }
+    }
+    
 }
