@@ -54,6 +54,7 @@ class plugin_quizfield extends pluginbase {
         global $DB, $CFG, $OUTPUT, $USER;
         $context = context_system::instance();
         $quizrecord = $DB->get_record('quiz', array('id' => $row->id));
+        $courserecord = $DB->get_record('course',array('id'=>$courseid)); 
         if (isset($quizrecord->{$data->column})) {
             switch ($data->column) {
                 case 'name':
@@ -65,10 +66,12 @@ class plugin_quizfield extends pluginbase {
                     $coursename = $DB->get_field('course', 'fullname', array('id'=>$quizrecord->{$data->column}));
                     $reportid = $DB->get_field('block_learnerscript', 'id', array('type'=> 'courseprofile'), IGNORE_MULTIPLE);
                     $checkpermissions = empty($reportid) ? false : (new reportbase($reportid))->check_permissions($USER->id, $context);
+                    $category = $DB->get_record('course_categories',array('id'=>$courserecord->category));
+                    $categoryName = $category->name;
                     if(empty($reportid) || empty($checkpermissions)){
-                        $quizrecord->{$data->column} = '<a href="'.$CFG->wwwroot.'/course/view.php?id='.$quizrecord->course.'" target="_blank" class="edit">'.$coursename.'</a>';
+                        $quizrecord->{$data->column} = '<a href="'.$CFG->wwwroot.'/course/view.php?id='.$quizrecord->course.'" target="_blank" class="edit">'.$coursename.' - '.$categoryName.'</a>';
                     } else{
-                        $quizrecord->{$data->column} = '<a href="'.$CFG->wwwroot.'/blocks/learnerscript/viewreport.php?id='.$reportid.'&filter_courses='.$quizrecord->course.'" target="_blank" class="edit">'.$coursename.'</a>';
+                        $quizrecord->{$data->column} = '<a href="'.$CFG->wwwroot.'/blocks/learnerscript/viewreport.php?id='.$reportid.'&filter_courses='.$quizrecord->course.'" target="_blank" class="edit">'.$coursename.' - '.$categoryName.'</a>';
                    }
                 break;
                 case 'timecreated':

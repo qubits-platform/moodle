@@ -89,10 +89,12 @@ class plugin_coursefield extends pluginbase {
                     break;
                 case 'fullname':
                     $checkpermissions = empty($coursereportid) ? false : (new reportbase($coursereportid))->check_permissions($USER->id, $context);
+                    $category = $DB->get_record('course_categories',array('id'=>$row->category));
+                    $categoryName = $category->name;
                     if($this->report->type == 'courseprofile' || empty($coursereportid) || empty($checkpermissions)){
-                        $courserecord->{$data->column} = '<a href="'.$CFG->wwwroot.'/course/view.php?id='.$courserecord->id.'" />'.$courserecord->{$data->column}.'</a>';
-                    }else if($coursereportid){
-                        $courserecord->{$data->column} = '<a href="'.$CFG->wwwroot.'/blocks/learnerscript/viewreport.php?id='.$coursereportid.'&filter_courses='.$courserecord->id.'" />'.$courserecord->{$data->column}.'</a>';
+                        $courserecord->{$data->column} = '<a href="'.$CFG->wwwroot.'/course/view.php?id='.$courserecord->id.'" />'.$courserecord->{$data->column}.' - '.$categoryName.'</a>';
+                    }else if($coursereportid){                        
+                        $courserecord->{$data->column} = '<a href="'.$CFG->wwwroot.'/blocks/learnerscript/viewreport.php?id='.$coursereportid.'&filter_courses='.$courserecord->id.'" />'.$courserecord->{$data->column}.' - '.$categoryName.'</a>';
                     }
                 break;
                 case 'category':
