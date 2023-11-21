@@ -47,8 +47,8 @@ class plugin_needgrading extends pluginbase{
 	public function execute($data, $row, $user, $courseid, $starttime = 0, $endtime = 0){
 		global $DB, $CFG, $OUTPUT, $USER;
         $date = new DateTime();
-    	$timestamp = $date->getTimestamp();
-		switch ($data->column) {
+    	$timestamp = $date->getTimestamp(); 
+		switch ($data->column) { 
 			case 'moduled':
 				$row->modulename = $row->module;
                 $activityicon = $OUTPUT->pix_icon('icon', ucfirst($row->module), $row->module, array('class' => 'icon'));
