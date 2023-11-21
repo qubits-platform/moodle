@@ -75,7 +75,7 @@ if(is_array($isvalidjson) or is_object($isvalidjson)) {
     $isvalidjson1 = json_decode($course_fcontent);
     $course = $isvalidjson1[0]->book;
     $course->code = $course->code.$cohort_idnumber;
-    $course->name = $course->name.' ('.$cohort_idnumber.')';
+    $course->name = $course->name;
     $chapters = $course->chapters;
     $course->chapters = array_map('addcohort_uid_item_obj', $chapters);
     
@@ -128,6 +128,13 @@ if(is_array($isvalidjson) or is_object($isvalidjson)) {
             }
 
             $newcourse->updateSections($courseid,$course->chapters,$course->otherfields,$type);
+            $availability = '{"op":"&","c":[{"type":"role","id":3}],"showc":[true]}';
+            $lkuid = '%-TP0-%';
+            $trsql = "UPDATE {course_sections} SET availability = :availability WHERE uid LIKE :lkuid AND availability IS NULL";
+            $DB->execute($trsql,[
+                "availability" => $availability,
+                "lkuid" => $lkuid
+            ]);
             rebuild_course_cache($courseid, true);
 
     echo "<pre>"; 
