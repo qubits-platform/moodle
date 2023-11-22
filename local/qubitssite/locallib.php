@@ -287,7 +287,24 @@ function local_qbs_upsert_ccategory($cohort, $uflag){
             $coursecategory->idnumber = $cohort->idnumber;
             $coursecategory->name = $cohort->description;
             $DB->update_record("course_categories", $coursecategory);
+            local_qbs_update_course_groups($cohort->oldcohortidnumber, $cohort->idnumber);
         }
     }
     
+}
+
+function local_qbs_update_course_groups($oldcohort, $newcohort){
+    global $DB;
+    $qry = "SELECT * FROM {groups} WHERE ";
+
+    $gparams["name1"] = $oldcohort.'%';
+    $gparams["name2"] = '%'.$oldcohort;
+
+    $where = " ( ".$DB->sql_like('name', ':name1', false)." OR ".$DB->sql_like('name', ':name2', false)." )";
+    $course_groups = $DB->get_records_sql("$qry $where", $gparams);
+    
+    foreach($course_groups as $course_group){
+        $course_group->name = str_replace($oldcohort, $newcohort,  $course_group->name);
+        $DB->update_record("groups", $course_group);
+    }
 }
