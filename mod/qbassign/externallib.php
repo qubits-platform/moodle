@@ -3467,6 +3467,7 @@ class mod_qbassign_external extends \mod_qbassign\external\external_api {
          global $DB,$CFG;
          $check_uniquefield = $DB->get_record('qbassign', array('uid' => $uid));
          $maxfilesubmissions = ($maxfilesubmissions!='')?$maxfilesubmissions:5;
+         $maxfilesubmissions_size = ($maxfilesubmissions_size!='')?$maxfilesubmissions_size:'8388608';
          if($check_uniquefield->id!='')
          {  
              //Update assignment details if unique field already present
@@ -4033,7 +4034,7 @@ class mod_qbassign_external extends \mod_qbassign\external\external_api {
  
      public static function getbytevalue($val)
      {
-         $bytearray = array('41943040'=>'40mb','20mb'=>'20971520','10485760'=>'10mb','5242880'=>'5mb','2097152'=>'2mb','1048576'=>'1mb','512000'=>'500kb','102400'=>'100kb','51200'=>'50kb','10240'=>'10kb');
+         $bytearray = array('8388608'=>'8mb','41943040'=>'40mb','20mb'=>'20971520','10485760'=>'10mb','5242880'=>'5mb','2097152'=>'2mb','1048576'=>'1mb','512000'=>'500kb','102400'=>'100kb','51200'=>'50kb','10240'=>'10kb');
          $byteval = array_search($val,$bytearray);
          return $byteval;
      }
