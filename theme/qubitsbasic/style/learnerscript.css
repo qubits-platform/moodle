@@ -241,3 +241,29 @@ body.reportdashboard.path-blocks-reportdashboard
 #widgetaction .dropdown #switchrole {
   display: none;
 }
+#page-blocks-reportdashboard-dashboard
+  table.dataTable.dtr-inline.collapsed
+  > tbody
+  > tr[role="row"]
+  > td:first-child:before,
+#page-blocks-reportdashboard-dashboard
+  table.dataTable.dtr-inline.collapsed
+  > tbody
+  > tr[role="row"]
+  > th:first-child:before {
+  position: absolute !important;
+}
+#page-blocks-reportdashboard-dashboard
+  table.dataTable.dtr-inline.collapsed
+  > tbody
+  > tr[role="row"]
+  > td:first-child,
+#page-blocks-reportdashboard-dashboard
+  table.dataTable.dtr-inline.collapsed
+  > tbody
+  > tr[role="row"]
+  > th:first-child {
+  display: table-cell !important;
+}
+
+
