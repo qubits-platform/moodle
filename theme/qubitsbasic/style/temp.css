@@ -153,3 +153,8 @@ input[type="checkbox"] {
 .level3-indent {
   margin-left: 11%;
 }
+
+#page-mod-quiz-view #page,
+#page-mod-quiz-attempt #page {
+  margin-top: 110px !important;
+}
