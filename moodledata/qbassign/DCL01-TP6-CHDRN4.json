@@ -1,11 +1,11 @@
 {
 	"title" : "6.1 Master Challenge 1",
-	"question": "See the pictograph below. It shows the number of glasses of water Zoya has everyday for a week.<br><img src='https://learn.qubitsedu.com/images/DC_L01_U06_S01_Challenge1.jpg' width='30%' height='90%' />",
+	"question": "See the pictograph below. It shows the number of glasses of water Zoya has everyday for a week.<br><img src='https://learn.qubitsedu.com/images/DC_L01_U06_S01_Challenge1.jpg' width='30%' height='90%' /> <br><p>1)How many glasses of water did Zoya drink on Wednesday?</p><p>------------------------------------------------------------------</p><p>2)On Which day did Zoya consume the least amount of water?</p><p>------------------------------------------------------------------<br></p><p>3)How many glasses of water did Zoya drink in a week?</p><p>------------------------------------------------------------------<br></p>",
 	"duedate": "",
 	"submissionfrom": "",
 	"grade_duedate": "",
 	"grade":100,	
-	"submission_type": "onlinefile", 
+	"submission_type": "onlinetext", 
 	"__submission_type_hint": "onlinetext - onlinefile - scratch - codeblock",
 	"activity_instruction":"Sum of 2 numbers",	
 	"submissionstatus": "yes",
