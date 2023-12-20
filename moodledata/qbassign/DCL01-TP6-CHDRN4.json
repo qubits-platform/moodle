@@ -5,7 +5,7 @@
 	"submissionfrom": "",
 	"grade_duedate": "",
 	"grade":100,	
-	"submission_type": "onlinefile", 
+	"submission_type": "onlinetext", 
 	"__submission_type_hint": "onlinetext - onlinefile - scratch - codeblock",
 	"activity_instruction":"Sum of 2 numbers",	
 	"submissionstatus": "yes",
