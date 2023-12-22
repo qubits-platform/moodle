@@ -1,0 +1,31 @@
+[
+  {
+    "book": {
+      "name": "DigiChamps Level 01",
+      "code": "DCL01",
+      "category": "DigiChamps",
+      "categorycode": "DC",
+      "summary": ".",
+      "otherfields": {
+        "level": "1",
+        "cardcolour": "#215caa"
+      },
+      "chapters": [
+        {
+          "route": "book/DCL01/DCL01-TP6-000.mdx",
+          "title": "Unit 6: Data",
+          "type": "topic",
+          "uid": "DCL01-TP6-000",
+          "children": [
+            {
+              "uid": "DCL01-TP6-CHDRN400",
+              "fname": "DCL01-TP6-CHDRN4.json",
+              "type": "assignment"
+            }
+          ],
+          "teacheronly": "no"
+        }
+      ]
+    }
+  }
+]

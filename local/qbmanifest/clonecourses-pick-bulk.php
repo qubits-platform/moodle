@@ -5,7 +5,7 @@ global $CFG, $DB, $USER, $OUTPUT;
 
 //$ref_csname = 'DCL02'; // Reference Course Short name
 //$cohort_idnumber = 'bfsajman';
-// Example http://qubits.localhost.com/local/qbmanifest/clonecourses-pick-bulk.php?cohortid=araps&cshortname=DCL01&tuid=DCL01-TP6-000&chlduid=DCL01-TP6-CHDRN400
+// Example http://qubits.localhost.com/local/qbmanifest/clonecourses-pick.php?cshortname=DCL03&cohortid=bfsajman
 // Deprecated this param &mfile=/books-json/digichamps/dcl03.json
 
 require_login();
@@ -13,11 +13,37 @@ require_login();
 if(!is_siteadmin()){
     throw new \moodle_exception('accessdenied');
 }
+
+$farr = array(
+    "DCL01" => "/books-json/digichamps/dcl01_pick.json",
+    "DCL02" => "/books-json/digichamps/dcl02.json",
+    "DCL03" => "/books-json/digichamps/dcl03.json",
+    "DCL04" => "/books-json/digichamps/dcl04.json",
+    "DCL05" => "/books-json/digichamps/dcl05.json",
+    "DCL06" => "/books-json/digichamps/dcl06.json",
+    "DCL07" => "/books-json/digichamps/dcl07.json",
+    "DCL08" => "/books-json/digichamps/dcl08.json",
+    "DCL09" => "/books-json/digichamps/dcl09.json",
+    "DCL10" => "/books-json/digichamps/dcl10.json",
+    "DCL11" => "/books-json/digichamps/dcl11.json",
+    "DCL12" => "/books-json/digichamps/dcl12.json",
+    "DPL01" => "/books-json/digipro/dpl01.json",
+    "DPL02" => "/books-json/digipro/dpl02.json",
+    "DPL03" => "/books-json/digipro/dpl03.json",
+    "DPL04" => "/books-json/digipro/dpl04.json",
+    "DPL05" => "/books-json/digipro/dpl05.json",
+    "DPL06" => "/books-json/digipro/dpl06.json",
+    "DPL07" => "/books-json/digipro/dpl07.json",
+    "DPL08" => "/books-json/digipro/dpl08.json",
+    "DPL09" => "/books-json/digipro/dpl09.json",
+    "DPL10" => "/books-json/digipro/dpl10.json",
+    "DPL11" => "/books-json/digipro/dpl11.json",
+    "DPL12" => "/books-json/digipro/dpl12.json",
+    "DJL01" => "/books-json/djl01.json"
+);
+
 $ref_csname = required_param('cshortname', PARAM_ALPHANUMEXT);
 $cohorts = $DB->get_records("cohort");
-$cohort_idnumber = '';
-$tuid = required_param('tuid', PARAM_ALPHANUMEXT);
-$chlduid = required_param('chlduid', PARAM_ALPHANUMEXT);
 
 foreach($cohorts as $onecohort){
   $cohort_idnumber = $onecohort->idnumber;
@@ -26,151 +52,114 @@ foreach($cohorts as $onecohort){
     "shortname" => $coursesname
   ]);
   if($onecourse){
-       // echo "Available $coursesname <br/>";
+
+  
+
+// $ref_csname = required_param('cshortname', PARAM_ALPHANUMEXT);
+// $cohort_idnumber = required_param('cohortid', PARAM_ALPHANUMEXT);
+//$cfilename = required_param('mfile', PARAM_RAW);
+$cfilename = $farr[$ref_csname];
+
+$rcohort = $DB->get_record("cohort", [
+    "idnumber" => $cohort_idnumber
+], '*', MUST_EXIST);
+
+$coursecategory = $DB->get_record("course_categories", [
+    "idnumber" => $cohort_idnumber
+], '*');
+
+if(empty($coursecategory)){
+    $coursecategory = new stdClass;
+    $coursecategory->name = $rcohort->description;
+    $coursecategory->idnumber = $rcohort->idnumber;
+    $coursecategory->parent = 0;
+    $rcat = core_course_category::create($coursecategory, '');
+}
+
+
+$coursefile = $CFG->dirroot.$cfilename; // '/books-json/digichamps/dcl02.json'
+$course_fcontent = file_get_contents($coursefile);
+
+
+$isvalidjson = qbjson_validate($course_fcontent);
+
+if(is_array($isvalidjson) or is_object($isvalidjson)) {
+    $isvalidjson1 = json_decode($course_fcontent);
+    $course = $isvalidjson1[0]->book;
+    $course->code = $course->code.$cohort_idnumber;
+    $course->name = $course->name;
+    $chapters = $course->chapters;
+    $course->chapters = array_map('addcohort_uid_item_obj', $chapters);
     
+    $datacourse = array();         
 
-    $farr = array(
-        "DCL01" => "/books-json/digichamps/dcl01.json",
-        "DCL02" => "/books-json/digichamps/dcl02.json",
-        "DCL03" => "/books-json/digichamps/dcl03.json",
-        "DCL04" => "/books-json/digichamps/dcl04.json",
-        "DCL05" => "/books-json/digichamps/dcl05.json",
-        "DCL06" => "/books-json/digichamps/dcl06.json",
-        "DCL07" => "/books-json/digichamps/dcl07.json",
-        "DCL08" => "/books-json/digichamps/dcl08.json",
-        "DCL09" => "/books-json/digichamps/dcl09.json",
-        "DCL10" => "/books-json/digichamps/dcl10.json",
-        "DCL11" => "/books-json/digichamps/dcl11.json",
-        "DCL12" => "/books-json/digichamps/dcl12.json",
-        "DPL01" => "/books-json/digipro/dpl01.json",
-        "DPL02" => "/books-json/digipro/dpl02.json",
-        "DPL03" => "/books-json/digipro/dpl03.json",
-        "DPL04" => "/books-json/digipro/dpl04.json",
-        "DPL05" => "/books-json/digipro/dpl05.json",
-        "DPL06" => "/books-json/digipro/dpl06.json",
-        "DPL07" => "/books-json/digipro/dpl07.json",
-        "DPL08" => "/books-json/digipro/dpl08.json",
-        "DPL09" => "/books-json/digipro/dpl09.json",
-        "DPL10" => "/books-json/digipro/dpl10.json",
-        "DPL11" => "/books-json/digipro/dpl11.json",
-        "DPL12" => "/books-json/digipro/dpl12.json",
-        "DJL01" => "/books-json/djl01.json"
-    );
+            $numofsections = (int) $course->level;
 
+            $datacourse[0]['fullname'] = $course->name;
+            $datacourse[0]['shortname'] = $course->code;
+            $datacourse[0]['category'] = $coursecategory->name;
+            $datacourse[0]['categoryid'] = $coursecategory->idnumber;
 
-    //$cohort_idnumber = required_param('cohortid', PARAM_ALPHANUMEXT);
+            $datacourse[0]['numsections'] = count($course->chapters);
+            $datacourse[0]['summary'] = $course->summary;
 
-    //$cfilename = required_param('mfile', PARAM_RAW);
-    $cfilename = $farr[$ref_csname];
+            $datacourse[0]['level'] = '';
+            $datacourse[0]['cardcolour'] = '';
+             
 
-    $rcohort = $DB->get_record("cohort", [
-        "idnumber" => $cohort_idnumber
-    ], '*', MUST_EXIST);
-
-    $coursecategory = $DB->get_record("course_categories", [
-        "idnumber" => $cohort_idnumber
-    ], '*');
-
-    if(empty($coursecategory)){
-        $coursecategory = new stdClass;
-        $coursecategory->name = $rcohort->description;
-        $coursecategory->idnumber = $rcohort->idnumber;
-        $coursecategory->parent = 0;
-        $rcat = core_course_category::create($coursecategory, '');
-    }
-
-
-    $coursefile = $CFG->dirroot.$cfilename; // '/books-json/digichamps/dcl02.json'
-    $course_fcontent = file_get_contents($coursefile);
-
-    $isvalidjson = qbjson_validate($course_fcontent);
-
-    if(is_array($isvalidjson) or is_object($isvalidjson)) {
-        $isvalidjson1 = json_decode($course_fcontent);
-        $course = $isvalidjson1[0]->book;
-        $course->code = $course->code.$cohort_idnumber;
-        $course->name = $course->name;
-        $chapters = [];
-        //$chapters = $course->chapters;
-        array_walk($course->chapters, function($val, $key){
-            global $tuid, $chapters;
-            if($val->uid == $tuid){
-                $chapters[] = $val;
+            if(isset($course->otherfields))
+            {
+                $datacourse[0]['level'] = $course->otherfields->level;
+                $datacourse[0]['cardcolour'] = $course->otherfields->cardcolour;
+                
             }
-        });
-        $course->chapters = array_map('addcohort_uid_item_obj', $chapters);
-        //echo "<pre>"; print_r($course->chapters); echo "</pre>"; exit;
-        $datacourse = array();         
-
-                $numofsections = (int) $course->level;
-
-                $datacourse[0]['fullname'] = $course->name;
-                $datacourse[0]['shortname'] = $course->code;
-                $datacourse[0]['category'] = $coursecategory->name;
-                $datacourse[0]['categoryid'] = $coursecategory->idnumber;
-
-                $datacourse[0]['numsections'] = count($course->chapters);
-                $datacourse[0]['summary'] = $course->summary;
-
-                $datacourse[0]['level'] = '';
-                $datacourse[0]['cardcolour'] = '';
-                
-
-                if(isset($course->otherfields))
-                {
-                    $datacourse[0]['level'] = $course->otherfields->level;
-                    $datacourse[0]['cardcolour'] = $course->otherfields->cardcolour;
-                    
-                }
-                
-                require_once($CFG->dirroot.'/local/qbmanifest/clonecreatecourse.php');
-                $newcourse = new local_clone_qbcourse($ref_csname, $cohort_idnumber);
-                
-                $cexists = $DB->get_record('course', array("shortname" => trim($course->code)));
-                if(!empty($cexists)){
-                    $courseid = $cexists->id;
-                    $DB->set_field('course', 'fullname', $course->name, array('id' => $cexists->id));
-                    $DB->set_field('course', 'summary', $course->summary, array('id' => $cexists->id));
-                    $msg='Record has been updated successfully.';
-                    $type = 2;
-                    if($cohort_idnumber=="dnsbarsha")
-                    $courseinstance = $DB->insert_record('enrol', array('courseid'=>$courseid, 'enrol'=>'oneroster', 'status'=> ENROL_INSTANCE_ENABLED));
-                }
-                else{
-                    $course_details = $newcourse->create_course($datacourse);
-                    $courseid = $course_details[0]['id'];
-                    $type = 1;
-                    if($cohort_idnumber=="dnsbarsha"){
-                        $courseinstance = $DB->get_record('enrol', array('courseid'=>$courseid, 'enrol'=>'oneroster'));
-                        if(empty($courseinstance)){
-                            $courseinstance = $DB->insert_record('enrol', array('courseid'=>$courseid, 'enrol'=>'oneroster', 'status'=> ENROL_INSTANCE_ENABLED));
-                        }
+            
+            require_once($CFG->dirroot.'/local/qbmanifest/clonecreatecourse.php');
+            $newcourse = new local_clone_qbcourse($ref_csname, $cohort_idnumber);
+            
+            $cexists = $DB->get_record('course', array("shortname" => trim($course->code)));
+            if(!empty($cexists)){
+                $courseid = $cexists->id;
+                $DB->set_field('course', 'fullname', $course->name, array('id' => $cexists->id));
+                $DB->set_field('course', 'summary', $course->summary, array('id' => $cexists->id));
+                $msg='Record has been updated successfully.';
+                $type = 2;
+                if($cohort_idnumber=="dnsbarsha")
+                  $courseinstance = $DB->insert_record('enrol', array('courseid'=>$courseid, 'enrol'=>'oneroster', 'status'=> ENROL_INSTANCE_ENABLED));
+            }
+            else{
+                $course_details = $newcourse->create_course($datacourse);
+                $courseid = $course_details[0]['id'];
+                $type = 1;
+                if($cohort_idnumber=="dnsbarsha"){
+                    $courseinstance = $DB->get_record('enrol', array('courseid'=>$courseid, 'enrol'=>'oneroster'));
+                    if(empty($courseinstance)){
+                        $courseinstance = $DB->insert_record('enrol', array('courseid'=>$courseid, 'enrol'=>'oneroster', 'status'=> ENROL_INSTANCE_ENABLED));
                     }
                 }
+            }
 
-                $newcourse->updateSections($courseid,$course->chapters,$course->otherfields,$type);
-                $availability = '{"op":"&","c":[{"type":"role","id":3}],"showc":[true]}';
-                $lkuid = '%-TP0-%';
-                $trsql = "UPDATE {course_sections} SET availability = :availability WHERE uid LIKE :lkuid AND availability IS NULL";
-                $DB->execute($trsql,[
-                    "availability" => $availability,
-                    "lkuid" => $lkuid
-                ]);
-                rebuild_course_cache($courseid, true);
+            $newcourse->updateSections($courseid,$course->chapters,$course->otherfields,$type);
+            $availability = '{"op":"&","c":[{"type":"role","id":3}],"showc":[true]}';
+            $lkuid = '%-TP0-%';
+            $trsql = "UPDATE {course_sections} SET availability = :availability WHERE uid LIKE :lkuid AND availability IS NULL";
+            $DB->execute($trsql,[
+                "availability" => $availability,
+                "lkuid" => $lkuid
+            ]);
+            rebuild_course_cache($courseid, true);
 
-        echo "<pre>"; 
-        //print_r($isvalidjson);
-        print_r($course);
-        echo "</pre>";
+    echo "<pre>"; 
+    //print_r($isvalidjson);
+    print_r($course);
+    echo "</pre>";
 
-        
-    }
-
-}else{
-    echo "Not available $coursesname <br/>";
+    
 }
 
+ }
 }
+
 exit;
 
 
@@ -239,23 +228,14 @@ function addcohort_uid_item($item){
 }
 
 function addcohort_uid_item_obj($item){
-    global $cohort_idnumber, $chlduid;
+    global $cohort_idnumber;
     $item->uid = $item->uid.'-'.$cohort_idnumber;
     if(isset($item->children)){
         $children = $item->children;
         $children = array_map('addcohort_uid_item_obj', $children);
-        $children = array_filter($children, function($v, $k){
-             global $chlduid;
-             if(str_contains($v->uid, $chlduid))
-               return true;
-            else
-               return false;
-        },ARRAY_FILTER_USE_BOTH);
         $item->children = $children;
     }
     return $item;
 }
 
 //echo "<pre>"; print_r($v); echo "</pre>";
-
-// http://qubits.localhost.com/local/qbmanifest/clonecourses-pick-bulk.php?cohortid=araps&cshortname=DCL01&tuid=DCL01-TP6-000&chlduid=DCL01-TP6-CHDRN400
