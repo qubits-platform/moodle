@@ -5,7 +5,7 @@ global $CFG, $DB, $USER, $OUTPUT;
 
 //$ref_csname = 'DCL02'; // Reference Course Short name
 //$cohort_idnumber = 'bfsajman';
-// Example http://qubits.localhost.com/local/qbmanifest/clonecourses.php?cshortname=DCL03&cohortid=bfsajman&uid=DCL01-TP6-CHDRN400
+// Example http://qubits.localhost.com/local/qbmanifest/clonecourses-pick.php?cshortname=DCL03&cohortid=bfsajman
 // Deprecated this param &mfile=/books-json/digichamps/dcl03.json
 
 require_login();
@@ -15,7 +15,7 @@ if(!is_siteadmin()){
 }
 
 $farr = array(
-    "DCL01" => "/books-json/digichamps/dcl01.json",
+    "DCL01" => "/books-json/digichamps/dcl01_pick.json",
     "DCL02" => "/books-json/digichamps/dcl02.json",
     "DCL03" => "/books-json/digichamps/dcl03.json",
     "DCL04" => "/books-json/digichamps/dcl04.json",
@@ -45,8 +45,6 @@ $farr = array(
 
 $ref_csname = required_param('cshortname', PARAM_ALPHANUMEXT);
 $cohort_idnumber = required_param('cohortid', PARAM_ALPHANUMEXT);
-$tuid = required_param('tuid', PARAM_ALPHANUMEXT);
-$chlduid = required_param('chlduid', PARAM_ALPHANUMEXT);
 //$cfilename = required_param('mfile', PARAM_RAW);
 $cfilename = $farr[$ref_csname];
 
@@ -70,6 +68,7 @@ if(empty($coursecategory)){
 $coursefile = $CFG->dirroot.$cfilename; // '/books-json/digichamps/dcl02.json'
 $course_fcontent = file_get_contents($coursefile);
 
+
 $isvalidjson = qbjson_validate($course_fcontent);
 
 if(is_array($isvalidjson) or is_object($isvalidjson)) {
@@ -77,16 +76,9 @@ if(is_array($isvalidjson) or is_object($isvalidjson)) {
     $course = $isvalidjson1[0]->book;
     $course->code = $course->code.$cohort_idnumber;
     $course->name = $course->name;
-    $chapters = [];
-    //$chapters = $course->chapters;
-    array_walk($course->chapters, function($val, $key){
-        global $tuid, $chapters;
-         if($val->uid == $tuid){
-            $chapters[] = $val;
-         }
-    });
+    $chapters = $course->chapters;
     $course->chapters = array_map('addcohort_uid_item_obj', $chapters);
-    echo "<pre>"; print_r($course->chapters); echo "</pre>"; exit;
+    
     $datacourse = array();         
 
             $numofsections = (int) $course->level;
@@ -221,23 +213,14 @@ function addcohort_uid_item($item){
 }
 
 function addcohort_uid_item_obj($item){
-    global $cohort_idnumber, $chlduid;
+    global $cohort_idnumber;
     $item->uid = $item->uid.'-'.$cohort_idnumber;
     if(isset($item->children)){
         $children = $item->children;
         $children = array_map('addcohort_uid_item_obj', $children);
-        $children = array_filter($children, function($v, $k){
-             global $chlduid;
-             if(str_contains($v->uid, $chlduid))
-               return true;
-            else
-               return false;
-        },ARRAY_FILTER_USE_BOTH);
         $item->children = $children;
     }
     return $item;
 }
 
 //echo "<pre>"; print_r($v); echo "</pre>";
-
-// http://qubits.localhost.com/local/qbmanifest/clonecourses-pick.php?cohortid=araps&cshortname=DCL01&tuid=DCL01-TP6-000&chlduid=DCL01-TP6-CHDRN400
