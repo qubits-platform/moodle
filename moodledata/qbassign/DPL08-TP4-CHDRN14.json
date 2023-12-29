@@ -1,0 +1,32 @@
+{
+	"title" : "Capstone Project - Develop a Quiz using Python",
+	"question": "<h4>Background information</h4>The project aims at developing a Quiz which is in the form of MCQs (Multiple Choice Questions). It is expected to be carried out through intensive learning and working knowledge of coding in Python that you have acquired during this course. The user would be examined by punching MCQs online. Each question would have four options. The user can choose any one of the four options as the correct answer by entering the option number. <br>A 100 points would be granted for each correct answer. For wrong answers, there will be no points. In the end the total points that a user scores would be displayed.<h4>Project objective</h4>Design a Quiz Program.<br><br><h4>Requirements</h4>This quiz must include the following:<br>◼ At the start of the quiz, the user should be asked to enter their name.<br>◼ Instructions to play the quiz should be displayed before the quiz begins and then wherever required.<br>◼ A single question followed by four choices for an answer should be displayed at a time.<br>◼ The user should be prompted to enter the answer within a text box provided with each question.<br>◼ A score of 100 points should be awarded for each correct answer. For wrong answers, no points should be given.<br>◼ After the user answers a question, the answer should be assessed and  an appropriate score should be displayed. The next question should be displayed after that.<br>◼ In the end, the user’s name and total score must be displayed.By breaking a huge project into bite-sized tasks, computer science experts can make steady progress towards the fi nal goal. In a similar vein, here are some milestones for your consideration. Submit your progress to your teacher at the end of each stage<br><img src='https://learn.qubitsedu.com/images/DP_L8_CP1_Table1.png' width='40%' height='80%' /><h4>Hint</h4>Use functions, Lists and Strings to simplify the program.<br><br><h4>Additional challenges</h4><br>◼ Use a loop to time the quiz. Represent it as a countdown. Once the countdown hits zero, the quiz should end.<br>◼ Add another functionality to your quiz. It should enable the admin to add more questions with options, to the existing List",
+	"duedate": "",
+	"submissionfrom": "",
+	"grade_duedate": "",
+	"grade":100,	
+	"submission_type": "codeblock", 
+	"__submission_type_hint": "onlinetext - onlinefile - scratch - codeblock",
+	"activity_instruction":"Sum of 2 numbers",	
+	"submissionstatus": "yes",
+	"online_text_limit":"500",
+	"additional_files": "",	
+	"codeblock_mode": "manual",
+	"__codeblock_mode_hint": "automate - manual",
+	"language_type": "python",
+	"__language_type_hint": "python - sql - htmlcss - javascript - R - pseudocode - java",
+	"grade_type":"scale",
+	"grading_method": "direct",
+	"uid": "DPL08-TP4-CHDRN14",
+	"maxfilesubmissions":"",	
+	"filetypeslist":"",	
+	"maxfilesubmissions_size":"",	
+	"testcases" : [
+	  {
+		"value" : "Case = Test integer sum\ninput = 1 2 3 5\noutput = 11"
+	  },
+	  {
+		"value" : "Case = Test integer sum\ninput = 1\n -2\n 3\n 5\noutput = 7"
+	  }
+	]
+}

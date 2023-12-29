@@ -1,0 +1,32 @@
+{
+	"title" : "Capstone Project - Amazing Dancers",
+	"question": "<h4>Background Information</h4>In this capstone project you will develop the Amazing Dancers animation. It has two sprites posing as dancers. When the program begins, with the click on the <img src='https://learn.qubitsedu.com/images/DP_L3_CP1_Image1.png' width='10%' height='20%' />, both the dancers should appear on the stage. You have to program them to show a variety of dance moves at different events.The project is divided into smaller stages or milestones. You will be assessed as you achieve one after the other to complete the entire task<br><br><h4>Project Objective</h4>Design and develop an animation based on the given theme using Scratch.<br><br><h4>Requirements</h4>This game must include the following items:<br>1. There should be two sprites (dancers).<br>2. Each sprite should have different costumes showing different dance moves.<br>3. The sprites should be in their normal posture (costume) in the beginning when the animation starts with a click on the <img src='https://learn.qubitsedu.com/images/DP_L4_CP1_Image2.png' width='10%' height='20%' /> .<br>4. Each sprite should show a different dance move when clicked separately <img src='https://learn.qubitsedu.com/images/DP_L3_CP1_Image1.png' width='30%' height='50%' />.<h4>Additional Challenges</h4>◼ Make the sprites say 1,2,3,4 for each of the dance moves.<br>◼ Discuss with your friends and modify the script based on their inputs toimprove the game.",
+	"duedate": "",
+	"submissionfrom": "",
+	"grade_duedate": "",
+	"grade":100,	
+	"submission_type": " scratch", 
+	"__submission_type_hint": "onlinetext - onlinefile - scratch - codeblock",
+	"activity_instruction":"Sum of 2 numbers",	
+	"submissionstatus": "yes",
+	"online_text_limit":"500",
+	"additional_files": "",	
+	"codeblock_mode": "",
+	"__codeblock_mode_hint": "automate - manual",
+	"language_type": "",
+	"__language_type_hint": "python - sql - htmlcss - scratch - javascript - R - pseudocode - java",
+	"grade_type":"scale",
+	"grading_method": "direct",
+	"uid": "DPL03-TP4-CHDRN11",
+	"maxfilesubmissions":"",	
+	"filetypeslist":"",	
+	"maxfilesubmissions_size":"",	
+	"testcases" : [
+	  {
+		"value" : "Case = Test integer sum\ninput = 1 2 3 5\noutput = 11"
+	  },
+	  {
+		"value" : "Case = Test integer sum\ninput = 1\n -2\n 3\n 5\noutput = 7"
+	  }
+	]
+}
