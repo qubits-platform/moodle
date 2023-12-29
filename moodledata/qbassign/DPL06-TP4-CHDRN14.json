@@ -1,0 +1,32 @@
+{
+	"title" : "Capstone Project - Create an AI-Based Chatbot for your school",
+	"question": "<h4>Background information</h4>You might have seen a chatbot assistant on your school’s website. It provides various types of information regarding your school. Check the current chatbot (if any) and fi nd out if it provides all the relevant information.Use your research to develop a chatbot for your school. It should provide general information about the school like bell timings, holidays, working hours, and so on.<br><br><h4>Project objective</h4>Develop an AI based chatbot for your school which gives responses via speech.<br><br><h4>Requirements</h4>Here are the milestones you need to achieve to finish this project<br><img src='https://learn.qubitsedu.com/images/DP_L6_CP2_Table1.png' width='40%' height='60%' /><br><br><h4>Additional challenge</h4>Modify the chatbot to give details about the books in the school library. Students should be able to check the availability of a book with the help of the chatbot.",
+	"duedate": "",
+	"submissionfrom": "",
+	"grade_duedate": "",
+	"grade":100,	
+	"submission_type": "onlinefile", 
+	"__submission_type_hint": "onlinetext - onlinefile - scratch - codeblock",
+	"activity_instruction":"Sum of 2 numbers",	
+	"submissionstatus": "yes",
+	"online_text_limit":"500",
+	"additional_files": "",	
+	"codeblock_mode": "",
+	"__codeblock_mode_hint": "automate - manual",
+	"language_type": "",
+	"__language_type_hint": "python - sql - htmlcss - scratch - javascript - R - pseudocode - java",
+	"grade_type":"scale",
+	"grading_method": "direct",
+	"uid": "DPL06-TP4-CHDRN14",
+	"maxfilesubmissions":"5",	
+	"filetypeslist":"",	
+	"maxfilesubmissions_size":"2097152",	
+	"testcases" : [
+	  {
+		"value" : "Case = Test integer sum\ninput = 1 2 3 5\noutput = 11"
+	  },
+	  {
+		"value" : "Case = Test integer sum\ninput = 1\n -2\n 3\n 5\noutput = 7"
+	  }
+	]
+}

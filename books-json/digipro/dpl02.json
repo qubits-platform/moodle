@@ -425,25 +425,14 @@
               "type": "assignment"
             },
             {
+              "uid": "DPL02-TP4-CHDRN11",
+              "fname": "DPL02-TP4-CHDRN11.json",
+              "type": "assignment"
+            },
+            {
               "uid": "DPL02-U04-CHDRN1",
               "fname": "DPL02-U04-CHDRN1.json",
               "type": "quiz"
-            }
-          ],
-          "teacheronly": "no"
-        },
-        {
-          "route": "book/DPL02/DPL02-TP5-000.mdx",
-          "title": "Capstone Project",
-          "type": "topic",
-          "uid": "DPL02-TP5-000",
-          "children": [
-            {
-              "title": "Summary",
-              "uid": "DPL02-TP5-CHDRN1",
-              "description": "",
-              "route": "/pdf?course=DigiPro&Level=Level2&pdf=DPL02_Capstone project",
-              "type": "page"
             }
           ],
           "teacheronly": "no"

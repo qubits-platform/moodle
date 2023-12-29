@@ -610,25 +610,14 @@
               "type": "assignment"
             },
             {
+              "uid": "DPL07-TP4-CHDRN19",
+              "fname": "DPL07-TP4-CHDRN19.json",
+              "type": "assignment"
+            },
+            {
               "uid": "DPL07-U04-CHDRN1",
               "fname": "DPL07-U04-CHDRN1.json",
               "type": "quiz"
-            }
-          ],
-          "teacheronly": "no"
-        },
-        {
-          "route": "book/DPL07/DPL07-TP1-000.mdx",
-          "title": "Capstone Project - Store Price Calculator",
-          "type": "topic",
-          "uid": "DPL07-TP7-000",
-          "children": [
-            {
-              "title": "Capstone Project - Store Price Calculator",
-              "uid": "DPL07-TP7-CHDRN1",
-              "description": "",
-              "route": "/pdf?course=DigiPro&Level=Level7&pdf=DPL07_U04_Capstone",
-              "type": "page"
             }
           ],
           "teacheronly": "no"
@@ -722,6 +711,11 @@
             {
               "uid": "DPL07-TP5-CHDRN15",
               "fname": "DPL07-TP5-CHDRN15.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "DPL07-TP5-CHDRN16",
+              "fname": "DPL07-TP5-CHDRN16.json",
               "type": "assignment"
             },
             {

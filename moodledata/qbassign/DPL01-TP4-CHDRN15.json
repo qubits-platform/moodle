@@ -1,0 +1,32 @@
+{
+	"title" : "Capstone Project - Create a New Year project using Scratch Jr",
+	"question": "<h4>Background Information</h4>Design a project using ScratchJr. It should show a scene for the new year’s celebrations. You can either use characters from the list available on ScratchJr or draw them on your own. You must include a twinkling star, a bell that shakes, and a few people in the scene. You can choose any suitable background from the ones available in the gallery.<br><br><h4>Project Objective</h4>Create a new year’s celebration party scene with different characters and a suitable background using ScratchJr.<br><br><h4>Requirements</h4>◼ Choose a suitable background and characters for decorations.<br>◼ Type New Year Party on the stage.<br>◼ Add a bell, a star and some people as characters.<br>◼ Program the bell to shake and ring.<br>◼ Program the star to twinkle.<br>◼ Save the project as New Year Party.<br>Here are some milestones for you to achieve to make this project. As you reach each milestone, submit the result to your teacher.<br><img src='https://learn.qubitsedu.com/images/DP_L1_CP1_Table1.png' width='50%' height='90%' /><br><br><h4>Additional Challenges</h4>Add one more sprite to detect another face keypoint and add different costumes for it.<h4>Requirements</h4>Here are the milestones you need to achieve to finish this project",
+	"duedate": "",
+	"submissionfrom": "",
+	"grade_duedate": "",
+	"grade":100,	
+	"submission_type": "onlinefile", 
+	"__submission_type_hint": "onlinetext - onlinefile - scratch - codeblock",
+	"activity_instruction":"Sum of 2 numbers",	
+	"submissionstatus": "yes",
+	"online_text_limit":"500",
+	"additional_files": "",	
+	"codeblock_mode": "",
+	"__codeblock_mode_hint": "automate - manual",
+	"language_type": "",
+	"__language_type_hint": "python - sql - htmlcss - scratch - javascript - R - pseudocode - java",
+	"grade_type":"scale",
+	"grading_method": "direct",
+	"uid": "DPL01-TP4-CHDRN15",
+	"maxfilesubmissions":"5",	
+	"filetypeslist":"",	
+	"maxfilesubmissions_size":"2097152",	
+	"testcases" : [
+	  {
+		"value" : "Case = Test integer sum\ninput = 1 2 3 5\noutput = 11"
+	  },
+	  {
+		"value" : "Case = Test integer sum\ninput = 1\n -2\n 3\n 5\noutput = 7"
+	  }
+	]
+}
