@@ -427,27 +427,6 @@
           }
         ],
         "teacheronly": "no"
-      },
-      {
-        "route": "book/DPL01/DPL01-TP1-000.mdx",
-        "title": "Capstone Project",
-        "type": "topic",
-        "uid": "DPL01-TP5-000",
-        "children": [
-          {
-            "title": "Summary",
-            "uid": "DPL01-TP5-CHDRN1",
-            "description": "",
-            "route": "/pdf?course=DigiPro&Level=Level1&pdf=DPL01_Capstone project",
-            "type": "page"
-          },
-          {
-            "uid": "DPL01-TP5-CHDRN2",
-            "fname": "DPL01-TP5-CHDRN2.json",
-            "type": "assignment"
-          }
-        ],
-        "teacheronly": "no"
       }
     ]
   }

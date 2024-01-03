@@ -641,22 +641,6 @@
             }
           ],
           "teacheronly": "no"
-        },
-        {
-          "route": "book/DPL06/DPL06-TP8-000.mdx",
-          "title": "Capstone Project - Stop Global Warming",
-          "type": "topic",
-          "uid": "DPL06-TP8-000",
-          "children": [
-            {
-              "title": "Capstone Project - Stop Global Warming",
-              "uid": "DPL06-TP8-CHDRN1",
-              "description": "",
-              "route": "/pdf?course=DigiPro&Level=Level6&pdf=DPL06_U5_Capstone project",
-              "type": "page"
-            }
-          ],
-          "teacheronly": "no"
         }
       ]
     }
