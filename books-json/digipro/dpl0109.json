@@ -1,0 +1,58 @@
+[
+    {
+        "book": {
+			"name": "DigiPro Level 01",
+			"code": "DPL01",
+			"category": "DigiPro",
+			"categorycode": "DP",
+			"summary": ".",
+			"otherfields": {
+				"level": "1",
+				"cardcolour": "#215caa"
+			},
+			"chapters": [
+                {
+                    "route": "book/DPL01/DPL01-TP1-000.mdx",
+                    "title": "Unit 4: Peekaboo",
+                    "type": "topic",
+                    "uid": "DPL01-TP4-000",
+                    "children": [
+						{
+							"uid": "DPL01-TP4-CHDRN15",
+							"fname": "DPL01-TP4-CHDRN15.json",
+							"type": "assignment"
+						}
+					]
+				}
+			]
+		}
+	},
+	{
+        "book": {
+			"name": "DigiPro Level 01",
+			"code": "DPL01",
+			"category": "DigiPro",
+			"categorycode": "DP",
+			"summary": ".",
+			"otherfields": {
+				"level": "1",
+				"cardcolour": "#215caa"
+			},
+			"chapters": [
+                {
+                    "route": "book/DPL01/DPL01-TP1-000.mdx",
+                    "title": "Unit 4: Peekaboo",
+                    "type": "topic",
+                    "uid": "DPL01-TP4-000",
+                    "children": [
+						{
+							"uid": "DPL01-TP4-CHDRN15",
+							"fname": "DPL01-TP4-CHDRN15.json",
+							"type": "assignment"
+						}
+					]
+				}
+			]
+		}
+	}
+]
