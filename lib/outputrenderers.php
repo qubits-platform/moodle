@@ -4848,6 +4848,12 @@ EOD;
         $context->logourl = $url;
         $context->sitename = format_string($SITE->fullname, true,
                 ['context' => context_course::instance(SITEID), "escape" => false]);
+        
+        if($hostname == "learn.qubitsedu.com"){
+            $context->proxyssourl = "https://ai.qubitsedu.com/api/sso/initiate";
+        } else {
+            $context->proxyssourl = "https://node.myqubit.co/api/sso/initiate";
+        }
 
         return $this->render_from_template('core/loginform', $context);
     }

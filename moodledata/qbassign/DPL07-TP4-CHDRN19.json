@@ -1,0 +1,32 @@
+{
+	"title" : "Capstone Project - Store Price Calculator",
+	"question": "<h4>Background information</h4>Store Price Calculator is an application that computes the cost of all the items bought by a customer. The customer is able to select the items from the list that also displays the price of each item. Once the customer is done with selecting the items, the program displays the total amount to be paid by the customer.<br><br><h4>Project objective</h4>Using Python develop a simple program to compute the total cost of items purchased by a customer.<br><br><h4>Requirements</h4>Here are the milestones you need to achieve to finish this project<br><img src='https://learn.qubitsedu.com/images/DP_L7_CP1_Table1.png' width='40%' height='50%' /><br><img src='https://learn.qubitsedu.com/images/DP_L7_CP1_Table1(cont).png' width='40%' height='50%' /><br><br><h4>Additional Challenge</h4>Modify the Store Price Calculator as suggested below:<br>◼ Enter the amount paid by the customer and display if any change has to be paid back by the storekeeper.<br>◼ Create a List of stock and when the user selects an item, check if it is available. Display a message if it is not available",
+	"duedate": "",
+	"submissionfrom": "",
+	"grade_duedate": "",
+	"grade":100,	
+	"submission_type": "codeblock", 
+	"__submission_type_hint": "onlinetext - onlinefile - scratch - codeblock",
+	"activity_instruction":"Sum of 2 numbers",	
+	"submissionstatus": "yes",
+	"online_text_limit":"500",
+	"additional_files": "",	
+	"codeblock_mode": "manual",
+	"__codeblock_mode_hint": "automate - manual",
+	"language_type": "python",
+	"__language_type_hint": "python - sql - htmlcss - javascript - R - pseudocode - java",
+	"grade_type":"scale",
+	"grading_method": "direct",
+	"uid": "DPL07-TP4-CHDRN19",
+	"maxfilesubmissions":"",	
+	"filetypeslist":"",	
+	"maxfilesubmissions_size":"",	
+	"testcases" : [
+	  {
+		"value" : "Case = Test integer sum\ninput = 1 2 3 5\noutput = 11"
+	  },
+	  {
+		"value" : "Case = Test integer sum\ninput = 1\n -2\n 3\n 5\noutput = 7"
+	  }
+	]
+}

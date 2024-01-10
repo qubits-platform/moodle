@@ -10,7 +10,7 @@ $email = required_param('email', PARAM_TEXT);
 $token = required_param('token', PARAM_TEXT);
 //d194573de478fa1a83a8b0079a9df01b
 $token = str_replace("869o", "", $token);
-$rtoken = $DB->get_record("external_tokens", array("id" => 2));
+$rtoken = $DB->get_record("external_tokens", array("token" => $token));
 if($rtoken->token!==$token){
     throw new moodle_exception('Invalid Token', 'error');
 }

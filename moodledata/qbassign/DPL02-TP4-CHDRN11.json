@@ -1,0 +1,32 @@
+{
+	"title" : "Capstone Project - Animate Modes of Transportation using Scratch Jr",
+	"question": "<h4>Background Information</h4>There are different types of vehicles used for traveling depending upon the mode of travel- air, water or land. In this project, you will animate these means of transport. Your animation should explain each type of vehicle used in the project.<br><a href='https://vimeo.com/661786492/0e59e7ad8b' target='_blank'>https://vimeo.com/661786492/0e59e7ad8b</a><br><img src='https://learn.qubitsedu.com/images/DP_L2_CP1_Image2.png' width='25%' height='100%' /><br><br><h4>Project Objective</h4>Create an animation that describes the types of vehicles used for different modesof transportation.<br><br><h4>Requirements</h4>◼ There should be a minimum of 3 scenes in your animation.<br>◼ Each scene should represent a different mode of transportation: air, water,and land.<br>◼ Each scene should have a character with your face riding the vehicle. Youcan also add other characters as passengers.<br>◼ The character and vehicle should be moving when the animation begins.<br>◼ When the rider character is tapped, it should talk to the user describingthe type of vehicle it is riding.<br>◼ The project should be named Let Us Travel.<br><br>Computer science professionals break larger projects into smaller milestonesto focus on the end goal. In a similar fashion, here are some milestones for you.Achieve each milestone and submit the result to your teacher.<br><img src='https://learn.qubitsedu.com/images/DP_L2_CP1_Table1.png' width='60%' height='80%' />",
+	"duedate": "",
+	"submissionfrom": "",
+	"grade_duedate": "",
+	"grade":100,	
+	"submission_type": "scratch", 
+	"__submission_type_hint": "onlinetext - onlinefile - scratch - codeblock",
+	"activity_instruction":"Sum of 2 numbers",	
+	"submissionstatus": "yes",
+	"online_text_limit":"500",
+	"additional_files": "",	
+	"codeblock_mode": "",
+	"__codeblock_mode_hint": "automate - manual",
+	"language_type": "",
+	"__language_type_hint": "python - sql - htmlcss - scratch - javascript - R - pseudocode - java",
+	"grade_type":"scale",
+	"grading_method": "direct",
+	"uid": "DPL02-TP4-CHDRN11",
+	"maxfilesubmissions":"5",	
+	"filetypeslist":"",	
+	"maxfilesubmissions_size":"2097152",	
+	"testcases" : [
+	  {
+		"value" : "Case = Test integer sum\ninput = 1 2 3 5\noutput = 11"
+	  },
+	  {
+		"value" : "Case = Test integer sum\ninput = 1\n -2\n 3\n 5\noutput = 7"
+	  }
+	]
+}

@@ -1,0 +1,32 @@
+{
+	"title" : "Capstone Project - Food Calorie Management Project",
+	"question": "<h4>Background information</h4>The project aims at developing a Food Calorie Management project . Students will use a food nutrition database that will be used to access the caloric content and other facts about common foods. The calorie intake function will help users understand how much energy their body receives from their favorite food and snacks. It will enable them to pay particular attention to the number of calories in the amount and kind of food they eat. The various search techniques will help users choose suitable amounts and types of food in order to make healthier choices.<br><br><h4>Project objective</h4> Design a program to manage the food calorie database by providing options to read, search and update the data. Provide functionalities such as the daily calorie intake calculator and BMI calculator.The Food Nutrition dataset in the CSV file here contains the following information: Food, Serving Size, Calories, Protein, Fat,and Carbohydrates. The data provided in the CSV file is an approximate value and might change based on specific types.<br><br><h4>Requirements</h4>This Food Calorie Management project  must include the following:<br>● At the start of the project, the user should be asked to enter their name, gender, age, height, weight, medical conditions, and activity level on a daily basis.<br>● Instructions about their BMI, target weight, and weight to be lost/ gained or maintained should be displayed.<br>● It should read the CSV and display all the details in a table format.<br>● It should search for food from the CSV file and display its information.<br>● It should determine a suitable searching technique by analyzing the Food Nutrition dataset and using it for searching.<br>● It should calculate the daily calorie intake by prompting the user to enter the food and the number of servings. Calories must be calculated for the food items considering whether the servings are in terms of grams, ounces, cups, slices, large, or medium based on the type of food.<br><br>Computer science experts can make steady progress toward the final goal by breaking a huge project into bite-sized tasks. In a similar vein, here are some milestones for your consideration. Submit your progress to your teacher at the end of each stage.<br>Here are the milestones you need to achieve to finish this project:<br><img src='https://learn.qubitsedu.com/images/DP_L9_CP1_Table1.png' width='40%' height='60%' />",
+	"duedate": "",
+	"submissionfrom": "",
+	"grade_duedate": "",
+	"grade":100,	
+	"submission_type": "codeblock", 
+	"__submission_type_hint": "onlinetext - onlinefile - scratch - codeblock",
+	"activity_instruction":"Sum of 2 numbers",	
+	"submissionstatus": "yes",
+	"online_text_limit":"500",
+	"additional_files": "",	
+	"codeblock_mode": "manual",
+	"__codeblock_mode_hint": "automate - manual",
+	"language_type": "python",
+	"__language_type_hint": "python - sql - htmlcss - javascript - R - pseudocode - java",
+	"grade_type":"scale",
+	"grading_method": "direct",
+	"uid": "DPL09-TP5-CHDRN13",
+	"maxfilesubmissions":"",	
+	"filetypeslist":"",	
+	"maxfilesubmissions_size":"",	
+	"testcases" : [
+	  {
+		"value" : "Case = Test integer sum\ninput = 1 2 3 5\noutput = 11"
+	  },
+	  {
+		"value" : "Case = Test integer sum\ninput = 1\n -2\n 3\n 5\noutput = 7"
+	  }
+	]
+}

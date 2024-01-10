@@ -1,0 +1,358 @@
+[
+    {
+        "book": {
+			"name": "DigiPro Level 01",
+			"code": "DPL01",
+			"category": "DigiPro",
+			"categorycode": "DP",
+			"summary": ".",
+			"otherfields": {
+				"level": "1",
+				"cardcolour": "#215caa"
+			},
+			"chapters": [
+                {
+                    "route": "book/DPL01/DPL01-TP1-000.mdx",
+                    "title": "Unit 4: Peekaboo",
+                    "type": "topic",
+                    "uid": "DPL01-TP4-000",
+                    "children": [
+						{
+							"uid": "DPL01-TP4-CHDRN15",
+							"fname": "DPL01-TP4-CHDRN15.json",
+							"type": "assignment"
+						}
+					]
+				}
+			]
+		}
+	},
+	{
+        "book": {
+			"name": "DigiPro Level 02",
+			"code": "DPL02",
+			"category": "DigiPro",
+			"categorycode": "DP",
+			"summary": ".",
+			"otherfields": {
+				"level": "2",
+				"cardcolour": "#204796"
+			},
+			"chapters": [
+                {
+					"route": "book/DPL02/DPL02-TP4-000.mdx",
+					"title": "Unit 4: Quiz Time!",
+					"type": "topic",
+					"uid": "DPL02-TP4-000",
+                    "children": [
+						 {
+						  "uid": "DPL02-TP4-CHDRN11",
+						  "fname": "DPL02-TP4-CHDRN11.json",
+						  "type": "assignment"
+						}
+					]
+				}
+			]
+		}
+	},
+	{
+        "book": {
+			"name": "DigiPro Level 03",
+            "code": "DPL03",
+            "category": "DigiPro",
+            "categorycode": "DP",
+            "summary": ".",
+            "otherfields": {
+                "level": "3",
+                "cardcolour": "#f9ac1a"
+            },
+			"chapters": [
+                {
+					"route": "book/DPL03/DPL03-TP1-000.mdx",
+					"title": "Unit 4: States of Matter Animation",
+					"type": "topic",
+					"uid": "DPL03-TP4-000",
+                    "children": [
+						{
+						  "uid": "DPL03-TP4-CHDRN11",
+						  "fname": "DPL03-TP4-CHDRN11.json",
+						  "type": "assignment"
+						}
+					]
+				},
+				{
+					"route": "book/DPL03/DPL03-TP1-000.mdx",
+					"title": "Unit 5: Intelligent Beings",
+					"type": "topic",
+					"uid": "DPL03-TP5-000",
+					"children": [
+						{
+						  "uid": "DPL03-TP5-CHDRN13",
+						  "fname": "DPL03-TP5-CHDRN13.json",
+						  "type": "assignment"
+						}
+					]
+				}
+			]
+		}
+	},
+	{
+        "book": {
+			"name": "DigiPro Level 04",
+			"code": "DPL04",
+			"category": "DigiPro",
+			"categorycode": "DP",
+			"summary": ".",
+			"otherfields": {
+				"level": "4",
+				"cardcolour": "#ff744d"
+			},
+			"chapters": [
+                {
+					"route": "book/DPL04/DPL04-TP1-000.mdx",
+					"title": "Unit 3: The Game",
+					"type": "topic",
+					"uid": "DPL04-TP3-000",
+                    "children": [
+						{
+						  "uid": "DPL04-TP3-CHDRN19",
+						  "fname": "DPL04-TP3-CHDRN19.json",
+						  "type": "assignment"
+						}
+					]
+				},
+				{
+					"route": "book/DPL04/DPL04-TP1-000.mdx",
+					"title": "Unit 4: Training a Machine",
+					"type": "topic",
+					"uid": "DPL04-TP4-000",
+                    "children": [
+						{
+						  "uid": "DPL04-TP4-CHDRN15",
+						  "fname": "DPL04-TP4-CHDRN15.json",
+						  "type": "assignment"
+						}
+					]
+				}
+			]
+		}
+	},
+	{
+        "book": {
+			"name": "DigiPro Level 05",
+            "code": "DPL05",
+            "category": "DigiPro",
+            "categorycode": "DP",
+            "summary": ".",
+            "otherfields": {
+              "level": "5",
+              "cardcolour": "#ed25a0"
+            },
+			"chapters": [
+                {
+					"route": "book/DPL05/DPL05-TP1-000.mdx",
+					"title": "Unit 3: The Music",
+					"type": "topic",
+					"uid": "DPL05-TP3-000",
+                    "children": [
+						{
+						  "uid": "DPL05-TP3-CHDRN19",
+						  "fname": "DPL05-TP3-CHDRN19.json",
+						  "type": "assignment"
+						}
+					]
+				},
+				{
+					"route": "book/DPL05/DPL05-TP1-000.mdx",
+					"title": "Unit 4: Using a Trained Model",
+					"type": "topic",
+					"uid": "DPL05-TP4-000",
+                    "children": [
+						{
+						  "uid": "DPL05-TP4-CHDRN13",
+						  "fname": "DPL05-TP4-CHDRN13.json",
+						  "type": "assignment"
+						}
+					]
+				},
+				{
+					"route": "book/DPL05/DPL05-TP5-000.mdx",
+					"title": "Unit 5: Hi Thunkers!",
+					"type": "topic",
+					"uid": "DPL05-TP5-000",
+                    "children": [
+						{
+						  "uid": "DPL05-TP5-CHDRN14",
+						  "fname": "DPL05-TP5-CHDRN14.json",
+						  "type": "assignment"
+						}
+					]
+				}
+			]
+		}
+	},
+	{
+        "book": {
+			"name": "DigiPro Level 06",
+            "code": "DPL06",
+            "category": "DigiPro",
+            "categorycode": "DP",
+            "summary": ".",
+            "otherfields": {
+              "level": "6",
+              "cardcolour": "#75246b"
+            },
+			"chapters": [
+                {
+					"route": "book/DPL06/DPL06-TP3-000.mdx",
+					"title": "Unit 3: Boat Race",
+					"type": "topic",
+					"uid": "DPL06-TP3-000",
+                    "children": [
+						{
+						  "uid": "DPL06-TP3-CHDRN16",
+						  "fname": "DPL06-TP3-CHDRN16.json",
+						  "type": "assignment"
+						}
+					]
+				},
+				{
+					"route": "book/DPL06/DPL06-TP4-000.mdx",
+					"title": "Unit 4: AI Chatbot",
+					"type": "topic",
+					"uid": "DPL06-TP4-000",
+                    "children": [
+						{
+						  "uid": "DPL06-TP4-CHDRN14",
+						  "fname": "DPL06-TP4-CHDRN14.json",
+						  "type": "assignment"
+						}
+					]
+				},
+				{
+					"route": "book/DPL06/DPL06-TP5-000.mdx",
+					"title": "Unit 5: Mini Games on Thunkable",
+					"type": "topic",
+					"uid": "DPL06-TP5-000",
+                    "children": [
+						{
+						  "uid": "DPL06-TP5-CHDRN15",
+						  "fname": "DPL06-TP5-CHDRN15.json",
+						  "type": "assignment"
+						}
+					]
+				}
+			]
+		}
+	},
+	{
+        "book": {
+			"name": "DigiPro Level 07",
+			"code": "DPL07",
+			"category": "DigiPro",
+			"categorycode": "DP",
+			"summary": ".",
+			"otherfields": {
+				"level": "7",
+				"cardcolour": "#215caa"
+			},
+			"chapters": [
+                {
+					"route": "book/DPL07/DPL07-TP1-000.mdx",
+					"title": "Unit 4: Flow Control",
+					"type": "topic",
+					"uid": "DPL07-TP4-000",
+                    "children": [
+						{
+						  "uid": "DPL07-TP4-CHDRN19",
+						  "fname": "DPL07-TP4-CHDRN19.json",
+						  "type": "assignment"
+						}
+					]
+				},
+				{
+					"route": "book/DPL07/DPL07-TP1-000.mdx",
+					"title": "Unit 5: AI Based Emotion Recognition App",
+					"type": "topic",
+					"uid": "DPL07-TP5-000",
+                    "children": [
+						{
+						  "uid": "DPL07-TP5-CHDRN16",
+						  "fname": "DPL07-TP5-CHDRN16.json",
+						  "type": "assignment"
+						}
+					]
+				}
+			]
+		}
+	},
+	{
+        "book": {
+			"name": "DigiPro Level 08",
+			"code": "DPL08",
+			"category": "DigiPro",
+			"categorycode": "DP",
+			"summary": ".",
+			"otherfields": {
+				"level": "8",
+				"cardcolour": "#215caa"
+			},
+			"chapters": [
+                {
+					"route": "book/DPL08/DPL08-TP1-000.mdx",
+					"title": "Unit 4: Loops and User-Defined Functions",
+					"type": "topic",
+					"uid": "DPL08-TP4-000",
+                    "children": [
+						{
+						  "uid": "DPL08-TP4-CHDRN14",
+						  "fname": "DPL08-TP4-CHDRN14.json",
+						  "type": "assignment"
+						}
+					]
+				},
+				{
+					"route": "book/DPL08/DPL08-TP1-000.mdx",
+					"title": "Unit 5: AI on Thunkable",
+					"type": "topic",
+					"uid": "DPL08-TP5-000",
+                    "children": [
+						{
+						  "uid": "DPL08-TP5-CHDRN11",
+						  "fname": "DPL08-TP5-CHDRN11.json",
+						  "type": "assignment"
+						}
+					]
+				}
+			]
+		}
+	},
+	{
+        "book": {
+			"name": "DigiPro Level 09",
+			"code": "DPL09",
+			"category": "DigiPro",
+			"categorycode": "DP",
+			"summary": ".",
+			"otherfields": {
+				"level": "9",
+				"cardcolour": "#215caa"
+			},
+			"chapters": [
+                {
+					"route": "book/DPL09/DPL09-TP1-000.mdx",
+					"title": "Unit 5: Search Algorithms",
+					"type": "topic",
+					"uid": "DPL09-TP4-000",
+                    "children": [
+					  {
+						"uid": "DPL09-TP5-CHDRN13",
+						"fname": "DPL09-TP5-CHDRN13.json",
+						"type": "assignment"
+					  }
+					]
+				}
+			]
+		}
+	}
+]

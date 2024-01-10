@@ -1,0 +1,32 @@
+{
+	"title" : "Capstone Project - Create a Wandering BOT Animation using Scratch",
+	"question": "<h4>Background Information</h4>Make a chatbot that asks different questions to the user and takes them to different scenes based on their responses.<br><br><h4>Project Objective</h4>Design and develop an animation on a given theme using Scratch.<br><br><h4>Requirements</h4>In this game, you must include the following:<br>◼ Choose a suitable backdrop, sprite and costumes to make the wandering bot animation. There should be at least three scenes, like a desert, forest,ocean and so on.<br>◼ You should program the wandering bot to interact with the user. The bot should first introduce itself to the user, ask the user’s name, and greet the user by name. Then the bot should ask the user if he or she wants to go to different places.<br>◼ Add code to switch the scenes. Make sure you give proper instructions to switch the backdrop, hide and show suitable sprites, and make the bot glide to suitable positions.<br>◼ After the tour, the bot has to return to the main scene and say, ‘Thank you.That was a great experience!’. It should also play a tune on a keyboard,simultaneously.<br><br>Computer science professionals break larger projects into smaller milestones to focus on the end goal. In a similar fashion, here are some milestones for you.Achieve each milestone and submit the result to your teacher <br><img src='https://learn.qubitsedu.com/images/DP_L5_CP1_Table1.png' width='35%' height='40%' /><h4>Additional challenges</h4>◼ Add extra sprites to appear in each scene. The extra sprite in a scene should explain how pollution is affecting the environment of the place shown in that scene.",
+	"duedate": "",
+	"submissionfrom": "",
+	"grade_duedate": "",
+	"grade":100,	
+	"submission_type": "scratch", 
+	"__submission_type_hint": "onlinetext - onlinefile - scratch - codeblock",
+	"activity_instruction":"Sum of 2 numbers",	
+	"submissionstatus": "yes",
+	"online_text_limit":"500",
+	"additional_files": "",	
+	"codeblock_mode": "",
+	"__codeblock_mode_hint": "automate - manual",
+	"language_type": "",
+	"__language_type_hint": "python - sql - htmlcss - scratch - javascript - R - pseudocode - java",
+	"grade_type":"scale",
+	"grading_method": "direct",
+	"uid": "DPL05-TP3-CHDRN19",
+	"maxfilesubmissions":"",	
+	"filetypeslist":"",	
+	"maxfilesubmissions_size":"",	
+	"testcases" : [
+	  {
+		"value" : "Case = Test integer sum\ninput = 1 2 3 5\noutput = 11"
+	  },
+	  {
+		"value" : "Case = Test integer sum\ninput = 1\n -2\n 3\n 5\noutput = 7"
+	  }
+	]
+}

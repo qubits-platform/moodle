@@ -1,0 +1,32 @@
+{
+	"title" : "Capstone Project - Multi-utility Mobile App",
+	"question": "<h4>Background information</h4>Design and code a multi-utility app that will perform tasks using Speech Recognition.<br><br><h4>Project objective</h4>The objective of the project is to create an app that can perform multiple tasks using Speech Recognition.<br><br>The app should carry out the following functions:<br>◼ Record a fi ve-second video using the mobile device’s camera.<br>◼ Use the audio recorder of the mobile device to record a three-second long audio file.<br>◼ Scan the QR codes and barcodes using the camera of the mobile device.<br>◼ Open the phone’s Photo Gallery on hearing a voice command<h4>Requirements</h4><img src='https://learn.qubitsedu.com/images/DP_L8_CP2_Table1.png' width='50%' height='60%' /><br><img src='https://learn.qubitsedu.com/images/DP_L8_CP2_Table1(cont).png' width='50%' height='40%' /><br>Here are the milestones you need to achieve to fi nish this project<br><br><h4>Additional challenges</h4>Use a loop to time the quiz. Represent it as a countdown. Once the countdown hits zero, the quiz should end.",
+	"duedate": "",
+	"submissionfrom": "",
+	"grade_duedate": "",
+	"grade":100,	
+	"submission_type": "onlinefile", 
+	"__submission_type_hint": "onlinetext - onlinefile - scratch - codeblock",
+	"activity_instruction":"Sum of 2 numbers",	
+	"submissionstatus": "yes",
+	"online_text_limit":"500",
+	"additional_files": "",	
+	"codeblock_mode": "automate",
+	"__codeblock_mode_hint": "automate - manual",
+	"language_type": "",
+	"__language_type_hint": "python - sql - htmlcss - javascript - R - pseudocode - java",
+	"grade_type":"scale",
+	"grading_method": "direct",
+	"uid": "DPL08-TP5-CHDRN10",
+	"maxfilesubmissions":"5",	
+	"filetypeslist":"",	
+	"maxfilesubmissions_size":"2097152",	
+	"testcases" : [
+	  {
+		"value" : "Case = Test integer sum\ninput = 1 2 3 5\noutput = 11"
+	  },
+	  {
+		"value" : "Case = Test integer sum\ninput = 1\n -2\n 3\n 5\noutput = 7"
+	  }
+	]
+}

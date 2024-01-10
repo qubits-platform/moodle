@@ -602,7 +602,7 @@
             "route": "book/DPL09/DPL09-TP1-000.mdx",
             "title": "Unit 5: Search Algorithms",
             "type": "topic",
-            "uid": "DPL09-TP4-000",
+            "uid": "DPL09-TP5-000",
             "children": [
               {
                 "title": "Unit 5 Summary",
@@ -663,27 +663,15 @@
                 "type": "assignment"
               },
               {
+                "uid": "DPL09-TP5-CHDRN13",
+                "fname": "DPL09-TP5-CHDRN13.json",
+                "type": "assignment"
+              },
+              {
                 "uid": "DPL09-U05-CHDRN1",
                 "fname": "DPL09-U05-CHDRN1.json",
                 "type": "quiz"
               }
-            ],
-            "teacheronly": "no"
-          },
-          {
-            "route": "book/DPL09/DPL09-TP8-000.mdx",
-            "title": "Capstone Project - Food Calorie Management Project",
-            "type": "topic",
-            "uid": "DPL09-TP8-000",
-            "children": [
-              {
-                "title": "Capstone Project - Food Calorie Management Project",
-                "uid": "DPL09-TP8-CHDRN1",
-                "description": "",
-                "route": "/pdf?course=DigiPro&Level=Level9&pdf=28-Capstone_ Daily Calorie Intake - Google Docs",
-                "type": "page"
-              }
-              
             ],
             "teacheronly": "no"
           },
