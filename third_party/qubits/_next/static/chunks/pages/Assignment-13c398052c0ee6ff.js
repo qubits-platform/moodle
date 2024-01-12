@@ -1472,36 +1472,7 @@
 							children: null == e ? void 0 : e.map(function(n, e) {
 								return (0, a.jsxs)("div", {
 									className: "assignment-wrapper",
-									children: [(0, a.jsxs)(j.Z, {
-										style: {
-											borderBottom: "1px solid #dee2e6"
-										},
-										children: [(0, a.jsx)(b.Z, {
-											expandIcon: (0, a.jsx)(S.Z, {
-												className: "expand-icon"
-											}),
-											"aria-controls": "panel1a-content",
-											id: "panel1a-header",
-											children: (0, a.jsx)("h1", {
-												children: "Add Your Comments"
-											})
-										}), (0, a.jsx)(v.Z, {
-											children: (0, a.jsx)("div", {
-												children: (0, a.jsx)("textarea", {
-													style: {
-														width: "90%",
-														borderColor: "#8f959e",
-														borderRadius: "8px",
-														padding: "10px"
-													},
-													onChange: function(n) {
-														return f(n.target.value)
-													},
-													value: h
-												})
-											})
-										})]
-									}), (0, a.jsxs)("div", {
+									children: [ (0, a.jsxs)("div", {
 										children: [(0, a.jsx)("h2", {
 											children: n.data.assignmentdetails.assignment_title
 										}), (0, a.jsx)("p", {
@@ -1510,7 +1481,36 @@
 											assignmentlanguage: Z.toString(),
 											programcontent: u,
 											setprogramcontent: x
-										}), (0, a.jsx)("br", {}), (0, a.jsx)("br", {}), (0, a.jsx)("br", {}), (0, a.jsxs)(c.Z, {
+										}), (0, a.jsx)("br", {}), (0, a.jsx)("br", {}),(0, a.jsxs)(j.Z, {
+											style: {
+												borderBottom: "1px solid #dee2e6"
+											},
+											children: [(0, a.jsx)(b.Z, {
+												expandIcon: (0, a.jsx)(S.Z, {
+													className: "expand-icon"
+												}),
+												"aria-controls": "panel1a-content",
+												id: "panel1a-header",
+												children: (0, a.jsx)("h1", {
+													children: "Add Your Comments"
+												})
+											}), (0, a.jsx)(v.Z, {
+												children: (0, a.jsx)("div", {
+													children: (0, a.jsx)("textarea", {
+														style: {
+															width: "90%",
+															borderColor: "#8f959e",
+															borderRadius: "8px",
+															padding: "10px"
+														},
+														onChange: function(n) {
+															return f(n.target.value)
+														},
+														value: h
+													})
+												})
+											})]
+										}), (0, a.jsx)("br", {}),(0, a.jsx)("br", {}), (0, a.jsx)("br", {}), (0, a.jsxs)(c.Z, {
 											direction: "row",
 											spacing: 2,
 											children: [(0, a.jsx)(r.Z, {
