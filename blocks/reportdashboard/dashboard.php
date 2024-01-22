@@ -168,6 +168,7 @@ if ($delete && confirm_sesskey()) {
 
 $header = get_string('reports', 'block_reportdashboard');
 $PAGE->set_title($header);
+$PAGE->set_heading($header);
 
 $reportsfont = get_config('block_reportdashboard', 'reportsfont');
 if ($reportsfont == 2) { // Selected font as PT Sans.
