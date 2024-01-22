@@ -64,11 +64,14 @@ class theme_qubitsbasic_core_renderer extends theme_boost\output\core_renderer {
         $primary = new core\navigation\output\primary($PAGE);
         $renderer = $PAGE->get_renderer('core');
         $primarymenu = $primary->export_for_template($renderer);
+        $hostname = parse_url($CFG->wwwroot, PHP_URL_HOST);
+        $rflag = ($hostname=="learn.qubitsedu.com") ? false : true;
         $context = array(
             "myenrolcourses" => $myenrolcourses,
             'usermenu' => $primarymenu['user'],
             'currentrolename' => $rolename,
-            'currentadmin' => $isadmin
+            'currentadmin' => $isadmin,
+            'rflag' => $rflag
         );
         return $this->render_from_template("theme_qubitsbasic/custom/leftnavigation", $context);
     }
