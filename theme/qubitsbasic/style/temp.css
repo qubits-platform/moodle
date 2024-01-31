@@ -80,8 +80,8 @@
 .course-section {
   border: none !important;
 }
-.description {
-  display: none !important;
+.activity-wrapper .activity-item .description{
+  display: none;
 }
 .custom-switch .custom-control-label::after {
   top: calc(0px + 2px) !important;
