@@ -39,7 +39,7 @@ $farr = array(
     "DPL10" => "/books-json/digipro/dpl10.json",
     "DPL11" => "/books-json/digipro/dpl11.json",
     "DPL12" => "/books-json/digipro/dpl12.json",
-    "DJL01" => "/books-json/djl01.json"
+    "DJLK" => "/books-json/djlk.json"
 );
 
 
