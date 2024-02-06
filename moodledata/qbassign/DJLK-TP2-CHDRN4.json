@@ -1,5 +1,5 @@
 {
-	"title" : "Challenge for 3.1 How to Use a Computer?",
+	"title" : "Challenge for 2.1 Parts of a Computer",
 	"question": "Write a sample program",
 	"duedate": "",
 	"submissionfrom": "",
@@ -15,7 +15,7 @@
 	"__codeblock_mode_hint": "automate - manual",
 	"grade_type":"scale",
 	"grading_method": "direct",
-	"uid": "DJL01-TP3-CHDRN4",
+	"uid": "DJLK-TP2-CHDRN4",
 	"maxfilesubmissions":"",	
 	"filetypeslist":"",	
 	"maxfilesubmissions_size":"",	
