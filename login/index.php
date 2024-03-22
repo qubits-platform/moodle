@@ -102,7 +102,6 @@ $PAGE->navbar->add($loginsite);
 
 if ($user !== false or $frm !== false or $errormsg !== '') {
     // some auth plugin already supplied full user, fake form data or prevented user login with error message
-
 } else if (!empty($SESSION->wantsurl) && file_exists($CFG->dirroot.'/login/weblinkauth.php')) {
     // Handles the case of another Moodle site linking into a page on this site
     //TODO: move weblink into own auth plugin
@@ -363,6 +362,11 @@ if (!empty($SESSION->loginerrormsg)) {
 
 $PAGE->set_title("$site->fullname: $loginsite");
 $PAGE->set_heading("$site->fullname");
+
+if (isloggedin() and !isguestuser()) {
+    redirect(new moodle_url('/my/courses.php'));
+    die;
+}
 
 echo $OUTPUT->header();
 
