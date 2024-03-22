@@ -1,0 +1,53 @@
+[
+  {
+    "book": {
+      "name": "DigiQuest Level 04",
+      "code": "DQL04",
+      "category": "DigiQuest",
+      "categorycode": "DQ",
+      "summary": ".",
+      "otherfields": {
+        "level": "4",
+        "cardcolour": "#215caa"
+      },
+      "chapters": [
+        {
+          "route": "book/DQL04/DQL04-TP1-000.mdx",
+          "title": "Unit 1: Digital World",
+          "type": "topic",
+          "uid": "DQL04-TP1-000",
+          "children": [
+            {
+              "title": "Unit 1 Summary",
+              "uid": "DQL04-TP1-CHDRN1",
+              "description": "",
+              "route": "/pdf?course=DigiQuest&Level=Level4&unit=Unit1&pdf=DigIQuest Stage 4 U1_Summary",
+              "type": "page"
+            },
+            {
+              "title": "Sprint 1.1 Control Systems and Data",
+              "uid": "DQL04-TP1-CHDRN2",
+              "description": "",
+              "route": "/pdf?course=DigiQuest&Level=Level4&unit=Unit1&pdf=DigIQuest Stage 4 U1_S1",
+              "type": "page"
+            },
+            {
+              "title": "Sprint 1.2 Software and File Types",
+              "uid": "DQL04-TP1-CHDRN3",
+              "description": "",
+              "route": "/pdf?course=DigiQuest&Level=Level4&unit=Unit1&pdf=DigIQuest Stage 4 U1_S2",
+              "type": "page"
+            },
+            {
+              "title": "Sprint 1.3 World of Computer Science and Robotics",
+              "uid": "DQL04-TP1-CHDRN4",
+              "description": "",
+              "route": "/pdf?course=DigiQuest&Level=Level4&unit=Unit1&pdf=DigIQuest Stage 4 U1_S3",
+              "type": "page"
+            }
+          ]
+        }
+      ]
+    }
+  }
+]
