@@ -46,6 +46,150 @@
               "type": "page"
             }
           ]
+        },
+        {
+          "route": "book/DQL04/DQL04-TP2-000.mdx",
+          "title": "Unit 2: Connected Devices",
+          "type": "topic",
+          "uid": "DQL04-TP2-000",
+          "children": [
+            {
+              "title": "Unit 2 Summary",
+              "uid": "DQL04-TP2-CHDRN1",
+              "description": "",
+              "route": "/pdf?course=DigiQuest&Level=Level4&unit=Unit2&pdf=DigIQuest Stage 4 U2_Summary",
+              "type": "page"
+            },
+            {
+              "title": "Sprint 2.1 Computer Networks",
+              "uid": "DQL04-TP2-CHDRN2",
+              "description": "",
+              "route": "/pdf?course=DigiQuest&Level=Level4&unit=Unit2&pdf=DigIQuest Stage 4 U2_S1",
+              "type": "page"
+            },
+            {
+              "title": "Sprint 2.2 Introduction to Encryption and Ciphers",
+              "uid": "DQL04-TP2-CHDRN3",
+              "description": "",
+              "route": "/pdf?course=DigiQuest&Level=Level4&unit=Unit2&pdf=DigIQuest Stage 4 U2_S2",
+              "type": "page"
+            }
+          ]
+        },
+        {
+          "route": "book/DQL04/DQL04-TP3-000.mdx",
+          "title": "Unit 3: Exploring Algorithms",
+          "type": "topic",
+          "uid": "DQL04-TP3-000",
+          "children": [
+            {
+              "title": "Unit 3 Summary",
+              "uid": "DQL04-TP3-CHDRN1",
+              "description": "",
+              "route": "/pdf?course=DigiQuest&Level=Level4&unit=Unit3&pdf=DigIQuest Stage 4 U3_Summary",
+              "type": "page"
+            },
+            {
+              "title": "Sprint 3.1 Iterative algorithms",
+              "uid": "DQL04-TP3-CHDRN2",
+              "description": "",
+              "route": "/pdf?course=DigiQuest&Level=Level4&unit=Unit3&pdf=DigIQuest Stage 4 U3_S1",
+              "type": "page"
+            },
+            {
+              "title": "Sprint 3.2 Developing concise algorithms",
+              "uid": "DQL04-TP3-CHDRN3",
+              "description": "",
+              "route": "/pdf?course=DigiQuest&Level=Level4&unit=Unit3&pdf=DigIQuest Stage 4 U3_S2",
+              "type": "page"
+            },
+            {
+              "title": "Sprint 3.3 Breaking Tasks into Subtasks",
+              "uid": "DQL04-TP3-CHDRN4",
+              "description": "",
+              "route": "/pdf?course=DigiQuest&Level=Level4&unit=Unit3&pdf=DigIQuest Stage 4 U3_S3",
+              "type": "page"
+            }
+          ]
+        },
+        {
+          "route": "book/DQL04/DQL04-TP1-000.mdx",
+          "title": "Unit 4: Exploring Art in Scratch and micro:bit",
+          "type": "topic",
+          "uid": "DQL04-TP4-000",
+          "children": [
+            {
+              "title": "Unit 4 Summary",
+              "uid": "DQL04-TP4-CHDRN1",
+              "description": "",
+              "route": "/pdf?course=DigiQuest&Level=Level4&unit=Unit4&pdf=DigIQuest Stage 4 U4_Summary",
+              "type": "page"
+            },
+            {
+              "title": "Sprint 4.1 Drawing with Sprites",
+              "uid": "DQL04-TP4-CHDRN2",
+              "description": "",
+              "route": "/pdf?course=DigiQuest&Level=Level4&unit=Unit4&pdf=DigIQuest Stage 4 U4_S1",
+              "type": "page"
+            },
+            {
+              "title": "Sprint 4.2 Sprite-User Interaction",
+              "uid": "DQL04-TP4-CHDRN3",
+              "description": "",
+              "route": "/pdf?course=DigiQuest&Level=Level4&unit=Unit4&pdf=DigIQuest Stage 4 U4_S2",
+              "type": "page"
+            },
+            {
+              "title": "Sprint 4.3 Testing and Debugging",
+              "uid": "DQL04-TP4-CHDRN4",
+              "description": "",
+              "route": "/pdf?course=DigiQuest&Level=Level4&unit=Unit4&pdf=DigIQuest Stage 4 U4_S3",
+              "type": "page"
+            },
+            {
+              "title": "Sprint 4.4 Physical Computing",
+              "uid": "DQL04-TP4-CHDRN5",
+              "description": "",
+              "route": "/pdf?course=DigiQuest&Level=Level4&unit=Unit4&pdf=DigIQuest Stage 4 U4_S4",
+              "type": "page"
+            }
+          ]
+        },
+        {
+          "route": "book/DQL04/DQL04-TP1-000.mdx",
+          "title": "Unit 5: Understanding Data and Databases",
+          "type": "topic",
+          "uid": "DQL04-TP5-000",
+          "children": [
+            {
+              "title": "Unit 5 Summary",
+              "uid": "DQL04-TP5-CHDRN1",
+              "description": "",
+              "route": "/pdf?course=DigiQuest&Level=Level4&unit=Unit5&pdf=DigIQuest Stage 4 U5_Summary",
+              "type": "page"
+            },
+            {
+              "title": "Sprint 5.1 Introduction to Databases",
+              "uid": "DQL04-TP5-CHDRN2",
+              "description": "",
+              "route": "/pdf?course=DigiQuest&Level=Level4&unit=Unit5&pdf=DigIQuest Stage 4 U5_S1",
+              "type": "page"
+            },
+            {
+              "title": "Sprint 5.2 Collecting and Organising Data",
+              "uid": "DQL04-TP5-CHDRN3",
+              "description": "",
+              "route": "/pdf?course=DigiQuest&Level=Level4&unit=Unit5&pdf=DigIQuest Stage 4 U5_S2",
+              "type": "page"
+            },
+            {
+              "title": "Sprint 5.3 Using Databases to Answer Questions",
+              "uid": "DQL04-TP5-CHDRN4",
+              "description": "",
+              "route": "/pdf?course=DigiQuest&Level=Level4&unit=Unit5&pdf=DigIQuest Stage 4 U5_S3",
+              "type": "page"
+            }
+          ]
         }
       ]
     }
