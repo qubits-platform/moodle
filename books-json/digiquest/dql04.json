@@ -25,25 +25,30 @@
               "type": "page"
             },
             {
-              "title": "Sprint 1.1 Control Systems and Data",
+              "title": "1.1 Control Systems and Data",
               "uid": "DQL04-TP1-CHDRN2",
               "description": "",
               "route": "/pdf?course=DigiQuest&Level=Level4&unit=Unit1&pdf=DQL04_U01_S01",
               "type": "page"
             },
             {
-              "title": "Sprint 1.2 Software and File Types",
+              "title": "1.2 Software and File Types",
               "uid": "DQL04-TP1-CHDRN3",
               "description": "",
               "route": "/pdf?course=DigiQuest&Level=Level4&unit=Unit1&pdf=DQL04_U01_S02",
               "type": "page"
             },
             {
-              "title": "Sprint 1.3 World of Computer Science and Robotics",
+              "title": "1.3 World of Computer Science and Robotics",
               "uid": "DQL04-TP1-CHDRN4",
               "description": "",
               "route": "/pdf?course=DigiQuest&Level=Level4&unit=Unit1&pdf=DQL04_U01_S03",
               "type": "page"
+            },
+            {
+              "uid": "DQL04-U01-CHDRN1",
+              "fname": "DQL04-U01-CHDRN1.json",
+              "type": "quiz"
             }
           ]
         },
@@ -61,25 +66,90 @@
               "type": "page"
             },
             {
-              "title": "Sprint 2.1 Repetitions in Algorithms",
+              "title": "2.1 Repetitions in Algorithms",
               "uid": "DQL04-TP2-CHDRN2",
               "description": "",
               "route": "/pdf?course=DigiQuest&Level=Level4&unit=Unit2&pdf=DQL04_U02_S01",
               "type": "page"
             },
             {
-              "title": "Sprint 2.2 Developing Algorithms",
+              "uid": "DQL04-TP2-CHDRN5",
+              "fname": "DQL04-TP2-CHDRN5.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "DQL04-TP2-CHDRN6",
+              "fname": "DQL04-TP2-CHDRN6.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "DQL04-TP2-CHDRN7",
+              "fname": "DQL04-TP2-CHDRN7.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "DQL04-TP2-CHDRN8",
+              "fname": "DQL04-TP2-CHDRN8.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "DQL04-TP2-CHDRN9",
+              "fname": "DQL04-TP2-CHDRN9.json",
+              "type": "assignment"
+            },
+            {
+              "title": "2.2 Developing Algorithms",
               "uid": "DQL04-TP2-CHDRN3",
               "description": "",
               "route": "/pdf?course=DigiQuest&Level=Level4&unit=Unit2&pdf=DQL04_U02_S02",
               "type": "page"
             },
             {
-              "title": "Sprint 2.3 Breaking Tasks into Subtasks",
+              "uid": "DQL04-TP2-CHDRN10",
+              "fname": "DQL04-TP2-CHDRN10.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "DQL04-TP2-CHDRN11",
+              "fname": "DQL04-TP2-CHDRN11.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "DQL04-TP2-CHDRN12",
+              "fname": "DQL04-TP2-CHDRN12.json",
+              "type": "assignment"
+            },
+            {
+              "title": "2.3 Breaking Tasks into Subtasks",
               "uid": "DQL04-TP2-CHDRN4",
               "description": "",
               "route": "/pdf?course=DigiQuest&Level=Level4&unit=Unit2&pdf=DQL04_U02_S03",
               "type": "page"
+            },
+            {
+              "uid": "DQL04-TP2-CHDRN13",
+              "fname": "DQL04-TP2-CHDRN13.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "DQL04-TP2-CHDRN14",
+              "fname": "DQL04-TP2-CHDRN14.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "DQL04-TP2-CHDRN15",
+              "fname": "DQL04-TP2-CHDRN15.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "DQL04-TP2-CHDRN16",
+              "fname": "DQL04-TP2-CHDRN16.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "DQL04-U02-CHDRN1",
+              "fname": "DQL04-U02-CHDRN1.json",
+              "type": "quiz"
             }
           ]
         },
@@ -97,32 +167,92 @@
               "type": "page"
             },
             {
-              "title": "Sprint 3.1 Drawing with Sprites",
+              "title": "3.1 Drawing with Sprites",
               "uid": "DQL04-TP3-CHDRN2",
               "description": "",
               "route": "/pdf?course=DigiQuest&Level=Level4&unit=Unit3&pdf=DQL04_U03_S01",
               "type": "page"
             },
             {
-              "title": "Sprint 3.2 Sprite-User Interaction",
+              "uid": "DQL04-TP3-CHDRN6",
+              "fname": "DQL04-TP3-CHDRN6.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "DQL04-TP3-CHDRN7",
+              "fname": "DQL04-TP3-CHDRN7.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "DQL04-TP3-CHDRN8",
+              "fname": "DQL04-TP3-CHDRN8.json",
+              "type": "assignment"
+            },
+            {
+              "title": "3.2 Sprite-User Interaction",
               "uid": "DQL04-TP3-CHDRN3",
               "description": "",
               "route": "/pdf?course=DigiQuest&Level=Level4&unit=Unit3&pdf=DQL04_U03_S02",
               "type": "page"
             },
             {
-              "title": "Sprint 3.3 Testing and Debugging",
+              "uid": "DQL04-TP3-CHDRN9",
+              "fname": "DQL04-TP3-CHDRN9.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "DQL04-TP3-CHDRN10",
+              "fname": "DQL04-TP3-CHDRN10.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "DQL04-TP3-CHDRN11",
+              "fname": "DQL04-TP3-CHDRN11.json",
+              "type": "assignment"
+            },
+            {
+              "title": "3.3 Testing and Debugging",
               "uid": "DQL04-TP3-CHDRN4",
               "description": "",
               "route": "/pdf?course=DigiQuest&Level=Level4&unit=Unit3&pdf=DQL04_U03_S03",
               "type": "page"
             },
             {
-              "title": "Sprint 3.4 Physical Computing",
+              "uid": "DQL04-TP3-CHDRN12",
+              "fname": "DQL04-TP3-CHDRN12.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "DQL04-TP3-CHDRN13",
+              "fname": "DQL04-TP3-CHDRN13.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "DQL04-TP3-CHDRN14",
+              "fname": "DQL04-TP3-CHDRN14.json",
+              "type": "assignment"
+            },
+            {
+              "title": "3.4 Physical Computing",
               "uid": "DQL04-TP3-CHDRN5",
               "description": "",
               "route": "/pdf?course=DigiQuest&Level=Level4&unit=Unit3&pdf=DQL04_U03_S04",
               "type": "page"
+            },
+            {
+              "uid": "DQL04-TP3-CHDRN15",
+              "fname": "DQL04-TP3-CHDRN15.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "DQL04-TP3-CHDRN16",
+              "fname": "DQL04-TP3-CHDRN16.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "DQL04-U03-CHDRN1",
+              "fname": "DQL04-U03-CHDRN1.json",
+              "type": "quiz"
             }
           ]
         },
@@ -140,25 +270,60 @@
               "type": "page"
             },
             {
-              "title": "Sprint 4.1 Introduction to Databases",
+              "title": "4.1 Introduction to Databases",
               "uid": "DQL04-TP4-CHDRN2",
               "description": "",
               "route": "/pdf?course=DigiQuest&Level=Level4&unit=Unit4&pdf=DQL04_U04_S01",
               "type": "page"
             },
             {
-              "title": "Sprint 4.2 Collecting and Organising Data",
+              "uid": "DQL04-TP4-CHDRN5",
+              "fname": "DQL04-TP4-CHDRN5.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "DQL04-TP4-CHDRN6",
+              "fname": "DQL04-TP4-CHDRN6.json",
+              "type": "assignment"
+            },
+            {
+              "title": "4.2 Collecting and Organising Data",
               "uid": "DQL04-TP4-CHDRN3",
               "description": "",
               "route": "/pdf?course=DigiQuest&Level=Level4&unit=Unit4&pdf=DQL04_U04_S02",
               "type": "page"
             },
             {
-              "title": "Sprint 4.3 Using Databases to Answer Questions",
+              "uid": "DQL04-TP4-CHDRN7",
+              "fname": "DQL04-TP4-CHDRN7.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "DQL04-TP4-CHDRN8",
+              "fname": "DQL04-TP4-CHDRN8.json",
+              "type": "assignment"
+            },
+            {
+              "title": "4.3 Using Databases to Answer Questions",
               "uid": "DQL04-TP4-CHDRN4",
               "description": "",
               "route": "/pdf?course=DigiQuest&Level=Level4&unit=Unit4&pdf=DQL04_U04_S03",
               "type": "page"
+            },
+            {
+              "uid": "DQL04-TP4-CHDRN9",
+              "fname": "DQL04-TP4-CHDRN9.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "DQL04-TP4-CHDRN10",
+              "fname": "DQL04-TP4-CHDRN10.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "DQL04-U04-CHDRN1",
+              "fname": "DQL04-U04-CHDRN1.json",
+              "type": "quiz"
             }
           ]
         },
@@ -176,18 +341,38 @@
               "type": "page"
             },
             {
-              "title": "Sprint 5.1 Computer Networks",
+              "title": "5.1 Computer Networks",
               "uid": "DQL04-TP5-CHDRN2",
               "description": "",
               "route": "/pdf?course=DigiQuest&Level=Level4&unit=Unit5&pdf=DQL04_U05_S01",
               "type": "page"
             },
             {
-              "title": "Sprint 5.2 Introduction to Encryption and Ciphers",
+              "uid": "DQL04-TP5-CHDRN4",
+              "fname": "DQL04-TP5-CHDRN4.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "DQL04-TP5-CHDRN5",
+              "fname": "DQL04-TP5-CHDRN5.json",
+              "type": "assignment"
+            },
+            {
+              "title": "5.2 Introduction to Encryption and Ciphers",
               "uid": "DQL04-TP5-CHDRN3",
               "description": "",
               "route": "/pdf?course=DigiQuest&Level=Level4&unit=Unit5&pdf=DQL04_U05_S02",
               "type": "page"
+            },
+            {
+              "uid": "DQL04-TP5-CHDRN6",
+              "fname": "DQL04-TP5-CHDRN6.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "DQL04-TP5-CHDRN7",
+              "fname": "DQL04-TP5-CHDRN7.json",
+              "type": "assignment"
             }
           ]
         }
