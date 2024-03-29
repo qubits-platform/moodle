@@ -44,6 +44,11 @@
               "description": "",
               "route": "/pdf?course=DigiQuest&Level=Level4&unit=Unit1&pdf=DQL04_U01_S03",
               "type": "page"
+            },
+            {
+              "uid": "DQL04-U01-CHDRN1",
+              "fname": "DQL04-U01-CHDRN1.json",
+              "type": "quiz"
             }
           ]
         },
@@ -140,6 +145,11 @@
               "uid": "DQL04-TP2-CHDRN16",
               "fname": "DQL04-TP2-CHDRN16.json",
               "type": "assignment"
+            },
+            {
+              "uid": "DQL04-U02-CHDRN1",
+              "fname": "DQL04-U02-CHDRN1.json",
+              "type": "quiz"
             }
           ]
         },
@@ -238,6 +248,11 @@
               "uid": "DQL04-TP3-CHDRN16",
               "fname": "DQL04-TP3-CHDRN16.json",
               "type": "assignment"
+            },
+            {
+              "uid": "DQL04-U03-CHDRN1",
+              "fname": "DQL04-U03-CHDRN1.json",
+              "type": "quiz"
             }
           ]
         },
@@ -304,6 +319,11 @@
               "uid": "DQL04-TP4-CHDRN10",
               "fname": "DQL04-TP4-CHDRN10.json",
               "type": "assignment"
+            },
+            {
+              "uid": "DQL04-U04-CHDRN1",
+              "fname": "DQL04-U04-CHDRN1.json",
+              "type": "quiz"
             }
           ]
         },
