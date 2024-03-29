@@ -1,6 +1,6 @@
 {
   "title": "4.1 Master Challenge 2",
-  "question": "Fred uses the following grid scenario and the algorithm to reach school.<br><br>Trace Fred's path to the school and complete the sub-routine.<br><br>Step 1: Move 3 blocks forward.<br>Step 2: Turn left.<br>Step 3: 'Move and turn'.<br>Step 4: Move 1 block forward.<br>Step 5: Turn left.<br>Step 6: Move 1 block forward.<br><br>Sub-routine: 'Move and turn'.<br><br>Step 1: Move _____ blocks forward.<br>Step 2: Turn __________.<br><img src='https://learn.qubitsedu.com/images/DQL04_U02_S03_MC1.png' width='50%' height='30%'>",
+  "question": "<strong>School lunch menu</strong><br><br>Examine the data table representing a week’s school lunch menu and answer the following questions.<br><br><img src='https://learn.qubitsedu.com/images/DQL04_U04_S01_MC21.png' width='50%' height='30%'><br><img src='https://learn.qubitsedu.com/images/DQL04_U04_S01_MC22.png' width='50%' height='30%'><br><br>a. What are the different categories of information (fields) in this table?<br>b. How many days of menus (records) does this table show?<br>c. How many columns (each representing a different type of food) are in this table?",
   "duedate": "",
   "submissionfrom": "",
   "grade_duedate": "",

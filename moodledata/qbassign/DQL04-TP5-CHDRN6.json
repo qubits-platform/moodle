@@ -1,6 +1,6 @@
 {
   "title": "5.2 Master Challenge 1",
-  "question": "Fred uses the following grid scenario and the algorithm to reach school.<br><br>Trace Fred's path to the school and complete the sub-routine.<br><br>Step 1: Move 3 blocks forward.<br>Step 2: Turn left.<br>Step 3: 'Move and turn'.<br>Step 4: Move 1 block forward.<br>Step 5: Turn left.<br>Step 6: Move 1 block forward.<br><br>Sub-routine: 'Move and turn'.<br><br>Step 1: Move _____ blocks forward.<br>Step 2: Turn __________.<br><img src='https://learn.qubitsedu.com/images/DQL04_U02_S03_MC1.png' width='50%' height='30%'>",
+  "question": "<strong>Secret message</strong><br><br>Rick and Tina formed a secret detective club. Rick wants to send a secret message to Tina about an investigation clue. The clue is Buckingham Palace. Help Rick by encoding the clue using the Pigpen Cipher.",
   "duedate": "",
   "submissionfrom": "",
   "grade_duedate": "",
@@ -18,9 +18,9 @@
   "grade_type": "scale",
   "grading_method": "direct",
   "uid": "DQL04-TP5-CHDRN6",
-  "maxfilesubmissions": "",
+  "maxfilesubmissions": "5",
   "filetypeslist": "",
-  "maxfilesubmissions_size": "",
+  "maxfilesubmissions_size": "2097152",
   "testcases": [
     {
       "value": "Case = Test integer sum\ninput = 1 2 3 5\noutput = 11"
