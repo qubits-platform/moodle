@@ -71,7 +71,9 @@ class course_summary_exporter extends \core\external\exporter {
             $cname = 'DigiPro';
         } elseif (str_contains($this->data->shortname, 'DCL')) {
             $cname =  'DigiChamps';
-        }else {
+        } elseif (str_contains($this->data->shortname, 'DQL')) {
+            $cname =  'DigiQuest';
+        } else {
             $cname = $coursecategory->name;
         }
 
