@@ -1,0 +1,922 @@
+[
+    {
+        "book": {
+            "name": "CMS Grade 05",
+            "code": "CMS05",
+            "category": "CMS",
+            "categorycode": "CMS",
+            "summary": ".",
+            "otherfields": {
+                "level": "5",
+                "cardcolour": "#204796"
+            },
+            "chapters": [
+                {
+                    "route": "book/CMS05/CMS05-TP1-000.mdx",
+                    "title": "Unit 1: Tables and Templates in MS Word",
+                    "type": "topic",
+                    "uid": "CMS05-TP1-000",
+                    "children": [
+                        {
+                            "title": "Unit 1 Summary",
+                            "uid": "CMS05-TP1-CHDRN1",
+                            "description": "",
+                            "route": "/pdf?course=DigiChamps&Level=Level4&pdf=DCL04_U05_Intro",
+                            "type": "page"
+                        },
+                        {
+                            "title": "1.1 - Tables In Documents",
+                            "uid": "CMS05-TP1-CHDRN2",
+                            "description": "",
+                            "route": "/pdf?course=DigiChamps&Level=Level4&pdf=DCL04_U05_S01",
+                            "type": "page"
+                        },
+                        {
+                            "uid": "CMS05-TP1-CHDRN5",
+                            "fname": "CMS05-TP1-CHDRN5.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS05-TP1-CHDRN6",
+                            "fname": "CMS05-TP1-CHDRN6.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS05-TP1-CHDRN7",
+                            "fname": "CMS05-TP1-CHDRN7.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "title": "1.2 - Borders And Line Spacing",
+                            "uid": "CMS05-TP1-CHDRN3",
+                            "description": "",
+                            "route": "/pdf?course=DigiChamps&Level=Level4&pdf=DCL04_U05_S02",
+                            "type": "page"
+                        },
+                        {
+                            "uid": "CMS05-TP1-CHDRN8",
+                            "fname": "CMS05-TP1-CHDRN8.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS05-TP1-CHDRN9",
+                            "fname": "CMS05-TP1-CHDRN9.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS05-TP1-CHDRN10",
+                            "fname": "CMS05-TP1-CHDRN10.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "title": "1.3 - Templates And Orientation",
+                            "uid": "CMS05-TP1-CHDRN4",
+                            "description": "",
+                            "route": "/pdf?course=DigiChamps&Level=Level4&pdf=DCL04_U05_S03",
+                            "type": "page"
+                        },
+                        {
+                            "uid": "CMS05-TP1-CHDRN11",
+                            "fname": "CMS05-TP1-CHDRN11.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS05-TP1-CHDRN12",
+                            "fname": "CMS05-TP1-CHDRN12.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS05-U01-CHDRN1",
+                            "fname": "CMS05-U01-CHDRN1.json",
+                            "type": "quiz"
+                        }
+                    ],
+                    "teacheronly": "no"
+                },
+                {
+                    "route": "book/CMS05/CMS05-TP2-000.mdx",
+                    "title": "Unit 2: Accessibility Tools and Formatting in MS Word",
+                    "type": "topic",
+                    "uid": "CMS05-TP2-000",
+                    "children": [
+                        {
+                            "title": "Unit 2 Summary",
+                            "uid": "CMS05-TP2-CHDRN1",
+                            "description": "",
+                            "route": "/pdf?course=DigiChamps&Level=Level5&pdf=DCL05_U05_Intro",
+                            "type": "page"
+                        },
+                        {
+                            "title": "2.1 - Shapes And WordArt",
+                            "uid": "CMS05-TP2-CHDRN2",
+                            "description": "",
+                            "route": "/pdf?course=DigiChamps&Level=Level5&pdf=DCL05_U05_S01",
+                            "type": "page"
+                        },
+                        {
+                            "uid": "CMS05-TP2-CHDRN5",
+                            "fname": "CMS05-TP2-CHDRN5.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS05-TP2-CHDRN6",
+                            "fname": "CMS05-TP2-CHDRN6.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS05-TP2-CHDRN7",
+                            "fname": "CMS05-TP2-CHDRN7.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS05-TP2-CHDRN8",
+                            "fname": "CMS05-TP2-CHDRN8.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "title": "2.2 - Dictate And Read Aloud Tool",
+                            "uid": "CMS05-TP2-CHDRN3",
+                            "description": "",
+                            "route": "/pdf?course=DigiChamps&Level=Level5&pdf=DCL05_U05_S02",
+                            "type": "page"
+                        },
+                        {
+                            "uid": "CMS05-TP2-CHDRN9",
+                            "fname": "CMS05-TP2-CHDRN9.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS05-TP2-CHDRN10",
+                            "fname": "CMS05-TP2-CHDRN10.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS05-TP2-CHDRN11",
+                            "fname": "CMS05-TP2-CHDRN11.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS05-TP2-CHDRN12",
+                            "fname": "CMS05-TP2-CHDRN12.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "title": "2.3 - Ruler, Margins, And Tabs",
+                            "uid": "CMS05-TP2-CHDRN4",
+                            "description": "",
+                            "route": "/pdf?course=DigiChamps&Level=Level5&pdf=DCL05_U05_S03",
+                            "type": "page"
+                        },
+                        {
+                            "uid": "CMS05-TP2-CHDRN13",
+                            "fname": "CMS05-TP2-CHDRN13.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS05-TP2-CHDRN14",
+                            "fname": "CMS05-TP2-CHDRN14.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS05-U02-CHDRN1",
+                            "fname": "CMS05-U02-CHDRN1.json",
+                            "type": "quiz"
+                        }
+                    ],
+                    "teacheronly": "no"
+                },
+                {
+                    "route": "book/CMS05/CMS05-TP3-000.mdx",
+                    "title": "Unit 3: Conversation",
+                    "type": "topic",
+                    "uid": "CMS05-TP3-000",
+                    "children": [
+                        {
+                            "title": "Unit 3 Summary",
+                            "uid": "CMS05-TP3-CHDRN1",
+                            "description": "",
+                            "route": "/pdf?course=DigiPro&Level=Level5&pdf=DPL05_U1_Intro",
+                            "type": "page"
+                        },
+                        {
+                            "title": "3.1 - The Stage",
+                            "uid": "CMS05-TP3-CHDRN2",
+                            "description": "",
+                            "route": "/pdf?course=DigiPro&Level=Level5&pdf=DPL05_U1_S1",
+                            "type": "page"
+                        },
+                        {
+                            "uid": "CMS05-TP3-CHDRN5",
+                            "fname": "CMS05-TP3-CHDRN5.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS05-TP3-CHDRN6",
+                            "fname": "CMS05-TP3-CHDRN6.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "title": "3.2 - Text to Speech",
+                            "uid": "CMS05-TP3-CHDRN3",
+                            "description": "",
+                            "route": "/pdf?course=DigiPro&Level=Level5&pdf=DPL05_U1_S2",
+                            "type": "page"
+                        },
+                        {
+                            "uid": "CMS05-TP3-CHDRN7",
+                            "fname": "CMS05-TP3-CHDRN7.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS05-TP3-CHDRN8",
+                            "fname": "CMS05-TP3-CHDRN8.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "title": "3.3 - Ask Block",
+                            "uid": "CMS05-TP3-CHDRN4",
+                            "description": "",
+                            "route": "/pdf?course=DigiPro&Level=Level5&pdf=DPL05_U1_S3",
+                            "type": "page"
+                        },
+                        {
+                            "uid": "CMS05-TP3-CHDRN9",
+                            "fname": "CMS05-TP3-CHDRN9.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS05-TP3-CHDRN10",
+                            "fname": "CMS05-TP3-CHDRN10.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS05-TP3-CHDRN11",
+                            "fname": "CMS05-TP3-CHDRN11.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS05-U03-CHDRN1",
+                            "fname": "CMS05-U03-CHDRN1.json",
+                            "type": "quiz"
+                        }
+                    ],
+                    "teacheronly": "no"
+                },
+                {
+                    "route": "book/CMS05/CMS05-TP4-000.mdx",
+                    "title": "Unit 4: Intelligent Beings",
+                    "type": "topic",
+                    "uid": "CMS05-TP4-000",
+                    "children": [
+                        {
+                            "title": "Unit 4 Summary",
+                            "uid": "CMS05-TP4-CHDRN1",
+                            "description": "",
+                            "route": "/pdf?course=DigiPro&Level=Level3&pdf=DPL03_U05_Intro",
+                            "type": "page"
+                        },
+                        {
+                            "title": "4.1 - Intelligence",
+                            "uid": "CMS05-TP4-CHDRN2",
+                            "description": "",
+                            "route": "/pdf?course=DigiPro&Level=Level3&pdf=DPL03_U05_S01",
+                            "type": "page"
+                        },
+                        {
+                            "uid": "CMS05-TP4-CHDRN6",
+                            "fname": "CMS05-TP4-CHDRN6.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS05-TP4-CHDRN7",
+                            "fname": "CMS05-TP4-CHDRN7.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "title": "4.2 - Computer Vision",
+                            "uid": "CMS05-TP4-CHDRN3",
+                            "description": "",
+                            "route": "/pdf?course=DigiPro&Level=Level3&pdf=DPL03_U05_S02",
+                            "type": "page"
+                        },
+                        {
+                            "uid": "CMS05-TP4-CHDRN8",
+                            "fname": "CMS05-TP4-CHDRN8.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS05-TP4-CHDRN9",
+                            "fname": "CMS05-TP4-CHDRN9.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "title": "4.3 Face Sensing",
+                            "uid": "CMS05-TP4-CHDRN4",
+                            "description": "",
+                            "route": "/pdf?course=DigiPro&Level=Level3&pdf=DPL03_U05_S03",
+                            "type": "page"
+                        },
+                        {
+                            "uid": "CMS05-TP4-CHDRN10",
+                            "fname": "CMS05-TP4-CHDRN10.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS05-TP4-CHDRN11",
+                            "fname": "CMS05-TP4-CHDRN11.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS05-TP4-CHDRN12",
+                            "fname": "CMS05-TP4-CHDRN12.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS05-U04-CHDRN1",
+                            "fname": "CMS05-U04-CHDRN1.json",
+                            "type": "quiz"
+                        },
+                        {
+                            "uid": "CMS05-TP4-CHDRN13",
+                            "fname": "CMS05-TP4-CHDRN13.json",
+                            "type": "assignment"
+                        }
+                    ],
+                    "teacheronly": "no"
+                },
+                {
+                    "route": "book/CMS05/CMS05-TP5-000.mdx",
+                    "title": "Unit 5: Animations",
+                    "type": "topic",
+                    "uid": "CMS05-TP5-000",
+                    "children": [
+                        {
+                            "title": "Unit 5 Summary",
+                            "uid": "CMS05-TP5-CHDRN1",
+                            "description": "",
+                            "route": "/pdf?course=DigiPro&Level=Level5&pdf=DPL05_U2_Intro",
+                            "type": "page"
+                        },
+                        {
+                            "title": "5.1 - Conditions and Sensing",
+                            "uid": "CMS05-TP5-CHDRN2",
+                            "description": "",
+                            "route": "/pdf?course=DigiPro&Level=Level5&pdf=DPL05_U2_S1",
+                            "type": "page"
+                        },
+                        {
+                            "uid": "CMS05-TP5-CHDRN6",
+                            "fname": "CMS05-TP5-CHDRN6.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS05-TP5-CHDRN7",
+                            "fname": "CMS05-TP5-CHDRN7.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS05-TP5-CHDRN8",
+                            "fname": "CMS05-TP5-CHDRN8.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "title": "5.2 - Loops",
+                            "uid": "CMS05-TP5-CHDRN3",
+                            "description": "",
+                            "route": "/pdf?course=DigiPro&Level=Level5&pdf=DPL05_U2_S2",
+                            "type": "page"
+                        },
+                        {
+                            "uid": "CMS05-TP5-CHDRN9",
+                            "fname": "CMS05-TP5-CHDRN9.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS05-TP5-CHDRN10",
+                            "fname": "CMS05-TP5-CHDRN10.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS05-TP5-CHDRN11",
+                            "fname": "CMS05-TP5-CHDRN11.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "title": "5.3 - Glide and Go To Block",
+                            "uid": "CMS05-TP5-CHDRN4",
+                            "description": "",
+                            "route": "/pdf?course=DigiPro&Level=Level5&pdf=DPL05_U2_S3",
+                            "type": "page"
+                        },
+                        {
+                            "uid": "CMS05-TP5-CHDRN12",
+                            "fname": "CMS05-TP5-CHDRN12.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS05-TP5-CHDRN13",
+                            "fname": "CMS05-TP5-CHDRN13.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "title": "5.4 - Switching Scene",
+                            "uid": "CMS05-TP5-CHDRN5",
+                            "description": "",
+                            "route": "/pdf?course=DigiPro&Level=Level5&pdf=DPL05_U2_S4",
+                            "type": "page"
+                        },
+                        {
+                            "uid": "CMS05-TP5-CHDRN14",
+                            "fname": "CMS05-TP5-CHDRN14.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS05-TP5-CHDRN15",
+                            "fname": "CMS05-TP5-CHDRN15.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS05-TP5-CHDRN16",
+                            "fname": "CMS05-TP5-CHDRN16.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS05-U05-CHDRN1",
+                            "fname": "CMS05-U05-CHDRN1.json",
+                            "type": "quiz"
+                        }
+                    ],
+                    "teacheronly": "no"
+                },
+                {
+                    "route": "book/CMS05/CMS05-TP6-000.mdx",
+                    "title": "Unit 6: Computing Devices",
+                    "type": "topic",
+                    "uid": "CMS05-TP6-000",
+                    "children": [
+                        {
+                            "title": "Unit 6 Summary",
+                            "uid": "CMS05-TP6-CHDRN1",
+                            "description": "",
+                            "route": "/pdf?course=DigiChamps&Level=Level4&pdf=DCL04_U01_Intro",
+                            "type": "page"
+                        },
+                        {
+                            "title": "6.1 - Troubleshooting",
+                            "uid": "CMS05-TP6-CHDRN2",
+                            "description": "",
+                            "route": "/pdf?course=DigiChamps&Level=Level4&pdf=DCL04_U01_S01",
+                            "type": "page"
+                        },
+                        {
+                            "title": "6.2 - Next Generation Technology",
+                            "uid": "CMS05-TP6-CHDRN3",
+                            "description": "",
+                            "route": "/pdf?course=DigiChamps&Level=Level4&pdf=DCL04_U01_S02",
+                            "type": "page"
+                        },
+                        {
+                            "uid": "CMS05-U06-CHDRN1",
+                            "fname": "CMS05-U06-CHDRN1.json",
+                            "type": "quiz"
+                        }
+                    ],
+                    "teacheronly": "no"
+                },
+                {
+                    "route": "book/CMS05/CMS05-TP7-000.mdx",
+                    "title": "Unit 7: Powerpoint Basics",
+                    "type": "topic",
+                    "uid": "CMS05-TP7-000",
+                    "children": [
+                        {
+                            "title": "Unit 7 Summary",
+                            "uid": "CMS05-TP7-CHDRN1",
+                            "description": "",
+                            "route": "/pdf?course=DigiChamps&Level=Level1&pdf=DCL01_U05_Intro",
+                            "type": "page"
+                        },
+                        {
+                            "title": "7.1 - New Slides And Images",
+                            "uid": "CMS05-TP7-CHDRN2",
+                            "description": "",
+                            "route": "/pdf?course=DigiChamps&Level=Level1&pdf=DCL01_U05_S01",
+                            "type": "page"
+                        },
+                        {
+                            "uid": "CMS05-TP7-CHDRN4",
+                            "fname": "CMS05-TP7-CHDRN4.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS05-TP7-CHDRN5",
+                            "fname": "CMS05-TP7-CHDRN5.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS05-TP7-CHDRN6",
+                            "fname": "CMS05-TP7-CHDRN6.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "title": "7.2 - Text Formatting",
+                            "uid": "CMS05-TP7-CHDRN3",
+                            "description": "",
+                            "route": "/pdf?course=DigiChamps&Level=Level1&pdf=DCL01_U05_S02",
+                            "type": "page"
+                        },
+                        {
+                            "uid": "CMS05-TP7-CHDRN7",
+                            "fname": "CMS05-TP7-CHDRN7.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS05-TP7-CHDRN8",
+                            "fname": "CMS05-TP7-CHDRN8.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS05-TP7-CHDRN9",
+                            "fname": "CMS05-TP7-CHDRN9.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS05-U07-CHDRN1",
+                            "fname": "CMS05-U07-CHDRN1.json",
+                            "type": "quiz"
+                        }
+                    ],
+                    "teacheronly": "no"
+                },
+                {
+                    "route": "book/CMS05/CMS05-TP8-000.mdx",
+                    "title": "Unit 8: Shapes on Slides",
+                    "type": "topic",
+                    "uid": "CMS05-TP8-000",
+                    "children": [
+                        {
+                            "title": "Unit 8 Summary",
+                            "uid": "CMS05-TP8-CHDRN1",
+                            "description": "",
+                            "route": "/pdf?course=DigiChamps&Level=Level1&pdf=DCL02_U05_Intro",
+                            "type": "page"
+                        },
+                        {
+                            "title": "8.1 - Adding Shape",
+                            "uid": "CMS05-TP8-CHDRN2",
+                            "description": "",
+                            "route": "/pdf?course=DigiChamps&Level=Level2&pdf=DCL02_U05_S01",
+                            "type": "page"
+                        },
+                        {
+                            "uid": "CMS05-TP8-CHDRN5",
+                            "fname": "CMS05-TP8-CHDRN5.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS05-TP8-CHDRN6",
+                            "fname": "CMS05-TP8-CHDRN6.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS05-TP8-CHDRN7",
+                            "fname": "CMS05-TP8-CHDRN7.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "title": "8.2 - Themes And Color",
+                            "uid": "CMS05-TP8-CHDRN3",
+                            "description": "",
+                            "route": "/pdf?course=DigiChamps&Level=Level2&pdf=DCL02_U05_S02",
+                            "type": "page"
+                        },
+                        {
+                            "uid": "CMS05-TP8-CHDRN8",
+                            "fname": "CMS05-TP8-CHDRN8.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS05-TP8-CHDRN9",
+                            "fname": "CMS05-TP8-CHDRN9.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS05-TP8-CHDRN10",
+                            "fname": "CMS05-TP8-CHDRN10.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "title": "8.3 - Size Of Shapes",
+                            "uid": "CMS05-TP8-CHDRN4",
+                            "description": "",
+                            "route": "/pdf?course=DigiChamps&Level=Level2&pdf=DCL02_U05_S03",
+                            "type": "page"
+                        },
+                        {
+                            "uid": "CMS05-TP8-CHDRN11",
+                            "fname": "CMS05-TP8-CHDRN11.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS05-TP8-CHDRN12",
+                            "fname": "CMS05-TP8-CHDRN12.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS05-U08-CHDRN1",
+                            "fname": "CMS05-U08-CHDRN1.json",
+                            "type": "quiz"
+                        }
+                    ],
+                    "teacheronly": "no"
+                },
+                {
+                    "route": "book/CMS05/CMS05-TP9-000.mdx",
+                    "title": "Unit 9: SmartArt to Text and Vice versa",
+                    "type": "topic",
+                    "uid": "CMS05-TP9-000",
+                    "children": [
+                        {
+                            "title": "Unit 9 Summary",
+                            "uid": "CMS05-TP9-CHDRN1",
+                            "description": "",
+                            "route": "/pdf?course=DigiChamps&Level=Level3&pdf=DCL03_U04_Intro",
+                            "type": "page"
+                        },
+                        {
+                            "title": "9.1 - SmartArt",
+                            "uid": "CMS05-TP9-CHDRN2",
+                            "description": "",
+                            "route": "/pdf?course=DigiChamps&Level=Level3&pdf=DCL03_U04_S01",
+                            "type": "page"
+                        },
+                        {
+                            "uid": "CMS05-TP9-CHDRN5",
+                            "fname": "CMS05-TP9-CHDRN5.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS05-TP9-CHDRN6",
+                            "fname": "CMS05-TP9-CHDRN6.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS05-TP9-CHDRN7",
+                            "fname": "CMS05-TP9-CHDRN7.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "title": "9.2 - SmartArt To Text And Vice Versa",
+                            "uid": "CMS05-TP9-CHDRN3",
+                            "description": "",
+                            "route": "/pdf?course=DigiChamps&Level=Level3&pdf=DCL03_U04_S02",
+                            "type": "page"
+                        },
+                        {
+                            "uid": "CMS05-TP9-CHDRN8",
+                            "fname": "CMS05-TP9-CHDRN8.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS05-TP9-CHDRN9",
+                            "fname": "CMS05-TP9-CHDRN9.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "title": "9.3 - SmartArt Process",
+                            "uid": "CMS05-TP9-CHDRN4",
+                            "description": "",
+                            "route": "/pdf?course=DigiChamps&Level=Level3&pdf=DCL03_U04_S03",
+                            "type": "page"
+                        },
+                        {
+                            "uid": "CMS05-TP9-CHDRN10",
+                            "fname": "CMS05-TP9-CHDRN10.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS05-TP9-CHDRN11",
+                            "fname": "CMS05-TP9-CHDRN11.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS05-TP9-CHDRN12",
+                            "fname": "CMS05-TP9-CHDRN12.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS05-U09-CHDRN1",
+                            "fname": "CMS05-U09-CHDRN1.json",
+                            "type": "quiz"
+                        }
+                    ],
+                    "teacheronly": "no"
+                },
+                {
+                    "route": "book/CMS05/CMS05-TP10-000.mdx",
+                    "title": "Unit 10: Charts, Transition and Slideshow",
+                    "type": "topic",
+                    "uid": "CMS05-TP10-000",
+                    "children": [
+                        {
+                            "title": "Unit 10 Summary",
+                            "uid": "CMS05-TP10-CHDRN1",
+                            "description": "",
+                            "route": "/pdf?course=DigiChamps&Level=Level5&pdf=DCL05_U04_Intro",
+                            "type": "page"
+                        },
+                        {
+                            "title": "10.1 - Charts In PowerPoint",
+                            "uid": "CMS05-TP10-CHDRN2",
+                            "description": "",
+                            "route": "/pdf?course=DigiChamps&Level=Level5&pdf=DCL05_U04_S01",
+                            "type": "page"
+                        },
+                        {
+                            "uid": "CMS05-TP10-CHDRN13",
+                            "fname": "CMS05-TP10-CHDRN13.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS05-TP10-CHDRN6",
+                            "fname": "CMS05-TP10-CHDRN6.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "title": "10.2 - Transitions And Sound Effects",
+                            "uid": "CMS05-TP10-CHDRN3",
+                            "description": "",
+                            "route": "/pdf?course=DigiChamps&Level=Level5&pdf=DCL05_U04_S02",
+                            "type": "page"
+                        },
+                        {
+                            "uid": "CMS05-TP10-CHDRN7",
+                            "fname": "CMS05-TP10-CHDRN7.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS05-TP10-CHDRN8",
+                            "fname": "CMS05-TP10-CHDRN8.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS05-TP10-CHDRN9",
+                            "fname": "CMS05-TP10-CHDRN9.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "title": "10.3 - SlideShow",
+                            "uid": "CMS05-TP10-CHDRN4",
+                            "description": "",
+                            "route": "/pdf?course=DigiChamps&Level=Level5&pdf=DCL05_U04_S03",
+                            "type": "page"
+                        },
+                        {
+                            "uid": "CMS05-TP10-CHDRN10",
+                            "fname": "CMS05-TP10-CHDRN10.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS05-TP10-CHDRN11",
+                            "fname": "CMS05-TP10-CHDRN11.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS05-TP10-CHDRN12",
+                            "fname": "CMS05-TP10-CHDRN12.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS05-U10-CHDRN1",
+                            "fname": "CMS05-U10-CHDRN1.json",
+                            "type": "quiz"
+                        }
+                    ],
+                    "teacheronly": "no"
+                },
+                {
+                    "route": "book/CMS05/CMS05-TP11-000.mdx",
+                    "title": "Unit 11: Hi Thunkers!",
+                    "type": "topic",
+                    "uid": "CMS05-TP11-000",
+                    "children": [
+                        {
+                            "title": "Unit 11 Summary",
+                            "uid": "CMS05-TP11-CHDRN1",
+                            "description": "",
+                            "route": "/pdf?course=DigiPro&Level=Level5&pdf=DPL05_U5_Intro",
+                            "type": "page"
+                        },
+                        {
+                            "title": "11.1 - Getting Started With Thunkable",
+                            "uid": "CMS05-TP11-CHDRN2",
+                            "description": "",
+                            "route": "/pdf?course=DigiPro&Level=Level5&pdf=DPL05_U5_S1",
+                            "type": "page"
+                        },
+                        {
+                            "uid": "CMS05-TP11-CHDRN6",
+                            "fname": "CMS05-TP11-CHDRN6.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS05-TP11-CHDRN7",
+                            "fname": "CMS05-TP11-CHDRN7.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "title": "11.2 - Buttons and Events",
+                            "uid": "CMS05-TP11-CHDRN3",
+                            "description": "",
+                            "route": "/pdf?course=DigiPro&Level=Level5&pdf=DPL05_U5_S2",
+                            "type": "page"
+                        },
+                        {
+                            "uid": "CMS05-TP11-CHDRN8",
+                            "fname": "CMS05-TP11-CHDRN8.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS05-TP11-CHDRN9",
+                            "fname": "CMS05-TP11-CHDRN9.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "title": "11.3 - Lists and Colors",
+                            "uid": "CMS05-TP11-CHDRN4",
+                            "description": "",
+                            "route": "/pdf?course=DigiPro&Level=Level5&pdf=DPL05_U5_S3",
+                            "type": "page"
+                        },
+                        {
+                            "uid": "CMS05-TP11-CHDRN10",
+                            "fname": "CMS05-TP11-CHDRN10.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS05-TP11-CHDRN11",
+                            "fname": "CMS05-TP11-CHDRN11.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS05-TP11-CHDRN12",
+                            "fname": "CMS05-TP11-CHDRN12.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS05-TP11-CHDRN13",
+                            "fname": "CMS05-TP11-CHDRN13.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS05-TP11-CHDRN14",
+                            "fname": "CMS05-TP11-CHDRN14.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS05-U11-CHDRN1",
+                            "fname": "CMS05-U11-CHDRN1.json",
+                            "type": "quiz"
+                        }
+                    ],
+                    "teacheronly": "no"
+                },
+                {
+                    "route": "book/CMS05/CMS05-TP12-000.mdx",
+                    "title": "Unit 12: Impact Of Computing",
+                    "type": "topic",
+                    "uid": "CMS05-TP12-000",
+                    "children": [
+                        {
+                            "title": "Unit 12 Summary",
+                            "uid": "CMS05-TP12-CHDRN1",
+                            "description": "",
+                            "route": "/pdf?course=DigiChamps&Level=Level5&pdf=DCL05_U01_Intro",
+                            "type": "page"
+                        },
+                        {
+                            "title": "12.1 - Improving Technology",
+                            "uid": "CMS05-TP12-CHDRN2",
+                            "description": "",
+                            "route": "/pdf?course=DigiChamps&Level=Level5&pdf=DCL05_U01_S01",
+                            "type": "page"
+                        },
+                        {
+                            "title": "12.2 - Collaboration",
+                            "uid": "CMS05-TP12-CHDRN3",
+                            "description": "",
+                            "route": "/pdf?course=DigiChamps&Level=Level5&pdf=DCL05_U01_S02",
+                            "type": "page"
+                        },
+                        {
+                            "uid": "CMS05-U12-CHDRN1",
+                            "fname": "CMS05-U12-CHDRN1.json",
+                            "type": "quiz"
+                        }
+                    ],
+                    "teacheronly": "no"
+                }
+            ]
+        }
+    }
+]

@@ -13,7 +13,7 @@
       "chapters": [
         {
           "route": "book/CMS03/CMS03-TP1-000.mdx",
-          "title": "Computing Devices",
+          "title": "Unit 1: Computing Devices",
           "type": "topic",
           "uid": "CMS03-TP1-000",
           "children": [
@@ -48,7 +48,7 @@
         },
         {
           "route": "book/CMS03/CMS03-TP2-000.mdx",
-          "title": "My First Letter",
+          "title": "Unit 2: My First Letter",
           "type": "topic",
           "uid": "CMS03-TP2-000",
           "children": [
@@ -157,7 +157,7 @@
         },
         {
           "route": "book/CMS03/CMS03-TP3-000.mdx",
-          "title": "Introduction to Scratch",
+          "title": "Unit 3: Introduction to Scratch",
           "type": "topic",
           "uid": "CMS03-TP3-000",
           "children": [
@@ -249,7 +249,7 @@
         },
         {
           "route": "book/CMS03/CMS03-TP4-000.mdx",
-          "title": "Stage",
+          "title": "Unit 4: Stage",
           "type": "topic",
           "uid": "CMS03-TP4-000",
           "children": [
@@ -321,7 +321,7 @@
         },
         {
           "route": "book/CMS03/CMS03-TP5-000.mdx",
-          "title": "Hide and Seek Game",
+          "title": "Unit 5: Hide and Seek Game",
           "type": "topic",
           "uid": "CMS03-TP5-000",
           "children": [
@@ -403,7 +403,7 @@
         },
         {
           "route": "book/CMS03/CMS03-TP6-000.mdx",
-          "title": "States of Matter Animation",
+          "title": "Unit 6: States of Matter Animation",
           "type": "topic",
           "uid": "CMS03-TP6-000",
           "children": [
@@ -475,7 +475,7 @@
         },
         {
           "route": "book/CMS03/CMS03-TP7-000.mdx",
-          "title": "PowerPoint Basics",
+          "title": "Unit 7: PowerPoint Basics",
           "type": "topic",
           "uid": "CMS03-TP7-000",
           "children": [
@@ -540,7 +540,7 @@
         },
         {
           "route": "book/CMS03/CMS03-TP8-000.mdx",
-          "title": "Shapes on Slides",
+          "title": "Unit 8: Shapes on Slides",
           "type": "topic",
           "uid": "CMS03-TP8-000",
           "children": [
@@ -622,7 +622,7 @@
         },
         {
           "route": "book/CMS03/CMS03-TP9-000.mdx",
-          "title": "Internet and Emailing",
+          "title": "Unit 9: Internet and Emailing",
           "type": "topic",
           "uid": "CMS03-TP9-000",
           "children": [
