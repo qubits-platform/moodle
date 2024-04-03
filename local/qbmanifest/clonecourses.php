@@ -40,7 +40,8 @@ $farr = array(
     "DPL11" => "/books-json/digipro/dpl11.json",
     "DPL12" => "/books-json/digipro/dpl12.json",
     "DJLK" => "/books-json/djlk.json",
-    "DQL04" => "/books-json/digiquest/dql04.json"
+    "DQL04" => "/books-json/digiquest/dql04.json",
+    "CMS03" => "/books-json/hybrid/cms03.json"
 );
 
 
