@@ -1,0 +1,32 @@
+{
+    "title": "Capstone Project - Escape and collect game",
+    "question": "<h4>Background Information</h4>In this capstone project you have to develop a game called Escape and Collect. It has a main sprite that the player must touch with the sprite to be collected, to score a point. An enemy sprite is added to increase the difficulty level. It appears randomly during the game. If it is touched by the main sprite, the game ends. You have learned to program in Scratch while making the Sprite Catcher game. Now use your understanding to develop a new game. The project is divided into smaller stages or milestones. You will be assessed as you achieve them one after the other to complete the entire task.<br><br><h4>Project Objective</h4>Design and develop a game on the given theme using Scratch.<br><img src='https://learn.qubitsedu.com/images/DP_L4_CP1_Image1.png' width='40%' height='80%' /><br><br><h4>Requirements</h4>Here are the milestones you need to achieve to fi nish this project<br><br><h4>Requirements</h4>This game must include the following items:<br>1. There should be three sprites; the main sprite, the enemy sprite and the sprite to be collected.<br>2. The game should begin with a click on the .<img src='https://learn.qubitsedu.com/theme/qubitsbasic/pix/scratch-go.svg' width='2%' height='2%' /><br>3. Make the main sprite move with the keyboard keys. It means that the spriteshould move left, right, up, and down when a particular key on the keyboard is pressed.<br>4. The sprite to be collected should move to random positions when the game begins.<br>5. The enemy sprite should appear at random positions on the stage when the game is running.<br>6. The score should be set to zero when the game begins.<br>7. If the main sprite touches the sprite to be collected, the score should increase by 1.<br>8. If the main sprite touches the enemy sprite, the game should end.<br><br> Computer science professionals break larger projects into smaller milestones to focus on the end goal. In a similar fashion, here are some milestones for you. Achieve each milestone and submit the result to your teacher <br><br><img src='https://learn.qubitsedu.com/images/DP_L4_CP1_Table1.png' width='40%' height='70%' /><br><br><h4>Additional challenges</h4>◼ Make changes in the program to change the costume of the main sprite for 1 second when the enemy sprite is touched.<br>◼ Program the main sprite to make a sound when it touches the sprite to be collected.<br>◼ Discuss with your friends and modify the script based on their inputs to improve the game.",
+    "duedate": "",
+    "submissionfrom": "",
+    "grade_duedate": "",
+    "grade": 100,
+    "submission_type": "scratch",
+    "__submission_type_hint": "onlinetext - onlinefile - scratch - codeblock",
+    "activity_instruction": "Sum of 2 numbers",
+    "submissionstatus": "yes",
+    "online_text_limit": "500",
+    "additional_files": "",
+    "codeblock_mode": "",
+    "__codeblock_mode_hint": "automate - manual",
+    "language_type": "",
+    "__language_type_hint": "python - sql - htmlcss - scratch - javascript - R - pseudocode - java",
+    "grade_type": "scale",
+    "grading_method": "direct",
+    "uid": "CMS04-TP7-CHDRN19",
+    "maxfilesubmissions": "",
+    "filetypeslist": "",
+    "maxfilesubmissions_size": "",
+    "testcases": [
+        {
+            "value": "Case = Test integer sum\ninput = 1 2 3 5\noutput = 11"
+        },
+        {
+            "value": "Case = Test integer sum\ninput = 1\n -2\n 3\n 5\noutput = 7"
+        }
+    ]
+}
