@@ -1,661 +1,661 @@
 [
-  {
-    "book": {
-      "name": "CMS Grade 03",
-      "code": "CMS03",
-      "category": "CMS",
-      "categorycode": "CMS",
-      "summary": ".",
-      "otherfields": {
-        "level": "3",
-        "cardcolour": "#215caa"
-      },
-      "chapters": [
-        {
-          "route": "book/CMS03/CMS03-TP1-000.mdx",
-          "title": "Unit 1: Computing Devices",
-          "type": "topic",
-          "uid": "CMS03-TP1-000",
-          "children": [
-            {
-              "title": "Unit 1 Summary",
-              "uid": "CMS03-TP1-CHDRN1",
-              "description": "",
-              "route": "/pdf?course=DigiChamps&Level=Level3&pdf=DCL03_U01_Intro",
-              "type": "page"
-            },
-            {
-              "title": "1.1 - Computing System",
-              "uid": "CMS03-TP1-CHDRN2",
-              "description": "",
-              "route": "/pdf?course=DigiChamps&Level=Level3&pdf=DCL03_U01_S01",
-              "type": "page"
-            },
-            {
-              "title": "1.2 - Using The Computer",
-              "uid": "CMS03-TP1-CHDRN3",
-              "description": "",
-              "route": "/pdf?course=DigiChamps&Level=Level3&pdf=DCL03_U01_S02",
-              "type": "page"
-            },
-            {
-              "uid": "CMS03-U01-CHDRN1",
-              "fname": "CMS03-U01-CHDRN1.json",
-              "type": "quiz"
-            }
-          ],
-          "teacheronly": "no"
-        },
-        {
-          "route": "book/CMS03/CMS03-TP2-000.mdx",
-          "title": "Unit 2: My First Letter",
-          "type": "topic",
-          "uid": "CMS03-TP2-000",
-          "children": [
-            {
-              "title": "Unit 2 Summary",
-              "uid": "CMS03-TP2-CHDRN1",
-              "description": "",
-              "route": "/pdf?course=DigiChamps&Level=Level2&pdf=DCL02_U06_Intro",
-              "type": "page"
-            },
-            {
-              "title": "2.1 - Introduction To Microsoft Word",
-              "uid": "CMS03-TP2-CHDRN2",
-              "description": "",
-              "route": "/pdf?course=DigiChamps&Level=Level2&pdf=DCL02_U06_S01",
-              "type": "page"
-            },
-            {
-              "uid": "CMS03-TP2-CHDRN6",
-              "fname": "CMS03-TP2-CHDRN6.json",
-              "type": "assignment"
-            },
-            {
-              "uid": "CMS03-TP2-CHDRN7",
-              "fname": "CMS03-TP2-CHDRN7.json",
-              "type": "assignment"
-            },
-            {
-              "uid": "CMS03-TP2-CHDRN8",
-              "fname": "CMS03-TP2-CHDRN8.json",
-              "type": "assignment"
-            },
-            {
-              "title": "2.2 - Picture And Picture Frame",
-              "uid": "CMS03-TP2-CHDRN3",
-              "description": "",
-              "route": "/pdf?course=DigiChamps&Level=Level2&pdf=DCL02_U06_S02",
-              "type": "page"
-            },
-            {
-              "uid": "CMS03-TP2-CHDRN9",
-              "fname": "CMS03-TP2-CHDRN9.json",
-              "type": "assignment"
-            },
-            {
-              "uid": "CMS03-TP2-CHDRN10",
-              "fname": "CMS03-TP2-CHDRN10.json",
-              "type": "assignment"
-            },
-            {
-              "uid": "CMS03-TP2-CHDRN11",
-              "fname": "CMS03-TP2-CHDRN11.json",
-              "type": "assignment"
-            },
-            {
-              "title": "2.3 - Formatting Text",
-              "uid": "CMS03-TP2-CHDRN4",
-              "description": "",
-              "route": "/pdf?course=DigiChamps&Level=Level2&pdf=DCL02_U06_S03",
-              "type": "page"
-            },
-            {
-              "uid": "CMS03-TP2-CHDRN12",
-              "fname": "CMS03-TP2-CHDRN12.json",
-              "type": "assignment"
-            },
-            {
-              "uid": "CMS03-TP2-CHDRN13",
-              "fname": "CMS03-TP2-CHDRN13.json",
-              "type": "assignment"
-            },
-            {
-              "uid": "CMS03-TP2-CHDRN14",
-              "fname": "CMS03-TP2-CHDRN14.json",
-              "type": "assignment"
-            },
-            {
-              "title": "2.4 - Formatting Images",
-              "uid": "CMS03-TP2-CHDRN5",
-              "description": "",
-              "route": "/pdf?course=DigiChamps&Level=Level2&pdf=DCL02_U06_S04",
-              "type": "page"
-            },
-            {
-              "uid": "CMS03-TP2-CHDRN15",
-              "fname": "CMS03-TP2-CHDRN15.json",
-              "type": "assignment"
-            },
-            {
-              "uid": "CMS03-TP2-CHDRN16",
-              "fname": "CMS03-TP2-CHDRN16.json",
-              "type": "assignment"
-            },
-            {
-              "uid": "CMS03-TP2-CHDRN17",
-              "fname": "CMS03-TP2-CHDRN17.json",
-              "type": "assignment"
-            },
-            {
-              "uid": "CMS03-U02-CHDRN1",
-              "fname": "CMS03-U02-CHDRN1.json",
-              "type": "quiz"
-            }
-          ],
-          "teacheronly": "no"
-        },
-        {
-          "route": "book/CMS03/CMS03-TP3-000.mdx",
-          "title": "Unit 3: Introduction to Scratch",
-          "type": "topic",
-          "uid": "CMS03-TP3-000",
-          "children": [
-            {
-              "title": "Unit 3 Summary",
-              "uid": "CMS03-TP3-CHDRN1",
-              "description": "",
-              "route": "/pdf?course=DigiPro&Level=Level3&pdf=DPL03_U01_Intro",
-              "type": "page"
-            },
-            {
-              "title": "3.1 - Introduction to Scratch",
-              "uid": "CMS03-TP3-CHDRN2",
-              "description": "",
-              "route": "/pdf?course=DigiPro&Level=Level3&pdf=DPL03_U01_S01",
-              "type": "page"
-            },
-            {
-              "uid": "CMS03-TP3-CHDRN5",
-              "fname": "CMS03-TP3-CHDRN5.json",
-              "type": "assignment"
-            },
-            {
-              "uid": "CMS03-TP3-CHDRN6",
-              "fname": "CMS03-TP3-CHDRN6.json",
-              "type": "assignment"
-            },
-            {
-              "uid": "CMS03-TP3-CHDRN7",
-              "fname": "CMS03-TP3-CHDRN7.json",
-              "type": "assignment"
-            },
-            {
-              "title": "3.2 - interface",
-              "uid": "CMS03-TP3-CHDRN3",
-              "description": "",
-              "route": "/pdf?course=DigiPro&Level=Level3&pdf=DPL03_U01_S02",
-              "type": "page"
-            },
-            {
-              "uid": "CMS03-TP3-CHDRN8",
-              "fname": "CMS03-TP3-CHDRN8.json",
-              "type": "assignment"
-            },
-            {
-              "uid": "CMS03-TP3-CHDRN9",
-              "fname": "CMS03-TP3-CHDRN9.json",
-              "type": "assignment"
-            },
-            {
-              "uid": "CMS03-TP3-CHDRN10",
-              "fname": "CMS03-TP3-CHDRN10.json",
-              "type": "assignment"
-            },
-            {
-              "uid": "CMS03-TP3-CHDRN11",
-              "fname": "CMS03-TP3-CHDRN11.json",
-              "type": "assignment"
-            },
-            {
-              "title": "3.3 - Save and Share",
-              "uid": "CMS03-TP3-CHDRN4",
-              "description": "",
-              "route": "/pdf?course=DigiPro&Level=Level3&pdf=DPL03_U01_S03",
-              "type": "page"
-            },
-            {
-              "uid": "CMS03-TP3-CHDRN12",
-              "fname": "CMS03-TP3-CHDRN12.json",
-              "type": "assignment"
-            },
-            {
-              "uid": "CMS03-TP3-CHDRN13",
-              "fname": "CMS03-TP3-CHDRN13.json",
-              "type": "assignment"
-            },
-            {
-              "uid": "CMS03-TP3-CHDRN14",
-              "fname": "CMS03-TP3-CHDRN14.json",
-              "type": "assignment"
-            },
-            {
-              "uid": "CMS03-U03-CHDRN1",
-              "fname": "CMS03-U03-CHDRN1.json",
-              "type": "quiz"
-            }
-          ],
-          "teacheronly": "no"
-        },
-        {
-          "route": "book/CMS03/CMS03-TP4-000.mdx",
-          "title": "Unit 4: Stage",
-          "type": "topic",
-          "uid": "CMS03-TP4-000",
-          "children": [
-            {
-              "title": "Unit 4 Summary",
-              "uid": "CMS03-TP4-CHDRN1",
-              "description": "",
-              "route": "/pdf?course=DigiPro&Level=Level3&pdf=DPL03_U02_Intro",
-              "type": "page"
-            },
-            {
-              "title": "4.1 - Storyboard",
-              "uid": "CMS03-TP4-CHDRN2",
-              "description": "",
-              "route": "/pdf?course=DigiPro&Level=Level3&pdf=DPL03_U02_S01",
-              "type": "page"
-            },
-            {
-              "uid": "CMS03-TP4-CHDRN5",
-              "fname": "CMS03-TP4-CHDRN5.json",
-              "type": "assignment"
-            },
-            {
-              "uid": "CMS03-TP4-CHDRN6",
-              "fname": "CMS03-TP4-CHDRN6.json",
-              "type": "assignment"
-            },
-            {
-              "title": "4.2 - Sprites",
-              "uid": "CMS03-TP4-CHDRN3",
-              "description": "",
-              "route": "/pdf?course=DigiPro&Level=Level3&pdf=DPL03_U02_S02",
-              "type": "page"
-            },
-            {
-              "uid": "CMS03-TP4-CHDRN7",
-              "fname": "CMS03-TP4-CHDRN7.json",
-              "type": "assignment"
-            },
-            {
-              "uid": "CMS03-TP4-CHDRN8",
-              "fname": "CMS03-TP4-CHDRN8.json",
-              "type": "assignment"
-            },
-            {
-              "title": "4.3 - Backdrop",
-              "uid": "CMS03-TP4-CHDRN4",
-              "description": "",
-              "route": "/pdf?course=DigiPro&Level=Level3&pdf=DPL03_U02_S03",
-              "type": "page"
-            },
-            {
-              "uid": "CMS03-TP4-CHDRN9",
-              "fname": "CMS03-TP4-CHDRN9.json",
-              "type": "assignment"
-            },
-            {
-              "uid": "CMS03-TP4-CHDRN10",
-              "fname": "CMS03-TP4-CHDRN10.json",
-              "type": "assignment"
-            },
-            {
-              "uid": "CMS03-U04-CHDRN1",
-              "fname": "CMS03-U04-CHDRN1.json",
-              "type": "quiz"
-            }
-          ],
-          "teacheronly": "no"
-        },
-        {
-          "route": "book/CMS03/CMS03-TP5-000.mdx",
-          "title": "Unit 5: Hide and Seek Game",
-          "type": "topic",
-          "uid": "CMS03-TP5-000",
-          "children": [
-            {
-              "title": "Unit 5 Summary",
-              "uid": "CMS03-TP5-CHDRN1",
-              "description": "",
-              "route": "/pdf?course=DigiPro&Level=Level3&pdf=DPL03_U03_Intro",
-              "type": "page"
-            },
-            {
-              "title": "5.1 - Events",
-              "uid": "CMS03-TP5-CHDRN2",
-              "description": "",
-              "route": "/pdf?course=DigiPro&Level=Level3&pdf=DPL03_U03_S01",
-              "type": "page"
-            },
-            {
-              "uid": "CMS03-TP5-CHDRN5",
-              "fname": "CMS03-TP5-CHDRN5.json",
-              "type": "assignment"
-            },
-            {
-              "uid": "CMS03-TP5-CHDRN6",
-              "fname": "CMS03-TP5-CHDRN6.json",
-              "type": "assignment"
-            },
-            {
-              "uid": "CMS03-TP5-CHDRN7",
-              "fname": "CMS03-TP5-CHDRN7.json",
-              "type": "assignment"
-            },
-            {
-              "uid": "CMS03-TP5-CHDRN8",
-              "fname": "CMS03-TP5-CHDRN8.json",
-              "type": "assignment"
-            },
-            {
-              "title": "5.2 - Hide and Show",
-              "uid": "CMS03-TP5-CHDRN3",
-              "description": "",
-              "route": "/pdf?course=DigiPro&Level=Level3&pdf=DPL03_U03_S02",
-              "type": "page"
-            },
-            {
-              "uid": "CMS03-TP5-CHDRN9",
-              "fname": "CMS03-TP5-CHDRN9.json",
-              "type": "assignment"
-            },
-            {
-              "uid": "CMS03-TP5-CHDRN10",
-              "fname": "CMS03-TP5-CHDRN10.json",
-              "type": "assignment"
-            },
-            {
-              "title": "5.3 - Sound on Click",
-              "uid": "CMS03-TP5-CHDRN4",
-              "description": "",
-              "route": "/pdf?course=DigiPro&Level=Level3&pdf=DPL03_U03_S03",
-              "type": "page"
-            },
-            {
-              "uid": "CMS03-TP5-CHDRN11",
-              "fname": "CMS03-TP5-CHDRN11.json",
-              "type": "assignment"
-            },
-            {
-              "uid": "CMS03-TP5-CHDRN12",
-              "fname": "CMS03-TP5-CHDRN12.json",
-              "type": "assignment"
-            },
-            {
-              "uid": "CMS03-U05-CHDRN1",
-              "fname": "CMS03-U05-CHDRN1.json",
-              "type": "quiz"
-            }
-          ],
-          "teacheronly": "no"
-        },
-        {
-          "route": "book/CMS03/CMS03-TP6-000.mdx",
-          "title": "Unit 6: States of Matter Animation",
-          "type": "topic",
-          "uid": "CMS03-TP6-000",
-          "children": [
-            {
-              "title": "Unit 6 Summary",
-              "uid": "CMS03-TP6-CHDRN1",
-              "description": "",
-              "route": "/pdf?course=DigiPro&Level=Level3&pdf=DPL03_U04_Intro",
-              "type": "page"
-            },
-            {
-              "title": "6.1 - Draw the Sprites",
-              "uid": "CMS03-TP6-CHDRN2",
-              "description": "",
-              "route": "/pdf?course=DigiPro&Level=Level3&pdf=DPL03_U04_S01",
-              "type": "page"
-            },
-            {
-              "uid": "CMS03-TP6-CHDRN6",
-              "fname": "CMS03-TP6-CHDRN6.json",
-              "type": "assignment"
-            },
-            {
-              "title": "6.2 - Costume Change",
-              "uid": "CMS03-TP6-CHDRN3",
-              "description": "",
-              "route": "/pdf?course=DigiPro&Level=Level3&pdf=DPL03_U04_S02",
-              "type": "page"
-            },
-            {
-              "uid": "CMS03-TP6-CHDRN7",
-              "fname": "CMS03-TP6-CHDRN7.json",
-              "type": "assignment"
-            },
-            {
-              "uid": "CMS03-TP6-CHDRN8",
-              "fname": "CMS03-TP6-CHDRN8.json",
-              "type": "assignment"
-            },
-            {
-              "title": "6.3 - Say Block",
-              "uid": "CMS03-TP6-CHDRN4",
-              "description": "",
-              "route": "/pdf?course=DigiPro&Level=Level3&pdf=DPL03_U04_S03",
-              "type": "page"
-            },
-            {
-              "uid": "CMS03-TP6-CHDRN9",
-              "fname": "CMS03-TP6-CHDRN9.json",
-              "type": "assignment"
-            },
-            {
-              "uid": "CMS03-TP6-CHDRN10",
-              "fname": "CMS03-TP6-CHDRN10.json",
-              "type": "assignment"
-            },
-            {
-              "uid": "CMS03-TP6-CHDRN11",
-              "fname": "CMS03-TP6-CHDRN11.json",
-              "type": "assignment"
-            },
-            {
-              "uid": "CMS03-U06-CHDRN1",
-              "fname": "CMS03-U06-CHDRN1.json",
-              "type": "quiz"
-            }
-          ],
-          "teacheronly": "no"
-        },
-        {
-          "route": "book/CMS03/CMS03-TP7-000.mdx",
-          "title": "Unit 7: PowerPoint Basics",
-          "type": "topic",
-          "uid": "CMS03-TP7-000",
-          "children": [
-            {
-              "title": "Unit 7 Summary",
-              "uid": "CMS03-TP7-CHDRN1",
-              "description": "",
-              "route": "/pdf?course=DigiChamps&Level=Level1&pdf=DCL01_U05_Intro",
-              "type": "page"
-            },
-            {
-              "title": "7.1 - New Slides And Images",
-              "uid": "CMS03-TP7-CHDRN2",
-              "description": "",
-              "route": "/pdf?course=DigiChamps&Level=Level1&pdf=DCL01_U05_S01",
-              "type": "page"
-            },
-            {
-              "uid": "CMS03-TP7-CHDRN4",
-              "fname": "CMS03-TP7-CHDRN4.json",
-              "type": "assignment"
-            },
-            {
-              "uid": "CMS03-TP7-CHDRN5",
-              "fname": "CMS03-TP7-CHDRN5.json",
-              "type": "assignment"
-            },
-            {
-              "uid": "CMS03-TP7-CHDRN6",
-              "fname": "CMS03-TP7-CHDRN6.json",
-              "type": "assignment"
-            },
-            {
-              "title": "7.2 - Text Formatting",
-              "uid": "CMS03-TP7-CHDRN3",
-              "description": "",
-              "route": "/pdf?course=DigiChamps&Level=Level1&pdf=DCL01_U05_S02",
-              "type": "page"
-            },
-            {
-              "uid": "CMS03-TP7-CHDRN7",
-              "fname": "CMS03-TP7-CHDRN7.json",
-              "type": "assignment"
-            },
-            {
-              "uid": "CMS03-TP7-CHDRN8",
-              "fname": "CMS03-TP7-CHDRN8.json",
-              "type": "assignment"
-            },
-            {
-              "uid": "CMS03-TP7-CHDRN9",
-              "fname": "CMS03-TP7-CHDRN9.json",
-              "type": "assignment"
-            },
-            {
-              "uid": "CMS03-U07-CHDRN1",
-              "fname": "CMS03-U07-CHDRN1.json",
-              "type": "quiz"
-            }
-          ],
-          "teacheronly": "no"
-        },
-        {
-          "route": "book/CMS03/CMS03-TP8-000.mdx",
-          "title": "Unit 8: Shapes on Slides",
-          "type": "topic",
-          "uid": "CMS03-TP8-000",
-          "children": [
-            {
-              "title": "Unit 8 Summary",
-              "uid": "CMS03-TP8-CHDRN1",
-              "description": "",
-              "route": "/pdf?course=DigiChamps&Level=Level1&pdf=DCL02_U05_Intro",
-              "type": "page"
-            },
-            {
-              "title": "8.1 - Adding Shape",
-              "uid": "CMS03-TP8-CHDRN2",
-              "description": "",
-              "route": "/pdf?course=DigiChamps&Level=Level2&pdf=DCL02_U05_S01",
-              "type": "page"
-            },
-            {
-              "uid": "CMS03-TP8-CHDRN5",
-              "fname": "CMS03-TP8-CHDRN5.json",
-              "type": "assignment"
-            },
-            {
-              "uid": "CMS03-TP8-CHDRN6",
-              "fname": "CMS03-TP8-CHDRN6.json",
-              "type": "assignment"
-            },
-            {
-              "uid": "CMS03-TP8-CHDRN7",
-              "fname": "CMS03-TP8-CHDRN7.json",
-              "type": "assignment"
-            },
-            {
-              "title": "8.2 - Themes And Color",
-              "uid": "CMS03-TP8-CHDRN3",
-              "description": "",
-              "route": "/pdf?course=DigiChamps&Level=Level2&pdf=DCL02_U05_S02",
-              "type": "page"
-            },
-            {
-              "uid": "CMS03-TP8-CHDRN8",
-              "fname": "CMS03-TP8-CHDRN8.json",
-              "type": "assignment"
-            },
-            {
-              "uid": "CMS03-TP8-CHDRN9",
-              "fname": "CMS03-TP8-CHDRN9.json",
-              "type": "assignment"
-            },
-            {
-              "uid": "CMS03-TP8-CHDRN10",
-              "fname": "CMS03-TP8-CHDRN10.json",
-              "type": "assignment"
-            },
-            {
-              "title": "8.3 - Size Of Shapes",
-              "uid": "CMS03-TP8-CHDRN4",
-              "description": "",
-              "route": "/pdf?course=DigiChamps&Level=Level2&pdf=DCL02_U05_S03",
-              "type": "page"
-            },
-            {
-              "uid": "CMS03-TP8-CHDRN11",
-              "fname": "CMS03-TP8-CHDRN11.json",
-              "type": "assignment"
-            },
-            {
-              "uid": "CMS03-TP8-CHDRN12",
-              "fname": "CMS03-TP8-CHDRN12.json",
-              "type": "assignment"
-            },
-            {
-              "uid": "CMS03-U08-CHDRN1",
-              "fname": "CMS03-U08-CHDRN1.json",
-              "type": "quiz"
-            }
-          ],
-          "teacheronly": "no"
-        },
-        {
-          "route": "book/CMS03/CMS03-TP9-000.mdx",
-          "title": "Unit 9: Internet and Emailing",
-          "type": "topic",
-          "uid": "CMS03-TP9-000",
-          "children": [
-            {
-              "title": "Unit 9 Summary",
-              "uid": "CMS03-TP9-CHDRN1",
-              "description": "",
-              "route": "/pdf?course=DigiChamps&Level=Level3&pdf=DCL03_U02_Intro",
-              "type": "page"
-            },
-            {
-              "title": "9.1 - Internet",
-              "uid": "CMS03-TP9-CHDRN2",
-              "description": "",
-              "route": "/pdf?course=DigiChamps&Level=Level3&pdf=DCL03_U02_S01",
-              "type": "page"
-            },
-            {
-              "title": "9.2 - Emailing",
-              "uid": "CMS03-TP9-CHDRN3",
-              "description": "",
-              "route": "/pdf?course=DigiChamps&Level=Level3&pdf=DCL03_U02_S02",
-              "type": "page"
-            },
-            {
-              "uid": "CMS03-U09-CHDRN1",
-              "fname": "CMS03-U09-CHDRN1.json",
-              "type": "quiz"
-            }
-          ],
-          "teacheronly": "no"
+    {
+        "book": {
+            "name": "CMS Grade 03",
+            "code": "CMS03",
+            "category": "CMS",
+            "categorycode": "CMS",
+            "summary": ".",
+            "otherfields": {
+                "level": "3",
+                "cardcolour": "#204796"
+            },
+            "chapters": [
+                {
+                    "route": "book/CMS03/CMS03-TP1-000.mdx",
+                    "title": "Unit 1: Computing Devices",
+                    "type": "topic",
+                    "uid": "CMS03-TP1-000",
+                    "children": [
+                        {
+                            "title": "Unit 1 Summary",
+                            "uid": "CMS03-TP1-CHDRN1",
+                            "description": "",
+                            "route": "/pdf?course=DigiChamps&Level=Level3&pdf=DCL03_U01_Intro",
+                            "type": "page"
+                        },
+                        {
+                            "title": "1.1 - Computing System",
+                            "uid": "CMS03-TP1-CHDRN2",
+                            "description": "",
+                            "route": "/pdf?course=DigiChamps&Level=Level3&pdf=DCL03_U01_S01",
+                            "type": "page"
+                        },
+                        {
+                            "title": "1.2 - Using The Computer",
+                            "uid": "CMS03-TP1-CHDRN3",
+                            "description": "",
+                            "route": "/pdf?course=DigiChamps&Level=Level3&pdf=DCL03_U01_S02",
+                            "type": "page"
+                        },
+                        {
+                            "uid": "CMS03-U01-CHDRN1",
+                            "fname": "CMS03-U01-CHDRN1.json",
+                            "type": "quiz"
+                        }
+                    ],
+                    "teacheronly": "no"
+                },
+                {
+                    "route": "book/CMS03/CMS03-TP2-000.mdx",
+                    "title": "Unit 2: My First Letter",
+                    "type": "topic",
+                    "uid": "CMS03-TP2-000",
+                    "children": [
+                        {
+                            "title": "Unit 2 Summary",
+                            "uid": "CMS03-TP2-CHDRN1",
+                            "description": "",
+                            "route": "/pdf?course=DigiChamps&Level=Level2&pdf=DCL02_U06_Intro",
+                            "type": "page"
+                        },
+                        {
+                            "title": "2.1 - Introduction To Microsoft Word",
+                            "uid": "CMS03-TP2-CHDRN2",
+                            "description": "",
+                            "route": "/pdf?course=DigiChamps&Level=Level2&pdf=DCL02_U06_S01",
+                            "type": "page"
+                        },
+                        {
+                            "uid": "CMS03-TP2-CHDRN6",
+                            "fname": "CMS03-TP2-CHDRN6.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS03-TP2-CHDRN7",
+                            "fname": "CMS03-TP2-CHDRN7.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS03-TP2-CHDRN8",
+                            "fname": "CMS03-TP2-CHDRN8.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "title": "2.2 - Picture And Picture Frame",
+                            "uid": "CMS03-TP2-CHDRN3",
+                            "description": "",
+                            "route": "/pdf?course=DigiChamps&Level=Level2&pdf=DCL02_U06_S02",
+                            "type": "page"
+                        },
+                        {
+                            "uid": "CMS03-TP2-CHDRN9",
+                            "fname": "CMS03-TP2-CHDRN9.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS03-TP2-CHDRN10",
+                            "fname": "CMS03-TP2-CHDRN10.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS03-TP2-CHDRN11",
+                            "fname": "CMS03-TP2-CHDRN11.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "title": "2.3 - Formatting Text",
+                            "uid": "CMS03-TP2-CHDRN4",
+                            "description": "",
+                            "route": "/pdf?course=DigiChamps&Level=Level2&pdf=DCL02_U06_S03",
+                            "type": "page"
+                        },
+                        {
+                            "uid": "CMS03-TP2-CHDRN12",
+                            "fname": "CMS03-TP2-CHDRN12.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS03-TP2-CHDRN13",
+                            "fname": "CMS03-TP2-CHDRN13.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS03-TP2-CHDRN14",
+                            "fname": "CMS03-TP2-CHDRN14.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "title": "2.4 - Formatting Images",
+                            "uid": "CMS03-TP2-CHDRN5",
+                            "description": "",
+                            "route": "/pdf?course=DigiChamps&Level=Level2&pdf=DCL02_U06_S04",
+                            "type": "page"
+                        },
+                        {
+                            "uid": "CMS03-TP2-CHDRN15",
+                            "fname": "CMS03-TP2-CHDRN15.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS03-TP2-CHDRN16",
+                            "fname": "CMS03-TP2-CHDRN16.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS03-TP2-CHDRN17",
+                            "fname": "CMS03-TP2-CHDRN17.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS03-U02-CHDRN1",
+                            "fname": "CMS03-U02-CHDRN1.json",
+                            "type": "quiz"
+                        }
+                    ],
+                    "teacheronly": "no"
+                },
+                {
+                    "route": "book/CMS03/CMS03-TP3-000.mdx",
+                    "title": "Unit 3: Introduction to Scratch",
+                    "type": "topic",
+                    "uid": "CMS03-TP3-000",
+                    "children": [
+                        {
+                            "title": "Unit 3 Summary",
+                            "uid": "CMS03-TP3-CHDRN1",
+                            "description": "",
+                            "route": "/pdf?course=DigiPro&Level=Level3&pdf=DPL03_U01_Intro",
+                            "type": "page"
+                        },
+                        {
+                            "title": "3.1 - Introduction to Scratch",
+                            "uid": "CMS03-TP3-CHDRN2",
+                            "description": "",
+                            "route": "/pdf?course=DigiPro&Level=Level3&pdf=DPL03_U01_S01",
+                            "type": "page"
+                        },
+                        {
+                            "uid": "CMS03-TP3-CHDRN5",
+                            "fname": "CMS03-TP3-CHDRN5.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS03-TP3-CHDRN6",
+                            "fname": "CMS03-TP3-CHDRN6.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS03-TP3-CHDRN7",
+                            "fname": "CMS03-TP3-CHDRN7.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "title": "3.2 - interface",
+                            "uid": "CMS03-TP3-CHDRN3",
+                            "description": "",
+                            "route": "/pdf?course=DigiPro&Level=Level3&pdf=DPL03_U01_S02",
+                            "type": "page"
+                        },
+                        {
+                            "uid": "CMS03-TP3-CHDRN8",
+                            "fname": "CMS03-TP3-CHDRN8.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS03-TP3-CHDRN9",
+                            "fname": "CMS03-TP3-CHDRN9.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS03-TP3-CHDRN10",
+                            "fname": "CMS03-TP3-CHDRN10.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS03-TP3-CHDRN11",
+                            "fname": "CMS03-TP3-CHDRN11.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "title": "3.3 - Save and Share",
+                            "uid": "CMS03-TP3-CHDRN4",
+                            "description": "",
+                            "route": "/pdf?course=DigiPro&Level=Level3&pdf=DPL03_U01_S03",
+                            "type": "page"
+                        },
+                        {
+                            "uid": "CMS03-TP3-CHDRN12",
+                            "fname": "CMS03-TP3-CHDRN12.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS03-TP3-CHDRN13",
+                            "fname": "CMS03-TP3-CHDRN13.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS03-TP3-CHDRN14",
+                            "fname": "CMS03-TP3-CHDRN14.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS03-U03-CHDRN1",
+                            "fname": "CMS03-U03-CHDRN1.json",
+                            "type": "quiz"
+                        }
+                    ],
+                    "teacheronly": "no"
+                },
+                {
+                    "route": "book/CMS03/CMS03-TP4-000.mdx",
+                    "title": "Unit 4: Stage",
+                    "type": "topic",
+                    "uid": "CMS03-TP4-000",
+                    "children": [
+                        {
+                            "title": "Unit 4 Summary",
+                            "uid": "CMS03-TP4-CHDRN1",
+                            "description": "",
+                            "route": "/pdf?course=DigiPro&Level=Level3&pdf=DPL03_U02_Intro",
+                            "type": "page"
+                        },
+                        {
+                            "title": "4.1 - Storyboard",
+                            "uid": "CMS03-TP4-CHDRN2",
+                            "description": "",
+                            "route": "/pdf?course=DigiPro&Level=Level3&pdf=DPL03_U02_S01",
+                            "type": "page"
+                        },
+                        {
+                            "uid": "CMS03-TP4-CHDRN5",
+                            "fname": "CMS03-TP4-CHDRN5.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS03-TP4-CHDRN6",
+                            "fname": "CMS03-TP4-CHDRN6.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "title": "4.2 - Sprites",
+                            "uid": "CMS03-TP4-CHDRN3",
+                            "description": "",
+                            "route": "/pdf?course=DigiPro&Level=Level3&pdf=DPL03_U02_S02",
+                            "type": "page"
+                        },
+                        {
+                            "uid": "CMS03-TP4-CHDRN7",
+                            "fname": "CMS03-TP4-CHDRN7.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS03-TP4-CHDRN8",
+                            "fname": "CMS03-TP4-CHDRN8.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "title": "4.3 - Backdrop",
+                            "uid": "CMS03-TP4-CHDRN4",
+                            "description": "",
+                            "route": "/pdf?course=DigiPro&Level=Level3&pdf=DPL03_U02_S03",
+                            "type": "page"
+                        },
+                        {
+                            "uid": "CMS03-TP4-CHDRN9",
+                            "fname": "CMS03-TP4-CHDRN9.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS03-TP4-CHDRN10",
+                            "fname": "CMS03-TP4-CHDRN10.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS03-U04-CHDRN1",
+                            "fname": "CMS03-U04-CHDRN1.json",
+                            "type": "quiz"
+                        }
+                    ],
+                    "teacheronly": "no"
+                },
+                {
+                    "route": "book/CMS03/CMS03-TP5-000.mdx",
+                    "title": "Unit 5: Hide and Seek Game",
+                    "type": "topic",
+                    "uid": "CMS03-TP5-000",
+                    "children": [
+                        {
+                            "title": "Unit 5 Summary",
+                            "uid": "CMS03-TP5-CHDRN1",
+                            "description": "",
+                            "route": "/pdf?course=DigiPro&Level=Level3&pdf=DPL03_U03_Intro",
+                            "type": "page"
+                        },
+                        {
+                            "title": "5.1 - Events",
+                            "uid": "CMS03-TP5-CHDRN2",
+                            "description": "",
+                            "route": "/pdf?course=DigiPro&Level=Level3&pdf=DPL03_U03_S01",
+                            "type": "page"
+                        },
+                        {
+                            "uid": "CMS03-TP5-CHDRN5",
+                            "fname": "CMS03-TP5-CHDRN5.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS03-TP5-CHDRN6",
+                            "fname": "CMS03-TP5-CHDRN6.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS03-TP5-CHDRN7",
+                            "fname": "CMS03-TP5-CHDRN7.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS03-TP5-CHDRN8",
+                            "fname": "CMS03-TP5-CHDRN8.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "title": "5.2 - Hide and Show",
+                            "uid": "CMS03-TP5-CHDRN3",
+                            "description": "",
+                            "route": "/pdf?course=DigiPro&Level=Level3&pdf=DPL03_U03_S02",
+                            "type": "page"
+                        },
+                        {
+                            "uid": "CMS03-TP5-CHDRN9",
+                            "fname": "CMS03-TP5-CHDRN9.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS03-TP5-CHDRN10",
+                            "fname": "CMS03-TP5-CHDRN10.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "title": "5.3 - Sound on Click",
+                            "uid": "CMS03-TP5-CHDRN4",
+                            "description": "",
+                            "route": "/pdf?course=DigiPro&Level=Level3&pdf=DPL03_U03_S03",
+                            "type": "page"
+                        },
+                        {
+                            "uid": "CMS03-TP5-CHDRN11",
+                            "fname": "CMS03-TP5-CHDRN11.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS03-TP5-CHDRN12",
+                            "fname": "CMS03-TP5-CHDRN12.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS03-U05-CHDRN1",
+                            "fname": "CMS03-U05-CHDRN1.json",
+                            "type": "quiz"
+                        }
+                    ],
+                    "teacheronly": "no"
+                },
+                {
+                    "route": "book/CMS03/CMS03-TP6-000.mdx",
+                    "title": "Unit 6: States of Matter Animation",
+                    "type": "topic",
+                    "uid": "CMS03-TP6-000",
+                    "children": [
+                        {
+                            "title": "Unit 6 Summary",
+                            "uid": "CMS03-TP6-CHDRN1",
+                            "description": "",
+                            "route": "/pdf?course=DigiPro&Level=Level3&pdf=DPL03_U04_Intro",
+                            "type": "page"
+                        },
+                        {
+                            "title": "6.1 - Draw the Sprites",
+                            "uid": "CMS03-TP6-CHDRN2",
+                            "description": "",
+                            "route": "/pdf?course=DigiPro&Level=Level3&pdf=DPL03_U04_S01",
+                            "type": "page"
+                        },
+                        {
+                            "uid": "CMS03-TP6-CHDRN6",
+                            "fname": "CMS03-TP6-CHDRN6.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "title": "6.2 - Costume Change",
+                            "uid": "CMS03-TP6-CHDRN3",
+                            "description": "",
+                            "route": "/pdf?course=DigiPro&Level=Level3&pdf=DPL03_U04_S02",
+                            "type": "page"
+                        },
+                        {
+                            "uid": "CMS03-TP6-CHDRN7",
+                            "fname": "CMS03-TP6-CHDRN7.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS03-TP6-CHDRN8",
+                            "fname": "CMS03-TP6-CHDRN8.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "title": "6.3 - Say Block",
+                            "uid": "CMS03-TP6-CHDRN4",
+                            "description": "",
+                            "route": "/pdf?course=DigiPro&Level=Level3&pdf=DPL03_U04_S03",
+                            "type": "page"
+                        },
+                        {
+                            "uid": "CMS03-TP6-CHDRN9",
+                            "fname": "CMS03-TP6-CHDRN9.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS03-TP6-CHDRN10",
+                            "fname": "CMS03-TP6-CHDRN10.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS03-TP6-CHDRN11",
+                            "fname": "CMS03-TP6-CHDRN11.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS03-U06-CHDRN1",
+                            "fname": "CMS03-U06-CHDRN1.json",
+                            "type": "quiz"
+                        }
+                    ],
+                    "teacheronly": "no"
+                },
+                {
+                    "route": "book/CMS03/CMS03-TP7-000.mdx",
+                    "title": "Unit 7: Powerpoint Basics",
+                    "type": "topic",
+                    "uid": "CMS03-TP7-000",
+                    "children": [
+                        {
+                            "title": "Unit 7 Summary",
+                            "uid": "CMS03-TP7-CHDRN1",
+                            "description": "",
+                            "route": "/pdf?course=DigiChamps&Level=Level1&pdf=DCL01_U05_Intro",
+                            "type": "page"
+                        },
+                        {
+                            "title": "7.1 - New Slides And Images",
+                            "uid": "CMS03-TP7-CHDRN2",
+                            "description": "",
+                            "route": "/pdf?course=DigiChamps&Level=Level1&pdf=DCL01_U05_S01",
+                            "type": "page"
+                        },
+                        {
+                            "uid": "CMS03-TP7-CHDRN4",
+                            "fname": "CMS03-TP7-CHDRN4.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS03-TP7-CHDRN5",
+                            "fname": "CMS03-TP7-CHDRN5.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS03-TP7-CHDRN6",
+                            "fname": "CMS03-TP7-CHDRN6.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "title": "7.2 - Text Formatting",
+                            "uid": "CMS03-TP7-CHDRN3",
+                            "description": "",
+                            "route": "/pdf?course=DigiChamps&Level=Level1&pdf=DCL01_U05_S02",
+                            "type": "page"
+                        },
+                        {
+                            "uid": "CMS03-TP7-CHDRN7",
+                            "fname": "CMS03-TP7-CHDRN7.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS03-TP7-CHDRN8",
+                            "fname": "CMS03-TP7-CHDRN8.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS03-TP7-CHDRN9",
+                            "fname": "CMS03-TP7-CHDRN9.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS03-U07-CHDRN1",
+                            "fname": "CMS03-U07-CHDRN1.json",
+                            "type": "quiz"
+                        }
+                    ],
+                    "teacheronly": "no"
+                },
+                {
+                    "route": "book/CMS03/CMS03-TP8-000.mdx",
+                    "title": "Unit 8: Shapes on Slides",
+                    "type": "topic",
+                    "uid": "CMS03-TP8-000",
+                    "children": [
+                        {
+                            "title": "Unit 8 Summary",
+                            "uid": "CMS03-TP8-CHDRN1",
+                            "description": "",
+                            "route": "/pdf?course=DigiChamps&Level=Level1&pdf=DCL02_U05_Intro",
+                            "type": "page"
+                        },
+                        {
+                            "title": "8.1 - Adding Shape",
+                            "uid": "CMS03-TP8-CHDRN2",
+                            "description": "",
+                            "route": "/pdf?course=DigiChamps&Level=Level2&pdf=DCL02_U05_S01",
+                            "type": "page"
+                        },
+                        {
+                            "uid": "CMS03-TP8-CHDRN5",
+                            "fname": "CMS03-TP8-CHDRN5.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS03-TP8-CHDRN6",
+                            "fname": "CMS03-TP8-CHDRN6.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS03-TP8-CHDRN7",
+                            "fname": "CMS03-TP8-CHDRN7.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "title": "8.2 - Themes And Color",
+                            "uid": "CMS03-TP8-CHDRN3",
+                            "description": "",
+                            "route": "/pdf?course=DigiChamps&Level=Level2&pdf=DCL02_U05_S02",
+                            "type": "page"
+                        },
+                        {
+                            "uid": "CMS03-TP8-CHDRN8",
+                            "fname": "CMS03-TP8-CHDRN8.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS03-TP8-CHDRN9",
+                            "fname": "CMS03-TP8-CHDRN9.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS03-TP8-CHDRN10",
+                            "fname": "CMS03-TP8-CHDRN10.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "title": "8.3 - Size Of Shapes",
+                            "uid": "CMS03-TP8-CHDRN4",
+                            "description": "",
+                            "route": "/pdf?course=DigiChamps&Level=Level2&pdf=DCL02_U05_S03",
+                            "type": "page"
+                        },
+                        {
+                            "uid": "CMS03-TP8-CHDRN11",
+                            "fname": "CMS03-TP8-CHDRN11.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS03-TP8-CHDRN12",
+                            "fname": "CMS03-TP8-CHDRN12.json",
+                            "type": "assignment"
+                        },
+                        {
+                            "uid": "CMS03-U08-CHDRN1",
+                            "fname": "CMS03-U08-CHDRN1.json",
+                            "type": "quiz"
+                        }
+                    ],
+                    "teacheronly": "no"
+                },
+                {
+                    "route": "book/CMS03/CMS03-TP9-000.mdx",
+                    "title": "Unit 9: Internet And Emailing",
+                    "type": "topic",
+                    "uid": "CMS03-TP9-000",
+                    "children": [
+                        {
+                            "title": "Unit 9 Summary",
+                            "uid": "CMS03-TP9-CHDRN1",
+                            "description": "",
+                            "route": "/pdf?course=DigiChamps&Level=Level3&pdf=DCL03_U02_Intro",
+                            "type": "page"
+                        },
+                        {
+                            "title": "9.1 - Internet",
+                            "uid": "CMS03-TP9-CHDRN2",
+                            "description": "",
+                            "route": "/pdf?course=DigiChamps&Level=Level3&pdf=DCL03_U02_S01",
+                            "type": "page"
+                        },
+                        {
+                            "title": "9.2 - Emailing",
+                            "uid": "CMS03-TP9-CHDRN3",
+                            "description": "",
+                            "route": "/pdf?course=DigiChamps&Level=Level3&pdf=DCL03_U02_S02",
+                            "type": "page"
+                        },
+                        {
+                            "uid": "CMS03-U09-CHDRN1",
+                            "fname": "CMS03-U09-CHDRN1.json",
+                            "type": "quiz"
+                        }
+                    ],
+                    "teacheronly": "no"
+                }
+            ]
         }
-      ]
     }
-  }
 ]

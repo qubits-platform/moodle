@@ -44,7 +44,8 @@ $farr = array(
     "CMS03" => "/books-json/hybrid/cms03.json",
     "CMS04" => "/books-json/hybrid/cms04.json",
     "CMS05" => "/books-json/hybrid/cms05.json",
-    "CMS06" => "/books-json/hybrid/cms06.json"
+    "CMS06" => "/books-json/hybrid/cms06.json",
+    "CMS07" => "/books-json/hybrid/cms07.json"
 );
 
 
