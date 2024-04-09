@@ -1,0 +1,32 @@
+{
+  "title": "3.3 Master Challenge 3",
+  "question": "<strong>Debugging Mira’s cat</strong><br><br>Mira created the following program to make a cat sprite draw a straight line while walking. When she clicked on the green flag, she could neither see the line nor the cat. Help Mira fix the errors in her program and rewrite it.<br><br><img src='https://learn.qubitsedu.com/images/DQL04_U03_S03_MC3.png' width='25%' height='25%'>",
+  "duedate": "",
+  "submissionfrom": "",
+  "grade_duedate": "",
+  "grade": 100,
+  "submission_type": "scratch",
+  "__submission_type_hint": "onlinetext - onlinefile - scratch - codeblock",
+  "activity_instruction": "Sum of 2 numbers",
+  "submissionstatus": "yes",
+  "online_text_limit": "500",
+  "additional_files": "",
+  "codeblock_mode": "automate",
+  "__codeblock_mode_hint": "automate - manual",
+  "language_type": "",
+  "__language_type_hint": "python - sql - htmlcss - javascript - R - pseudocode - java",
+  "grade_type": "scale",
+  "grading_method": "direct",
+  "uid": "DQL04-TP3-CHDRN14",
+  "maxfilesubmissions": "5",
+  "filetypeslist": "",
+  "maxfilesubmissions_size": "2097152",
+  "testcases": [
+    {
+      "value": "Case = Test integer sum\ninput = 1 2 3 5\noutput = 11"
+    },
+    {
+      "value": "Case = Test integer sum\ninput = 1\n -2\n 3\n 5\noutput = 7"
+    }
+  ]
+}

@@ -1,0 +1,788 @@
+[
+  {
+    "book": {
+      "name": "CMS Grade 07",
+      "code": "CMS07",
+      "category": "CMS",
+      "categorycode": "CMS",
+      "summary": ".",
+      "otherfields": {
+        "level": "7",
+        "cardcolour": "#204796"
+      },
+      "chapters": [
+        {
+          "route": "book/CMS07/CMS07-TP1-000.mdx",
+          "title": "Unit 1: Working with Data",
+          "type": "topic",
+          "uid": "CMS07-TP1-000",
+          "children": [
+            {
+              "title": "Unit 1 Summary",
+              "uid": "CMS07-TP1-CHDRN1",
+              "description": "",
+              "route": "/pdf?course=DigiChamps&Level=Level4&pdf=DCL04_U06_Intro",
+              "type": "page"
+            },
+            {
+              "title": "1.1 - Data At Work",
+              "uid": "CMS07-TP1-CHDRN2",
+              "description": "",
+              "route": "/pdf?course=DigiChamps&Level=Level4&pdf=DCL04_U06_S01",
+              "type": "page"
+            },
+            {
+              "uid": "CMS07-TP1-CHDRN5",
+              "fname": "CMS07-TP1-CHDRN5.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "CMS07-TP1-CHDRN6",
+              "fname": "CMS07-TP1-CHDRN6.json",
+              "type": "assignment"
+            },
+            {
+              "title": "1.2 - Prediction From Data",
+              "uid": "CMS07-TP1-CHDRN3",
+              "description": "",
+              "route": "/pdf?course=DigiChamps&Level=Level4&pdf=DCL04_U06_S02",
+              "type": "page"
+            },
+            {
+              "uid": "CMS07-TP1-CHDRN7",
+              "fname": "CMS07-TP1-CHDRN7.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "CMS07-TP1-CHDRN8",
+              "fname": "CMS07-TP1-CHDRN8.json",
+              "type": "assignment"
+            },
+            {
+              "title": "1.3 - Data Insight",
+              "uid": "CMS07-TP1-CHDRN4",
+              "description": "",
+              "route": "/pdf?course=DigiChamps&Level=Level4&pdf=DCL04_U06_S03",
+              "type": "page"
+            },
+            {
+              "uid": "CMS07-TP1-CHDRN9",
+              "fname": "CMS07-TP1-CHDRN9.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "CMS07-TP1-CHDRN10",
+              "fname": "CMS07-TP1-CHDRN10.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "CMS07-U01-CHDRN1",
+              "fname": "CMS07-U01-CHDRN1.json",
+              "type": "quiz"
+            }
+          ],
+          "teacheronly": "no"
+        },
+        {
+          "route": "book/CMS07/CMS07-TP2-000.mdx",
+          "title": "Unit 2: Data",
+          "type": "topic",
+          "uid": "CMS07-TP2-000",
+          "children": [
+            {
+              "title": "Unit 2 Summary",
+              "uid": "CMS07-TP2-CHDRN1",
+              "description": "",
+              "route": "/pdf?course=DigiChamps&Level=Level5&pdf=DCL05_U06_Intro",
+              "type": "page"
+            },
+            {
+              "title": "2.1 - Representing Data",
+              "uid": "CMS07-TP2-CHDRN2",
+              "description": "",
+              "route": "/pdf?course=DigiChamps&Level=Level5&pdf=DCL05_U06_S01",
+              "type": "page"
+            },
+            {
+              "uid": "CMS07-TP2-CHDRN5",
+              "fname": "CMS07-TP2-CHDRN5.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "CMS07-TP2-CHDRN6",
+              "fname": "CMS07-TP2-CHDRN6.json",
+              "type": "assignment"
+            },
+            {
+              "title": " 2.2 - Data And Relationships",
+              "uid": "CMS07-TP2-CHDRN3",
+              "description": "",
+              "route": "/pdf?course=DigiChamps&Level=Level5&pdf=DCL05_U06_S02",
+              "type": "page"
+            },
+            {
+              "uid": "CMS07-TP2-CHDRN7",
+              "fname": "CMS07-TP2-CHDRN7.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "CMS07-TP2-CHDRN8",
+              "fname": "CMS07-TP2-CHDRN8.json",
+              "type": "assignment"
+            },
+            {
+              "title": " 2.3 - Data For Creative Solutions",
+              "uid": "CMS07-TP2-CHDRN4",
+              "description": "",
+              "route": "/pdf?course=DigiChamps&Level=Level5&pdf=DCL05_U06_S03",
+              "type": "page"
+            },
+            {
+              "uid": "CMS07-TP2-CHDRN9",
+              "fname": "CMS07-TP2-CHDRN9.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "CMS07-TP2-CHDRN10",
+              "fname": "CMS07-TP2-CHDRN10.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "CMS07-U02-CHDRN1",
+              "fname": "CMS07-U02-CHDRN1.json",
+              "type": "quiz"
+            }
+          ],
+          "teacheronly": "no"
+        },
+        {
+          "route": "book/CMS07/CMS07-TP3-000.mdx",
+          "title": "Unit 3: Working with Data",
+          "type": "topic",
+          "uid": "CMS07-TP3-000",
+          "children": [
+            {
+              "title": " 3.1 - Working With Data",
+              "uid": "CMS07-TP3-CHDRN3",
+              "description": "",
+              "route": "/pdf?course=DigiChamps&Level=Level6&pdf=DCL06_U05_S02",
+              "type": "page"
+            },
+            {
+              "uid": "CMS07-TP3-CHDRN9",
+              "fname": "CMS07-TP3-CHDRN9.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "CMS07-TP3-CHDRN10",
+              "fname": "CMS07-TP3-CHDRN10.json",
+              "type": "assignment"
+            }
+          ],
+          "teacheronly": "no"
+        },
+        {
+          "route": "book/CMS07/CMS07-TP4-000.mdx",
+          "title": "Unit 4: Cleaning the Data",
+          "type": "topic",
+          "uid": "CMS07-TP4-000",
+          "children": [
+            {
+              "title": "4.1 - Cleaning The Data",
+              "uid": "CMS07-TP4-CHDRN4",
+              "description": "",
+              "route": "/pdf?course=DigiChamps&Level=Level6&pdf=DCL06_U05_S03",
+              "type": "page"
+            },
+            {
+              "uid": "CMS07-TP4-CHDRN11",
+              "fname": "CMS07-TP4-CHDRN11.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "CMS07-TP4-CHDRN12",
+              "fname": "CMS07-TP4-CHDRN12.json",
+              "type": "assignment"
+            }
+          ]
+        },
+        {
+          "route": "book/CMS07/CMS07-TP5-000.mdx",
+          "title": "Unit 5: Introduction to Python",
+          "type": "topic",
+          "uid": "CMS07-TP5-000",
+          "children": [
+            {
+              "title": "Unit 5 Summary",
+              "uid": "CMS07-TP5-CHDRN1",
+              "description": "",
+              "route": "/pdf?course=DigiPro&Level=Level7&pdf=DPL07_U01_Intro",
+              "type": "page"
+            },
+            {
+              "title": "5.1 - Starting Up With Python",
+              "uid": "CMS07-TP5-CHDRN2",
+              "description": "",
+              "route": "/pdf?course=DigiPro&Level=Level7&pdf=DPL07_U01_S01",
+              "type": "page"
+            },
+            {
+              "uid": "CMS07-TP5-CHDRN6",
+              "fname": "CMS07-TP5-CHDRN6.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "CMS07-TP5-CHDRN7",
+              "fname": "CMS07-TP5-CHDRN7.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "CMS07-TP5-CHDRN18",
+              "fname": "CMS07-TP5-CHDRN18.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "CMS07-TP5-CHDRN8",
+              "fname": "CMS07-TP5-CHDRN8.json",
+              "type": "assignment"
+            },
+            {
+              "title": "5.2 - My First Program",
+              "uid": "CMS07-TP5-CHDRN3",
+              "description": "",
+              "route": "/pdf?course=DigiPro&Level=Level7&pdf=DPL07_U01_S02",
+              "type": "page"
+            },
+            {
+              "uid": "CMS07-TP5-CHDRN9",
+              "fname": "CMS07-TP5-CHDRN9.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "CMS07-TP5-CHDRN10",
+              "fname": "CMS07-TP5-CHDRN10.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "CMS07-TP5-CHDRN11",
+              "fname": "CMS07-TP5-CHDRN11.json",
+              "type": "assignment"
+            },
+            {
+              "title": "5.3 - Variables",
+              "uid": "CMS07-TP5-CHDRN4",
+              "description": "",
+              "route": "/pdf?course=DigiPro&Level=Level7&pdf=DPL07_U01_S03",
+              "type": "page"
+            },
+            {
+              "uid": "CMS07-TP5-CHDRN12",
+              "fname": "CMS07-TP5-CHDRN12.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "CMS07-TP5-CHDRN13",
+              "fname": "CMS07-TP5-CHDRN13.json",
+              "type": "assignment"
+            },
+            {
+              "title": "5.4 - Tokens Of Python",
+              "uid": "CMS07-TP5-CHDRN5",
+              "description": "",
+              "route": "/pdf?course=DigiPro&Level=Level7&pdf=DPL07_U01_S04",
+              "type": "page"
+            },
+            {
+              "uid": "CMS07-TP5-CHDRN14",
+              "fname": "CMS07-TP5-CHDRN14.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "CMS07-TP5-CHDRN15",
+              "fname": "CMS07-TP5-CHDRN15.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "CMS07-TP5-CHDRN16",
+              "fname": "CMS07-TP5-CHDRN16.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "CMS07-TP5-CHDRN17",
+              "fname": "CMS07-TP5-CHDRN17.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "CMS07-U05-CHDRN1",
+              "fname": "CMS07-U05-CHDRN1.json",
+              "type": "quiz"
+            }
+          ],
+          "teacheronly": "no"
+        },
+        {
+          "route": "book/CMS07/CMS07-TP6-000.mdx",
+          "title": "Unit 6: Numbers and Operations",
+          "type": "topic",
+          "uid": "CMS07-TP6-000",
+          "children": [
+            {
+              "title": "Unit 6 Summary",
+              "uid": "CMS07-TP6-CHDRN1",
+              "description": "",
+              "route": "/pdf?course=DigiPro&Level=Level7&pdf=DPL07_U02_Intro",
+              "type": "page"
+            },
+            {
+              "title": "6.1 - Data Type And Conversion",
+              "uid": "CMS07-TP6-CHDRN2",
+              "description": "",
+              "route": "/pdf?course=DigiPro&Level=Level7&pdf=DPL07_U02_S01",
+              "type": "page"
+            },
+            {
+              "uid": "CMS07-TP6-CHDRN6",
+              "fname": "CMS07-TP6-CHDRN6.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "CMS07-TP6-CHDRN7",
+              "fname": "CMS07-TP6-CHDRN7.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "CMS07-TP6-CHDRN8",
+              "fname": "CMS07-TP6-CHDRN8.json",
+              "type": "assignment"
+            },
+            {
+              "title": "6.2 - Arithmetic Operations On Numbers",
+              "uid": "CMS07-TP6-CHDRN3",
+              "description": "",
+              "route": "/pdf?course=DigiPro&Level=Level7&pdf=DPL07_U02_S02",
+              "type": "page"
+            },
+            {
+              "uid": "CMS07-TP6-CHDRN9",
+              "fname": "CMS07-TP6-CHDRN9.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "CMS07-TP6-CHDRN10",
+              "fname": "CMS07-TP6-CHDRN10.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "CMS07-TP6-CHDRN11",
+              "fname": "CMS07-TP6-CHDRN11.json",
+              "type": "assignment"
+            },
+            {
+              "title": "6.3 - Arithmetic Operations Using Python",
+              "uid": "CMS07-TP6-CHDRN4",
+              "description": "",
+              "route": "/pdf?course=DigiPro&Level=Level7&pdf=DPL07_U02_S03",
+              "type": "page"
+            },
+            {
+              "uid": "CMS07-TP6-CHDRN12",
+              "fname": "CMS07-TP6-CHDRN12.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "CMS07-TP6-CHDRN13",
+              "fname": "CMS07-TP6-CHDRN13.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "CMS07-TP6-CHDRN14",
+              "fname": "CMS07-TP6-CHDRN14.json",
+              "type": "assignment"
+            },
+            {
+              "title": "6.4 - More On Arithmetic Operations",
+              "uid": "CMS07-TP6-CHDRN5",
+              "description": "",
+              "route": "/pdf?course=DigiPro&Level=Level7&pdf=DPL07_U02_S04",
+              "type": "page"
+            },
+            {
+              "uid": "CMS07-TP6-CHDRN15",
+              "fname": "CMS07-TP6-CHDRN15.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "CMS07-TP6-CHDRN16",
+              "fname": "CMS07-TP6-CHDRN16.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "CMS07-TP6-CHDRN17",
+              "fname": "CMS07-TP6-CHDRN17.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "CMS07-U06-CHDRN1",
+              "fname": "CMS07-U06-CHDRN1.json",
+              "type": "quiz"
+            }
+          ],
+          "teacheronly": "no"
+        },
+        {
+          "route": "book/CMS07/CMS07-TP7-000.mdx",
+          "title": "Unit 7: Personal Portfolio",
+          "type": "topic",
+          "uid": "CMS07-TP7-000",
+          "children": [
+            {
+              "title": "Unit 7 Summary",
+              "uid": "CMS07-TP7-CHDRN1",
+              "description": "",
+              "route": "/pdf?course=DigiChamps&Level=Level6&pdf=DCL06_U02_Intro",
+              "type": "page"
+            },
+            {
+              "title": "7.1 - Create Your Own Website",
+              "uid": "CMS07-TP7-CHDRN2",
+              "description": "",
+              "route": "/pdf?course=DigiChamps&Level=Level6&pdf=DCL06_U02_S01",
+              "type": "page"
+            },
+            {
+              "uid": "CMS07-TP7-CHDRN6",
+              "fname": "CMS07-TP7-CHDRN6.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "CMS07-TP7-CHDRN7",
+              "fname": "CMS07-TP7-CHDRN7.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "CMS07-TP7-CHDRN8",
+              "fname": "CMS07-TP7-CHDRN8.json",
+              "type": "assignment"
+            },
+            {
+              "title": "7.2 - More On Home Page",
+              "uid": "CMS07-TP7-CHDRN3",
+              "description": "",
+              "route": "/pdf?course=DigiChamps&Level=Level6&pdf=DCL06_U02_S02 ",
+              "type": "page"
+            },
+            {
+              "uid": "CMS07-TP7-CHDRN9",
+              "fname": "CMS07-TP7-CHDRN9.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "CMS07-TP7-CHDRN10",
+              "fname": "CMS07-TP7-CHDRN10.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "CMS07-TP7-CHDRN11",
+              "fname": "CMS07-TP7-CHDRN11.json",
+              "type": "assignment"
+            },
+            {
+              "title": "7.3 - Add A Webpage",
+              "uid": "CMS07-TP7-CHDRN4",
+              "description": "",
+              "route": "/pdf?course=DigiChamps&Level=Level6&pdf=DCL06_U02_S03",
+              "type": "page"
+            },
+            {
+              "uid": "CMS07-TP7-CHDRN12",
+              "fname": "CMS07-TP7-CHDRN12.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "CMS07-TP7-CHDRN13",
+              "fname": "CMS07-TP7-CHDRN13.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "CMS07-TP7-CHDRN14",
+              "fname": "CMS07-TP7-CHDRN14.json",
+              "type": "assignment"
+            },
+            {
+              "title": " 7.4 - Sections And Collapsible Groups",
+              "uid": "CMS07-TP7-CHDRN5",
+              "description": "",
+              "route": "/pdf?course=DigiChamps&Level=Level6&pdf=DCL06_U02_S04",
+              "type": "page"
+            },
+            {
+              "uid": "CMS07-TP7-CHDRN15",
+              "fname": "CMS07-TP7-CHDRN15.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "CMS07-TP7-CHDRN16",
+              "fname": "CMS07-TP7-CHDRN16.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "CMS07-TP7-CHDRN17",
+              "fname": "CMS07-TP7-CHDRN17.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "CMS07-TP7-CHDRN18",
+              "fname": "CMS07-TP7-CHDRN18.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "CMS07-U07-CHDRN1",
+              "fname": "CMS07-U07-CHDRN1.json",
+              "type": "quiz"
+            }
+          ],
+          "teacheronly": "no"
+        },
+        {
+          "route": "book/CMS07/CMS07-TP8-000.mdx",
+          "title": "Unit 8: Web Pages in a Website",
+          "type": "topic",
+          "uid": "CMS07-TP8-000",
+          "children": [
+            {
+              "title": "Unit 8 Summary",
+              "uid": "CMS07-TP8-CHDRN1",
+              "description": "",
+              "route": "/pdf?course=DigiChamps&Level=Level7&pdf=DCL07_U02_Intro",
+              "type": "page"
+            },
+            {
+              "title": "8.1 - Home Page With Header And Footer",
+              "uid": "CMS07-TP8-CHDRN2",
+              "description": "",
+              "route": "/pdf?course=DigiChamps&Level=Level7&pdf=DCL07_U02_S01",
+              "type": "page"
+            },
+            {
+              "uid": "CMS07-TP8-CHDRN5",
+              "fname": "CMS07-TP8-CHDRN5.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "CMS07-TP8-CHDRN6",
+              "fname": "CMS07-TP8-CHDRN6.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "CMS07-TP8-CHDRN7",
+              "fname": "CMS07-TP8-CHDRN7.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "CMS07-TP8-CHDRN8",
+              "fname": "CMS07-TP8-CHDRN8.json",
+              "type": "assignment"
+            },
+            {
+              "title": "8.2 - Layouts And Images In Web Pages",
+              "uid": "CMS07-TP8-CHDRN3",
+              "description": "",
+              "route": "/pdf?course=DigiChamps&Level=Level7&pdf=DCL07_U02_S02",
+              "type": "page"
+            },
+            {
+              "uid": "CMS07-TP8-CHDRN9",
+              "fname": "CMS07-TP8-CHDRN9.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "CMS07-TP8-CHDRN10",
+              "fname": "CMS07-TP8-CHDRN10.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "CMS07-TP8-CHDRN11",
+              "fname": "CMS07-TP8-CHDRN11.json",
+              "type": "assignment"
+            },
+            {
+              "title": "8.3 - Image Carousel And Navigation",
+              "uid": "CMS07-TP8-CHDRN4",
+              "description": "",
+              "route": "/pdf?course=DigiChamps&Level=Level7&pdf=DCL07_U02_S03",
+              "type": "page"
+            },
+            {
+              "uid": "CMS07-TP8-CHDRN12",
+              "fname": "CMS07-TP8-CHDRN12.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "CMS07-TP8-CHDRN13",
+              "fname": "CMS07-TP8-CHDRN13.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "CMS07-TP8-CHDRN14",
+              "fname": "CMS07-TP8-CHDRN14.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "CMS07-U08-CHDRN1",
+              "fname": "CMS07-U08-CHDRN1.json",
+              "type": "quiz"
+            }
+          ],
+          "teacheronly": "no"
+        },
+        {
+          "route": "book/CMS07/CMS07-TP9-000.mdx",
+          "title": "Unit 9: Completing the Website",
+          "type": "topic",
+          "uid": "CMS07-TP9-000",
+          "children": [
+            {
+              "title": "Unit 9 Summary",
+              "uid": "CMS07-TP9-CHDRN1",
+              "description": "",
+              "route": "/pdf?course=DigiChamps&Level=Level7&pdf=DCL07_U03_Intro",
+              "type": "page"
+            },
+            {
+              "title": "9.1 - Embed Web Pages And Videos",
+              "uid": "CMS07-TP9-CHDRN2",
+              "description": "",
+              "route": "/pdf?course=DigiChamps&Level=Level7&pdf=DCL07_U03_S01",
+              "type": "page"
+            },
+            {
+              "uid": "CMS07-TP9-CHDRN4",
+              "fname": "CMS07-TP9-CHDRN4.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "CMS07-TP9-CHDRN5",
+              "fname": "CMS07-TP9-CHDRN5.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "CMS07-TP9-CHDRN6",
+              "fname": "CMS07-TP9-CHDRN6.json",
+              "type": "assignment"
+            },
+            {
+              "title": "9.2 - Share And Publish The Website",
+              "uid": "CMS07-TP9-CHDRN3",
+              "description": "",
+              "route": "/pdf?course=DigiChamps&Level=Level7&pdf=DCL07_U03_S02",
+              "type": "page"
+            },
+            {
+              "uid": "CMS07-TP9-CHDRN7",
+              "fname": "CMS07-TP9-CHDRN7.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "CMS07-TP9-CHDRN8",
+              "fname": "CMS07-TP9-CHDRN8.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "CMS07-U09-CHDRN1",
+              "fname": "CMS07-U09-CHDRN1.json",
+              "type": "quiz"
+            }
+          ],
+          "teacheronly": "no"
+        },
+        {
+          "route": "book/CMS07/CMS07-TP10-000.mdx",
+          "title": "Unit 10: AI Chatbot",
+          "type": "topic",
+          "uid": "CMS07-TP10-000",
+          "children": [
+            {
+              "title": "Unit 10 Summary",
+              "uid": "CMS07-TP10-CHDRN1",
+              "description": "",
+              "route": "/pdf?course=DigiPro&Level=Level6&pdf=DPL06_U4_Intro",
+              "type": "page"
+            },
+            {
+              "title": "10.1 - What is a ChatBot?",
+              "uid": "CMS07-TP10-CHDRN2",
+              "description": "",
+              "route": "/pdf?course=DigiPro&Level=Level6&pdf=DPL06_U4_S1",
+              "type": "page"
+            },
+            {
+              "uid": "CMS07-TP10-CHDRN6",
+              "fname": "CMS07-TP10-CHDRN6.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "CMS07-TP10-CHDRN7",
+              "fname": "CMS07-TP10-CHDRN7.json",
+              "type": "assignment"
+            },
+            {
+              "title": "10.2 - Develop and Analyze a ChatBot",
+              "uid": "CMS07-TP10-CHDRN3",
+              "description": "",
+              "route": "/pdf?course=DigiPro&Level=Level6&pdf=DPL06_U4_S2",
+              "type": "page"
+            },
+            {
+              "uid": "CMS07-TP10-CHDRN8",
+              "fname": "CMS07-TP10-CHDRN8.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "CMS07-TP10-CHDRN9",
+              "fname": "CMS07-TP10-CHDRN9.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "CMS07-TP10-CHDRN10",
+              "fname": "CMS07-TP10-CHDRN10.json",
+              "type": "assignment"
+            },
+            {
+              "title": "10.3 - AI ChatBotS",
+              "uid": "CMS07-TP10-CHDRN4",
+              "description": "",
+              "route": "/pdf?course=DigiPro&Level=Level6&pdf=DPL06_U4_S3",
+              "type": "page"
+            },
+            {
+              "uid": "CMS07-TP10-CHDRN11",
+              "fname": "CMS07-TP10-CHDRN11.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "CMS07-TP10-CHDRN12",
+              "fname": "CMS07-TP10-CHDRN12.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "CMS07-TP10-CHDRN13",
+              "fname": "CMS07-TP10-CHDRN13.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "CMS07-TP10-CHDRN14",
+              "fname": "CMS07-TP10-CHDRN14.json",
+              "type": "assignment"
+            },
+            {
+              "uid": "CMS07-U10-CHDRN1",
+              "fname": "CMS07-U10-CHDRN1.json",
+              "type": "quiz"
+            }
+          ],
+          "teacheronly": "no"
+        }
+      ]
+    }
+  }
+]

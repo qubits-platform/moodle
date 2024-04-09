@@ -1,0 +1,32 @@
+{
+    "title": "Capstone Project  - My School",
+    "question": "<h4>Background Information</h4>Design and code an app to display the following information about your school:<br>1. School name<br>2. Location of your school<br>3. A landmark near your school<br>4. Directions to your school<br>5. Strength of students in each grade<h4>Project objective</h4>The objective of the project is to design an app that displays relevant information about your school on pressing certain buttons.<br>The app should comprise the following features:<br>1. Display your school name upon pressing the School Name button.<br>2. Display the location of your school upon pressing the Location button.<br>3. Display any landmark near your school upon pressing the Landmark button.<br>4. Display the directions to your school from your house upon pressing the Directions button.<br>5. Display the number of students in each grade in your school, using lists, upon pressing the Strength of the school button. Make your app look attractive by adding a suitable background color and modifying the properties of the buttons.<br><br><h4>Requirements</h4>Here are the milestones you need to achieve to finish this project<br><br><img src='https://learn.qubitsedu.com/images/DP_L5_CP3_Table1.png' width='50%' height='60%' /><br><br><h4>Additional challenges </h4>Change the background color of the screen every time a button is pressed in your app",
+    "duedate": "",
+    "submissionfrom": "",
+    "grade_duedate": "",
+    "grade": 100,
+    "submission_type": "onlinefile",
+    "__submission_type_hint": "onlinetext - onlinefile - scratch - codeblock",
+    "activity_instruction": "Sum of 2 numbers",
+    "submissionstatus": "yes",
+    "online_text_limit": "500",
+    "additional_files": "",
+    "codeblock_mode": "automate",
+    "__codeblock_mode_hint": "automate - manual",
+    "language_type": "",
+    "__language_type_hint": "python - sql - htmlcss - javascript - R - pseudocode - java",
+    "grade_type": "scale",
+    "grading_method": "direct",
+    "uid": "CMS06-TP5-CHDRN14",
+    "maxfilesubmissions": "5",
+    "filetypeslist": "",
+    "maxfilesubmissions_size": "2097152",
+    "testcases": [
+        {
+            "value": "Case = Test integer sum\ninput = 1 2 3 5\noutput = 11"
+        },
+        {
+            "value": "Case = Test integer sum\ninput = 1\n -2\n 3\n 5\noutput = 7"
+        }
+    ]
+}

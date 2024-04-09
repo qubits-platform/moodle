@@ -1,0 +1,32 @@
+{
+  "title": "2.2 Master Challenge 2",
+  "question": "<strong>Finding a concise path</strong><br><br>Consider the following grid and the algorithm used by Lucy to reach Han.<br><br>Step 1: Turn right.<br>Step 2: Move 2 blocks forward.<br>Step 3: Turn left.<br>Step 4: Move 1 block forward.<br>Step 5: Turn right.<br>Step 6: Move 2 blocks forward.<br>Step 7: Turn left.<br>Step 8: Move 1 block forward.<br><br>Convert the given algorithm to a concise one using a repetition approach.<br><br><img src='https://learn.qubitsedu.com/images/DQL04_U02_S02_MC2.png' width='40%' height='30%'>",
+  "duedate": "",
+  "submissionfrom": "",
+  "grade_duedate": "",
+  "grade": 100,
+  "submission_type": "onlinetext",
+  "__submission_type_hint": "onlinetext - onlinefile - scratch - codeblock",
+  "activity_instruction": "Sum of 2 numbers",
+  "submissionstatus": "yes",
+  "online_text_limit": "500",
+  "additional_files": "",
+  "codeblock_mode": "automate",
+  "__codeblock_mode_hint": "automate - manual",
+  "language_type": "",
+  "__language_type_hint": "python - sql - htmlcss - javascript - R - pseudocode - java",
+  "grade_type": "scale",
+  "grading_method": "direct",
+  "uid": "DQL04-TP2-CHDRN11",
+  "maxfilesubmissions": "",
+  "filetypeslist": "",
+  "maxfilesubmissions_size": "",
+  "testcases": [
+    {
+      "value": "Case = Test integer sum\ninput = 1 2 3 5\noutput = 11"
+    },
+    {
+      "value": "Case = Test integer sum\ninput = 1\n -2\n 3\n 5\noutput = 7"
+    }
+  ]
+}

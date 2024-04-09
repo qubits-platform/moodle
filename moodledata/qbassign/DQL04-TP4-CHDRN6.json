@@ -1,0 +1,32 @@
+{
+  "title": "4.1 Master Challenge 2",
+  "question": "<strong>School lunch menu</strong><br><br>Examine the data table representing a week’s school lunch menu and answer the following questions.<br><br><img src='https://learn.qubitsedu.com/images/DQL04_U04_S01_MC21.png' width='50%' height='30%'><br><img src='https://learn.qubitsedu.com/images/DQL04_U04_S01_MC22.png' width='50%' height='30%'><br><br>a. What are the different categories of information (fields) in this table?<br>b. How many days of menus (records) does this table show?<br>c. How many columns (each representing a different type of food) are in this table?",
+  "duedate": "",
+  "submissionfrom": "",
+  "grade_duedate": "",
+  "grade": 100,
+  "submission_type": "onlinetext",
+  "__submission_type_hint": "onlinetext - onlinefile - scratch - codeblock",
+  "activity_instruction": "Sum of 2 numbers",
+  "submissionstatus": "yes",
+  "online_text_limit": "500",
+  "additional_files": "",
+  "codeblock_mode": "automate",
+  "__codeblock_mode_hint": "automate - manual",
+  "language_type": "",
+  "__language_type_hint": "python - sql - htmlcss - javascript - R - pseudocode - java",
+  "grade_type": "scale",
+  "grading_method": "direct",
+  "uid": "DQL04-TP4-CHDRN6",
+  "maxfilesubmissions": "5",
+  "filetypeslist": "",
+  "maxfilesubmissions_size": "2097152",
+  "testcases": [
+    {
+      "value": "Case = Test integer sum\ninput = 1 2 3 5\noutput = 11"
+    },
+    {
+      "value": "Case = Test integer sum\ninput = 1\n -2\n 3\n 5\noutput = 7"
+    }
+  ]
+}
