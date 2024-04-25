@@ -1036,13 +1036,14 @@ class qbassign_grading_table extends table_sql implements renderable {
      */
     public function col_timemarked(stdClass $row) {
         $o = '-';
-
         if ($row->timemarked && $row->grade !== null && $row->grade >= 0) {
-            $o = userdate($row->timemarked);
+            //$o = userdate($row->timemarked);
+            $o = '<span class="d-none dtelcl" data-time="'.$row->timemarked.'"></span>';
         }
         if ($row->timemarked && $this->is_downloading()) {
             // Force it for downloads as it affects import.
-            $o = userdate($row->timemarked);
+            //$o = userdate($row->timemarked);
+            $o = '<span class="d-none dtelcl" data-time="'.$row->timemarked.'"></span>';
         }
 
         return $o;
@@ -1061,9 +1062,11 @@ class qbassign_grading_table extends table_sql implements renderable {
         $submission = false;
         $this->get_group_and_submission($row->id, $group, $submission, -1);
         if ($submission && $submission->timemodified && $submission->status != qbassign_SUBMISSION_STATUS_NEW) {
-            $o = userdate($submission->timemodified);
+            //$o = userdate($submission->timemodified);
+            $o = '<span class="d-none dtelcl" data-time="'.$submission->timemodified.'"></span>';
         } else if ($row->timesubmitted && $row->status != qbassign_SUBMISSION_STATUS_NEW) {
-            $o = userdate($row->timesubmitted);
+            //$o = userdate($row->timesubmitted);
+            $o = '<span class="d-none dtelcl" data-time="'.$row->timesubmitted.'"></span>';
         }
 
         return $o;
