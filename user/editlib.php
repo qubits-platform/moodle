@@ -321,6 +321,7 @@ function useredit_shared_definition(&$mform, $editoroptions, $filemanageroptions
         $mform->setDefault('country', core_user::get_property_default('country'));
     }
 
+    $mform->addElement('html', '<div class="d-none">');
     if (isset($CFG->forcetimezone) and $CFG->forcetimezone != 99) {
         $choices = core_date::get_list_of_timezones($CFG->forcetimezone);
         $mform->addElement('static', 'forcedtimezone', get_string('timezone'), $choices[$CFG->forcetimezone]);
@@ -330,6 +331,7 @@ function useredit_shared_definition(&$mform, $editoroptions, $filemanageroptions
         $choices = core_date::get_list_of_timezones($user->timezone, true);
         $mform->addElement('select', 'timezone', get_string('timezone'), $choices);
     }
+    $mform->addElement('html', '</div>');
 
     if ($user->id < 0) {
         $purpose = user_edit_map_field_purpose($user->id, 'lang');
