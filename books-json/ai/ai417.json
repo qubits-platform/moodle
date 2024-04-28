@@ -1,0 +1,67 @@
+[
+  {
+    "book": {
+      "name": "Artificial Intelligence",
+      "code": "AI-417",
+      "category": "AI",
+      "categorycode": "AI",
+      "summary": ".",
+      "otherfields": {
+        "level": "9",
+        "cardcolour": "#215caa"
+      },
+      "chapters": [
+        {
+          "route": "book/AI-417/AI-417-TP1-000.mdx",
+          "title": "Unit 1:  Introduction to Artificial Intelligence",
+          "type": "topic",
+          "uid": "AI-417-TP1-000",
+          "children": [
+            {
+              "title": "Unit 1 Summary",
+              "uid": "AI-417-TP1-CHDRN1",
+              "description": "",
+              "route": "/pdf?course=DigiPro&Level=LevelAI&pdf=GLS AI Grade 9 Unit 1 - Summary",
+              "type": "page"
+            },
+            {
+              "title": "Chapter 1: Excite - Discovering AI",
+              "uid": "AI-417-TP1-CHDRN2",
+              "description": "",
+              "route": "/pdf?course=DigiPro&Level=LevelAI&pdf=GLS AI Grade 9 Unit 1 - Chapter 1",
+              "type": "page"
+            },
+            {
+              "title": "Chapter 2: Relate - AI in Daily Life",
+              "uid": "AI-417-TP1-CHDRN3",
+              "description": "",
+              "route": "/pdf?course=DigiPro&Level=LevelAI&pdf=GLS AI Grade 9 Unit 1 - Chapter 2",
+              "type": "page"
+            },
+            {
+              "title": "Chapter 3: Purpose - Sustainable Development Goals",
+              "uid": "AI-417-TP1-CHDRN4",
+              "description": "",
+              "route": "/pdf?course=DigiPro&Level=LevelAI&pdf=GLS AI Grade 9 Unit 1 - Chapter 3",
+              "type": "page"
+            },
+            {
+              "title": "Chapter 4: Possibilities - AI Careers and Skills",
+              "uid": "AI-417-TP1-CHDRN5",
+              "description": "",
+              "route": "/pdf?course=DigiPro&Level=LevelAI&pdf=GLS AI Grade 9 Unit 1 - Chapter 4",
+              "type": "page"
+            },
+            {
+              "title": "Chapter 5: AI Ethics",
+              "uid": "AI-417-TP1-CHDRN6",
+              "description": "",
+              "route": "/pdf?course=DigiPro&Level=LevelAI&pdf=GLS AI Grade 9 Unit 1 - Chapter 5",
+              "type": "page"
+            }
+          ]
+        }
+      ]
+    }
+  }
+]
