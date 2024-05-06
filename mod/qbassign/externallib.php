@@ -3298,9 +3298,15 @@ class mod_qbassign_external extends \mod_qbassign\external\external_api {
             'sesskey' => $USER->sesskey,
             'role' => $rolename
             );
+
+            $assignmentid = $get_assignmentdetails->id;
+            $ruserflag = $DB->get_record('qbassign_user_flags', array('qbassignment' => $assignmentid, 'userid' => $USER->id));
+            $locked = ($ruserflag->locked == 1) ? true : false;
+
             $returnarray = array(
             'course_id' => $get_assignmentdetails->course,
             'assignmentid' => $get_assignmentdetails->id,
+            'locked' => $locked,
             'assignment_title' => $get_assignmentdetails->name,
             'assignment_activitydesc' => $get_assignmentdetails->intro,
             'duedate' => $get_assignmentdetails->duedate,
@@ -3358,6 +3364,7 @@ class mod_qbassign_external extends \mod_qbassign\external\external_api {
                                         'assignment_title' => new external_value(PARAM_TEXT, 'Assignment Name',VALUE_OPTIONAL),
                                         'assignment_activitydesc' => new external_value(PARAM_RAW, 'Assignment Question',VALUE_OPTIONAL),
                                         'duedate' => new external_value(PARAM_INT, 'Last date',VALUE_OPTIONAL),
+                                        'locked' => new external_value(PARAM_BOOL, 'Locked', VALUE_OPTIONAL),
                                         'allowsubmissionsfromdate' => new external_value(PARAM_INT, 'Start Submission date',VALUE_OPTIONAL),
                                         'assign_uniquefield' => new external_value(PARAM_TEXT, 'Unique field',VALUE_OPTIONAL),
                                         'last_submitted_date' => new external_value(PARAM_INT, 'Last Submitted date',VALUE_OPTIONAL),
@@ -4850,6 +4857,7 @@ class mod_qbassign_external extends \mod_qbassign\external\external_api {
     public static function scratch_submission($qbassignmentid,$plugindata_text,$plugindata_format,$plugindata_type,$explanation)
     {
         global $DB,$CFG,$USER,$CONTEXT;
+        
         $currentuser = $USER->id;
         if(empty($currentuser))
         {
@@ -4860,7 +4868,6 @@ class mod_qbassign_external extends \mod_qbassign\external\external_api {
         {            
             //Explanations
             $explain_data = ($explanation!='')?$explanation:''; 
-            
             //Get activity Module details
             $get_coursefield = $DB->get_record('course_modules', array('instance' => $qbassignmentid,'course' => $assignid->course));
             $moduleid = $get_coursefield->id;
@@ -4922,6 +4929,22 @@ class mod_qbassign_external extends \mod_qbassign\external\external_api {
                     'onlineformat' => $plugindata_format
                     );
                     $sub_insertid = $DB->insert_record('qbassignsubmission_scratch', $add_textsubmission);
+                    // Applied restriction for changes
+                    $userflagrec = $DB->get_record('qbassign_user_flags',[
+                        'userid' => $USER->id,
+                        'qbassignment' => $qbassignmentid
+                    ]);
+                    if(empty($userflagrec)){
+                        $userflag = array(
+                            'userid' => $USER->id,
+                            'qbassignment' => $qbassignmentid,
+                            'locked' => 1
+                        );
+                        $DB->insert_record('qbassign_user_flags', $userflag);
+                    }else{
+                        $DB->set_field('qbassign_user_flags', 'locked', 1, array('userid' => $USER->id,'qbassignment'=>$qbassignmentid));
+                    }
+                
                 }
             }
             else
@@ -4937,10 +4960,25 @@ class mod_qbassign_external extends \mod_qbassign\external\external_api {
                     'onlineformat' => $plugindata_format
                     );
                     $sub_insertid = $DB->insert_record('qbassignsubmission_scratch', $add_textsubmission);
-
                     $DB->set_field('qbassign_submission', 'status', 'submitted', array('userid' => $USER->id,'qbassignment'=>$qbassignmentid));
                     $DB->set_field('qbassign_submission', 'timemodified', time(), array('userid' => $USER->id,'qbassignment'=>$qbassignmentid));
                     $submissionID = $check_submission->id;
+                     // Applied restriction for changes
+                     $userflagrec = $DB->get_record('qbassign_user_flags',[
+                        'userid' => $USER->id,
+                        'qbassignment' => $qbassignmentid
+                    ]);
+                    if(empty($userflagrec)){
+                        $userflag = array(
+                            'userid' => $USER->id,
+                            'qbassignment' => $qbassignmentid,
+                            'locked' => 1
+                        );
+                        $DB->insert_record('qbassign_user_flags', $userflag);
+                    }else{
+                        $DB->set_field('qbassign_user_flags', 'locked', 1, array('userid' => $USER->id,'qbassignment'=>$qbassignmentid));
+                    }
+
                 }   
                 else
                 { 
