@@ -4601,6 +4601,14 @@ class mod_qbassign_external extends \mod_qbassign\external\external_api {
                         }
 
                          $DB->set_field('qbassign_submission', 'status', 'new', array('userid' => $USER->id,'id'=>$submissionid));
+                         // Applied restriction for changes
+                         $userflagrec = $DB->get_record('qbassign_user_flags',[
+                            'userid' => $USER->id,
+                            'qbassignment' => $assignmentid
+                         ]);
+                         if($userflagrec){
+                            $DB->set_field('qbassign_user_flags', 'locked', 0, array('userid' => $USER->id,'qbassignment'=>$assignmentid));
+                         }
                          $remove_updated = ['message'=>'sucess']; 
                          return $remove_updated;
                      }

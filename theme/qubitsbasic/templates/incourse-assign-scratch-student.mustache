@@ -191,7 +191,11 @@ M.assn = {
 require(['jquery'], function($) {
    setTimeout(function () {
    $('.index_app_2mqDO').prependTo('#page-content');
-   }, 4000); 
+   let agurl = `${M.cfg.wwwroot}/lib/ajax/service.php?sesskey=${M.cfg.sesskey}&info=mod_qbassign_get_assignment_service`;
+   let adata = [{"index":0,"methodname":"mod_qbassign_get_assignment_service","args":{"uniquefield": M.assn.uid}}]
+      console.log(agurl)
+      console.log(adata)
+   }, 4000);
 });
 {{/js}}
 
