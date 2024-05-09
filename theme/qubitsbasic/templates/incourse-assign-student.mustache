@@ -357,7 +357,9 @@ require(['jquery'], function($) {
             console.error("Error:", errorThrown);
         });
      }
-     //check_lk();
-     setTimeout(check_lk, 2000);
+     setTimeout(check_lk, 4000);
+     $(document).on("click", "#svchs1, #cncl1, #svchs2, #cncl2, #upldfle, #upldcncl", function(){
+        setTimeout(check_lk, 4000);
+     });
 });
 {{/js}}

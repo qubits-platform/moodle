@@ -4246,7 +4246,7 @@ class mod_qbassign_external extends \mod_qbassign\external\external_api {
                  } 
              }
              // Applied restriction
-             self::applied_restriction($qbassignmentid, $USER->id, 1);           
+             self::applied_restriction($qbassignmentid, $USER->id, 1);         
              $save_updated = ['message'=>'sucess','submissionid'=>$submissionID]; 
              return $save_updated; 
          }
@@ -4702,6 +4702,8 @@ class mod_qbassign_external extends \mod_qbassign\external\external_api {
                         $filesubmit_id = $get_submited->id;
 
                         $DB->set_field('qbassignsubmission_file', 'explanation', $explain_data, array('submission' => $filesubmit_id,'qbassignment'=>$assignmentid));
+                        // Applied restriction
+                        self::applied_restriction($assignmentid, $userid, 1);
                         return array('code'=>200,'message'=>'Submission Success');
                 }
                 else{

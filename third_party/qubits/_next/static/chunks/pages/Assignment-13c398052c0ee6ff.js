@@ -307,6 +307,7 @@
 											direction: "row",
 											spacing: 2,
 											children: [(0, a.jsx)(r.Z, {
+												id: "svchs1",
 												variant: "contained",
 												style: {
 													backgroundColor: "#116cbf",
@@ -317,6 +318,7 @@
 												onClick: b,
 												children: "Save changes"
 											}), (0, a.jsx)(r.Z, {
+												id: "cncl1",
 												variant: "contained",
 												style: {
 													backgroundColor: "#116cbf",
@@ -897,6 +899,7 @@
 										direction: "row",
 										spacing: 2,
 										children: [(0, a.jsx)(r.Z, {
+											id: "upldfle",
 											variant: "contained",
 											style: {
 												backgroundColor: "#116cbf",
@@ -907,6 +910,7 @@
 											onClick: k,
 											children: "Upload File"
 										}), (0, a.jsx)(r.Z, {
+											id: "upldcncl",
 											variant: "contained",
 											style: {
 												backgroundColor: "#116cbf",
@@ -1522,6 +1526,7 @@
 											direction: "row",
 											spacing: 2,
 											children: [(0, a.jsx)(r.Z, {
+												id: "svchs2",
 												variant: "contained",
 												style: {
 													backgroundColor: "#116cbf",
@@ -1532,6 +1537,7 @@
 												onClick: _,
 												children: "Save changes"
 											}), (0, a.jsx)(r.Z, {
+												id: "cncl2",
 												variant: "contained",
 												style: {
 													backgroundColor: "#116cbf",
