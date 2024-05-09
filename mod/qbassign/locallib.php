@@ -8388,6 +8388,30 @@ class qbassign {
         return true;
     }
 
+    public function lock_submission_student($userid) {
+        global $USER, $DB;
+        // Need grade permission.
+        //require_capability('mod/qbassign:grade', $this->context);
+
+        // Give each submission plugin a chance to process the locking.
+        $plugins = $this->get_submission_plugins();
+        $submission = $this->get_user_submission($userid, false);
+
+        $flags = $this->get_user_flags($userid, true);
+        $flags->locked = 1;
+        $this->update_user_flags($flags);
+
+        foreach ($plugins as $plugin) {
+            if ($plugin->is_enabled() && $plugin->is_visible()) {
+                $plugin->lock($submission, $flags);
+            }
+        }
+
+        $user = $DB->get_record('user', array('id' => $userid), '*', MUST_EXIST);
+        \mod_qbassign\event\submission_locked::create_from_user($this, $user)->trigger();
+        return true;
+    }
+
 
     /**
      * Set the workflow state for multiple users

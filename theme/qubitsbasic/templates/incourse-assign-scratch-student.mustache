@@ -189,9 +189,35 @@ M.assn = {
 <script type="text/javascript" src="{{scratch_aurl}}/chunks/gui.js"></script>
 {{#js}}
 require(['jquery'], function($) {
+   function check_lk(){
+   let agurl = `${M.cfg.wwwroot}/lib/ajax/service.php?sesskey=${M.cfg.sesskey}&info=mod_qbassign_get_assignment_service`;
+   let adata = [{"index":0,"methodname":"mod_qbassign_get_assignment_service","args":{"uniquefield": M.assn.uid}}]
+   $.ajax({
+        type: "POST",
+        url: agurl,
+        data: JSON.stringify(adata),
+        contentType: 'application/json'
+      }).done(function(resp){
+          let locked = resp[0]?.data?.assignmentdetails?.locked;
+          locked = (locked === undefined) ? true : locked
+          if(locked === false){
+            $("#editButton").show();
+            $("#remveButton2").show();
+          }
+      });
+     } 
+
    setTimeout(function () {
    $('.index_app_2mqDO').prependTo('#page-content');
-   }, 4000); 
+      check_lk();
+   }, 4000);
+
+   $(document).on("click", "#svchs,#cncl", function(){
+     setTimeout(function () {
+       check_lk();
+     }, 2000);
+   });
+
 });
 {{/js}}
 
