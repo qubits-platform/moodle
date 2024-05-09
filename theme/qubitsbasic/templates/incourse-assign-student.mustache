@@ -325,3 +325,39 @@ require(["jquery", "jqueryui"], function($, jqui){
 
 });
 {{/js}}
+
+{{#js}}
+require(['jquery'], function($) {
+   function check_lk() {
+    let agurl = `${M.cfg.wwwroot}/lib/ajax/service.php?sesskey=${M.cfg.sesskey}&info=mod_qbassign_get_assignment_service`;
+    let ufldid = "{{muid}}";
+    let adata = [{"index":0,"methodname":"mod_qbassign_get_assignment_service","args":{"uniquefield": ufldid}}]
+        $.ajax({
+            type: "POST",
+            url: agurl,
+            data: JSON.stringify(adata),
+            contentType: 'application/json'
+        }).done(function(resp){
+            let submission_status = resp[0]?.data?.assignmentdetails?.submission_status;
+            let locked = resp[0]?.data?.assignmentdetails?.locked;
+            locked = (locked === undefined) ? true : locked
+            if(submission_status == "1"){
+                if(locked){
+                    $("#edts1,#edts2,#edts3").hide();
+                    $("#rmvs1,#rmvs2,#rmvs3").hide();
+                }else{
+                    $("#edts1,#edts2,#edts3").show();
+                    $("#rmvs1,#rmvs2,#rmvs3").show();
+                }
+            }
+            console.log(`Submission Status ${submission_status}`);
+            console.log(typeof submission_status)
+        }).fail(function(jqXHR, textStatus, errorThrown) {
+            // Handle error
+            console.error("Error:", errorThrown);
+        });
+     }
+     //check_lk();
+     setTimeout(check_lk, 2000);
+});
+{{/js}}

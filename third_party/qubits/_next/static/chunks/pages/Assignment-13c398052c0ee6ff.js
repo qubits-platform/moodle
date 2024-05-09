@@ -590,24 +590,28 @@
 									direction: "row",
 									spacing: 2,
 									children: [(0, a.jsx)(r.Z, {
+										id: "edts1",
 										variant: "contained",
 										style: {
 											backgroundColor: "#116cbf",
 											textTransform: "none",
 											fontSize: "14px",
-											borderRadius: "0.5rem"
+											borderRadius: "0.5rem",
+											display: "none"
 										},
 										onClick: function() {
 											T(!0)
 										},
 										children: "Edit Submission"
 									}), (0, a.jsx)(r.Z, {
+										id: "rmvs1",
 										variant: "contained",
 										style: {
 											backgroundColor: "#116cbf",
 											textTransform: "none",
 											fontSize: "14px",
-											borderRadius: "0.5rem"
+											borderRadius: "0.5rem",
+											display: "none"
 										},
 										onClick: function() {
 											var n = "".concat(M.cfg.wwwroot, "/lib/ajax/service.php?sesskey=").concat(M.cfg.sesskey, "&info=mod_qbassign_remove_submission"),
@@ -1170,24 +1174,28 @@
 									direction: "row",
 									spacing: 2,
 									children: [(0, a.jsx)(r.Z, {
+										id: "edts2",
 										variant: "contained",
 										style: {
 											backgroundColor: "#116cbf",
 											textTransform: "none",
 											fontSize: "14px",
-											borderRadius: "0.5rem"
+											borderRadius: "0.5rem",
+											display: "none"
 										},
 										onClick: function() {
 											T(!0)
 										},
 										children: "Edit Submission"
 									}), (0, a.jsx)(r.Z, {
+										id: "rmvs2",
 										variant: "contained",
 										style: {
 											backgroundColor: "#116cbf",
 											textTransform: "none",
 											fontSize: "14px",
-											borderRadius: "0.5rem"
+											borderRadius: "0.5rem",
+											display: "none"
 										},
 										disabled: !1,
 										onClick: function() {
@@ -1786,24 +1794,28 @@
 									direction: "row",
 									spacing: 2,
 									children: [(0, a.jsx)(r.Z, {
+										id: "edts3",
 										variant: "contained",
 										style: {
 											backgroundColor: "#116cbf",
 											textTransform: "none",
 											fontSize: "14px",
-											borderRadius: "0.5rem"
+											borderRadius: "0.5rem",
+											display: "none"
 										},
 										onClick: function() {
 											I(!0)
 										},
 										children: "Edit Submission"
 									}), (0, a.jsx)(r.Z, {
+										id: "rmvs3",
 										variant: "contained",
 										style: {
 											backgroundColor: "#116cbf",
 											textTransform: "none",
 											fontSize: "14px",
-											borderRadius: "0.5rem"
+											borderRadius: "0.5rem",
+											display: "none"
 										},
 										disabled: !1,
 										onClick: function() {
