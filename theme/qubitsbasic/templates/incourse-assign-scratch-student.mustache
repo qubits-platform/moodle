@@ -198,6 +198,7 @@ require(['jquery'], function($) {
         data: JSON.stringify(adata),
         contentType: 'application/json'
       }).done(function(resp){
+        console.log("*******");
           let locked = resp[0]?.data?.assignmentdetails?.locked;
           locked = (locked === undefined) ? true : locked
           if(locked === false){
@@ -209,7 +210,7 @@ require(['jquery'], function($) {
 
    setTimeout(function () {
    $('.index_app_2mqDO').prependTo('#page-content');
-      check_lk();
+      setTimeout(check_lk, 5000);
    }, 4000);
 
    $(document).on("click", "#svchs,#cncl", function(){
