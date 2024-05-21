@@ -1,9 +1,11 @@
 {{#js}}
 require(['jquery'], function($) {
-   $(".qicon-icon-close-drawer").trigger('click');
       $("#topofscroll").removeClass('main-inner');
       $('#page-content').addClass('main-inner');
       $('.index_app_2mqDO').appendTo('#page-content');
+      setTimeout(()=>{
+          $(".qicon-icon-close-drawer").trigger('click');
+      }, 5000);
    // $('.index_app_2mqDO').appendTo('#topofscroll');
 });
 {{/js}}
