@@ -189,9 +189,51 @@ M.assn = {
 <script type="text/javascript" src="{{scratch_aurl}}/chunks/gui.js"></script>
 {{#js}}
 require(['jquery'], function($) {
+    let path = window.location.pathname;
+	let width = window.innerWidth;
+	let height = window.innerHeight;
+
+    if (width <= 1366 && height <= 1024) {
+        $(".sidebar").addClass("close-bars");
+        $(".compact-logo").show();
+        $(".qicon-menu").show();
+        $(".pagetitle-left-alignment").addClass("closebar-left-alignment");
+        $(".sidebar").show();
+        $(".main-inner").addClass("leftnav");
+        $(".previousnav").hide();
+        $(".sidebar-overlay").hide();
+    }
+
+   function check_lk(){
+   let agurl = `${M.cfg.wwwroot}/lib/ajax/service.php?sesskey=${M.cfg.sesskey}&info=mod_qbassign_get_assignment_service`;
+   let adata = [{"index":0,"methodname":"mod_qbassign_get_assignment_service","args":{"uniquefield": M.assn.uid}}]
+   $.ajax({
+        type: "POST",
+        url: agurl,
+        data: JSON.stringify(adata),
+        contentType: 'application/json'
+      }).done(function(resp){
+        console.log("*******");
+          let locked = resp[0]?.data?.assignmentdetails?.locked;
+          locked = (locked === undefined) ? true : locked
+          if(locked === false){
+            $("#editButton").show();
+            $("#remveButton2").show();
+          }
+      });
+     } 
+
    setTimeout(function () {
    $('.index_app_2mqDO').prependTo('#page-content');
-   }, 4000); 
+      setTimeout(check_lk, 5000);
+   }, 4000);
+
+   $(document).on("click", "#svchs,#cncl", function(){
+     setTimeout(function () {
+       check_lk();
+     }, 2000);
+   });
+
 });
 {{/js}}
 
