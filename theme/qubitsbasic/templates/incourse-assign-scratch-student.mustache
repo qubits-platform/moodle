@@ -189,6 +189,21 @@ M.assn = {
 <script type="text/javascript" src="{{scratch_aurl}}/chunks/gui.js"></script>
 {{#js}}
 require(['jquery'], function($) {
+    let path = window.location.pathname;
+	let width = window.innerWidth;
+	let height = window.innerHeight;
+
+    if (width <= 1366 && height <= 1024) {
+        $(".sidebar").addClass("close-bars");
+        $(".compact-logo").show();
+        $(".qicon-menu").show();
+        $(".pagetitle-left-alignment").addClass("closebar-left-alignment");
+        $(".sidebar").show();
+        $(".main-inner").addClass("leftnav");
+        $(".previousnav").hide();
+        $(".sidebar-overlay").hide();
+    }
+
    function check_lk(){
    let agurl = `${M.cfg.wwwroot}/lib/ajax/service.php?sesskey=${M.cfg.sesskey}&info=mod_qbassign_get_assignment_service`;
    let adata = [{"index":0,"methodname":"mod_qbassign_get_assignment_service","args":{"uniquefield": M.assn.uid}}]
