@@ -196,3 +196,22 @@
 .drawer-left {
   display: none !important;
 }
+
+@media screen and (max-width: 1366px) and (max-height: 1024px) {
+  .main-inner {
+    position: relative;
+    height: 90vh;
+    left: 140px;
+    width: calc(100% - 100px) !important;
+    transition: all 0.5s ease;
+  }
+}
+@media screen and (max-width: 1180px) and (max-height: 820px) {
+  .main-inner {
+    position: relative;
+    height: 90vh;
+    left: 140px;
+    width: calc(100% - 100px) !important;
+    transition: all 0.5s ease;
+  }
+}

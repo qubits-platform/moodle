@@ -9,6 +9,22 @@
 <div class="sidebar-overlay"></div>
 {{#js}}
 require(['jquery'], function($){
+	$(document).ready(function() {
+		var path = window.location.pathname;
+		var width = window.innerWidth;
+		var height = window.innerHeight;
+		if (path.includes('third_party/scratch') && width <= 1366 && height <= 1024) {
+			$(".sidebar").addClass("close-bars");
+			$(".compact-logo").show();
+			$(".qicon-menu").show();
+			$(".pagetitle-left-alignment").addClass("closebar-left-alignment");
+			$(".sidebar").show();
+			$(".main-inner").addClass("leftnav");
+			$(".previousnav").hide();
+			$(".sidebar-overlay").hide();
+		}
+	});
+
     $(document).on("mouseenter", ".coursecard", function(){
         $(this).find(".white-circle").addClass("numbercolor");
     }).on("mouseleave", ".coursecard", function(){
@@ -54,14 +70,7 @@ require(['jquery'], function($){
 				$(".white-circle").toggleClass("numbercolor");
 			});
 		} else {
-				$(".sidebar").addClass("close-bars");
-				$(".compact-logo").show();
-				$(".qicon-menu").show();
-				$(".pagetitle-left-alignment").addClass("closebar-left-alignment");
-				$(".sidebar").show();
-				$(".main-inner").addClass("leftnav");
-				$(".previousnav").hide();
-				$(".sidebar-overlay").hide();
+				
 			$(".arrow-left").click(function () {
 				$(".sidebar").addClass("close-bars");
 				$(".compact-logo").show();
@@ -82,14 +91,7 @@ require(['jquery'], function($){
 				$(".main-inner").removeClass("leftnav");
 				$(".previousnav").show();
 			});
-				$(".sidebar").removeClass("close-bars");
-				$(".compact-logo").hide();
-				$(".sidebar-overlay").hide();
-				$(".qicon-menu").hide();
-				$(".pagetitle-left-alignment").removeClass("closebar-left-alignment");
-				$(".sidebar").show();
-				$(".main-inner").removeClass("leftnav");
-				$(".previousnav").show();
+				
 			
 		}
 	}
