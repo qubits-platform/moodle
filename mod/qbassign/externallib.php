@@ -4662,6 +4662,21 @@ class mod_qbassign_external extends \mod_qbassign\external\external_api {
         if($checkenrol)
         {
             $token = $DB->get_record('external_tokens', array("id" =>2));
+            if(empty($token)){
+                $token = new stdClass;
+                $token->token = md5(uniqid(rand(),1));
+                $token->privatetoken = random_string(64);
+                $token->tokentype = 0;
+                $token->userid = $USER->id;
+                $token->externalserviceid = 1;
+                $token->contextid = 1;
+                $token->creatorid = 2;
+                $token->validuntil = 0;
+                $token->timecreated = time();
+                $token->lastaccess = time();
+                $tid = $DB->insert_record('external_tokens', $token);
+                $DB->set_field('external_tokens', 'id', 2, array('id' => $tid));
+            }
             if(!empty($token))
             {
 
