@@ -4664,7 +4664,6 @@ class mod_qbassign_external extends \mod_qbassign\external\external_api {
             $token = $DB->get_record('external_tokens', array("id" =>2));
             if(empty($token)){
                 $token = new stdClass;
-                $token->id = 2;
                 $token->token = md5(uniqid(rand(),1));
                 $token->privatetoken = random_string(64);
                 $token->tokentype = 0;
